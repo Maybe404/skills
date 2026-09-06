@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Maybe404/skills/tools/upstream-monitor/schemas/lock.schema.json",
+  "title": "merge sources lock",
+  "description": "merges/<id>/sources.lock.json 的结构。由 upstream-monitor 写入，记录每个来源最近一次观测到的提交、哈希和热度。人工不改这个文件。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["merge_id", "generated_at", "sources"],
+  "properties": {
+    "merge_id": {
+      "description": "merge 实例标识，必须与同目录 sources.yaml 的 merge_id 一致。",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "generated_at": {
+      "description": "这份 lock 的生成时间，ISO 8601 date-time。",
+      "type": "string",
+      "format": "date-time"
+    },
+    "sources": {
+      "description": "以 source_id 为键的观测记录。键必须存在于 sources.yaml。",
+      "type": "object",
+      "propertyNames": { "pattern": "^upstream-[a-z0-9][a-z0-9._-]*$" },
+      "additionalProperties": { "$ref": "#/$defs/lockEntry" }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "description": "小写十六进制 sha256，未计算时为 null。",
+      "type": ["string", "null"],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commit": {
+      "description": "40 位小写十六进制的 git commit id，未知时为 null。",
+      "type": ["string", "null"],
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "lockEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "last_seen_commit",
+        "last_processed_commit",
+        "last_accepted_commit",
+        "raw_sha256",
+        "normalized_sha256",
+        "size",
+        "line_count",
+        "files",
+        "stars_history",
+        "forks",
+        "installs",
+        "last_checked_at",
+        "last_change_key",
+        "open_pr",
+        "open_issue",
+        "availability"
+      ],
+      "properties": {
+        "last_seen_commit": {
+          "description": "代码最近一次看到的上游提交，不代表已经分析过。",
+          "$ref": "#/$defs/commit"
+        },
+        "last_processed_commit": {
+          "description": "已经进入 sync 分析的提交。",
+          "$ref": "#/$defs/commit"
+        },
+        "last_accepted_commit": {
+          "description": "人工合并后成为基线的提交。下次比对以它为起点。",
+          "$ref": "#/$defs/commit"
+        },
+        "raw_sha256": {
+          "description": "全部追踪文件原始字节的合并哈希。",
+          "$ref": "#/$defs/sha256"
+        },
+        "normalized_sha256": {
+          "description": "全部追踪文件规范化后（统一换行、去尾随空白）的合并哈希。这个值不变的变更自动合并，不审。",
+          "$ref": "#/$defs/sha256"
+        },
+        "size": {
+          "description": "全部追踪文件的字节数合计，未知时为 null。",
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "line_count": {
+          "description": "全部追踪文件的行数合计，未知时为 null。",
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "files": {
+          "description": "逐个追踪文件的记录，顺序与 sources.yaml 的 paths 一致。",
+          "type": "array",
+          "items": { "$ref": "#/$defs/lockFile" }
+        },
+        "stars_history": {
+          "description": "star 数的观测序列，按时间从旧到新追加。",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["observed_at", "value"],
+            "properties": {
+              "observed_at": {
+                "description": "观测时间，ISO 8601 date-time。",
+                "type": "string",
+                "format": "date-time"
+              },
+              "value": {
+                "description": "观测到的 star 数。",
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "forks": {
+          "description": "最近一次观测到的 fork 数，未知时为 null。",
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "installs": {
+          "description": "skills.sh 目录页显示的安装量。这是展示值，不是独立用户数；没有条目时为 null。",
+          "type": ["integer", "string", "null"]
+        },
+        "last_checked_at": {
+          "description": "最近一次检查这个来源的时间，ISO 8601 date-time。",
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "last_change_key": {
+          "description": "最近一次内容变更的去重键，格式 source_id:path:commit。同一个键不重复开 PR。",
+          "type": ["string", "null"],
+          "pattern": "^upstream-[a-z0-9._-]+:[^:]*:[0-9a-f]{40}$"
+        },
+        "open_pr": {
+          "description": "当前为这个来源开着的 PR 编号，没有时为 null。",
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "open_issue": {
+          "description": "当前为这个来源开着的 issue 编号，没有时为 null。",
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "availability": {
+          "description": "可达性。ok 正常；unreachable 临时不可达；private 转为私有；gone 已删除。",
+          "enum": ["ok", "unreachable", "private", "gone"]
+        }
+      }
+    },
+    "lockFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["original_path", "stored_path", "raw_sha256", "normalized_sha256"],
+      "properties": {
+        "original_path": {
+          "description": "上游仓库中的路径。",
+          "type": "string",
+          "minLength": 1
+        },
+        "stored_path": {
+          "description": "本仓库中快照的路径，相对仓库根；snapshot_policy 为 metadata-only 时必须是 null。SKILL.md 存为 SKILL.source.md。",
+          "type": ["string", "null"]
+        },
+        "raw_sha256": {
+          "description": "这个文件原始字节的 sha256。",
+          "$ref": "#/$defs/sha256"
+        },
+        "normalized_sha256": {
+          "description": "这个文件规范化后的 sha256。",
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

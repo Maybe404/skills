@@ -1,0 +1,90 @@
+merge_id: maybe-humanizer
+target_skill: maybe-humanizer
+
+sources:
+  - id: upstream-petergyang-no-ai-slop
+    source_type: github-skill
+    repository: petergyang/no-ai-slop
+    previous_repository: []
+    branch: main
+    paths:
+      - skills/no-ai-slop/SKILL.md
+    license: MIT
+    license_status: known
+    snapshot_policy: full-text
+    status: candidate
+    selection_status: representative
+    lineage: no-ai-slop
+    tracking_revision: 1
+    previous_paths: []
+    path_changed_at: null
+    baseline_reset_reason: null
+    status_changed_at: "2026-09-06T09:46:50Z"
+    reason: 从调研清单登记为试验上游，入围评估尚未做。
+    notes: 英文审稿与改写，带 eval.md。仓库内还有 agents/ 和 scripts/，本轮不追踪。
+
+  - id: upstream-lifelonglazylearner-qu-ai-wei
+    source_type: github-skill
+    repository: LifelongLazyLearner/qu-ai-wei
+    previous_repository: []
+    branch: main
+    paths:
+      - SKILL.md
+    license: MIT
+    license_status: known
+    snapshot_policy: full-text
+    status: candidate
+    selection_status: representative
+    lineage: qu-ai-wei
+    tracking_revision: 1
+    previous_paths: []
+    path_changed_at: null
+    baseline_reset_reason: null
+    status_changed_at: "2026-09-06T09:46:50Z"
+    reason: 从调研清单登记为试验上游，入围评估尚未做。
+    notes: 简体中文保真改写。仓库另有 references/ 和 tests/，本轮只追踪 SKILL.md。
+
+  - id: upstream-jzocb-writing-style-skill
+    source_type: github-skill
+    repository: jzOcb/writing-style-skill
+    previous_repository: []
+    branch: main
+    paths:
+      - SKILL.md
+    license: unknown
+    license_status: unknown
+    snapshot_policy: metadata-only
+    status: candidate
+    selection_status: representative
+    lineage: writing-style-skill
+    tracking_revision: 1
+    previous_paths: []
+    path_changed_at: null
+    baseline_reset_reason: null
+    status_changed_at: "2026-09-06T09:46:50Z"
+    reason: 从调研清单登记为试验上游，入围评估尚未做。
+    notes: 仓库根目录没有 LICENSE 文件，GitHub API 也没有返回许可证，因此不保存原文，只记元数据。仓库内 scripts/ 只读不跑。
+
+  - id: upstream-aboudjem-humanizer-skill
+    source_type: github-skill
+    repository: Aboudjem/humanizer-skill
+    previous_repository: []
+    branch: main
+    paths:
+      - skills/humanizer/SKILL.md
+      - skills/humanizer/references/always-on-templates.md
+      - skills/humanizer/references/patterns.md
+      - skills/humanizer/references/patterns.zh.md
+    license: MIT
+    license_status: known
+    snapshot_policy: full-text
+    status: candidate
+    selection_status: representative
+    lineage: humanizer
+    tracking_revision: 1
+    previous_paths: []
+    path_changed_at: null
+    baseline_reset_reason: null
+    status_changed_at: "2026-09-06T09:46:50Z"
+    reason: 从调研清单登记为试验上游，入围评估尚未做。
+    notes: 中英双语模式表。lineage 暂记为 humanizer，与 blader/humanizer 是否同源要在入围阶段核实。仓库内 cli/ 和 tools/ 不追踪、不执行。

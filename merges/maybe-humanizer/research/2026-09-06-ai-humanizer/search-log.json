@@ -1,0 +1,1685 @@
+{
+  "date": "2026-09-06",
+  "queries": [
+    {
+      "query": "humanizer",
+      "entries": [
+        {
+          "package": "op7418/humanizer-zh@humanizer-zh",
+          "installsDisplay": "47.2K",
+          "url": "https://skills.sh/op7418/humanizer-zh/humanizer-zh"
+        },
+        {
+          "package": "github/awesome-copilot@finnish-humanizer",
+          "installsDisplay": "9.2K",
+          "url": "https://skills.sh/github/awesome-copilot/finnish-humanizer"
+        },
+        {
+          "package": "blader/humanizer@humanizer",
+          "installsDisplay": "5.8K",
+          "url": "https://skills.sh/blader/humanizer/humanizer"
+        },
+        {
+          "package": "humanizerai/agent-skills@humanize",
+          "installsDisplay": "3.8K",
+          "url": "https://skills.sh/humanizerai/agent-skills/humanize"
+        },
+        {
+          "package": "daleseo/korean-skills@humanizer",
+          "installsDisplay": "2.7K",
+          "url": "https://skills.sh/daleseo/korean-skills/humanizer"
+        },
+        {
+          "package": "huggingface/skills@hf-cli",
+          "installsDisplay": "2.6K",
+          "url": "https://skills.sh/huggingface/skills/hf-cli"
+        },
+        {
+          "package": "nomadamas/k-skill@korean-humanizer",
+          "installsDisplay": "2.2K",
+          "url": "https://skills.sh/nomadamas/k-skill/korean-humanizer"
+        },
+        {
+          "package": "kevintsai1202/humanizer-zh-tw@humanizer-zh-tw",
+          "installsDisplay": "1.2K",
+          "url": "https://skills.sh/kevintsai1202/humanizer-zh-tw/humanizer-zh-tw"
+        },
+        {
+          "package": "ai-zixun/humanizer-zh@humanizer-zh",
+          "installsDisplay": "890",
+          "url": "https://skills.sh/ai-zixun/humanizer-zh/humanizer-zh"
+        },
+        {
+          "package": "bencium/bencium-marketplace@hungarian-humanizer",
+          "installsDisplay": "819",
+          "url": "https://skills.sh/bencium/bencium-marketplace/hungarian-humanizer"
+        },
+        {
+          "package": "alirezarezvani/claude-skills@content-humanizer",
+          "installsDisplay": "804",
+          "url": "https://skills.sh/alirezarezvani/claude-skills/content-humanizer"
+        },
+        {
+          "package": "z0gsh1u/oh-my-writing-skill@humanizer-cn",
+          "installsDisplay": "742",
+          "url": "https://skills.sh/z0gsh1u/oh-my-writing-skill/humanizer-cn"
+        },
+        {
+          "package": "aboudjem/humanizer-skill@humanizer",
+          "installsDisplay": "631",
+          "url": "https://skills.sh/aboudjem/humanizer-skill/humanizer"
+        },
+        {
+          "package": "vladimir-human/humanizer-ru@humanizer-ru",
+          "installsDisplay": "601",
+          "url": "https://skills.sh/vladimir-human/humanizer-ru/humanizer-ru"
+        },
+        {
+          "package": "hairyf/skills@writing-humanizer-zh",
+          "installsDisplay": "574",
+          "url": "https://skills.sh/hairyf/skills/writing-humanizer-zh"
+        },
+        {
+          "package": "petrkindlmann/qa-skills@qa-report-humanizer",
+          "installsDisplay": "565",
+          "url": "https://skills.sh/petrkindlmann/qa-skills/qa-report-humanizer"
+        },
+        {
+          "package": "brandonwise/humanizer@humanizer",
+          "installsDisplay": "377",
+          "url": "https://skills.sh/brandonwise/humanizer/humanizer"
+        },
+        {
+          "package": "redbaronyyyyy-eng/humanizer-zh-academic@humanizer-zh-academic",
+          "installsDisplay": "322",
+          "url": "https://skills.sh/redbaronyyyyy-eng/humanizer-zh-academic/humanizer-zh-academic"
+        },
+        {
+          "package": "skills.volces.com@humanizer",
+          "installsDisplay": "306",
+          "url": "https://skills.sh/skills.volces.com/humanizer"
+        },
+        {
+          "package": "smithery.ai@humanizer",
+          "installsDisplay": "290",
+          "url": "https://skills.sh/smithery.ai/humanizer"
+        }
+      ]
+    },
+    {
+      "query": "humanize",
+      "entries": [
+        {
+          "package": "op7418/humanizer-zh@humanizer-zh",
+          "installsDisplay": "47.2K",
+          "url": "https://skills.sh/op7418/humanizer-zh/humanizer-zh"
+        },
+        {
+          "package": "github/awesome-copilot@finnish-humanizer",
+          "installsDisplay": "9.2K",
+          "url": "https://skills.sh/github/awesome-copilot/finnish-humanizer"
+        },
+        {
+          "package": "blader/humanizer@humanizer",
+          "installsDisplay": "5.8K",
+          "url": "https://skills.sh/blader/humanizer/humanizer"
+        },
+        {
+          "package": "humanizerai/agent-skills@humanize",
+          "installsDisplay": "3.8K",
+          "url": "https://skills.sh/humanizerai/agent-skills/humanize"
+        },
+        {
+          "package": "daleseo/korean-skills@humanizer",
+          "installsDisplay": "2.7K",
+          "url": "https://skills.sh/daleseo/korean-skills/humanizer"
+        },
+        {
+          "package": "huggingface/skills@hf-cli",
+          "installsDisplay": "2.6K",
+          "url": "https://skills.sh/huggingface/skills/hf-cli"
+        },
+        {
+          "package": "nomadamas/k-skill@korean-humanizer",
+          "installsDisplay": "2.2K",
+          "url": "https://skills.sh/nomadamas/k-skill/korean-humanizer"
+        },
+        {
+          "package": "momo2young/humanize-academic-writing@humanize-academic-writing",
+          "installsDisplay": "1.8K",
+          "url": "https://skills.sh/momo2young/humanize-academic-writing/humanize-academic-writing"
+        },
+        {
+          "package": "jpeggdev/humanize-writing@humanize-writing",
+          "installsDisplay": "1.6K",
+          "url": "https://skills.sh/jpeggdev/humanize-writing/humanize-writing"
+        },
+        {
+          "package": "kevintsai1202/humanizer-zh-tw@humanizer-zh-tw",
+          "installsDisplay": "1.2K",
+          "url": "https://skills.sh/kevintsai1202/humanizer-zh-tw/humanizer-zh-tw"
+        },
+        {
+          "package": "ai-zixun/humanizer-zh@humanizer-zh",
+          "installsDisplay": "890",
+          "url": "https://skills.sh/ai-zixun/humanizer-zh/humanizer-zh"
+        },
+        {
+          "package": "bencium/bencium-marketplace@hungarian-humanizer",
+          "installsDisplay": "819",
+          "url": "https://skills.sh/bencium/bencium-marketplace/hungarian-humanizer"
+        },
+        {
+          "package": "alirezarezvani/claude-skills@content-humanizer",
+          "installsDisplay": "804",
+          "url": "https://skills.sh/alirezarezvani/claude-skills/content-humanizer"
+        },
+        {
+          "package": "z0gsh1u/oh-my-writing-skill@humanizer-cn",
+          "installsDisplay": "742",
+          "url": "https://skills.sh/z0gsh1u/oh-my-writing-skill/humanizer-cn"
+        },
+        {
+          "package": "sickn33/agentic-awesome-skills@humanize-chinese",
+          "installsDisplay": "656",
+          "url": "https://skills.sh/sickn33/agentic-awesome-skills/humanize-chinese"
+        },
+        {
+          "package": "aboudjem/humanizer-skill@humanizer",
+          "installsDisplay": "631",
+          "url": "https://skills.sh/aboudjem/humanizer-skill/humanizer"
+        },
+        {
+          "package": "vladimir-human/humanizer-ru@humanizer-ru",
+          "installsDisplay": "601",
+          "url": "https://skills.sh/vladimir-human/humanizer-ru/humanizer-ru"
+        },
+        {
+          "package": "hairyf/skills@writing-humanizer-zh",
+          "installsDisplay": "574",
+          "url": "https://skills.sh/hairyf/skills/writing-humanizer-zh"
+        },
+        {
+          "package": "learnprompt/humanize-ppt@humanize-ppt",
+          "installsDisplay": "509",
+          "url": "https://skills.sh/learnprompt/humanize-ppt/humanize-ppt"
+        },
+        {
+          "package": "pproenca/dot-skills@humanize",
+          "installsDisplay": "360",
+          "url": "https://skills.sh/pproenca/dot-skills/humanize"
+        }
+      ]
+    },
+    {
+      "query": "去AI",
+      "entries": [
+        {
+          "package": "zenstory-ai/oh-story-claudecode@story-deslop",
+          "installsDisplay": "13.5K",
+          "url": "https://skills.sh/zenstory-ai/oh-story-claudecode/story-deslop"
+        },
+        {
+          "package": "ai-zixun/humanizer-zh@humanizer-zh",
+          "installsDisplay": "890",
+          "url": "https://skills.sh/ai-zixun/humanizer-zh/humanizer-zh"
+        },
+        {
+          "package": "lifelonglazylearner/qu-ai-wei@qu-ai-wei",
+          "installsDisplay": "625",
+          "url": "https://skills.sh/lifelonglazylearner/qu-ai-wei/qu-ai-wei"
+        },
+        {
+          "package": "smallnest/goal-workflow@humanize-it",
+          "installsDisplay": "445",
+          "url": "https://skills.sh/smallnest/goal-workflow/humanize-it"
+        },
+        {
+          "package": "wordflowlab/novel-writer-skills@requirement-detector",
+          "installsDisplay": "278",
+          "url": "https://skills.sh/wordflowlab/novel-writer-skills/requirement-detector"
+        },
+        {
+          "package": "chujianyun/skills@remove-ai-flavor",
+          "installsDisplay": "130",
+          "url": "https://skills.sh/chujianyun/skills/remove-ai-flavor"
+        },
+        {
+          "package": "jackywxsz/jacky-opc@jacky-de-ai",
+          "installsDisplay": "109",
+          "url": "https://skills.sh/jackywxsz/jacky-opc/jacky-de-ai"
+        },
+        {
+          "package": "allinherog-star/ai-skills@ai-humanizer-zh",
+          "installsDisplay": "65",
+          "url": "https://skills.sh/allinherog-star/ai-skills/ai-humanizer-zh"
+        },
+        {
+          "package": "aaaaqwq/agi-super-team@de-ai-ify",
+          "installsDisplay": "49",
+          "url": "https://skills.sh/aaaaqwq/agi-super-team/de-ai-ify"
+        },
+        {
+          "package": "hardydai-cell/qu-ai-wei@去ai味",
+          "installsDisplay": "22",
+          "url": "https://skills.sh/hardydai-cell/qu-ai-wei/ai"
+        },
+        {
+          "package": "tance-mang/chinese-webnovel-skills@deslop",
+          "installsDisplay": "21",
+          "url": "https://skills.sh/tance-mang/chinese-webnovel-skills/deslop"
+        },
+        {
+          "package": "spacezephyr/creator-buddy@space-video-script",
+          "installsDisplay": "15",
+          "url": "https://skills.sh/spacezephyr/creator-buddy/space-video-script"
+        },
+        {
+          "package": "chained1001/mo-shu@moshu-deslop",
+          "installsDisplay": "13",
+          "url": "https://skills.sh/chained1001/mo-shu/moshu-deslop"
+        },
+        {
+          "package": "kevinaimonster/skill-hub@chinese-copyfix",
+          "installsDisplay": "12",
+          "url": "https://skills.sh/kevinaimonster/skill-hub/chinese-copyfix"
+        },
+        {
+          "package": "elvisw/oh-story-claudecode@story-deslop",
+          "installsDisplay": "11",
+          "url": "https://skills.sh/elvisw/oh-story-claudecode/story-deslop"
+        },
+        {
+          "package": "skills.volces.com@humanize-zh",
+          "installsDisplay": "9",
+          "url": "https://skills.sh/skills.volces.com/humanize-zh"
+        },
+        {
+          "package": "bojieli/ai-agent-book@ai-style",
+          "installsDisplay": "8",
+          "url": "https://skills.sh/bojieli/ai-agent-book/ai-style"
+        },
+        {
+          "package": "malue-ai/dazee-small@humanizer",
+          "installsDisplay": "6",
+          "url": "https://skills.sh/malue-ai/dazee-small/humanizer"
+        },
+        {
+          "package": "modelscope.cn@ai-humanizer-zh",
+          "installsDisplay": "6",
+          "url": "https://skills.sh/modelscope.cn/ai-humanizer-zh"
+        },
+        {
+          "package": "wordflowlab/novelweave@requirement-detector",
+          "installsDisplay": "5",
+          "url": "https://skills.sh/wordflowlab/novelweave/requirement-detector"
+        }
+      ]
+    },
+    {
+      "query": "说人话",
+      "entries": [
+        {
+          "package": "hotcoffeeshake/tong-jincheng-skill@tong-jincheng-perspective",
+          "installsDisplay": "3.9K",
+          "url": "https://skills.sh/hotcoffeeshake/tong-jincheng-skill/tong-jincheng-perspective"
+        },
+        {
+          "package": "mrgediao/shuorenhua@shuorenhua",
+          "installsDisplay": "975",
+          "url": "https://skills.sh/mrgediao/shuorenhua/shuorenhua"
+        },
+        {
+          "package": "pluviobyte/rnskill@dbs-chatroom",
+          "installsDisplay": "147",
+          "url": "https://skills.sh/pluviobyte/rnskill/dbs-chatroom"
+        },
+        {
+          "package": "lulu-eva/eva-skill@eva-audience-finder",
+          "installsDisplay": "110",
+          "url": "https://skills.sh/lulu-eva/eva-skill/eva-audience-finder"
+        },
+        {
+          "package": "pluviobyte/rnskill@rn-renhua",
+          "installsDisplay": "96",
+          "url": "https://skills.sh/pluviobyte/rnskill/rn-renhua"
+        },
+        {
+          "package": "1-skill/shuorenhua@shuorenhua",
+          "installsDisplay": "65",
+          "url": "https://skills.sh/1-skill/shuorenhua/shuorenhua"
+        },
+        {
+          "package": "taxueseek/say-it-human@editor-revisor",
+          "installsDisplay": "51",
+          "url": "https://skills.sh/taxueseek/say-it-human/editor-revisor"
+        },
+        {
+          "package": "43college/43-agent-skills@media-transcriber",
+          "installsDisplay": "46",
+          "url": "https://skills.sh/43college/43-agent-skills/media-transcriber"
+        },
+        {
+          "package": "cycleuser/skills@humanizer",
+          "installsDisplay": "33",
+          "url": "https://skills.sh/cycleuser/skills/humanizer"
+        },
+        {
+          "package": "yikuaibanzi/forge-skill@use-persona",
+          "installsDisplay": "29",
+          "url": "https://skills.sh/yikuaibanzi/forge-skill/use-persona"
+        },
+        {
+          "package": "luoyuweidu1/podcastcut-skills@podcastcut:剪播客",
+          "installsDisplay": "26",
+          "url": "https://skills.sh/luoyuweidu1/podcastcut-skills/podcastcut"
+        },
+        {
+          "package": "skills.volces.com@web-search-engine",
+          "installsDisplay": "21",
+          "url": "https://skills.sh/skills.volces.com/web-search-engine"
+        },
+        {
+          "package": "tance-mang/chinese-webnovel-skills@dialogue",
+          "installsDisplay": "19",
+          "url": "https://skills.sh/tance-mang/chinese-webnovel-skills/dialogue"
+        },
+        {
+          "package": "kevinaimonster/skill-hub@translator",
+          "installsDisplay": "13",
+          "url": "https://skills.sh/kevinaimonster/skill-hub/translator"
+        },
+        {
+          "package": "buke18/fengge-skill@fenggge-perspective",
+          "installsDisplay": "12",
+          "url": "https://skills.sh/buke18/fengge-skill/fenggge-perspective"
+        },
+        {
+          "package": "pluviobyte/rnskill@renhua",
+          "installsDisplay": "10",
+          "url": "https://skills.sh/pluviobyte/rnskill/renhua"
+        },
+        {
+          "package": "patrick-fu/awesome-skills@deslop",
+          "installsDisplay": "9",
+          "url": "https://skills.sh/patrick-fu/awesome-skills/deslop"
+        },
+        {
+          "package": "skills.volces.com@sutui-minimax-tts",
+          "installsDisplay": "7",
+          "url": "https://skills.sh/skills.volces.com/sutui-minimax-tts"
+        },
+        {
+          "package": "cagezh/etna-skillhub@transcript",
+          "installsDisplay": "6",
+          "url": "https://skills.sh/cagezh/etna-skillhub/transcript"
+        },
+        {
+          "package": "eze-is/eze-skills@audio-transcribe",
+          "installsDisplay": "5",
+          "url": "https://skills.sh/eze-is/eze-skills/audio-transcribe"
+        }
+      ]
+    },
+    {
+      "query": "writing style",
+      "entries": [
+        {
+          "package": "obra/the-elements-of-style@writing-clearly-and-concisely",
+          "installsDisplay": "1.7K",
+          "url": "https://skills.sh/obra/the-elements-of-style/writing-clearly-and-concisely"
+        },
+        {
+          "package": "haowjy/creative-writing-skills@project-setup",
+          "installsDisplay": "406",
+          "url": "https://skills.sh/haowjy/creative-writing-skills/project-setup"
+        },
+        {
+          "package": "different-ai/agent-bank@writing-style",
+          "installsDisplay": "377",
+          "url": "https://skills.sh/different-ai/agent-bank/writing-style"
+        },
+        {
+          "package": "sugarforever/01coder-agent-skills@personal-chinese-writing-style",
+          "installsDisplay": "359",
+          "url": "https://skills.sh/sugarforever/01coder-agent-skills/personal-chinese-writing-style"
+        },
+        {
+          "package": "shining319/claude-code-single-person-workflow@academic-writing-style",
+          "installsDisplay": "311",
+          "url": "https://skills.sh/shining319/claude-code-single-person-workflow/academic-writing-style"
+        },
+        {
+          "package": "haowjy/creative-writing-skills@style-analysis",
+          "installsDisplay": "289",
+          "url": "https://skills.sh/haowjy/creative-writing-skills/style-analysis"
+        },
+        {
+          "package": "sugarforever/01coder-agent-skills@personal-writing-style",
+          "installsDisplay": "283",
+          "url": "https://skills.sh/sugarforever/01coder-agent-skills/personal-writing-style"
+        },
+        {
+          "package": "haowjy/creative-writing-skills@cw-prose-writing",
+          "installsDisplay": "259",
+          "url": "https://skills.sh/haowjy/creative-writing-skills/cw-prose-writing"
+        },
+        {
+          "package": "social-media-skills/skills@writing-style-and-tone",
+          "installsDisplay": "183",
+          "url": "https://skills.sh/social-media-skills/skills/writing-style-and-tone"
+        },
+        {
+          "package": "dongbeixiaohuo/writing-agent@style-modeler",
+          "installsDisplay": "120",
+          "url": "https://skills.sh/dongbeixiaohuo/writing-agent/style-modeler"
+        },
+        {
+          "package": "hairyf/skills@writing-styles-juejin",
+          "installsDisplay": "119",
+          "url": "https://skills.sh/hairyf/skills/writing-styles-juejin"
+        },
+        {
+          "package": "joelhooks/joelclaw@joel-writing-style",
+          "installsDisplay": "84",
+          "url": "https://skills.sh/joelhooks/joelclaw/joel-writing-style"
+        },
+        {
+          "package": "jzocb/writing-style-skill@writing-style-skill",
+          "installsDisplay": "51",
+          "url": "https://skills.sh/jzocb/writing-style-skill/writing-style-skill"
+        },
+        {
+          "package": "adhi-jp/agent-skills@writing-style-guide",
+          "installsDisplay": "37",
+          "url": "https://skills.sh/adhi-jp/agent-skills/writing-style-guide"
+        },
+        {
+          "package": "efoo-team/skills@sql-writing-style",
+          "installsDisplay": "36",
+          "url": "https://skills.sh/efoo-team/skills/sql-writing-style"
+        },
+        {
+          "package": "cdeistopened/skill-stack@writing-style",
+          "installsDisplay": "34",
+          "url": "https://skills.sh/cdeistopened/skill-stack/writing-style"
+        },
+        {
+          "package": "anotb/management-consulting-plugin@writing-style",
+          "installsDisplay": "29",
+          "url": "https://skills.sh/anotb/management-consulting-plugin/writing-style"
+        },
+        {
+          "package": "nihildigit/writing-style@writing-style",
+          "installsDisplay": "23",
+          "url": "https://skills.sh/nihildigit/writing-style/writing-style"
+        },
+        {
+          "package": "schroneko/skills@writing-style",
+          "installsDisplay": "17",
+          "url": "https://skills.sh/schroneko/skills/writing-style"
+        },
+        {
+          "package": "lout33/writing-style-skill@writing-style",
+          "installsDisplay": "13",
+          "url": "https://skills.sh/lout33/writing-style-skill/writing-style"
+        }
+      ]
+    },
+    {
+      "query": "natural writing",
+      "entries": [
+        {
+          "package": "yuan1z0825/nature-skills@nature-citation",
+          "installsDisplay": "10.3K",
+          "url": "https://skills.sh/yuan1z0825/nature-skills/nature-citation"
+        },
+        {
+          "package": "yuan1z0825/nature-skills@nature-data",
+          "installsDisplay": "10.2K",
+          "url": "https://skills.sh/yuan1z0825/nature-skills/nature-data"
+        },
+        {
+          "package": "yuan1z0825/nature-skills@nature-response",
+          "installsDisplay": "9.9K",
+          "url": "https://skills.sh/yuan1z0825/nature-skills/nature-response"
+        },
+        {
+          "package": "yuan1z0825/nature-skills@nature-writing",
+          "installsDisplay": "9.8K",
+          "url": "https://skills.sh/yuan1z0825/nature-skills/nature-writing"
+        },
+        {
+          "package": "galaxy-dawn/claude-scholar@nature-writing",
+          "installsDisplay": "249",
+          "url": "https://skills.sh/galaxy-dawn/claude-scholar/nature-writing"
+        },
+        {
+          "package": "third774/dotfiles@natural-writing",
+          "installsDisplay": "69",
+          "url": "https://skills.sh/third774/dotfiles/natural-writing"
+        },
+        {
+          "package": "modelscope.cn@nature-writing",
+          "installsDisplay": "38",
+          "url": "https://skills.sh/modelscope.cn/nature-writing"
+        },
+        {
+          "package": "yyx20202020/natural-writing-skill@natural-writing",
+          "installsDisplay": "24",
+          "url": "https://skills.sh/yyx20202020/natural-writing-skill/natural-writing"
+        },
+        {
+          "package": "flutter/agent-plugins@natural-writing",
+          "installsDisplay": "21",
+          "url": "https://skills.sh/flutter/agent-plugins/natural-writing"
+        },
+        {
+          "package": "acedergren/agentic-tools@write-natural-swedish",
+          "installsDisplay": "21",
+          "url": "https://skills.sh/acedergren/agentic-tools/write-natural-swedish"
+        },
+        {
+          "package": "vivswan/skills@natural-writing",
+          "installsDisplay": "13",
+          "url": "https://skills.sh/vivswan/skills/natural-writing"
+        },
+        {
+          "package": "cuipengfei/prompts@natural-writing",
+          "installsDisplay": "6",
+          "url": "https://skills.sh/cuipengfei/prompts/natural-writing"
+        },
+        {
+          "package": "tenfyzhong/skills-hub@natural-writing",
+          "installsDisplay": "5",
+          "url": "https://skills.sh/tenfyzhong/skills-hub/natural-writing"
+        },
+        {
+          "package": "flutter/flutter@natural-writing",
+          "installsDisplay": "4",
+          "url": "https://skills.sh/flutter/flutter/natural-writing"
+        },
+        {
+          "package": "a2ui-project/a2ui@natural-writing",
+          "installsDisplay": "4",
+          "url": "https://skills.sh/a2ui-project/a2ui/natural-writing"
+        },
+        {
+          "package": "joelio/plain-english@natural-writing",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/joelio/plain-english/natural-writing"
+        },
+        {
+          "package": "smithery.ai@natural-writing",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/smithery.ai/natural-writing"
+        },
+        {
+          "package": "rylaispirit/rylai-codex-hermes-skills@natural-writing",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/rylaispirit/rylai-codex-hermes-skills/natural-writing"
+        },
+        {
+          "package": "griddynamics/rosetta@natural-writing",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/griddynamics/rosetta/natural-writing"
+        },
+        {
+          "package": "yigitkonur/skills-by-yigitkonur@convert-to-natural-writing",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/yigitkonur/skills-by-yigitkonur/convert-to-natural-writing"
+        }
+      ]
+    },
+    {
+      "query": "deai",
+      "entries": [
+        {
+          "package": "bahayonghang/academic-writing-skills@latex-paper-en",
+          "installsDisplay": "5.2K",
+          "url": "https://skills.sh/bahayonghang/academic-writing-skills/latex-paper-en"
+        },
+        {
+          "package": "bahayonghang/academic-writing-skills@latex-thesis-zh",
+          "installsDisplay": "3.8K",
+          "url": "https://skills.sh/bahayonghang/academic-writing-skills/latex-thesis-zh"
+        },
+        {
+          "package": "bahayonghang/academic-writing-skills@typst-paper",
+          "installsDisplay": "1.3K",
+          "url": "https://skills.sh/bahayonghang/academic-writing-skills/typst-paper"
+        },
+        {
+          "package": "kellyclaudeai/memory-system-v2@memory-system-v2",
+          "installsDisplay": "81",
+          "url": "https://skills.sh/kellyclaudeai/memory-system-v2/memory-system-v2"
+        },
+        {
+          "package": "zizhanovo/doubaoya-community@dby",
+          "installsDisplay": "40",
+          "url": "https://skills.sh/zizhanovo/doubaoya-community/dby"
+        },
+        {
+          "package": "skills.volces.com@content-deai-engine",
+          "installsDisplay": "10",
+          "url": "https://skills.sh/skills.volces.com/content-deai-engine"
+        },
+        {
+          "package": "skills.volces.com@deai-skill",
+          "installsDisplay": "9",
+          "url": "https://skills.sh/skills.volces.com/deai-skill"
+        },
+        {
+          "package": "allblueuk/academic-deai@academic-deai",
+          "installsDisplay": "7",
+          "url": "https://skills.sh/allblueuk/academic-deai/academic-deai"
+        },
+        {
+          "package": "syq-cmdi/academic-deai@academic-deai",
+          "installsDisplay": "4",
+          "url": "https://skills.sh/syq-cmdi/academic-deai/academic-deai"
+        },
+        {
+          "package": "lanyasheng/content-deai-engine@content-deai-engine",
+          "installsDisplay": "3",
+          "url": "https://skills.sh/lanyasheng/content-deai-engine/content-deai-engine"
+        },
+        {
+          "package": "ilang-ai/ilang-openclaw@deai",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/ilang-ai/ilang-openclaw/deai"
+        },
+        {
+          "package": "nerdneilsfield/skills@deai",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/nerdneilsfield/skills/deai"
+        },
+        {
+          "package": "peng-666/deai-zh@deai-zh",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/peng-666/deai-zh/deai-zh"
+        },
+        {
+          "package": "golovatskygroup/deai-code@deai-code",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/golovatskygroup/deai-code/deai-code"
+        },
+        {
+          "package": "xcc864451691/gongwen-deai-skill@gongwen-deai",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/xcc864451691/gongwen-deai-skill/gongwen-deai"
+        },
+        {
+          "package": "youngze0016/thesis-polish-agent@deai",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/youngze0016/thesis-polish-agent/deai"
+        },
+        {
+          "package": "nerdneilsfield/dotfiles@deai",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/nerdneilsfield/dotfiles/deai"
+        },
+        {
+          "package": "doutianbao/academic-deai@academic-deai",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/doutianbao/academic-deai/academic-deai"
+        },
+        {
+          "package": "zh4men9/academic-deai@academic-deai",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/zh4men9/academic-deai/academic-deai"
+        },
+        {
+          "package": "kayquer/deai-text@deai-text",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/kayquer/deai-text/deai-text"
+        }
+      ]
+    },
+    {
+      "query": "taste",
+      "entries": [
+        {
+          "package": "leonxlnx/taste-skill@design-taste-frontend",
+          "installsDisplay": "447.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/design-taste-frontend"
+        },
+        {
+          "package": "leonxlnx/taste-skill@high-end-visual-design",
+          "installsDisplay": "331.2K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/high-end-visual-design"
+        },
+        {
+          "package": "leonxlnx/taste-skill@redesign-existing-projects",
+          "installsDisplay": "327.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/redesign-existing-projects"
+        },
+        {
+          "package": "leonxlnx/taste-skill@minimalist-ui",
+          "installsDisplay": "304K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/minimalist-ui"
+        },
+        {
+          "package": "leonxlnx/taste-skill@full-output-enforcement",
+          "installsDisplay": "289.9K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/full-output-enforcement"
+        },
+        {
+          "package": "leonxlnx/taste-skill@industrial-brutalist-ui",
+          "installsDisplay": "283.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/industrial-brutalist-ui"
+        },
+        {
+          "package": "leonxlnx/taste-skill@gpt-taste",
+          "installsDisplay": "282.2K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/gpt-taste"
+        },
+        {
+          "package": "leonxlnx/taste-skill@stitch-design-taste",
+          "installsDisplay": "282K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/stitch-design-taste"
+        },
+        {
+          "package": "leonxlnx/taste-skill@brandkit",
+          "installsDisplay": "272.2K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/brandkit"
+        },
+        {
+          "package": "leonxlnx/taste-skill@image-to-code",
+          "installsDisplay": "267.3K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/image-to-code"
+        },
+        {
+          "package": "leonxlnx/taste-skill@imagegen-frontend-web",
+          "installsDisplay": "265.7K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/imagegen-frontend-web"
+        },
+        {
+          "package": "leonxlnx/taste-skill@imagegen-frontend-mobile",
+          "installsDisplay": "260.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/imagegen-frontend-mobile"
+        },
+        {
+          "package": "leonxlnx/taste-skill@design-taste-frontend-v1",
+          "installsDisplay": "218.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/design-taste-frontend-v1"
+        },
+        {
+          "package": "google-labs-code/stitch-skills@taste-design",
+          "installsDisplay": "17.3K",
+          "url": "https://skills.sh/google-labs-code/stitch-skills/taste-design"
+        },
+        {
+          "package": "leonxlnx/taste-skill@image-taste-frontend",
+          "installsDisplay": "3.7K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/image-taste-frontend"
+        },
+        {
+          "package": "affaan-m/ecc@taste",
+          "installsDisplay": "3K",
+          "url": "https://skills.sh/affaan-m/ecc/taste"
+        },
+        {
+          "package": "refoundai/lenny-skills@product-taste-intuition",
+          "installsDisplay": "1.7K",
+          "url": "https://skills.sh/refoundai/lenny-skills/product-taste-intuition"
+        },
+        {
+          "package": "nexu-io/open-design@taste-skill",
+          "installsDisplay": "815",
+          "url": "https://skills.sh/nexu-io/open-design/taste-skill"
+        },
+        {
+          "package": "cristicretu/family-taste-skill@design-with-taste",
+          "installsDisplay": "704",
+          "url": "https://skills.sh/cristicretu/family-taste-skill/design-with-taste"
+        },
+        {
+          "package": "senlindesign/taste-skill@taste",
+          "installsDisplay": "252",
+          "url": "https://skills.sh/senlindesign/taste-skill/taste"
+        }
+      ]
+    },
+    {
+      "query": "anti slop",
+      "entries": [
+        {
+          "package": "uizze.com@anti-ui-slop",
+          "installsDisplay": "692.6K",
+          "url": "https://skills.sh/uizze.com/anti-ui-slop"
+        },
+        {
+          "package": "dmmulroy/anti-slop@install-anti-slop",
+          "installsDisplay": "6.4K",
+          "url": "https://skills.sh/dmmulroy/anti-slop/install-anti-slop"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop",
+          "installsDisplay": "628",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-ui",
+          "installsDisplay": "619",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-ui"
+        },
+        {
+          "package": "rand/cc-polymath@anti-slop",
+          "installsDisplay": "615",
+          "url": "https://skills.sh/rand/cc-polymath/anti-slop"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-copywriting",
+          "installsDisplay": "589",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-copywriting"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-human",
+          "installsDisplay": "555",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-human"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-layoutmobile",
+          "installsDisplay": "550",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-layoutmobile"
+        },
+        {
+          "package": "github/awesome-copilot@anti-ui-slop",
+          "installsDisplay": "514",
+          "url": "https://skills.sh/github/awesome-copilot/anti-ui-slop"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-code",
+          "installsDisplay": "479",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-code"
+        },
+        {
+          "package": "jalaalrd/anti-ai-slop-writing@anti-ai-slop-writing",
+          "installsDisplay": "448",
+          "url": "https://skills.sh/jalaalrd/anti-ai-slop-writing/anti-ai-slop-writing"
+        },
+        {
+          "package": "smithery.ai@anti-slop",
+          "installsDisplay": "392",
+          "url": "https://skills.sh/smithery.ai/anti-slop"
+        },
+        {
+          "package": "davepoon/buildwithclaude@anti-ui-slop",
+          "installsDisplay": "181",
+          "url": "https://skills.sh/davepoon/buildwithclaude/anti-ui-slop"
+        },
+        {
+          "package": "elithrar/dotfiles@anti-slop",
+          "installsDisplay": "99",
+          "url": "https://skills.sh/elithrar/dotfiles/anti-slop"
+        },
+        {
+          "package": "adenaufal/anti-slop-writing@anti-slop-writing",
+          "installsDisplay": "82",
+          "url": "https://skills.sh/adenaufal/anti-slop-writing/anti-slop-writing"
+        },
+        {
+          "package": "b4r7x/agent-skills@anti-slop",
+          "installsDisplay": "69",
+          "url": "https://skills.sh/b4r7x/agent-skills/anti-slop"
+        },
+        {
+          "package": "aplaceforallmystuff/the-antislop@antislop",
+          "installsDisplay": "57",
+          "url": "https://skills.sh/aplaceforallmystuff/the-antislop/antislop"
+        },
+        {
+          "package": "adewale/anti-slop-writing@anti-slop-writing",
+          "installsDisplay": "46",
+          "url": "https://skills.sh/adewale/anti-slop-writing/anti-slop-writing"
+        },
+        {
+          "package": "iuliandita/skills@anti-slop",
+          "installsDisplay": "35",
+          "url": "https://skills.sh/iuliandita/skills/anti-slop"
+        },
+        {
+          "package": "gesso-build/skills@anti-slop",
+          "installsDisplay": "20",
+          "url": "https://skills.sh/gesso-build/skills/anti-slop"
+        }
+      ]
+    },
+    {
+      "query": "stop slop",
+      "entries": [
+        {
+          "package": "uizze.com@anti-ui-slop",
+          "installsDisplay": "692.6K",
+          "url": "https://skills.sh/uizze.com/anti-ui-slop"
+        },
+        {
+          "package": "hardikpandya/stop-slop@stop-slop",
+          "installsDisplay": "13.4K",
+          "url": "https://skills.sh/hardikpandya/stop-slop/stop-slop"
+        },
+        {
+          "package": "uizze.com@ui-slop-score",
+          "installsDisplay": "2.1K",
+          "url": "https://skills.sh/uizze.com/ui-slop-score"
+        },
+        {
+          "package": "jssblck/agents@stop-slop",
+          "installsDisplay": "925",
+          "url": "https://skills.sh/jssblck/agents/stop-slop"
+        },
+        {
+          "package": "github/awesome-copilot@anti-ui-slop",
+          "installsDisplay": "514",
+          "url": "https://skills.sh/github/awesome-copilot/anti-ui-slop"
+        },
+        {
+          "package": "ikora128/stop-ai-slop-jp@stop-ai-slop-jp",
+          "installsDisplay": "93",
+          "url": "https://skills.sh/ikora128/stop-ai-slop-jp/stop-ai-slop-jp"
+        },
+        {
+          "package": "benknightdark/neo-skills@neo-stop-slop",
+          "installsDisplay": "32",
+          "url": "https://skills.sh/benknightdark/neo-skills/neo-stop-slop"
+        },
+        {
+          "package": "luongnv89/skills@slop-cleanup",
+          "installsDisplay": "27",
+          "url": "https://skills.sh/luongnv89/skills/slop-cleanup"
+        },
+        {
+          "package": "alfredolopez80/multi-agent-ralph-loop@stop-slop",
+          "installsDisplay": "17",
+          "url": "https://skills.sh/alfredolopez80/multi-agent-ralph-loop/stop-slop"
+        },
+        {
+          "package": "scottwater/skills@stop-slop",
+          "installsDisplay": "15",
+          "url": "https://skills.sh/scottwater/skills/stop-slop"
+        },
+        {
+          "package": "drm-collab/stop-slop@stop-slop",
+          "installsDisplay": "11",
+          "url": "https://skills.sh/drm-collab/stop-slop/stop-slop"
+        },
+        {
+          "package": "chandr3w/stop-slop@stop-slop",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/chandr3w/stop-slop/stop-slop"
+        },
+        {
+          "package": "borisov-ivan/1c-ai-development-kit-van@stop-slop",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/borisov-ivan/1c-ai-development-kit-van/stop-slop"
+        },
+        {
+          "package": "bossjones/boss-skills@stop-slop",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/bossjones/boss-skills/stop-slop"
+        },
+        {
+          "package": "allenxxxc/pm-deflavor@stop-slop",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/allenxxxc/pm-deflavor/stop-slop"
+        },
+        {
+          "package": "mohamedgame/stop-slop@stop-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/mohamedgame/stop-slop/stop-slop"
+        },
+        {
+          "package": "welttowelt/stop-slop-refined@stop-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/welttowelt/stop-slop-refined/stop-slop"
+        },
+        {
+          "package": "amdiakhate/stop-slop@stop-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/amdiakhate/stop-slop/stop-slop"
+        },
+        {
+          "package": "arnaldo-delisio/stop-slop@stop-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/arnaldo-delisio/stop-slop/stop-slop"
+        },
+        {
+          "package": "bgb-crb-holdings/stop-slop@stop-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/bgb-crb-holdings/stop-slop/stop-slop"
+        }
+      ]
+    },
+    {
+      "query": "no ai slop",
+      "entries": [
+        {
+          "package": "petergyang/no-ai-slop@no-ai-slop",
+          "installsDisplay": "9.9K",
+          "url": "https://skills.sh/petergyang/no-ai-slop/no-ai-slop"
+        },
+        {
+          "package": "cursor/plugins@deslop",
+          "installsDisplay": "5.3K",
+          "url": "https://skills.sh/cursor/plugins/deslop"
+        },
+        {
+          "package": "rand/cc-polymath@anti-slop",
+          "installsDisplay": "615",
+          "url": "https://skills.sh/rand/cc-polymath/anti-slop"
+        },
+        {
+          "package": "asyrafhussin/agent-skills@code-slop",
+          "installsDisplay": "484",
+          "url": "https://skills.sh/asyrafhussin/agent-skills/code-slop"
+        },
+        {
+          "package": "smithery.ai@anti-slop",
+          "installsDisplay": "392",
+          "url": "https://skills.sh/smithery.ai/anti-slop"
+        },
+        {
+          "package": "realrossmanngroup/no_ai_slop_writing_rules@no-ai-slop",
+          "installsDisplay": "374",
+          "url": "https://skills.sh/realrossmanngroup/no_ai_slop_writing_rules/no-ai-slop"
+        },
+        {
+          "package": "mengto/skills@no-ai-design-slop",
+          "installsDisplay": "277",
+          "url": "https://skills.sh/mengto/skills/no-ai-design-slop"
+        },
+        {
+          "package": "realrossmanngroup/no_ai_slop_writing_rules@rossmann-voice",
+          "installsDisplay": "229",
+          "url": "https://skills.sh/realrossmanngroup/no_ai_slop_writing_rules/rossmann-voice"
+        },
+        {
+          "package": "huytieu/cog-second-brain@no-ai-slop",
+          "installsDisplay": "56",
+          "url": "https://skills.sh/huytieu/cog-second-brain/no-ai-slop"
+        },
+        {
+          "package": "numen-tech/slopornot@slop-check",
+          "installsDisplay": "45",
+          "url": "https://skills.sh/numen-tech/slopornot/slop-check"
+        },
+        {
+          "package": "claudiusararu/unslop-ui-skill@no-ai-slop",
+          "installsDisplay": "18",
+          "url": "https://skills.sh/claudiusararu/unslop-ui-skill/no-ai-slop"
+        },
+        {
+          "package": "5dive-ai/skills@no-ai-slop",
+          "installsDisplay": "14",
+          "url": "https://skills.sh/5dive-ai/skills/no-ai-slop"
+        },
+        {
+          "package": "doniyor117/no-ai-slop@no-ai-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/doniyor117/no-ai-slop/no-ai-slop"
+        },
+        {
+          "package": "gsfsss/no-ai-slop@no-ai-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/gsfsss/no-ai-slop/no-ai-slop"
+        },
+        {
+          "package": "martinctc/no-ai-slop@no-ai-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/martinctc/no-ai-slop/no-ai-slop"
+        },
+        {
+          "package": "xr0zv/no-ai-slop@no-ai-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/xr0zv/no-ai-slop/no-ai-slop"
+        },
+        {
+          "package": "0xvangrim/no-ai-slop@no-ai-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/0xvangrim/no-ai-slop/no-ai-slop"
+        },
+        {
+          "package": "awbrown/no-ai-slop@no-ai-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/awbrown/no-ai-slop/no-ai-slop"
+        },
+        {
+          "package": "jamcow/no-ai-slop@no-ai-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/jamcow/no-ai-slop/no-ai-slop"
+        },
+        {
+          "package": "newjordan/no-ai-slop@no-ai-slop",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/newjordan/no-ai-slop/no-ai-slop"
+        }
+      ]
+    },
+    {
+      "query": "deslop",
+      "entries": [
+        {
+          "package": "zenstory-ai/oh-story-claudecode@story-deslop",
+          "installsDisplay": "13.5K",
+          "url": "https://skills.sh/zenstory-ai/oh-story-claudecode/story-deslop"
+        },
+        {
+          "package": "cursor/plugins@deslop",
+          "installsDisplay": "5.3K",
+          "url": "https://skills.sh/cursor/plugins/deslop"
+        },
+        {
+          "package": "brianlovin/agent-config@deslop",
+          "installsDisplay": "3.8K",
+          "url": "https://skills.sh/brianlovin/agent-config/deslop"
+        },
+        {
+          "package": "samber/cc-skills@frontend-design-deslop",
+          "installsDisplay": "2.2K",
+          "url": "https://skills.sh/samber/cc-skills/frontend-design-deslop"
+        },
+        {
+          "package": "every-app/open-seo@deslop",
+          "installsDisplay": "1.4K",
+          "url": "https://skills.sh/every-app/open-seo/deslop"
+        },
+        {
+          "package": "millionco/react-doctor@deslop",
+          "installsDisplay": "420",
+          "url": "https://skills.sh/millionco/react-doctor/deslop"
+        },
+        {
+          "package": "prathamdby/skills@deslop",
+          "installsDisplay": "384",
+          "url": "https://skills.sh/prathamdby/skills/deslop"
+        },
+        {
+          "package": "mikecann/agent-skills@deslop",
+          "installsDisplay": "189",
+          "url": "https://skills.sh/mikecann/agent-skills/deslop"
+        },
+        {
+          "package": "millionco/expect@deslop",
+          "installsDisplay": "174",
+          "url": "https://skills.sh/millionco/expect/deslop"
+        },
+        {
+          "package": "stephenturner/skill-deslop@deslop",
+          "installsDisplay": "165",
+          "url": "https://skills.sh/stephenturner/skill-deslop/deslop"
+        },
+        {
+          "package": "pedronauck/skills@deslop",
+          "installsDisplay": "159",
+          "url": "https://skills.sh/pedronauck/skills/deslop"
+        },
+        {
+          "package": "ilamanov/skills@deslop",
+          "installsDisplay": "115",
+          "url": "https://skills.sh/ilamanov/skills/deslop"
+        },
+        {
+          "package": "vincentkoc/dotskills@technical-deslop",
+          "installsDisplay": "87",
+          "url": "https://skills.sh/vincentkoc/dotskills/technical-deslop"
+        },
+        {
+          "package": "michael-denyer/pstack-claude@deslop",
+          "installsDisplay": "86",
+          "url": "https://skills.sh/michael-denyer/pstack-claude/deslop"
+        },
+        {
+          "package": "stephenturner/skills@deslop",
+          "installsDisplay": "74",
+          "url": "https://skills.sh/stephenturner/skills/deslop"
+        },
+        {
+          "package": "glaforge/deslopify@deslopify",
+          "installsDisplay": "74",
+          "url": "https://skills.sh/glaforge/deslopify/deslopify"
+        },
+        {
+          "package": "rawkode-academy/rawkode-academy@deslop",
+          "installsDisplay": "69",
+          "url": "https://skills.sh/rawkode-academy/rawkode-academy/deslop"
+        },
+        {
+          "package": "agent-sh/agentsys@deslop",
+          "installsDisplay": "65",
+          "url": "https://skills.sh/agent-sh/agentsys/deslop"
+        },
+        {
+          "package": "peteromallet/desloppify@desloppify",
+          "installsDisplay": "63",
+          "url": "https://skills.sh/peteromallet/desloppify/desloppify"
+        },
+        {
+          "package": "fasalzein/desloppify@desloppify",
+          "installsDisplay": "62",
+          "url": "https://skills.sh/fasalzein/desloppify/desloppify"
+        }
+      ]
+    },
+    {
+      "query": "voice style",
+      "entries": [
+        {
+          "package": "android/skills@styles",
+          "installsDisplay": "1.4K",
+          "url": "https://skills.sh/android/skills/styles"
+        },
+        {
+          "package": "jwynia/agent-skills@voice-analysis",
+          "installsDisplay": "423",
+          "url": "https://skills.sh/jwynia/agent-skills/voice-analysis"
+        },
+        {
+          "package": "simota/agent-skills@voice",
+          "installsDisplay": "187",
+          "url": "https://skills.sh/simota/agent-skills/voice"
+        },
+        {
+          "package": "drawcall-ai/speech@speech",
+          "installsDisplay": "109",
+          "url": "https://skills.sh/drawcall-ai/speech/speech"
+        },
+        {
+          "package": "gtmagents/gtm-agents@voice-guidelines",
+          "installsDisplay": "67",
+          "url": "https://skills.sh/gtmagents/gtm-agents/voice-guidelines"
+        },
+        {
+          "package": "reactjs/react.dev@docs-voice",
+          "installsDisplay": "64",
+          "url": "https://skills.sh/reactjs/react.dev/docs-voice"
+        },
+        {
+          "package": "majesticlabs-dev/majestic-marketplace@brand-voice",
+          "installsDisplay": "58",
+          "url": "https://skills.sh/majesticlabs-dev/majestic-marketplace/brand-voice"
+        },
+        {
+          "package": "michaelboeding/skills@audio-producer-agent",
+          "installsDisplay": "53",
+          "url": "https://skills.sh/michaelboeding/skills/audio-producer-agent"
+        },
+        {
+          "package": "cdeistopened/skill-stack@voice-analyzer",
+          "installsDisplay": "34",
+          "url": "https://skills.sh/cdeistopened/skill-stack/voice-analyzer"
+        },
+        {
+          "package": "michaelboeding/skills@voice-generation",
+          "installsDisplay": "32",
+          "url": "https://skills.sh/michaelboeding/skills/voice-generation"
+        },
+        {
+          "package": "cdeistopened/skill-stack@voice-pirate-wires",
+          "installsDisplay": "27",
+          "url": "https://skills.sh/cdeistopened/skill-stack/voice-pirate-wires"
+        },
+        {
+          "package": "danishi/claude-code-config@gemini-tts",
+          "installsDisplay": "22",
+          "url": "https://skills.sh/danishi/claude-code-config/gemini-tts"
+        },
+        {
+          "package": "alexanderguy/skills@style",
+          "installsDisplay": "13",
+          "url": "https://skills.sh/alexanderguy/skills/style"
+        },
+        {
+          "package": "sorawit-w/agent-skills@ghostwriter",
+          "installsDisplay": "13",
+          "url": "https://skills.sh/sorawit-w/agent-skills/ghostwriter"
+        },
+        {
+          "package": "michael-f-bryan/skills@voice-analyzer",
+          "installsDisplay": "10",
+          "url": "https://skills.sh/michael-f-bryan/skills/voice-analyzer"
+        },
+        {
+          "package": "albertmartorell1975/android-ai-workflow-foundation@styles",
+          "installsDisplay": "8",
+          "url": "https://skills.sh/albertmartorell1975/android-ai-workflow-foundation/styles"
+        },
+        {
+          "package": "cdeistopened/content-os@voice-pirate-wires",
+          "installsDisplay": "7",
+          "url": "https://skills.sh/cdeistopened/content-os/voice-pirate-wires"
+        },
+        {
+          "package": "cniska/skills@style",
+          "installsDisplay": "7",
+          "url": "https://skills.sh/cniska/skills/style"
+        },
+        {
+          "package": "reedmayhew18/claude-code-expert@voice-style",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/reedmayhew18/claude-code-expert/voice-style"
+        },
+        {
+          "package": "wakqasahmed/blog-writing-skills@13-editing-style-voice",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/wakqasahmed/blog-writing-skills/13-editing-style-voice"
+        }
+      ]
+    },
+    {
+      "query": "impeccable",
+      "entries": [
+        {
+          "package": "pbakaus/impeccable@impeccable",
+          "installsDisplay": "263.7K",
+          "url": "https://skills.sh/pbakaus/impeccable/impeccable"
+        },
+        {
+          "package": "pbakaus/impeccable@polish",
+          "installsDisplay": "87.2K",
+          "url": "https://skills.sh/pbakaus/impeccable/polish"
+        },
+        {
+          "package": "pbakaus/impeccable@critique",
+          "installsDisplay": "84.6K",
+          "url": "https://skills.sh/pbakaus/impeccable/critique"
+        },
+        {
+          "package": "pbakaus/impeccable@audit",
+          "installsDisplay": "83.8K",
+          "url": "https://skills.sh/pbakaus/impeccable/audit"
+        },
+        {
+          "package": "pbakaus/impeccable@animate",
+          "installsDisplay": "83.7K",
+          "url": "https://skills.sh/pbakaus/impeccable/animate"
+        },
+        {
+          "package": "pbakaus/impeccable@adapt",
+          "installsDisplay": "83.7K",
+          "url": "https://skills.sh/pbakaus/impeccable/adapt"
+        },
+        {
+          "package": "pbakaus/impeccable@clarify",
+          "installsDisplay": "83.2K",
+          "url": "https://skills.sh/pbakaus/impeccable/clarify"
+        },
+        {
+          "package": "pbakaus/impeccable@optimize",
+          "installsDisplay": "83K",
+          "url": "https://skills.sh/pbakaus/impeccable/optimize"
+        },
+        {
+          "package": "pbakaus/impeccable@colorize",
+          "installsDisplay": "82.8K",
+          "url": "https://skills.sh/pbakaus/impeccable/colorize"
+        },
+        {
+          "package": "pbakaus/impeccable@bolder",
+          "installsDisplay": "81.9K",
+          "url": "https://skills.sh/pbakaus/impeccable/bolder"
+        },
+        {
+          "package": "pbakaus/impeccable@delight",
+          "installsDisplay": "81.8K",
+          "url": "https://skills.sh/pbakaus/impeccable/delight"
+        },
+        {
+          "package": "pbakaus/impeccable@distill",
+          "installsDisplay": "81.4K",
+          "url": "https://skills.sh/pbakaus/impeccable/distill"
+        },
+        {
+          "package": "pbakaus/impeccable@quieter",
+          "installsDisplay": "80.5K",
+          "url": "https://skills.sh/pbakaus/impeccable/quieter"
+        },
+        {
+          "package": "pbakaus/impeccable@typeset",
+          "installsDisplay": "66.2K",
+          "url": "https://skills.sh/pbakaus/impeccable/typeset"
+        },
+        {
+          "package": "pbakaus/impeccable@overdrive",
+          "installsDisplay": "64.3K",
+          "url": "https://skills.sh/pbakaus/impeccable/overdrive"
+        },
+        {
+          "package": "pbakaus/impeccable@normalize",
+          "installsDisplay": "55.8K",
+          "url": "https://skills.sh/pbakaus/impeccable/normalize"
+        },
+        {
+          "package": "pbakaus/impeccable@extract",
+          "installsDisplay": "54.7K",
+          "url": "https://skills.sh/pbakaus/impeccable/extract"
+        },
+        {
+          "package": "pbakaus/impeccable@onboard",
+          "installsDisplay": "54.5K",
+          "url": "https://skills.sh/pbakaus/impeccable/onboard"
+        },
+        {
+          "package": "pbakaus/impeccable@harden",
+          "installsDisplay": "54.5K",
+          "url": "https://skills.sh/pbakaus/impeccable/harden"
+        },
+        {
+          "package": "pbakaus/impeccable@teach-impeccable",
+          "installsDisplay": "51.4K",
+          "url": "https://skills.sh/pbakaus/impeccable/teach-impeccable"
+        }
+      ]
+    },
+    {
+      "query": "clear english",
+      "entries": [
+        {
+          "package": "tamdogood/builder-essential-skills@orwell-writing",
+          "installsDisplay": "162",
+          "url": "https://skills.sh/tamdogood/builder-essential-skills/orwell-writing"
+        },
+        {
+          "package": "membranedev/application-skills@clear-books",
+          "installsDisplay": "62",
+          "url": "https://skills.sh/membranedev/application-skills/clear-books"
+        },
+        {
+          "package": "yanyang1116/skills@english-evaluation",
+          "installsDisplay": "31",
+          "url": "https://skills.sh/yanyang1116/skills/english-evaluation"
+        },
+        {
+          "package": "tranz007/ux-skills@clear",
+          "installsDisplay": "26",
+          "url": "https://skills.sh/tranz007/ux-skills/clear"
+        },
+        {
+          "package": "gigio1023/agent-skills@english-prompt-review",
+          "installsDisplay": "16",
+          "url": "https://skills.sh/gigio1023/agent-skills/english-prompt-review"
+        },
+        {
+          "package": "acomarcho/skills@plain-english",
+          "installsDisplay": "14",
+          "url": "https://skills.sh/acomarcho/skills/plain-english"
+        },
+        {
+          "package": "rstackjs/agent-skills@release-blog-writer",
+          "installsDisplay": "12",
+          "url": "https://skills.sh/rstackjs/agent-skills/release-blog-writer"
+        },
+        {
+          "package": "tw93/waza@english",
+          "installsDisplay": "11",
+          "url": "https://skills.sh/tw93/waza/english"
+        },
+        {
+          "package": "aturan/skills@writing-clearly-and-concisely",
+          "installsDisplay": "11",
+          "url": "https://skills.sh/aturan/skills/writing-clearly-and-concisely"
+        },
+        {
+          "package": "gigio1023/clear-writing@clear-writing",
+          "installsDisplay": "5",
+          "url": "https://skills.sh/gigio1023/clear-writing/clear-writing"
+        },
+        {
+          "package": "rejke/agents-marketplace@clear-writing",
+          "installsDisplay": "5",
+          "url": "https://skills.sh/rejke/agents-marketplace/clear-writing"
+        },
+        {
+          "package": "amoschenzixuan/agentic-working-contract@clear-issues",
+          "installsDisplay": "4",
+          "url": "https://skills.sh/amoschenzixuan/agentic-working-contract/clear-issues"
+        },
+        {
+          "package": "effylyx/english-coach@english-coach",
+          "installsDisplay": "3",
+          "url": "https://skills.sh/effylyx/english-coach/english-coach"
+        },
+        {
+          "package": "skills.volces.com@english",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/skills.volces.com/english"
+        },
+        {
+          "package": "mi9-llc/agent-skills@clear-and-short",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/mi9-llc/agent-skills/clear-and-short"
+        },
+        {
+          "package": "clawhub.ai@english",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/clawhub.ai/english"
+        },
+        {
+          "package": "joabgonzalez/ai-agents-skills@english-writing",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/joabgonzalez/ai-agents-skills/english-writing"
+        },
+        {
+          "package": "kevin-burns/claude-skills@clear-and-human",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/kevin-burns/claude-skills/clear-and-human"
+        },
+        {
+          "package": "smithery.ai@clear-books",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/smithery.ai/clear-books"
+        },
+        {
+          "package": "ceasarxuu/astartesskills@clear-prd",
+          "installsDisplay": "1",
+          "url": "https://skills.sh/ceasarxuu/astartesskills/clear-prd"
+        }
+      ]
+    },
+    {
+      "query": "ai flavor",
+      "entries": [
+        {
+          "package": "open-mercato/skills@om-prepare-test-env",
+          "installsDisplay": "915",
+          "url": "https://skills.sh/open-mercato/skills/om-prepare-test-env"
+        },
+        {
+          "package": "dhruvanbhalara/skills@flutter-config",
+          "installsDisplay": "212",
+          "url": "https://skills.sh/dhruvanbhalara/skills/flutter-config"
+        },
+        {
+          "package": "leancodepl/patrol@patrol-setup",
+          "installsDisplay": "152",
+          "url": "https://skills.sh/leancodepl/patrol/patrol-setup"
+        },
+        {
+          "package": "davepoon/buildwithclaude@obsidian-markdown",
+          "installsDisplay": "146",
+          "url": "https://skills.sh/davepoon/buildwithclaude/obsidian-markdown"
+        },
+        {
+          "package": "chujianyun/skills@remove-ai-flavor",
+          "installsDisplay": "130",
+          "url": "https://skills.sh/chujianyun/skills/remove-ai-flavor"
+        },
+        {
+          "package": "b1lli/remove-ai-flavor-writing-skill@remove-ai-flavor",
+          "installsDisplay": "86",
+          "url": "https://skills.sh/b1lli/remove-ai-flavor-writing-skill/remove-ai-flavor"
+        },
+        {
+          "package": "chambersxdu/enhance-comment@remove-ai-comments",
+          "installsDisplay": "86",
+          "url": "https://skills.sh/chambersxdu/enhance-comment/remove-ai-comments"
+        },
+        {
+          "package": "sd0xdev/sd0x-harness@de-ai-flavor",
+          "installsDisplay": "18",
+          "url": "https://skills.sh/sd0xdev/sd0x-harness/de-ai-flavor"
+        },
+        {
+          "package": "uipath/skills@manage-skill-flavors",
+          "installsDisplay": "18",
+          "url": "https://skills.sh/uipath/skills/manage-skill-flavors"
+        },
+        {
+          "package": "piyushverma0/android-agent-skills@gradle",
+          "installsDisplay": "18",
+          "url": "https://skills.sh/piyushverma0/android-agent-skills/gradle"
+        },
+        {
+          "package": "ronjunevaldoz/kmp-agent-skills@kmp-flavor-environment",
+          "installsDisplay": "13",
+          "url": "https://skills.sh/ronjunevaldoz/kmp-agent-skills/kmp-flavor-environment"
+        },
+        {
+          "package": "arindam200/nebius-skills@nebius-dedicated-endpoint",
+          "installsDisplay": "12",
+          "url": "https://skills.sh/arindam200/nebius-skills/nebius-dedicated-endpoint"
+        },
+        {
+          "package": "dair-ai/dair-academy-plugins@wiki-builder",
+          "installsDisplay": "9",
+          "url": "https://skills.sh/dair-ai/dair-academy-plugins/wiki-builder"
+        },
+        {
+          "package": "sickn33/agentic-awesome-skills@wiki-builder",
+          "installsDisplay": "8",
+          "url": "https://skills.sh/sickn33/agentic-awesome-skills/wiki-builder"
+        },
+        {
+          "package": "alisonaquinas/llm-doc-skills@github-flavored-markdown",
+          "installsDisplay": "8",
+          "url": "https://skills.sh/alisonaquinas/llm-doc-skills/github-flavored-markdown"
+        },
+        {
+          "package": "ucalyptus/skills@flavor-neo",
+          "installsDisplay": "7",
+          "url": "https://skills.sh/ucalyptus/skills/flavor-neo"
+        },
+        {
+          "package": "wangjiawei508/workwise@ai-flavor-remover",
+          "installsDisplay": "4",
+          "url": "https://skills.sh/wangjiawei508/workwise/ai-flavor-remover"
+        },
+        {
+          "package": "blocklune/skills@no-ai-flavor-zh",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/blocklune/skills/no-ai-flavor-zh"
+        },
+        {
+          "package": "alisheraxmedov/flutter-skills@flavors-env",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/alisheraxmedov/flutter-skills/flavors-env"
+        },
+        {
+          "package": "zaynjarvis/ai-writing-humanizer@ai-writing-humanizer",
+          "installsDisplay": "2",
+          "url": "https://skills.sh/zaynjarvis/ai-writing-humanizer/ai-writing-humanizer"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2937 @@
+{
+  "date": "2026-09-06",
+  "timezone": "Asia/Shanghai",
+  "scope": "Metadata and source screening only; no skills installed; no rewrite benchmark run.",
+  "counts": {
+    "queries": 16,
+    "rawResults": 320,
+    "uniqueDirectoryPackages": 297,
+    "repositoryAddresses": 114,
+    "accessibleRepositories": 112
+  },
+  "repositories": [
+    {
+      "id": 1,
+      "repo": "op7418/Humanizer-zh",
+      "url": "https://github.com/op7418/Humanizer-zh",
+      "accessible": true,
+      "stars": 16729,
+      "forks": 1113,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-01-19T07:46:35Z",
+      "description": "Humanizer 的汉化版本，Claude Code Skills，旨在消除文本中 AI 生成的痕迹。",
+      "note": "简体中文基线；与 blader 原版同一规则谱系。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "op7418/humanizer-zh@humanizer-zh",
+          "installs": "47.2K",
+          "url": "https://skills.sh/op7418/humanizer-zh/humanizer-zh",
+          "command": "npx skills add op7418/humanizer-zh@humanizer-zh"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 2,
+      "repo": "blader/humanizer",
+      "url": "https://github.com/blader/humanizer",
+      "accessible": true,
+      "stars": 43628,
+      "forks": 3653,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-19T05:58:53Z",
+      "description": "Agent skill that removes signs of AI-generated writing from text",
+      "note": "英文基线；24 类模式与二次复扫。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "blader/humanizer@humanizer",
+          "installs": "5.8K",
+          "url": "https://skills.sh/blader/humanizer/humanizer",
+          "command": "npx skills add blader/humanizer@humanizer"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 3,
+      "repo": "hardikpandya/stop-slop",
+      "url": "https://github.com/hardikpandya/stop-slop",
+      "accessible": true,
+      "stars": 16842,
+      "forks": 1216,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-03-17T18:50:39Z",
+      "description": "A skill file for removing AI tells from prose",
+      "note": "英文删套话与句式约束；禁令较强。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "hardikpandya/stop-slop@stop-slop",
+          "installs": "13.4K",
+          "url": "https://skills.sh/hardikpandya/stop-slop/stop-slop",
+          "command": "npx skills add hardikpandya/stop-slop@stop-slop"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 4,
+      "repo": "petergyang/no-ai-slop",
+      "url": "https://github.com/petergyang/no-ai-slop",
+      "accessible": true,
+      "stars": 7293,
+      "forks": 543,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-02T04:19:00Z",
+      "description": "Removes 20+ patterns of AI slop from any piece of writing.",
+      "note": "英文审稿与改写；保护个人声口。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/no-ai-slop/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "petergyang/no-ai-slop@no-ai-slop",
+          "installs": "9.9K",
+          "url": "https://skills.sh/petergyang/no-ai-slop/no-ai-slop",
+          "command": "npx skills add petergyang/no-ai-slop@no-ai-slop"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 5,
+      "repo": "LifelongLazyLearner/qu-ai-wei",
+      "url": "https://github.com/LifelongLazyLearner/qu-ai-wei",
+      "accessible": true,
+      "stars": 531,
+      "forks": 41,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-16T02:40:36Z",
+      "description": "去 AI 味：去除简体中文 AI 写作痕迹 / Chinese humanizer skill",
+      "note": "简体中文保真重写；信息账本、语体、引用边界。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "lifelonglazylearner/qu-ai-wei@qu-ai-wei",
+          "installs": "625",
+          "url": "https://skills.sh/lifelonglazylearner/qu-ai-wei/qu-ai-wei",
+          "command": "npx skills add lifelonglazylearner/qu-ai-wei@qu-ai-wei"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 6,
+      "repo": "MrGeDiao/shuorenhua",
+      "url": "https://github.com/MrGeDiao/shuorenhua",
+      "accessible": true,
+      "stars": 1438,
+      "forks": 72,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-05T06:18:27Z",
+      "description": "说人话｜中文优先的去 AI 味改写 skill：保事实、分场景、改完可直接发。Chinese-first rewrite skill for Codex / Claude Code / Cursor / ChatGPT — removes AI tone, preserves facts.",
+      "note": "中文优先；技术文档、状态更新、论坛等场景。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "mrgediao/shuorenhua@shuorenhua",
+          "installs": "975",
+          "url": "https://skills.sh/mrgediao/shuorenhua/shuorenhua",
+          "command": "npx skills add mrgediao/shuorenhua@shuorenhua"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 7,
+      "repo": "B1lli/remove-ai-flavor-writing-skill",
+      "url": "https://github.com/B1lli/remove-ai-flavor-writing-skill",
+      "accessible": false,
+      "stars": null,
+      "forks": null,
+      "parent": null,
+      "license": null,
+      "pushedAt": null,
+      "description": "",
+      "note": "CLI 有收录，但 GitHub API 此次无法解析。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "b1lli/remove-ai-flavor-writing-skill@remove-ai-flavor",
+          "installs": "86",
+          "url": "https://skills.sh/b1lli/remove-ai-flavor-writing-skill/remove-ai-flavor",
+          "command": "npx skills add b1lli/remove-ai-flavor-writing-skill@remove-ai-flavor"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 8,
+      "repo": "yanyintingyou/stop-slop-cn-en",
+      "url": "https://github.com/yanyintingyou/stop-slop-cn-en",
+      "accessible": true,
+      "stars": 1,
+      "forks": 0,
+      "parent": null,
+      "license": "NOASSERTION",
+      "pushedAt": "2026-05-29T10:35:58Z",
+      "description": "Hermes Agent skill adapted from stop-slop for Chinese/English anti-AI-slop writing.",
+      "note": "中英文适配版，非原 stop-slop 独立谱系。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [],
+      "group": "core"
+    },
+    {
+      "id": 9,
+      "repo": "redbaronyyyyy-eng/humanizer-zh-academic",
+      "url": "https://github.com/redbaronyyyyy-eng/humanizer-zh-academic",
+      "accessible": true,
+      "stars": 273,
+      "forks": 21,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-02-24T14:13:39Z",
+      "description": "🎓 降低中文学术写作 AIGC 检测率的 Claude Code Skill | Reduce AIGC detection rate for Chinese academic writing",
+      "note": "中文学术；降低检测率是作者声明，未验证。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "redbaronyyyyy-eng/humanizer-zh-academic@humanizer-zh-academic",
+          "installs": "322",
+          "url": "https://skills.sh/redbaronyyyyy-eng/humanizer-zh-academic/humanizer-zh-academic",
+          "command": "npx skills add redbaronyyyyy-eng/humanizer-zh-academic@humanizer-zh-academic"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 10,
+      "repo": "OUBIGFA/De-AI-Prompt-Enhancer-Writer-Booster-SKILL",
+      "url": "https://github.com/OUBIGFA/De-AI-Prompt-Enhancer-Writer-Booster-SKILL",
+      "accessible": true,
+      "stars": 753,
+      "forks": 84,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-09-05T15:26:01Z",
+      "description": "去AI味提示词-作家增强-SKILL",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        ".backup/humanizer-zh/SKILL.md",
+        ".backup/humanizer/SKILL.md",
+        "de-AI-writing/SKILL.md"
+      ],
+      "packages": [],
+      "group": "core"
+    },
+    {
+      "id": 11,
+      "repo": "alchaincyf/nuwa-skill",
+      "url": "https://github.com/alchaincyf/nuwa-skill",
+      "accessible": true,
+      "stars": 32101,
+      "forks": 4365,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-25T03:02:26Z",
+      "description": "你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks.",
+      "note": "人物思维与表达建模，属于风格工具而非专门去味。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [],
+      "group": "core"
+    },
+    {
+      "id": 12,
+      "repo": "dongbeixiaohuo/writing-agent",
+      "url": "https://github.com/dongbeixiaohuo/writing-agent",
+      "accessible": true,
+      "stars": 403,
+      "forks": 63,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-31T15:01:55Z",
+      "description": "🚀 一个基于 Claude Code (Skills + Subagents) 的“去AI味”全栈写作系统。不仅防套路，更通过专属规则强制注入人类观点与细节，搭配读者测试评估与自动图文排版。全面支持 DeepSeek / 智谱GLM / MiniMax 等国产低成本大模型，提供从选题、风格建模到审稿发布的高维全自动写作工作流。",
+      "note": "完整中文写作 Workflow，非单一过滤器。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "dongbeixiaohuo/writing-agent@style-modeler",
+          "installs": "120",
+          "url": "https://skills.sh/dongbeixiaohuo/writing-agent/style-modeler",
+          "command": "npx skills add dongbeixiaohuo/writing-agent@style-modeler"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 13,
+      "repo": "Aboudjem/humanizer-skill",
+      "url": "https://github.com/Aboudjem/humanizer-skill",
+      "accessible": true,
+      "stars": 215,
+      "forks": 32,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-04T08:14:31Z",
+      "description": "Free, open-source AI writing humanizer and detector. 55 patterns, 5 voices, a 0-100 AI-tell score, and nothing leaves your machine.",
+      "note": "55 类模式、五种 voice、CLI 规则评分。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/humanizer/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "aboudjem/humanizer-skill@humanizer",
+          "installs": "631",
+          "url": "https://skills.sh/aboudjem/humanizer-skill/humanizer",
+          "command": "npx skills add aboudjem/humanizer-skill@humanizer"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 14,
+      "repo": "jpeggdev/humanize-writing",
+      "url": "https://github.com/jpeggdev/humanize-writing",
+      "accessible": true,
+      "stars": 58,
+      "forks": 9,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-03-14T07:26:54Z",
+      "description": "Claude Code skill that rewrites AI-generated content to sound human",
+      "note": "英文八轮编辑；仓库 stars 少于 100。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "jpeggdev/humanize-writing@humanize-writing",
+          "installs": "1.6K",
+          "url": "https://skills.sh/jpeggdev/humanize-writing/humanize-writing",
+          "command": "npx skills add jpeggdev/humanize-writing@humanize-writing"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 15,
+      "repo": "momo2young/humanize-academic-writing",
+      "url": "https://github.com/momo2young/humanize-academic-writing",
+      "accessible": true,
+      "stars": 18,
+      "forks": 3,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-01-25T16:38:31Z",
+      "description": "An AI skill (Cursor/ Claude) for transforming AI-generated academic text into natural, human-like scholarly writing/ 一个专为社科学者设计的 Cursor AI Skills (Claude可用)，帮助将 AI 生成的英文学术文本转化为自然、人性化的学术写作。",
+      "note": "英文社科学术写作；低 stars，效果待测。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "momo2young/humanize-academic-writing@humanize-academic-writing",
+          "installs": "1.8K",
+          "url": "https://skills.sh/momo2young/humanize-academic-writing/humanize-academic-writing",
+          "command": "npx skills add momo2young/humanize-academic-writing@humanize-academic-writing"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 16,
+      "repo": "humanizerai/agent-skills",
+      "url": "https://github.com/humanizerai/agent-skills",
+      "accessible": true,
+      "stars": 42,
+      "forks": 7,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-02-05T14:19:04Z",
+      "description": "HumanizerAI Agent Skills for Claude Code and Codex - AI detection and text humanization",
+      "note": "外部 API 封装；传输正文并涉及 credits。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/humanize/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "humanizerai/agent-skills@humanize",
+          "installs": "3.8K",
+          "url": "https://skills.sh/humanizerai/agent-skills/humanize",
+          "command": "npx skills add humanizerai/agent-skills@humanize"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 17,
+      "repo": "obra/the-elements-of-style",
+      "url": "https://github.com/obra/the-elements-of-style",
+      "accessible": true,
+      "stars": 559,
+      "forks": 78,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-08-12T21:49:28Z",
+      "description": "William Strunk Jr.'s Elements of Style (1918) in markdown format for AI agents",
+      "note": "简洁英文写作经典规则，间接减少模板感。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "obra/the-elements-of-style@writing-clearly-and-concisely",
+          "installs": "1.7K",
+          "url": "https://skills.sh/obra/the-elements-of-style/writing-clearly-and-concisely",
+          "command": "npx skills add obra/the-elements-of-style@writing-clearly-and-concisely"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 18,
+      "repo": "realrossmanngroup/no_ai_slop_writing_rules",
+      "url": "https://github.com/realrossmanngroup/no_ai_slop_writing_rules",
+      "accessible": true,
+      "stars": 672,
+      "forks": 73,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-05-30T20:41:20Z",
+      "description": "Claude Code reference: write in Louis Rossmann's voice, never like AI slop. Portable CLAUDE.md plus skills.",
+      "note": "no-ai-slop 加特定人物 voice；不一定适合你的声音。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        ".claude/skills/no-ai-slop/SKILL.md",
+        ".claude/skills/rossmann-voice/SKILL.md",
+        "skills/no-ai-slop/SKILL.md",
+        "skills/rossmann-voice/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "realrossmanngroup/no_ai_slop_writing_rules@no-ai-slop",
+          "installs": "374",
+          "url": "https://skills.sh/realrossmanngroup/no_ai_slop_writing_rules/no-ai-slop",
+          "command": "npx skills add realrossmanngroup/no_ai_slop_writing_rules@no-ai-slop"
+        },
+        {
+          "package": "realrossmanngroup/no_ai_slop_writing_rules@rossmann-voice",
+          "installs": "229",
+          "url": "https://skills.sh/realrossmanngroup/no_ai_slop_writing_rules/rossmann-voice",
+          "command": "npx skills add realrossmanngroup/no_ai_slop_writing_rules@rossmann-voice"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 19,
+      "repo": "jalaalrd/anti-ai-slop-writing",
+      "url": "https://github.com/jalaalrd/anti-ai-slop-writing",
+      "accessible": true,
+      "stars": 441,
+      "forks": 45,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-04-18T23:37:12Z",
+      "description": "AI writing skill that eliminates detectable AI patterns. Works with Claude Code, Codex, Cursor, Gemini CLI, and 8+ other agents.",
+      "note": "英文反模板指令；包含不编造约束。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/anti-ai-slop-writing/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "jalaalrd/anti-ai-slop-writing@anti-ai-slop-writing",
+          "installs": "448",
+          "url": "https://skills.sh/jalaalrd/anti-ai-slop-writing/anti-ai-slop-writing",
+          "command": "npx skills add jalaalrd/anti-ai-slop-writing@anti-ai-slop-writing"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 20,
+      "repo": "adenaufal/anti-slop-writing",
+      "url": "https://github.com/adenaufal/anti-slop-writing",
+      "accessible": true,
+      "stars": 124,
+      "forks": 7,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-07-06T04:02:38Z",
+      "description": "Stop your AI from writing like AI. A universal system prompt eliminating every known LLM style tell — works with Claude Code, Gemini CLI, Codex CLI, Copilot, Cursor, and any web AI.",
+      "note": "通用系统 prompt/规则；安装结构另核实。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "adenaufal/anti-slop-writing@anti-slop-writing",
+          "installs": "82",
+          "url": "https://skills.sh/adenaufal/anti-slop-writing/anti-slop-writing",
+          "command": "npx skills add adenaufal/anti-slop-writing@anti-slop-writing"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 21,
+      "repo": "adewale/anti-slop-writing",
+      "url": "https://github.com/adewale/anti-slop-writing",
+      "accessible": true,
+      "stars": 17,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-05T13:46:40Z",
+      "description": "Agent Skill for editing prose so it does not read like generic LLM output",
+      "note": "英文编辑 skill；低 stars，作为备选。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "adewale/anti-slop-writing@anti-slop-writing",
+          "installs": "46",
+          "url": "https://skills.sh/adewale/anti-slop-writing/anti-slop-writing",
+          "command": "npx skills add adewale/anti-slop-writing@anti-slop-writing"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 22,
+      "repo": "brandonwise/humanizer",
+      "url": "https://github.com/brandonwise/humanizer",
+      "accessible": true,
+      "stars": 118,
+      "forks": 19,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-09T22:20:06Z",
+      "description": "OpenClaw skill that detects and removes signs of AI-generated writing, making text sound natural and human. Based on Wikipedia's Signs of AI Writing.",
+      "note": "面向 OpenClaw 的 Humanizer 同源方案。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "brandonwise/humanizer@humanizer",
+          "installs": "377",
+          "url": "https://skills.sh/brandonwise/humanizer/humanizer",
+          "command": "npx skills add brandonwise/humanizer@humanizer"
+        }
+      ],
+      "group": "core"
+    },
+    {
+      "id": 23,
+      "repo": "lynote-ai/best-humanizer-handbook",
+      "url": "https://github.com/lynote-ai/best-humanizer-handbook",
+      "accessible": true,
+      "stars": 370,
+      "forks": 5,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-06-16T13:27:57Z",
+      "description": "Best AI Humanizer Handbook A practical guide to making AI-assisted writing clearer, more credible, and more human",
+      "note": "参考手册，不当作独立可安装 skill。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "core"
+    },
+    {
+      "id": 24,
+      "repo": "lynote-ai/humanize-text",
+      "url": "https://github.com/lynote-ai/humanize-text",
+      "accessible": true,
+      "stars": 1600,
+      "forks": 102,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-05T08:56:35Z",
+      "description": "Open-source pipeline and reference implementations for improving the readability and natural cadence of AI-assisted drafts.",
+      "note": "文本改写 pipeline 项目，不等同 Markdown skill。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "core"
+    },
+    {
+      "id": 25,
+      "repo": "Hello-SimpleAI/chatgpt-comparison-detection",
+      "url": "https://github.com/Hello-SimpleAI/chatgpt-comparison-detection",
+      "accessible": true,
+      "stars": 1452,
+      "forks": 129,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2023-12-01T16:03:51Z",
+      "description": "Human ChatGPT Comparison Corpus (HC3), Detectors, and more! 🔥",
+      "note": "HC3 数据集与检测研究；排除出写作 skill 推荐。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "core"
+    },
+    {
+      "id": 26,
+      "repo": "kevintsai1202/Humanizer-zh-TW",
+      "url": "https://github.com/kevintsai1202/Humanizer-zh-TW",
+      "accessible": true,
+      "stars": 831,
+      "forks": 55,
+      "parent": "op7418/Humanizer-zh",
+      "license": "MIT",
+      "pushedAt": "2026-08-26T02:36:38Z",
+      "description": "Humanizer 的繁體中文版本，Agent Skills，專門去除文字中 AI 生成的痕跡。",
+      "note": "繁体中文；GitHub 明示 fork 自 op7418。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "kevintsai1202/humanizer-zh-tw@humanizer-zh-tw",
+          "installs": "1.2K",
+          "url": "https://skills.sh/kevintsai1202/humanizer-zh-tw/humanizer-zh-tw",
+          "command": "npx skills add kevintsai1202/humanizer-zh-tw@humanizer-zh-tw"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 27,
+      "repo": "ai-zixun/humanizer-zh",
+      "url": "https://github.com/ai-zixun/humanizer-zh",
+      "accessible": true,
+      "stars": 137,
+      "forks": 15,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-05-22T01:54:46Z",
+      "description": "`humanizer-zh` 是一个兼容 Codex、Claude Code 和 OpenClaw 的中文去 AI 味技能。它用于重写、润色或审阅中文博客、评论、产品分析、newsletter、书稿章节等长文本，让文字更像中文母语者写出来的，而不是翻译腔、模型拼接稿或营销通稿。",
+      "note": "同名但不同维护者；处理中文翻译腔和长文节奏。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "ai-zixun/humanizer-zh@humanizer-zh",
+          "installs": "890",
+          "url": "https://skills.sh/ai-zixun/humanizer-zh/humanizer-zh",
+          "command": "npx skills add ai-zixun/humanizer-zh@humanizer-zh"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 28,
+      "repo": "hairyf/skills",
+      "url": "https://github.com/hairyf/skills",
+      "accessible": true,
+      "stars": 25,
+      "forks": 2,
+      "parent": "antfu/skills",
+      "license": "MIT",
+      "pushedAt": "2026-08-10T17:28:12Z",
+      "description": "Hairy's curated collection of agent skills.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "hairyf/skills@writing-humanizer-zh",
+          "installs": "574",
+          "url": "https://skills.sh/hairyf/skills/writing-humanizer-zh",
+          "command": "npx skills add hairyf/skills@writing-humanizer-zh"
+        },
+        {
+          "package": "hairyf/skills@writing-styles-juejin",
+          "installs": "119",
+          "url": "https://skills.sh/hairyf/skills/writing-styles-juejin",
+          "command": "npx skills add hairyf/skills@writing-styles-juejin"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 29,
+      "repo": "z0gSh1u/oh-my-writing-skill",
+      "url": "https://github.com/z0gSh1u/oh-my-writing-skill",
+      "accessible": true,
+      "stars": 33,
+      "forks": 7,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-03-02T12:20:45Z",
+      "description": "基于 Claude Agent Skills 构建的内容创作助手，支持用户需求澄清、深度研究、配图、AI 痕迹优化、多平台风格等功能，一键生成高质量文章",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "z0gsh1u/oh-my-writing-skill@humanizer-cn",
+          "installs": "742",
+          "url": "https://skills.sh/z0gsh1u/oh-my-writing-skill/humanizer-cn",
+          "command": "npx skills add z0gsh1u/oh-my-writing-skill@humanizer-cn"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 30,
+      "repo": "sickn33/agentic-awesome-skills",
+      "url": "https://github.com/sickn33/agentic-awesome-skills",
+      "accessible": true,
+      "stars": 46028,
+      "forks": 6728,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-05T17:53:02Z",
+      "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,100+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "sickn33/agentic-awesome-skills@humanize-chinese",
+          "installs": "656",
+          "url": "https://skills.sh/sickn33/agentic-awesome-skills/humanize-chinese",
+          "command": "npx skills add sickn33/agentic-awesome-skills@humanize-chinese"
+        },
+        {
+          "package": "sickn33/agentic-awesome-skills@wiki-builder",
+          "installs": "8",
+          "url": "https://skills.sh/sickn33/agentic-awesome-skills/wiki-builder",
+          "command": "npx skills add sickn33/agentic-awesome-skills@wiki-builder"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 31,
+      "repo": "smallnest/goal-workflow",
+      "url": "https://github.com/smallnest/goal-workflow",
+      "accessible": true,
+      "stars": 278,
+      "forks": 40,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-06T04:22:14Z",
+      "description": "AI-driven development workflow with /prd, /goal, /review-it and /ship-it skills",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "smallnest/goal-workflow@humanize-it",
+          "installs": "445",
+          "url": "https://skills.sh/smallnest/goal-workflow/humanize-it",
+          "command": "npx skills add smallnest/goal-workflow@humanize-it"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 32,
+      "repo": "chujianyun/skills",
+      "url": "https://github.com/chujianyun/skills",
+      "accessible": true,
+      "stars": 733,
+      "forks": 99,
+      "parent": null,
+      "license": "NOASSERTION",
+      "pushedAt": "2026-08-31T04:10:50Z",
+      "description": "WuMing's Claude Skills",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "chujianyun/skills@remove-ai-flavor",
+          "installs": "130",
+          "url": "https://skills.sh/chujianyun/skills/remove-ai-flavor",
+          "command": "npx skills add chujianyun/skills@remove-ai-flavor"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 33,
+      "repo": "Jackywxsz/jacky-opc",
+      "url": "https://github.com/Jackywxsz/jacky-opc",
+      "accessible": true,
+      "stars": 35,
+      "forks": 1,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-06-28T11:56:20Z",
+      "description": "",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "jackywxsz/jacky-opc@jacky-de-ai",
+          "installs": "109",
+          "url": "https://skills.sh/jackywxsz/jacky-opc/jacky-de-ai",
+          "command": "npx skills add jackywxsz/jacky-opc@jacky-de-ai"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 34,
+      "repo": "allinherog-star/ai-skills",
+      "url": "https://github.com/allinherog-star/ai-skills",
+      "accessible": true,
+      "stars": 51,
+      "forks": 5,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-06-06T07:52:47Z",
+      "description": "AI Skills（ai-skills.ai）是一个面向各行各业的 AI 技能库。可直接用于openclaw，Hermes，qclaw，claude code，codex等智能体平台。为你的职业发展、行业竞争力，增加更多可能。",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "allinherog-star/ai-skills@ai-humanizer-zh",
+          "installs": "65",
+          "url": "https://skills.sh/allinherog-star/ai-skills/ai-humanizer-zh",
+          "command": "npx skills add allinherog-star/ai-skills@ai-humanizer-zh"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 35,
+      "repo": "aAAaqwq/AGI-Super-Team",
+      "url": "https://github.com/aAAaqwq/AGI-Super-Team",
+      "accessible": true,
+      "stars": 91,
+      "forks": 22,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-04T00:35:18Z",
+      "description": "An installable, cross-framework AI organization: C-suite agents, expert subagents, curated skills, independent review, and one-command setup across 18 AI client/runtime adapters.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "aaaaqwq/agi-super-team@de-ai-ify",
+          "installs": "49",
+          "url": "https://skills.sh/aaaaqwq/agi-super-team/de-ai-ify",
+          "command": "npx skills add aaaaqwq/agi-super-team@de-ai-ify"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 36,
+      "repo": "hardydai-cell/qu-ai-wei",
+      "url": "https://github.com/hardydai-cell/qu-ai-wei",
+      "accessible": true,
+      "stars": 0,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-05-11T09:23:07Z",
+      "description": "中文文本去 AI 味 Codex skill",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "hardydai-cell/qu-ai-wei@去ai味",
+          "installs": "22",
+          "url": "https://skills.sh/hardydai-cell/qu-ai-wei/ai",
+          "command": "npx skills add hardydai-cell/qu-ai-wei@去ai味"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 37,
+      "repo": "kevinaimonster/skill-hub",
+      "url": "https://github.com/kevinaimonster/skill-hub",
+      "accessible": true,
+      "stars": 3,
+      "forks": 2,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-03-21T14:21:06Z",
+      "description": "技能宝 SkillHub - 中文AI技能搜索、安装与智能推荐平台",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "kevinaimonster/skill-hub@chinese-copyfix",
+          "installs": "12",
+          "url": "https://skills.sh/kevinaimonster/skill-hub/chinese-copyfix",
+          "command": "npx skills add kevinaimonster/skill-hub@chinese-copyfix"
+        },
+        {
+          "package": "kevinaimonster/skill-hub@translator",
+          "installs": "13",
+          "url": "https://skills.sh/kevinaimonster/skill-hub/translator",
+          "command": "npx skills add kevinaimonster/skill-hub@translator"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 38,
+      "repo": "lanyasheng/content-deai-engine",
+      "url": "https://github.com/lanyasheng/content-deai-engine",
+      "accessible": true,
+      "stars": 0,
+      "forks": 0,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-03-07T02:53:58Z",
+      "description": "",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "lanyasheng/content-deai-engine@content-deai-engine",
+          "installs": "3",
+          "url": "https://skills.sh/lanyasheng/content-deai-engine/content-deai-engine",
+          "command": "npx skills add lanyasheng/content-deai-engine@content-deai-engine"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 39,
+      "repo": "Peng-666/deai-zh",
+      "url": "https://github.com/Peng-666/deai-zh",
+      "accessible": true,
+      "stars": 0,
+      "forks": 0,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-05-18T01:57:18Z",
+      "description": "中文去AI化重写 Claude Code Skill - 消除文本中的AI生成痕迹，让文字更自然有人味",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "peng-666/deai-zh@deai-zh",
+          "installs": "2",
+          "url": "https://skills.sh/peng-666/deai-zh/deai-zh",
+          "command": "npx skills add peng-666/deai-zh@deai-zh"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 40,
+      "repo": "xcc864451691/gongwen-deai-skill",
+      "url": "https://github.com/xcc864451691/gongwen-deai-skill",
+      "accessible": true,
+      "stars": 0,
+      "forks": 0,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-05-21T01:53:45Z",
+      "description": "公文去AI味写作专家。在生成工作汇报、总结、方案、计划等公文时，   自动剥离AI腔调，转换为「务实简练」的个人口吻。   去除套话开头、堆砌形容词、四字成语堆砌、过于模板化的结构。   当用户说「写工作汇报」「写总结」「写方案」「写计划」「去掉AI味」「用我的口吻」时触发。",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "xcc864451691/gongwen-deai-skill@gongwen-deai",
+          "installs": "2",
+          "url": "https://skills.sh/xcc864451691/gongwen-deai-skill/gongwen-deai",
+          "command": "npx skills add xcc864451691/gongwen-deai-skill@gongwen-deai"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 41,
+      "repo": "allblueuk/academic-deai",
+      "url": "https://github.com/allblueuk/academic-deai",
+      "accessible": false,
+      "stars": null,
+      "forks": null,
+      "parent": null,
+      "license": null,
+      "pushedAt": null,
+      "description": "",
+      "note": "CLI 有收录，但 GitHub API 此次无法解析。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "allblueuk/academic-deai@academic-deai",
+          "installs": "7",
+          "url": "https://skills.sh/allblueuk/academic-deai/academic-deai",
+          "command": "npx skills add allblueuk/academic-deai@academic-deai"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 42,
+      "repo": "DaleSeo/korean-skills",
+      "url": "https://github.com/DaleSeo/korean-skills",
+      "accessible": true,
+      "stars": 187,
+      "forks": 14,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-05-05T02:06:17Z",
+      "description": "🇰🇷 Korean language skills for AI agents",
+      "note": "韩文 humanizer。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "daleseo/korean-skills@humanizer",
+          "installs": "2.7K",
+          "url": "https://skills.sh/daleseo/korean-skills/humanizer",
+          "command": "npx skills add daleseo/korean-skills@humanizer"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 43,
+      "repo": "NomaDamas/k-skill",
+      "url": "https://github.com/NomaDamas/k-skill",
+      "accessible": true,
+      "stars": 7432,
+      "forks": 906,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-05T08:59:16Z",
+      "description": "한국인을 위한 스킬 모음집 - 에이전트를 한국인으로",
+      "note": "韩文 korean-humanizer 技能集。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "nomadamas/k-skill@korean-humanizer",
+          "installs": "2.2K",
+          "url": "https://skills.sh/nomadamas/k-skill/korean-humanizer",
+          "command": "npx skills add nomadamas/k-skill@korean-humanizer"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 44,
+      "repo": "Vladimir-Human/humanizer-ru",
+      "url": "https://github.com/Vladimir-Human/humanizer-ru",
+      "accessible": true,
+      "stars": 123,
+      "forks": 9,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-06T04:33:48Z",
+      "description": "Проверяемая гигиена вставки из чата для русского текста",
+      "note": "俄文文本卫生/粘贴处理；与另一同名项目分开。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "vladimir-human/humanizer-ru@humanizer-ru",
+          "installs": "601",
+          "url": "https://skills.sh/vladimir-human/humanizer-ru/humanizer-ru",
+          "command": "npx skills add vladimir-human/humanizer-ru@humanizer-ru"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 45,
+      "repo": "bencium/bencium-marketplace",
+      "url": "https://github.com/bencium/bencium-marketplace",
+      "accessible": true,
+      "stars": 419,
+      "forks": 57,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-30T20:11:15Z",
+      "description": "comprehensive skills based on the Anthropic Skills guide and our design and development philosophy",
+      "note": "含匈牙利文 humanizer。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "bencium/bencium-marketplace@hungarian-humanizer",
+          "installs": "819",
+          "url": "https://skills.sh/bencium/bencium-marketplace/hungarian-humanizer",
+          "command": "npx skills add bencium/bencium-marketplace@hungarian-humanizer"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 46,
+      "repo": "iKora128/stop-ai-slop-jp",
+      "url": "https://github.com/iKora128/stop-ai-slop-jp",
+      "accessible": true,
+      "stars": 447,
+      "forks": 16,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-06-11T12:04:42Z",
+      "description": "日本語の文章からAI臭を取り除く Claude Skill",
+      "note": "日文去味。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "ikora128/stop-ai-slop-jp@stop-ai-slop-jp",
+          "installs": "93",
+          "url": "https://skills.sh/ikora128/stop-ai-slop-jp/stop-ai-slop-jp",
+          "command": "npx skills add ikora128/stop-ai-slop-jp@stop-ai-slop-jp"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 47,
+      "repo": "evergreentree97/K-Humanizer",
+      "url": "https://github.com/evergreentree97/K-Humanizer",
+      "accessible": true,
+      "stars": 8,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-25T03:10:33Z",
+      "description": "An Agent Skill that makes LLM-written Korean sound natural to Korean readers while preserving facts, numbers, and domain-specific terminology.",
+      "note": "韩文去味，低 stars。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "localized"
+    },
+    {
+      "id": 48,
+      "repo": "1-SKILL/shuorenhua",
+      "url": "https://github.com/1-SKILL/shuorenhua",
+      "accessible": true,
+      "stars": 9,
+      "forks": 1,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-04-16T00:14:04Z",
+      "description": "说人话 — AI痕迹消除与文本人性化改写,查重率从60%降到30%以内",
+      "note": "与 MrGeDiao 版本不同；检测/查重宣传未验证。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "1-skill/shuorenhua@shuorenhua",
+          "installs": "65",
+          "url": "https://skills.sh/1-skill/shuorenhua/shuorenhua",
+          "command": "npx skills add 1-skill/shuorenhua@shuorenhua"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 49,
+      "repo": "taxueseek/say-it-human",
+      "url": "https://github.com/taxueseek/say-it-human",
+      "accessible": true,
+      "stars": 65,
+      "forks": 3,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-19T09:23:08Z",
+      "description": "专业消除AI味的skill",
+      "note": "含 editor-revisor、humanize-ai、voice-dissolver。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/editor-revisor/SKILL.md",
+        "skills/humanize-ai/SKILL.md",
+        "skills/voice-dissolver/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "taxueseek/say-it-human@editor-revisor",
+          "installs": "51",
+          "url": "https://skills.sh/taxueseek/say-it-human/editor-revisor",
+          "command": "npx skills add taxueseek/say-it-human@editor-revisor"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 50,
+      "repo": "cycleuser/Skills",
+      "url": "https://github.com/cycleuser/Skills",
+      "accessible": true,
+      "stars": 12,
+      "forks": 0,
+      "parent": null,
+      "license": "GPL-3.0",
+      "pushedAt": "2026-09-02T10:27:01Z",
+      "description": "Some skills written and used by myself.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "cycleuser/skills@humanizer",
+          "installs": "33",
+          "url": "https://skills.sh/cycleuser/skills/humanizer",
+          "command": "npx skills add cycleuser/skills@humanizer"
+        }
+      ],
+      "group": "localized"
+    },
+    {
+      "id": 51,
+      "repo": "alirezarezvani/claude-skills",
+      "url": "https://github.com/alirezarezvani/claude-skills",
+      "accessible": true,
+      "stars": 25587,
+      "forks": 3616,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-30T09:46:16Z",
+      "description": "380 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 380+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.",
+      "note": "含 content-humanizer；仓库总 stars 不代表子技能。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        ".gemini/skills/behuman/SKILL.md",
+        ".gemini/skills/content-humanizer/SKILL.md",
+        ".gemini/skills/human-gate/SKILL.md",
+        "engineering/behuman/skills/behuman/SKILL.md",
+        "engineering/human-gate/skills/human-gate/SKILL.md",
+        "marketing-skill/skills/content-humanizer/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "alirezarezvani/claude-skills@content-humanizer",
+          "installs": "804",
+          "url": "https://skills.sh/alirezarezvani/claude-skills/content-humanizer",
+          "command": "npx skills add alirezarezvani/claude-skills@content-humanizer"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 52,
+      "repo": "petrkindlmann/qa-skills",
+      "url": "https://github.com/petrkindlmann/qa-skills",
+      "accessible": true,
+      "stars": 110,
+      "forks": 22,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-06-10T18:06:18Z",
+      "description": "50 QA and test-automation skills for Claude Code, Codex, Cursor, and any Agent Skills Standard runtime.",
+      "note": "qa-report-humanizer，测试报告场景。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "petrkindlmann/qa-skills@qa-report-humanizer",
+          "installs": "565",
+          "url": "https://skills.sh/petrkindlmann/qa-skills/qa-report-humanizer",
+          "command": "npx skills add petrkindlmann/qa-skills@qa-report-humanizer"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 53,
+      "repo": "pproenca/dot-skills",
+      "url": "https://github.com/pproenca/dot-skills",
+      "accessible": true,
+      "stars": 202,
+      "forks": 17,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-15T17:56:06Z",
+      "description": "A collection of AI agent skills following the Agent Skills open format",
+      "note": "含 experimental humanize/human-copywrite；实验目录。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/.experimental/audio-voice-recovery/SKILL.md",
+        "skills/.experimental/human-copywrite/SKILL.md",
+        "skills/.experimental/humanize/SKILL.md",
+        "skills/.experimental/react-native-elements/SKILL.md",
+        "skills/.experimental/sonarqube-ai-slop-gate/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "pproenca/dot-skills@humanize",
+          "installs": "360",
+          "url": "https://skills.sh/pproenca/dot-skills/humanize",
+          "command": "npx skills add pproenca/dot-skills@humanize"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 54,
+      "repo": "sugarforever/01coder-agent-skills",
+      "url": "https://github.com/sugarforever/01coder-agent-skills",
+      "accessible": true,
+      "stars": 133,
+      "forks": 35,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-06-19T17:52:39Z",
+      "description": "",
+      "note": "个人中文写作风格；不是通用禁词表。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/personal-chinese-writing-style/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "sugarforever/01coder-agent-skills@personal-chinese-writing-style",
+          "installs": "359",
+          "url": "https://skills.sh/sugarforever/01coder-agent-skills/personal-chinese-writing-style",
+          "command": "npx skills add sugarforever/01coder-agent-skills@personal-chinese-writing-style"
+        },
+        {
+          "package": "sugarforever/01coder-agent-skills@personal-writing-style",
+          "installs": "283",
+          "url": "https://skills.sh/sugarforever/01coder-agent-skills/personal-writing-style",
+          "command": "npx skills add sugarforever/01coder-agent-skills@personal-writing-style"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 55,
+      "repo": "haowjy/creative-writing-skills",
+      "url": "https://github.com/haowjy/creative-writing-skills",
+      "accessible": true,
+      "stars": 447,
+      "forks": 63,
+      "parent": null,
+      "license": "Apache-2.0",
+      "pushedAt": "2026-08-08T18:57:16Z",
+      "description": "claude skills focused on creative writing",
+      "note": "风格分析和创意写作组合。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "haowjy/creative-writing-skills@project-setup",
+          "installs": "406",
+          "url": "https://skills.sh/haowjy/creative-writing-skills/project-setup",
+          "command": "npx skills add haowjy/creative-writing-skills@project-setup"
+        },
+        {
+          "package": "haowjy/creative-writing-skills@style-analysis",
+          "installs": "289",
+          "url": "https://skills.sh/haowjy/creative-writing-skills/style-analysis",
+          "command": "npx skills add haowjy/creative-writing-skills@style-analysis"
+        },
+        {
+          "package": "haowjy/creative-writing-skills@cw-prose-writing",
+          "installs": "259",
+          "url": "https://skills.sh/haowjy/creative-writing-skills/cw-prose-writing",
+          "command": "npx skills add haowjy/creative-writing-skills@cw-prose-writing"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 56,
+      "repo": "different-ai/agent-bank",
+      "url": "https://github.com/different-ai/agent-bank",
+      "accessible": true,
+      "stars": 249,
+      "forks": 45,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-04-03T18:18:43Z",
+      "description": "CLI-first banking for agents",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "different-ai/agent-bank@writing-style",
+          "installs": "377",
+          "url": "https://skills.sh/different-ai/agent-bank/writing-style",
+          "command": "npx skills add different-ai/agent-bank@writing-style"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 57,
+      "repo": "jwynia/agent-skills",
+      "url": "https://github.com/jwynia/agent-skills",
+      "accessible": true,
+      "stars": 153,
+      "forks": 19,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-02-24T02:35:14Z",
+      "description": "",
+      "note": "voice-analysis，个人文风分析。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/general/writing/analysis/voice-analysis/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "jwynia/agent-skills@voice-analysis",
+          "installs": "423",
+          "url": "https://skills.sh/jwynia/agent-skills/voice-analysis",
+          "command": "npx skills add jwynia/agent-skills@voice-analysis"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 58,
+      "repo": "third774/dotfiles",
+      "url": "https://github.com/third774/dotfiles",
+      "accessible": true,
+      "stars": 5,
+      "forks": 0,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-08-29T01:45:11Z",
+      "description": "",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "third774/dotfiles@natural-writing",
+          "installs": "69",
+          "url": "https://skills.sh/third774/dotfiles/natural-writing",
+          "command": "npx skills add third774/dotfiles@natural-writing"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 59,
+      "repo": "yyx20202020/natural-writing-skill",
+      "url": "https://github.com/yyx20202020/natural-writing-skill",
+      "accessible": true,
+      "stars": 14,
+      "forks": 1,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-07-16T08:54:41Z",
+      "description": "中英文自然写作与去 AI 味 Skill：支持事实保护、文风校准、场景路由和可审查提示词。",
+      "note": "中英文自然写作；事实保护与场景路由。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/natural-writing/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "yyx20202020/natural-writing-skill@natural-writing",
+          "installs": "24",
+          "url": "https://skills.sh/yyx20202020/natural-writing-skill/natural-writing",
+          "command": "npx skills add yyx20202020/natural-writing-skill@natural-writing"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 60,
+      "repo": "flutter/agent-plugins",
+      "url": "https://github.com/flutter/agent-plugins",
+      "accessible": true,
+      "stars": 2907,
+      "forks": 176,
+      "parent": null,
+      "license": "BSD-3-Clause",
+      "pushedAt": "2026-09-03T00:38:31Z",
+      "description": "",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        ".agents/agents/reidbaker-agent/skills/natural-writing/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "flutter/agent-plugins@natural-writing",
+          "installs": "21",
+          "url": "https://skills.sh/flutter/agent-plugins/natural-writing",
+          "command": "npx skills add flutter/agent-plugins@natural-writing"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 61,
+      "repo": "joelio/plain-english",
+      "url": "https://github.com/joelio/plain-english",
+      "accessible": true,
+      "stars": 4,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-03-15T23:24:44Z",
+      "description": "Claude Code skills for writing in plain English and British English. Reference guides for clear, accessible writing conventions.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "joelio/plain-english@natural-writing",
+          "installs": "2",
+          "url": "https://skills.sh/joelio/plain-english/natural-writing",
+          "command": "npx skills add joelio/plain-english@natural-writing"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 62,
+      "repo": "sho-das/clear-english",
+      "url": "https://github.com/sho-das/clear-english",
+      "accessible": true,
+      "stars": 2,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-09T10:36:59Z",
+      "description": "",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "extended"
+    },
+    {
+      "id": 63,
+      "repo": "tamdogood/builder-essential-skills",
+      "url": "https://github.com/tamdogood/builder-essential-skills",
+      "accessible": true,
+      "stars": 183,
+      "forks": 6,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-16T16:30:17Z",
+      "description": "A repository for skills that are essential to my daily work",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "tamdogood/builder-essential-skills@orwell-writing",
+          "installs": "162",
+          "url": "https://skills.sh/tamdogood/builder-essential-skills/orwell-writing",
+          "command": "npx skills add tamdogood/builder-essential-skills@orwell-writing"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 64,
+      "repo": "zenstory-ai/oh-story-claudecode",
+      "url": "https://github.com/zenstory-ai/oh-story-claudecode",
+      "accessible": true,
+      "stars": 6533,
+      "forks": 956,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-05T17:07:38Z",
+      "description": "网文/小说写作 skill 包，覆盖长篇与短篇网络小说的扫榜、拆文、写作、去AI味、封面图全流程 | An all-in-one skill pack for long- and short-form web fiction.",
+      "note": "中文网文 story-deslop，非商务/技术文档默认选项。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/story-deslop/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "zenstory-ai/oh-story-claudecode@story-deslop",
+          "installs": "13.5K",
+          "url": "https://skills.sh/zenstory-ai/oh-story-claudecode/story-deslop",
+          "command": "npx skills add zenstory-ai/oh-story-claudecode@story-deslop"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 65,
+      "repo": "tance-mang/chinese-webnovel-skills",
+      "url": "https://github.com/tance-mang/chinese-webnovel-skills",
+      "accessible": true,
+      "stars": 48,
+      "forks": 5,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-06-13T09:38:39Z",
+      "description": "中文网文写作工具包 · Chinese web-novel writing toolkit (23 skills) — a Claude Code plugin, also works in ChatGPT / DeepSeek / Gemini",
+      "note": "中文网文 deslop 和对白等技能。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "tance-mang/chinese-webnovel-skills@deslop",
+          "installs": "21",
+          "url": "https://skills.sh/tance-mang/chinese-webnovel-skills/deslop",
+          "command": "npx skills add tance-mang/chinese-webnovel-skills@deslop"
+        },
+        {
+          "package": "tance-mang/chinese-webnovel-skills@dialogue",
+          "installs": "19",
+          "url": "https://skills.sh/tance-mang/chinese-webnovel-skills/dialogue",
+          "command": "npx skills add tance-mang/chinese-webnovel-skills@dialogue"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 66,
+      "repo": "Chained1001/mo-shu",
+      "url": "https://github.com/Chained1001/mo-shu",
+      "accessible": true,
+      "stars": 0,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-04T18:47:22Z",
+      "description": "",
+      "note": "目录收录 moshu-deslop；零 stars，尚未细读。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "chained1001/mo-shu@moshu-deslop",
+          "installs": "13",
+          "url": "https://skills.sh/chained1001/mo-shu/moshu-deslop",
+          "command": "npx skills add chained1001/mo-shu@moshu-deslop"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 67,
+      "repo": "Wooooooooood/ai-fiction-writer",
+      "url": "https://github.com/Wooooooooood/ai-fiction-writer",
+      "accessible": true,
+      "stars": 37,
+      "forks": 7,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-06-28T13:35:08Z",
+      "description": "一套让 AI 小说「能完本」的系统。不是 prompt 堆砌，而是拆书、大纲、角色、世界、逻辑、质检、审稿十大 Skill 工程化工作流。本地化、去 AI 味、防 OOC、防吃书，让 AI 真正帮你把故事写到底。",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "extended"
+    },
+    {
+      "id": 68,
+      "repo": "every-app/open-seo",
+      "url": "https://github.com/every-app/open-seo",
+      "accessible": true,
+      "stars": 17310,
+      "forks": 2170,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-03T15:54:34Z",
+      "description": "Open source alternative to Semrush and Ahrefs",
+      "note": "SEO 项目中的 deslop；仓库总 stars 不代表子技能。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "every-app/open-seo@deslop",
+          "installs": "1.4K",
+          "url": "https://skills.sh/every-app/open-seo/deslop",
+          "command": "npx skills add every-app/open-seo@deslop"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 69,
+      "repo": "stephenturner/skill-deslop",
+      "url": "https://github.com/stephenturner/skill-deslop",
+      "accessible": true,
+      "stars": 381,
+      "forks": 25,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-03-18T17:30:41Z",
+      "description": "De-AI-ify scientific writing",
+      "note": "科研文章、摘要、基金材料等英文写作。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "stephenturner/skill-deslop@deslop",
+          "installs": "165",
+          "url": "https://skills.sh/stephenturner/skill-deslop/deslop",
+          "command": "npx skills add stephenturner/skill-deslop@deslop"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 70,
+      "repo": "glaforge/deslopify",
+      "url": "https://github.com/glaforge/deslopify",
+      "accessible": true,
+      "stars": 34,
+      "forks": 1,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-03-08T14:59:16Z",
+      "description": "A Gemini CLI skill to make text more genuine, natural, and free of AI tropes.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "glaforge/deslopify@deslopify",
+          "installs": "74",
+          "url": "https://skills.sh/glaforge/deslopify/deslopify",
+          "command": "npx skills add glaforge/deslopify@deslopify"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 71,
+      "repo": "vincentkoc/dotskills",
+      "url": "https://github.com/vincentkoc/dotskills",
+      "accessible": true,
+      "stars": 102,
+      "forks": 9,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-04T10:14:34Z",
+      "description": "🐙 A curated set of Codex and OpenClaw skills for workflow automation, technical debugging, and agent-assisted development patterns.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "vincentkoc/dotskills@technical-deslop",
+          "installs": "87",
+          "url": "https://skills.sh/vincentkoc/dotskills/technical-deslop",
+          "command": "npx skills add vincentkoc/dotskills@technical-deslop"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 72,
+      "repo": "miqdadbadjuber/anti-slop",
+      "url": "https://github.com/miqdadbadjuber/anti-slop",
+      "accessible": true,
+      "stars": 1161,
+      "forks": 89,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-05T13:12:21Z",
+      "description": "Rules for an AI coding agent to filter out generic AI-generated UI designs, text, and code.",
+      "note": "copywriting/human/UI/code 分模块，需挑具体子技能。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/antislop-code/SKILL.md",
+        "skills/antislop-copywriting/SKILL.md",
+        "skills/antislop-human/SKILL.md",
+        "skills/antislop-layoutmobile/SKILL.md",
+        "skills/antislop-ui/SKILL.md",
+        "skills/antislop/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop",
+          "installs": "628",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop",
+          "command": "npx skills add miqdadbadjuber/anti-slop@antislop"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-ui",
+          "installs": "619",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-ui",
+          "command": "npx skills add miqdadbadjuber/anti-slop@antislop-ui"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-copywriting",
+          "installs": "589",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-copywriting",
+          "command": "npx skills add miqdadbadjuber/anti-slop@antislop-copywriting"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-human",
+          "installs": "555",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-human",
+          "command": "npx skills add miqdadbadjuber/anti-slop@antislop-human"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-layoutmobile",
+          "installs": "550",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-layoutmobile",
+          "command": "npx skills add miqdadbadjuber/anti-slop@antislop-layoutmobile"
+        },
+        {
+          "package": "miqdadbadjuber/anti-slop@antislop-code",
+          "installs": "479",
+          "url": "https://skills.sh/miqdadbadjuber/anti-slop/antislop-code",
+          "command": "npx skills add miqdadbadjuber/anti-slop@antislop-code"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 73,
+      "repo": "rand/cc-polymath",
+      "url": "https://github.com/rand/cc-polymath",
+      "accessible": true,
+      "stars": 174,
+      "forks": 12,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-02-28T15:37:38Z",
+      "description": "Claude Code skills and workflows, optimized for context-efficiency and skill quality. Skills ranging from cloud infrastructure to design to advanced maths.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "rand/cc-polymath@anti-slop",
+          "installs": "615",
+          "url": "https://skills.sh/rand/cc-polymath/anti-slop",
+          "command": "npx skills add rand/cc-polymath@anti-slop"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 74,
+      "repo": "aplaceforallmystuff/the-antislop",
+      "url": "https://github.com/aplaceforallmystuff/the-antislop",
+      "accessible": true,
+      "stars": 28,
+      "forks": 2,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-18T18:08:45Z",
+      "description": "A Claude Code skill that detects and fixes AI-generated writing patterns. 35+ patterns, tiered scoring, editor mode.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "aplaceforallmystuff/the-antislop@antislop",
+          "installs": "57",
+          "url": "https://skills.sh/aplaceforallmystuff/the-antislop/antislop",
+          "command": "npx skills add aplaceforallmystuff/the-antislop@antislop"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 75,
+      "repo": "dmmulroy/anti-slop",
+      "url": "https://github.com/dmmulroy/anti-slop",
+      "accessible": true,
+      "stars": 4114,
+      "forks": 89,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-31T21:35:30Z",
+      "description": "Opinionated Oxlint rules for rejecting low-evidence TypeScript and JavaScript patterns",
+      "note": "JS/TS Oxlint 规则，排除出文本写作推荐。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "dmmulroy/anti-slop@install-anti-slop",
+          "installs": "6.4K",
+          "url": "https://skills.sh/dmmulroy/anti-slop/install-anti-slop",
+          "command": "npx skills add dmmulroy/anti-slop@install-anti-slop"
+        }
+      ],
+      "group": "extended"
+    },
+    {
+      "id": 76,
+      "repo": "Leonxlnx/taste-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "accessible": true,
+      "stars": 84663,
+      "forks": 5794,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-24T15:23:56Z",
+      "description": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop ",
+      "note": "UI/视觉审美方向，不能代替中文写作 skill。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "leonxlnx/taste-skill@design-taste-frontend",
+          "installs": "447.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/design-taste-frontend",
+          "command": "npx skills add leonxlnx/taste-skill@design-taste-frontend"
+        },
+        {
+          "package": "leonxlnx/taste-skill@high-end-visual-design",
+          "installs": "331.2K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/high-end-visual-design",
+          "command": "npx skills add leonxlnx/taste-skill@high-end-visual-design"
+        },
+        {
+          "package": "leonxlnx/taste-skill@redesign-existing-projects",
+          "installs": "327.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/redesign-existing-projects",
+          "command": "npx skills add leonxlnx/taste-skill@redesign-existing-projects"
+        },
+        {
+          "package": "leonxlnx/taste-skill@minimalist-ui",
+          "installs": "304K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/minimalist-ui",
+          "command": "npx skills add leonxlnx/taste-skill@minimalist-ui"
+        },
+        {
+          "package": "leonxlnx/taste-skill@full-output-enforcement",
+          "installs": "289.9K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/full-output-enforcement",
+          "command": "npx skills add leonxlnx/taste-skill@full-output-enforcement"
+        },
+        {
+          "package": "leonxlnx/taste-skill@industrial-brutalist-ui",
+          "installs": "283.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/industrial-brutalist-ui",
+          "command": "npx skills add leonxlnx/taste-skill@industrial-brutalist-ui"
+        },
+        {
+          "package": "leonxlnx/taste-skill@gpt-taste",
+          "installs": "282.2K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/gpt-taste",
+          "command": "npx skills add leonxlnx/taste-skill@gpt-taste"
+        },
+        {
+          "package": "leonxlnx/taste-skill@stitch-design-taste",
+          "installs": "282K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/stitch-design-taste",
+          "command": "npx skills add leonxlnx/taste-skill@stitch-design-taste"
+        },
+        {
+          "package": "leonxlnx/taste-skill@brandkit",
+          "installs": "272.2K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/brandkit",
+          "command": "npx skills add leonxlnx/taste-skill@brandkit"
+        },
+        {
+          "package": "leonxlnx/taste-skill@image-to-code",
+          "installs": "267.3K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/image-to-code",
+          "command": "npx skills add leonxlnx/taste-skill@image-to-code"
+        },
+        {
+          "package": "leonxlnx/taste-skill@imagegen-frontend-web",
+          "installs": "265.7K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/imagegen-frontend-web",
+          "command": "npx skills add leonxlnx/taste-skill@imagegen-frontend-web"
+        },
+        {
+          "package": "leonxlnx/taste-skill@imagegen-frontend-mobile",
+          "installs": "260.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/imagegen-frontend-mobile",
+          "command": "npx skills add leonxlnx/taste-skill@imagegen-frontend-mobile"
+        },
+        {
+          "package": "leonxlnx/taste-skill@design-taste-frontend-v1",
+          "installs": "218.5K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/design-taste-frontend-v1",
+          "command": "npx skills add leonxlnx/taste-skill@design-taste-frontend-v1"
+        },
+        {
+          "package": "leonxlnx/taste-skill@image-taste-frontend",
+          "installs": "3.7K",
+          "url": "https://skills.sh/leonxlnx/taste-skill/image-taste-frontend",
+          "command": "npx skills add leonxlnx/taste-skill@image-taste-frontend"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 77,
+      "repo": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "accessible": true,
+      "stars": 65865,
+      "forks": 4046,
+      "parent": null,
+      "license": "Apache-2.0",
+      "pushedAt": "2026-09-05T23:41:23Z",
+      "description": "The design language that makes your AI harness better at design.",
+      "note": "前端设计体系，不能代替文章润色。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "pbakaus/impeccable@impeccable",
+          "installs": "263.7K",
+          "url": "https://skills.sh/pbakaus/impeccable/impeccable",
+          "command": "npx skills add pbakaus/impeccable@impeccable"
+        },
+        {
+          "package": "pbakaus/impeccable@polish",
+          "installs": "87.2K",
+          "url": "https://skills.sh/pbakaus/impeccable/polish",
+          "command": "npx skills add pbakaus/impeccable@polish"
+        },
+        {
+          "package": "pbakaus/impeccable@critique",
+          "installs": "84.6K",
+          "url": "https://skills.sh/pbakaus/impeccable/critique",
+          "command": "npx skills add pbakaus/impeccable@critique"
+        },
+        {
+          "package": "pbakaus/impeccable@audit",
+          "installs": "83.8K",
+          "url": "https://skills.sh/pbakaus/impeccable/audit",
+          "command": "npx skills add pbakaus/impeccable@audit"
+        },
+        {
+          "package": "pbakaus/impeccable@animate",
+          "installs": "83.7K",
+          "url": "https://skills.sh/pbakaus/impeccable/animate",
+          "command": "npx skills add pbakaus/impeccable@animate"
+        },
+        {
+          "package": "pbakaus/impeccable@adapt",
+          "installs": "83.7K",
+          "url": "https://skills.sh/pbakaus/impeccable/adapt",
+          "command": "npx skills add pbakaus/impeccable@adapt"
+        },
+        {
+          "package": "pbakaus/impeccable@clarify",
+          "installs": "83.2K",
+          "url": "https://skills.sh/pbakaus/impeccable/clarify",
+          "command": "npx skills add pbakaus/impeccable@clarify"
+        },
+        {
+          "package": "pbakaus/impeccable@optimize",
+          "installs": "83K",
+          "url": "https://skills.sh/pbakaus/impeccable/optimize",
+          "command": "npx skills add pbakaus/impeccable@optimize"
+        },
+        {
+          "package": "pbakaus/impeccable@colorize",
+          "installs": "82.8K",
+          "url": "https://skills.sh/pbakaus/impeccable/colorize",
+          "command": "npx skills add pbakaus/impeccable@colorize"
+        },
+        {
+          "package": "pbakaus/impeccable@bolder",
+          "installs": "81.9K",
+          "url": "https://skills.sh/pbakaus/impeccable/bolder",
+          "command": "npx skills add pbakaus/impeccable@bolder"
+        },
+        {
+          "package": "pbakaus/impeccable@delight",
+          "installs": "81.8K",
+          "url": "https://skills.sh/pbakaus/impeccable/delight",
+          "command": "npx skills add pbakaus/impeccable@delight"
+        },
+        {
+          "package": "pbakaus/impeccable@distill",
+          "installs": "81.4K",
+          "url": "https://skills.sh/pbakaus/impeccable/distill",
+          "command": "npx skills add pbakaus/impeccable@distill"
+        },
+        {
+          "package": "pbakaus/impeccable@quieter",
+          "installs": "80.5K",
+          "url": "https://skills.sh/pbakaus/impeccable/quieter",
+          "command": "npx skills add pbakaus/impeccable@quieter"
+        },
+        {
+          "package": "pbakaus/impeccable@typeset",
+          "installs": "66.2K",
+          "url": "https://skills.sh/pbakaus/impeccable/typeset",
+          "command": "npx skills add pbakaus/impeccable@typeset"
+        },
+        {
+          "package": "pbakaus/impeccable@overdrive",
+          "installs": "64.3K",
+          "url": "https://skills.sh/pbakaus/impeccable/overdrive",
+          "command": "npx skills add pbakaus/impeccable@overdrive"
+        },
+        {
+          "package": "pbakaus/impeccable@normalize",
+          "installs": "55.8K",
+          "url": "https://skills.sh/pbakaus/impeccable/normalize",
+          "command": "npx skills add pbakaus/impeccable@normalize"
+        },
+        {
+          "package": "pbakaus/impeccable@extract",
+          "installs": "54.7K",
+          "url": "https://skills.sh/pbakaus/impeccable/extract",
+          "command": "npx skills add pbakaus/impeccable@extract"
+        },
+        {
+          "package": "pbakaus/impeccable@onboard",
+          "installs": "54.5K",
+          "url": "https://skills.sh/pbakaus/impeccable/onboard",
+          "command": "npx skills add pbakaus/impeccable@onboard"
+        },
+        {
+          "package": "pbakaus/impeccable@harden",
+          "installs": "54.5K",
+          "url": "https://skills.sh/pbakaus/impeccable/harden",
+          "command": "npx skills add pbakaus/impeccable@harden"
+        },
+        {
+          "package": "pbakaus/impeccable@teach-impeccable",
+          "installs": "51.4K",
+          "url": "https://skills.sh/pbakaus/impeccable/teach-impeccable",
+          "command": "npx skills add pbakaus/impeccable@teach-impeccable"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 78,
+      "repo": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "accessible": true,
+      "stars": 174639,
+      "forks": 20682,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-09-03T16:37:14Z",
+      "description": "Public repository for Agent Skills",
+      "note": "官方集合；frontend-design 属 UI，相邻而非文本去味。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "design"
+    },
+    {
+      "id": 79,
+      "repo": "github/awesome-copilot",
+      "url": "https://github.com/github/awesome-copilot",
+      "accessible": true,
+      "stars": 38675,
+      "forks": 4890,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-06T03:03:47Z",
+      "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
+      "note": "社区集合；finnish-humanizer 和 anti-ui-slop 分属两类。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "skills/anti-ui-slop/SKILL.md",
+        "skills/finnish-humanizer/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "github/awesome-copilot@finnish-humanizer",
+          "installs": "9.2K",
+          "url": "https://skills.sh/github/awesome-copilot/finnish-humanizer",
+          "command": "npx skills add github/awesome-copilot@finnish-humanizer"
+        },
+        {
+          "package": "github/awesome-copilot@anti-ui-slop",
+          "installs": "514",
+          "url": "https://skills.sh/github/awesome-copilot/anti-ui-slop",
+          "command": "npx skills add github/awesome-copilot@anti-ui-slop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 80,
+      "repo": "LearnPrompt/humanize-ppt",
+      "url": "https://github.com/LearnPrompt/humanize-ppt",
+      "accessible": true,
+      "stars": 925,
+      "forks": 79,
+      "parent": null,
+      "license": "NOASSERTION",
+      "pushedAt": "2026-07-31T08:08:39Z",
+      "description": "AST-based outline director for human-centered AI presentation workflows.",
+      "note": "演示文稿大纲/叙事方向。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "learnprompt/humanize-ppt@humanize-ppt",
+          "installs": "509",
+          "url": "https://skills.sh/learnprompt/humanize-ppt/humanize-ppt",
+          "command": "npx skills add learnprompt/humanize-ppt@humanize-ppt"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 81,
+      "repo": "MengTo/Skills",
+      "url": "https://github.com/MengTo/Skills",
+      "accessible": true,
+      "stars": 5817,
+      "forks": 695,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-28T23:38:17Z",
+      "description": "Agent skills for designers and builders using Codex, Claude, Cursor, and other AI coding agents",
+      "note": "no-ai-design-slop，UI 方向。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "mengto/skills@no-ai-design-slop",
+          "installs": "277",
+          "url": "https://skills.sh/mengto/skills/no-ai-design-slop",
+          "command": "npx skills add mengto/skills@no-ai-design-slop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 82,
+      "repo": "samber/cc-skills",
+      "url": "https://github.com/samber/cc-skills",
+      "accessible": true,
+      "stars": 203,
+      "forks": 15,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-05T01:01:11Z",
+      "description": "🧑‍🎨 A collection of agentic skills that works",
+      "note": "frontend-design-deslop，UI 方向。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "samber/cc-skills@frontend-design-deslop",
+          "installs": "2.2K",
+          "url": "https://skills.sh/samber/cc-skills/frontend-design-deslop",
+          "command": "npx skills add samber/cc-skills@frontend-design-deslop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 83,
+      "repo": "cursor/plugins",
+      "url": "https://github.com/cursor/plugins",
+      "accessible": true,
+      "stars": 6937,
+      "forks": 581,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-09-04T21:32:57Z",
+      "description": "Cursor plugin specification and official plugins",
+      "note": "deslop 处理代码，排除出文章去味推荐。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [
+        "cursor-team-kit/skills/deslop/SKILL.md",
+        "pstack/skills/principle-never-block-on-the-human/SKILL.md",
+        "pstack/skills/unslop/SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "cursor/plugins@deslop",
+          "installs": "5.3K",
+          "url": "https://skills.sh/cursor/plugins/deslop",
+          "command": "npx skills add cursor/plugins@deslop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 84,
+      "repo": "brianlovin/agent-config",
+      "url": "https://github.com/brianlovin/agent-config",
+      "accessible": true,
+      "stars": 364,
+      "forks": 31,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-03-25T17:52:51Z",
+      "description": "My coding agent config",
+      "note": "deslop 属编码配置，排除出文章去味推荐。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "brianlovin/agent-config@deslop",
+          "installs": "3.8K",
+          "url": "https://skills.sh/brianlovin/agent-config/deslop",
+          "command": "npx skills add brianlovin/agent-config@deslop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 85,
+      "repo": "jssblck/agents",
+      "url": "https://github.com/jssblck/agents",
+      "accessible": true,
+      "stars": 0,
+      "forks": 0,
+      "parent": null,
+      "license": "GPL-3.0",
+      "pushedAt": "2026-09-06T02:26:43Z",
+      "description": "Jess's agent skills/plugins/etc",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "jssblck/agents@stop-slop",
+          "installs": "925",
+          "url": "https://skills.sh/jssblck/agents/stop-slop",
+          "command": "npx skills add jssblck/agents@stop-slop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 86,
+      "repo": "elithrar/dotfiles",
+      "url": "https://github.com/elithrar/dotfiles",
+      "accessible": true,
+      "stars": 203,
+      "forks": 15,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-05T10:48:00Z",
+      "description": "dotfiles for my macOS & Linux environments ⌨️",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "elithrar/dotfiles@anti-slop",
+          "installs": "99",
+          "url": "https://skills.sh/elithrar/dotfiles/anti-slop",
+          "command": "npx skills add elithrar/dotfiles@anti-slop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 87,
+      "repo": "b4r7x/agent-skills",
+      "url": "https://github.com/b4r7x/agent-skills",
+      "accessible": true,
+      "stars": 0,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-06T08:38:57Z",
+      "description": "",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "b4r7x/agent-skills@anti-slop",
+          "installs": "69",
+          "url": "https://skills.sh/b4r7x/agent-skills/anti-slop",
+          "command": "npx skills add b4r7x/agent-skills@anti-slop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 88,
+      "repo": "iuliandita/skills",
+      "url": "https://github.com/iuliandita/skills",
+      "accessible": true,
+      "stars": 6,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-04T08:09:37Z",
+      "description": "46 skills for DevOps, security, infra, and software engineering, maintained with lint/spec checks, behavioral test coverage, and a Karpathy-style autoresearch loop.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "iuliandita/skills@anti-slop",
+          "installs": "35",
+          "url": "https://skills.sh/iuliandita/skills/anti-slop",
+          "command": "npx skills add iuliandita/skills@anti-slop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 89,
+      "repo": "Gesso-Build/skills",
+      "url": "https://github.com/Gesso-Build/skills",
+      "accessible": true,
+      "stars": 84,
+      "forks": 4,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-25T21:01:06Z",
+      "description": "Deterministic design critique for HTML/CSS: 73 slop guards from the rules professional designers use in production-grade designs. Exact detectors, idempotent auto-fixes, the anti-slop skill, and the /gesso-critique command. By Gesso, the AI creative team for builders.",
+      "note": "确定性设计检测，UI 方向。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "gesso-build/skills@anti-slop",
+          "installs": "20",
+          "url": "https://skills.sh/gesso-build/skills/anti-slop",
+          "command": "npx skills add gesso-build/skills@anti-slop"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 90,
+      "repo": "jzOcb/writing-style-skill",
+      "url": "https://github.com/jzOcb/writing-style-skill",
+      "accessible": true,
+      "stars": 264,
+      "forks": 28,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-03-24T21:52:55Z",
+      "description": "Writing style skill template with built-in auto-learning. AI writes → you edit → rules auto-extracted → SKILL.md improves. Works with Claude Code + OpenClaw.",
+      "note": "从用户修改 diff 提取风格规则；有脚本和写文件行为。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [
+        {
+          "package": "jzocb/writing-style-skill@writing-style-skill",
+          "installs": "51",
+          "url": "https://skills.sh/jzocb/writing-style-skill/writing-style-skill",
+          "command": "npx skills add jzocb/writing-style-skill@writing-style-skill"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 91,
+      "repo": "social-media-skills/skills",
+      "url": "https://github.com/social-media-skills/skills",
+      "accessible": true,
+      "stars": 67,
+      "forks": 16,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-03T19:55:05Z",
+      "description": "106 social media skills for AI agents - strategy, writing, video, design, platform growth, publishing, and analytics. Works with Claude, Cursor, OpenClaw, Hermes & 40+ agents.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "social-media-skills/skills@writing-style-and-tone",
+          "installs": "183",
+          "url": "https://skills.sh/social-media-skills/skills/writing-style-and-tone",
+          "command": "npx skills add social-media-skills/skills@writing-style-and-tone"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 92,
+      "repo": "simota/agent-skills",
+      "url": "https://github.com/simota/agent-skills",
+      "accessible": true,
+      "stars": 75,
+      "forks": 13,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-02T12:04:34Z",
+      "description": "90 specialist AI agents + 3 project-local extensions for Claude Code / Codex CLI / Antigravity CLI (agy). Anthropic Agent Skills spec-aligned, hub-spoke orchestration via Nexus with 49 Recipes and 11 Skill Packs. Covers development, security, design, testing, FinOps, compliance, observability, and AI/ML.",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "simota/agent-skills@voice",
+          "installs": "187",
+          "url": "https://skills.sh/simota/agent-skills/voice",
+          "command": "npx skills add simota/agent-skills@voice"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 93,
+      "repo": "majesticlabs-dev/majestic-marketplace",
+      "url": "https://github.com/majesticlabs-dev/majestic-marketplace",
+      "accessible": true,
+      "stars": 49,
+      "forks": 10,
+      "parent": null,
+      "license": "NOASSERTION",
+      "pushedAt": "2026-05-13T20:44:19Z",
+      "description": "",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "majesticlabs-dev/majestic-marketplace@brand-voice",
+          "installs": "58",
+          "url": "https://skills.sh/majesticlabs-dev/majestic-marketplace/brand-voice",
+          "command": "npx skills add majesticlabs-dev/majestic-marketplace@brand-voice"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 94,
+      "repo": "reactjs/react.dev",
+      "url": "https://github.com/reactjs/react.dev",
+      "accessible": true,
+      "stars": 11798,
+      "forks": 7945,
+      "parent": null,
+      "license": "CC-BY-4.0",
+      "pushedAt": "2026-09-03T08:11:11Z",
+      "description": "The React documentation website",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "reactjs/react.dev@docs-voice",
+          "installs": "64",
+          "url": "https://skills.sh/reactjs/react.dev/docs-voice",
+          "command": "npx skills add reactjs/react.dev@docs-voice"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 95,
+      "repo": "numen-tech/slopornot",
+      "url": "https://github.com/numen-tech/slopornot",
+      "accessible": true,
+      "stars": 46,
+      "forks": 4,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-07-02T19:56:07Z",
+      "description": "Agentic AI Humanizer Skill for Codex, Claude and OpenClaw: Bypass AI Detectors",
+      "note": "相关目录候选；仅核对仓库身份与简介，未做效果测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [
+        {
+          "package": "numen-tech/slopornot@slop-check",
+          "installs": "45",
+          "url": "https://skills.sh/numen-tech/slopornot/slop-check",
+          "command": "npx skills add numen-tech/slopornot@slop-check"
+        }
+      ],
+      "group": "design"
+    },
+    {
+      "id": 96,
+      "repo": "alchaincyf/tramstop-skill",
+      "url": "https://github.com/alchaincyf/tramstop-skill",
+      "accessible": true,
+      "stars": 37,
+      "forks": 7,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-25T03:02:34Z",
+      "description": "电车站.skill — 人味不是删出来的。Evidence-based de-slop skill: 四层AI味模型+真实素材注入，来自四版本盲测实验",
+      "note": "中文真实素材与结构改写；作者实验未独立复现。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [],
+      "group": "extra"
+    },
+    {
+      "id": 97,
+      "repo": "hylarucoder/ai-flavor-remover",
+      "url": "https://github.com/hylarucoder/ai-flavor-remover",
+      "accessible": true,
+      "stars": 1148,
+      "forks": 73,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2025-04-02T14:35:03Z",
+      "description": "AI 味去除 - 仅在 Gemini 2.5 Pro 上测试通过",
+      "note": "README 内的长 prompt；作者仅报告 Gemini 2.5 Pro 测试。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "extra"
+    },
+    {
+      "id": 98,
+      "repo": "superchun/no-slop-zh",
+      "url": "https://github.com/superchun/no-slop-zh",
+      "accessible": true,
+      "stars": 28,
+      "forks": 2,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-07-31T05:36:17Z",
+      "description": "",
+      "note": "中文保真、术语与命令保护；低 stars。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "extra"
+    },
+    {
+      "id": 99,
+      "repo": "conorbronsdon/avoid-ai-writing",
+      "url": "https://github.com/conorbronsdon/avoid-ai-writing",
+      "accessible": true,
+      "stars": 4136,
+      "forks": 349,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-06T03:03:43Z",
+      "description": "Skill that audits and rewrites content to remove AI writing patterns. Use it with your favorite agents including Claude Code, OpenClaw, Codex, and Hermes.",
+      "note": "英文审稿、改写、文件编辑和文风配置。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [],
+      "group": "forum"
+    },
+    {
+      "id": 100,
+      "repo": "yzhao062/agent-style",
+      "url": "https://github.com/yzhao062/agent-style",
+      "accessible": true,
+      "stars": 671,
+      "forks": 34,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-09-04T01:27:51Z",
+      "description": "21 writing rules for AI coding and writing agents. Drop-in for Claude Code, Codex, Copilot, Cursor, and Aider, so their output reads like a tech pro.",
+      "note": "技术写作规则与评审工具；作者 bench 未复现。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "forum"
+    },
+    {
+      "id": 101,
+      "repo": "WantongC/journal-adapt-writing-skill",
+      "url": "https://github.com/WantongC/journal-adapt-writing-skill",
+      "accessible": true,
+      "stars": 770,
+      "forks": 46,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-05-15T03:18:22Z",
+      "description": "Learn any journal's writing conventions from its published papers, then revise your manuscript to match — section by section.",
+      "note": "从目标期刊语料生成写作规范，属相邻方法。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "forum"
+    },
+    {
+      "id": 102,
+      "repo": "KKKKhazix/human-writing",
+      "url": "https://github.com/KKKKhazix/human-writing",
+      "accessible": true,
+      "stars": 3465,
+      "forks": 268,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-11T15:07:45Z",
+      "description": "让 AI 写的中文读起来像一个具体的人在说话。通用创作与改稿 Skill，开箱即用。",
+      "note": "中文创作和改稿，强调具体人物声音。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 103,
+      "repo": "chengzhi-c/natural-talk",
+      "url": "https://github.com/chengzhi-c/natural-talk",
+      "accessible": true,
+      "stars": 38,
+      "forks": 1,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-04T12:19:40Z",
+      "description": "让 AI 像人一样说话、创作的规则集。Ruleset for making AI talk and write like a human.",
+      "note": "对话和创作规则，非仅文章后处理。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 104,
+      "repo": "rephrasyai/rephrasy-skills",
+      "url": "https://github.com/rephrasyai/rephrasy-skills",
+      "accessible": true,
+      "stars": 4,
+      "forks": 1,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-01T19:04:21Z",
+      "description": "Free content skills for AI agents. Humanize AI text, keep your keywords intact, ship agency-quality drafts. Free, MIT, works across Claude Code, Codex, Cursor and ChatGPT.",
+      "note": "供应商发布的内容技能；执行前另审依赖与联网。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 105,
+      "repo": "ilyautov/humanizer-ru",
+      "url": "https://github.com/ilyautov/humanizer-ru",
+      "accessible": true,
+      "stars": 286,
+      "forks": 21,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-09-04T20:44:03Z",
+      "description": "Скилл для Claude. Убирает 64 признака нейросети в русском тексте: канцелярит, кальки, фингерпринты ChatGPT и Claude. Метит в то, что меряют GPTZero, DivEye, RuBERT: поднимает perplexity и burstiness. 20 жёстких банов, quad-pass аудит, калибровка под голос автора, eval-харнес с метриками до/после.",
+      "note": "俄文版本，非 vladimir-human 同名项目；安装子目录需核实。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 106,
+      "repo": "JCarterJohnson/vibecoded-design-tells",
+      "url": "https://github.com/JCarterJohnson/vibecoded-design-tells",
+      "accessible": true,
+      "stars": 481,
+      "forks": 29,
+      "parent": null,
+      "license": "NOASSERTION",
+      "pushedAt": "2026-06-24T01:10:58Z",
+      "description": "Reddit-mined data ranking the visual tells of vibe-coded (AI-built) sites: 3.2M posts scanned across 47 subreddits, with scripts, raw data, and charts.",
+      "note": "含 unslop-text、unslop-ui、unslop-code 及数据研究。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 107,
+      "repo": "SadhvikChirunomula/measured-humanizer",
+      "url": "https://github.com/SadhvikChirunomula/measured-humanizer",
+      "accessible": true,
+      "stars": 2,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-08-12T14:16:20Z",
+      "description": "",
+      "note": "校准、测量和改写循环；极低 stars，仅实验线索。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 108,
+      "repo": "stephenlzc/humanize-mba-text-skill",
+      "url": "https://github.com/stephenlzc/humanize-mba-text-skill",
+      "accessible": true,
+      "stars": 43,
+      "forks": 6,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-07-08T10:20:54Z",
+      "description": "去除中文MBA论文AI写作痕迹的检测与改写工具 | AI writing pattern detection and removal tool for Chinese MBA thesis",
+      "note": "中文 MBA 论文；规则数据化和扫描工作流。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 109,
+      "repo": "Daguilar0123/ai-writing-skill-field-guide",
+      "url": "https://github.com/Daguilar0123/ai-writing-skill-field-guide",
+      "accessible": true,
+      "stars": 1,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-07-30T13:41:40Z",
+      "description": "Measured survey of 68 open-source AI-humanizer skills — plus the output evaluation the field never published. Stars and maintenance are uncorrelated.",
+      "note": "第三方 68 项调研与测试资料，不是去味执行 skill。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 110,
+      "repo": "theclaymethod/unslop",
+      "url": "https://github.com/theclaymethod/unslop",
+      "accessible": true,
+      "stars": 355,
+      "forks": 11,
+      "parent": null,
+      "license": null,
+      "pushedAt": "2026-08-05T21:01:19Z",
+      "description": "An agent skill to de-AI your writing",
+      "note": "英文 audit-only 与诊断后重写，两阶段结构。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 111,
+      "repo": "asavvin-pixel/unslop",
+      "url": "https://github.com/asavvin-pixel/unslop",
+      "accessible": true,
+      "stars": 63,
+      "forks": 5,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-07-14T17:34:09Z",
+      "description": "English text humanizer for Claude: typography, vocabulary, structure. Calibrates to your voice. Built on the UMD / Google DeepMind study and Wikipedia's Signs of AI writing",
+      "note": "英文三层处理及用户文风校准；论文依据未独立核实。",
+      "rootSkillPresent": true,
+      "downloadedSkillPaths": [
+        "SKILL.md"
+      ],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 112,
+      "repo": "jere-mie/unslop",
+      "url": "https://github.com/jere-mie/unslop",
+      "accessible": true,
+      "stars": 6,
+      "forks": 1,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-04-05T13:49:20Z",
+      "description": "Clean up the AI \"slop\" from your text. A CLI tool that removes some tell-tale signs of LLM-generated text (curly quotes, em-dashes, and non-breaking spaces)",
+      "note": "Zig 字符/标点清理 CLI，不是语义改写 skill。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 113,
+      "repo": "mdeloughry/unslop",
+      "url": "https://github.com/mdeloughry/unslop",
+      "accessible": true,
+      "stars": 0,
+      "forks": 0,
+      "parent": null,
+      "license": "MIT",
+      "pushedAt": "2026-04-01T18:14:32Z",
+      "description": "Detect and fix AI writing patterns in Obsidian — clichés, jargon, passive voice, and more.",
+      "note": "Obsidian 插件；可选改写会调用外部模型。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "social"
+    },
+    {
+      "id": 114,
+      "repo": "cj-vana/unslop-ci",
+      "url": "https://github.com/cj-vana/unslop-ci",
+      "accessible": true,
+      "stars": 1,
+      "forks": 0,
+      "parent": null,
+      "license": "NOASSERTION",
+      "pushedAt": "2026-07-21T16:04:57Z",
+      "description": "Diff-aware CI gate for AI slop: scans only the lines a PR adds for the tells that make code, prose, and UI read as AI-generated",
+      "note": "PR 新增行规则门禁，非通用文章改写。",
+      "rootSkillPresent": false,
+      "downloadedSkillPaths": [],
+      "packages": [],
+      "group": "social"
+    }
+  ]
+}

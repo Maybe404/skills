@@ -1,0 +1,11 @@
+id: skill-merge
+name: skill 合并与增量同步
+kind: original
+status: active
+language:
+  - zh
+path: skills/skill-merge
+merge_instance: null
+replacement: null
+archived_at: null
+reason: null

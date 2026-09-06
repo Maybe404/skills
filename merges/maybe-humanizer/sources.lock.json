@@ -1,0 +1,144 @@
+{
+  "merge_id": "maybe-humanizer",
+  "generated_at": "2026-09-06T09:54:35Z",
+  "sources": {
+    "upstream-petergyang-no-ai-slop": {
+      "last_seen_commit": null,
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": null,
+      "normalized_sha256": null,
+      "size": null,
+      "line_count": null,
+      "files": [
+        {
+          "original_path": "skills/no-ai-slop/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-petergyang-no-ai-slop/skills/no-ai-slop/SKILL.source.md",
+          "raw_sha256": null,
+          "normalized_sha256": null
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T09:54:35Z",
+          "value": 7314
+        }
+      ],
+      "forks": 545,
+      "installs": null,
+      "last_checked_at": "2026-09-06T09:54:35Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-lifelonglazylearner-qu-ai-wei": {
+      "last_seen_commit": null,
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": null,
+      "normalized_sha256": null,
+      "size": null,
+      "line_count": null,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-lifelonglazylearner-qu-ai-wei/SKILL.source.md",
+          "raw_sha256": null,
+          "normalized_sha256": null
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T09:54:35Z",
+          "value": 531
+        }
+      ],
+      "forks": 41,
+      "installs": null,
+      "last_checked_at": "2026-09-06T09:54:35Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-jzocb-writing-style-skill": {
+      "last_seen_commit": null,
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": null,
+      "normalized_sha256": null,
+      "size": null,
+      "line_count": null,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": null,
+          "raw_sha256": null,
+          "normalized_sha256": null
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T09:54:35Z",
+          "value": 264
+        }
+      ],
+      "forks": 28,
+      "installs": null,
+      "last_checked_at": "2026-09-06T09:54:35Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-aboudjem-humanizer-skill": {
+      "last_seen_commit": null,
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": null,
+      "normalized_sha256": null,
+      "size": null,
+      "line_count": null,
+      "files": [
+        {
+          "original_path": "skills/humanizer/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aboudjem-humanizer-skill/skills/humanizer/SKILL.source.md",
+          "raw_sha256": null,
+          "normalized_sha256": null
+        },
+        {
+          "original_path": "skills/humanizer/references/always-on-templates.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aboudjem-humanizer-skill/skills/humanizer/references/always-on-templates.md",
+          "raw_sha256": null,
+          "normalized_sha256": null
+        },
+        {
+          "original_path": "skills/humanizer/references/patterns.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aboudjem-humanizer-skill/skills/humanizer/references/patterns.md",
+          "raw_sha256": null,
+          "normalized_sha256": null
+        },
+        {
+          "original_path": "skills/humanizer/references/patterns.zh.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aboudjem-humanizer-skill/skills/humanizer/references/patterns.zh.md",
+          "raw_sha256": null,
+          "normalized_sha256": null
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T09:54:35Z",
+          "value": 215
+        }
+      ],
+      "forks": 32,
+      "installs": null,
+      "last_checked_at": "2026-09-06T09:54:35Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    }
+  }
+}
