@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Maybe404/skills/tools/upstream-monitor/schemas/decisions.schema.json",
+  "title": "merge decisions",
+  "description": "merges/<id>/decisions.yaml 的结构。skill 写入，代码校验。每条记录一个可判定的规则单元，以及对它的取舍结论、证据和历史。skills/<id>/SOURCES.md 由代码从这个文件渲染。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["merge_id", "rules"],
+  "properties": {
+    "merge_id": {
+      "description": "merge 实例标识，必须与同目录 sources.yaml 的 merge_id 一致。",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "rules": {
+      "description": "规则单元列表。首次合并前为空数组。",
+      "type": "array",
+      "items": { "$ref": "#/$defs/rule" }
+    }
+  },
+  "$defs": {
+    "decisionEnum": {
+      "description": "取舍结论。adopted 原样采用；adopted-with-modification 改写后采用；duplicate 与已有规则重复；rejected 不采用；deferred 暂缓；reference-only 只作参考不进正文；unverified 无法验证，暂挂；retired 曾经采用现已撤下。",
+      "enum": [
+        "adopted",
+        "adopted-with-modification",
+        "duplicate",
+        "rejected",
+        "deferred",
+        "reference-only",
+        "unverified",
+        "retired"
+      ]
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "local",
+        "category",
+        "language",
+        "rule_summary",
+        "decision",
+        "decision_origin",
+        "decision_revision",
+        "decided_at",
+        "evidence_count",
+        "independent_sources",
+        "sources",
+        "rationale"
+      ],
+      "properties": {
+        "id": {
+          "description": "规则单元的稳定标识，格式 <前缀>-<类别码>-<三位数>，例如 ZH-P-012、EN-P-004、ALL-PROT-003。前缀 ZH、EN、ALL 对应规则适用的语言，类别码是 category 的大写缩写。分配后不改。",
+          "type": "string",
+          "pattern": "^(ZH|EN|ALL)-[A-Z]{1,5}-[0-9]{3}$"
+        },
+        "local": {
+          "description": "这条规则在本仓库落到哪里。",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["skill", "path", "anchor"],
+          "properties": {
+            "skill": {
+              "description": "承载这条规则的 skill id。",
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "path": {
+              "description": "文件路径，相对仓库根。",
+              "type": "string",
+              "minLength": 1
+            },
+            "anchor": {
+              "description": "文件内定位，用小节标题或稳定的行首文本，不用行号。规则尚未落地时为 null。",
+              "type": ["string", "null"]
+            }
+          }
+        },
+        "category": {
+          "description": "规则类别。pattern 指可识别的写法模式；protection 指必须保留的事实、术语、数字、命令；process 指流程步骤；style-opinion 指风格主张；genre 指体裁适配；measurement 指验证与度量方式。",
+          "enum": ["pattern", "protection", "process", "style-opinion", "genre", "measurement"]
+        },
+        "language": {
+          "description": "规则适用的语言。both 表示中英文都适用。",
+          "enum": ["zh", "en", "both"]
+        },
+        "rule_summary": {
+          "description": "一句话说明这条规则要求什么，必须可判定：能指出一句话里哪里违反了它。",
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": { "$ref": "#/$defs/decisionEnum" },
+        "decision_origin": {
+          "description": "结论来源。model-proposed 是模型提出、尚未人工确认；human-approved 是人工确认过。合并 PR 前要把该 PR 内的 model-proposed 改成 human-approved。",
+          "enum": ["model-proposed", "human-approved"]
+        },
+        "decision_revision": {
+          "description": "结论的版本号，从 1 起。每次改 decision 加一，旧值进 history。",
+          "type": "integer",
+          "minimum": 1
+        },
+        "decided_at": {
+          "description": "当前结论的确定时间，ISO 8601 date-time。",
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence_count": {
+          "description": "支持这条规则的证据条数，即 sources 的长度。只是证据，不用票数自动决定采用。",
+          "type": "integer",
+          "minimum": 0
+        },
+        "independent_sources": {
+          "description": "支持这条规则的独立来源数，同一谱系的多个仓库只计一次。",
+          "type": "integer",
+          "minimum": 0
+        },
+        "sources": {
+          "description": "证据出处列表。type 为 upstream 时 source_id 必须存在于同目录 sources.yaml。",
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidence" }
+        },
+        "rationale": {
+          "description": "取舍理由。不得引用 snapshot_policy 为 metadata-only 的来源的原文，只写思路。",
+          "type": "string",
+          "minLength": 1
+        },
+        "history": {
+          "description": "结论的变更历史，从旧到新。",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["decision", "at", "reason"],
+            "properties": {
+              "decision": { "$ref": "#/$defs/decisionEnum" },
+              "at": {
+                "description": "这次变更的时间，ISO 8601 date-time。",
+                "type": "string",
+                "format": "date-time"
+              },
+              "reason": {
+                "description": "改成这个结论的理由。",
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "default": []
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "source_id", "path", "commit", "anchor"],
+      "properties": {
+        "type": {
+          "description": "证据类型。upstream 来自上游来源；self 来自本仓库自身正文，用于原创 skill 首次吸收上游前的基线。",
+          "enum": ["upstream", "self"]
+        },
+        "source_id": {
+          "description": "type 为 upstream 时是 sources.yaml 里的来源主键；type 为 self 时固定为 self。",
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "description": "证据所在文件路径。upstream 写上游仓库内路径，self 写本仓库路径。",
+          "type": "string",
+          "minLength": 1
+        },
+        "commit": {
+          "description": "证据对应的提交；本仓库自身或无法定位时为 null。",
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "anchor": {
+          "description": "文件内定位，用小节标题或稳定的行首文本，不用行号。",
+          "type": ["string", "null"]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "self" } }, "required": ["type"] },
+          "then": { "properties": { "source_id": { "const": "self" } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "upstream" } }, "required": ["type"] },
+          "then": {
+            "properties": {
+              "source_id": { "pattern": "^upstream-[a-z0-9][a-z0-9._-]*$" }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

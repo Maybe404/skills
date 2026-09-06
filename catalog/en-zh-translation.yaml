@@ -1,0 +1,10 @@
+id: en-zh-translation
+name: 英译中
+kind: original
+status: active
+language: [zh, en]
+path: skills/en-zh-translation
+merge_instance: null
+replacement: null
+archived_at: null
+reason: null

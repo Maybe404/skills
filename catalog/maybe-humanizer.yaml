@@ -1,0 +1,12 @@
+id: maybe-humanizer
+name: 去 AI 味改写
+kind: aggregated
+status: planned
+language:
+  - zh
+  - en
+path: skills/maybe-humanizer
+merge_instance: merges/maybe-humanizer
+replacement: null
+archived_at: null
+reason: 上游已登记为 candidate，尚未做入围和拆规则，skills/maybe-humanizer/ 还没有内容。

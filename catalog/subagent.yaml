@@ -1,0 +1,10 @@
+id: subagent
+name: 派发 subagent
+kind: original
+status: active
+language: [zh]
+path: skills/subagent
+merge_instance: null
+replacement: null
+archived_at: null
+reason: null

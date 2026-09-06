@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Maybe404/skills/tools/upstream-monitor/schemas/sources.schema.json",
+  "title": "merge sources",
+  "description": "merges/<id>/sources.yaml 的结构。人工维护，登记这个 merge 实例追踪的全部上游来源。代码不写这个文件，只读它。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["merge_id", "target_skill", "sources"],
+  "properties": {
+    "merge_id": {
+      "description": "merge 实例标识，与 merges/<id>/ 的目录名一致。",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "target_skill": {
+      "description": "这个 merge 实例产出的 skill 的 id，对应 catalog/<id>.yaml 和 skills/<id>/。",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "sources": {
+      "description": "追踪的上游来源列表。",
+      "type": "array",
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source_type",
+        "repository",
+        "branch",
+        "paths",
+        "license",
+        "license_status",
+        "snapshot_policy",
+        "status",
+        "selection_status",
+        "lineage",
+        "tracking_revision"
+      ],
+      "properties": {
+        "id": {
+          "description": "来源的稳定主键，形如 upstream-<owner>-<repo>，全小写。上游仓库改名后这个值不变，改名记进 previous_repository。",
+          "type": "string",
+          "pattern": "^upstream-[a-z0-9][a-z0-9._-]*$"
+        },
+        "source_type": {
+          "description": "来源形态。github-skill 是 GitHub 上的 skill 仓库；github-prompt 是 GitHub 上的 prompt 或规则文件；web-page 是网页；directory-only 是只在目录站出现、没有可追踪源文件的条目。",
+          "enum": ["github-skill", "github-prompt", "web-page", "directory-only"]
+        },
+        "repository": {
+          "description": "当前仓库全名 <owner>/<repo>，或网页来源的 URL；directory-only 可为 null。",
+          "type": ["string", "null"]
+        },
+        "previous_repository": {
+          "description": "历史仓库全名列表，最新的排在最后。没有改名过写空数组。",
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "branch": {
+          "description": "追踪的分支名，取上游当前的默认分支；非仓库来源为 null。",
+          "type": ["string", "null"]
+        },
+        "paths": {
+          "description": "追踪的文件路径列表，相对仓库根。directory-only 来源写空数组。",
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "license": {
+          "description": "上游许可证的 SPDX 标识（例如 MIT、Apache-2.0），无法确定时写 unknown。",
+          "type": "string",
+          "minLength": 1
+        },
+        "license_status": {
+          "description": "许可证的核实状态。known 表示已核实；unknown 表示仓库没有许可证或无法确定；changed 表示核实过之后上游改了许可证，需要人工处理。",
+          "enum": ["known", "unknown", "changed"]
+        },
+        "snapshot_policy": {
+          "description": "快照策略。full-text 表示在 snapshots/<source_id>/ 存追踪文件的当前全文；metadata-only 表示不存任何原文，只记元数据和哈希。license 为 unknown 时必须是 metadata-only。",
+          "enum": ["full-text", "metadata-only"]
+        },
+        "status": {
+          "description": "追踪状态。candidate 表示已登记待评估；active 表示正在追踪；paused 表示暂停追踪；removed 表示不再追踪。",
+          "enum": ["candidate", "active", "paused", "removed"]
+        },
+        "selection_status": {
+          "description": "入围结论。representative 表示所在谱系的代表；derivative 表示同谱系的衍生版本；duplicate 表示内容重复；low-priority 表示暂不投入；inaccessible 表示无法访问。",
+          "enum": ["representative", "derivative", "duplicate", "low-priority", "inaccessible"]
+        },
+        "lineage": {
+          "description": "谱系标识。同源项目（fork、翻译版、再适配版）共用一个值，用于聚类和去重。",
+          "type": "string",
+          "minLength": 1
+        },
+        "tracking_revision": {
+          "description": "追踪定义的版本号，从 1 起。paths 或 branch 变化、基线重置时加一。",
+          "type": "integer",
+          "minimum": 1
+        },
+        "previous_paths": {
+          "description": "历史追踪路径列表，路径变更时把旧值追加进来。",
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        },
+        "path_changed_at": {
+          "description": "paths 最近一次变更的时间，ISO 8601 date-time；没变过写 null。",
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "baseline_reset_reason": {
+          "description": "基线被重置的理由，例如上游重写了历史或换了文件组织；没有重置过写 null。",
+          "type": ["string", "null"]
+        },
+        "status_changed_at": {
+          "description": "status 最近一次变更的时间，ISO 8601 date-time。",
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "reason": {
+          "description": "当前 status 和 selection_status 的理由。",
+          "type": ["string", "null"]
+        },
+        "notes": {
+          "description": "补充说明，例如上游的体裁范围、已知问题。",
+          "type": ["string", "null"]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "license": { "const": "unknown" } }, "required": ["license"] },
+          "then": {
+            "description": "没有许可证的来源不允许保存原文。",
+            "properties": { "snapshot_policy": { "const": "metadata-only" } }
+          }
+        },
+        {
+          "if": {
+            "properties": { "source_type": { "enum": ["github-skill", "github-prompt"] } },
+            "required": ["source_type"]
+          },
+          "then": {
+            "description": "GitHub 来源必须写清仓库、分支和至少一个追踪路径。",
+            "properties": {
+              "repository": { "type": "string", "pattern": "^[^/\\s]+/[^/\\s]+$" },
+              "branch": { "type": "string", "minLength": 1 },
+              "paths": { "minItems": 1 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "source_type": { "const": "directory-only" } },
+            "required": ["source_type"]
+          },
+          "then": {
+            "description": "目录站条目没有可追踪的源文件。",
+            "properties": { "paths": { "maxItems": 0 } }
+          }
+        }
+      ]
+    }
+  }
+}

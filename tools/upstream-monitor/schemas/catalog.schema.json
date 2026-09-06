@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Maybe404/skills/tools/upstream-monitor/schemas/catalog.schema.json",
+  "title": "catalog entry",
+  "description": "catalog/<id>.yaml 的结构。每个 skill 一份，人工维护，描述这个 skill 的身份、类型、状态和它与 merge 实例的关系。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "kind", "status", "language", "path", "merge_instance"],
+  "properties": {
+    "id": {
+      "description": "skill 的稳定标识，与 skills/<id>/ 的目录名一致，小写，用连字符分词。",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "name": {
+      "description": "给人读的名称，可用中文。",
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "description": "来源类型。original 表示全部内容自写；adapted 表示改编自单一上游；aggregated 表示归并多个上游。只有 adapted 和 aggregated 有 merges/<id>/。",
+      "enum": ["original", "adapted", "aggregated"]
+    },
+    "status": {
+      "description": "生命周期状态。active 表示当前可用；planned 表示已登记但尚未交付；archived 表示已停用。",
+      "enum": ["active", "planned", "archived"]
+    },
+    "language": {
+      "description": "这个 skill 处理的文本语言，用 BCP 47 或 zh/en 这类短代码。",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 2 }
+    },
+    "path": {
+      "description": "交付物目录，相对仓库根，形如 skills/<id>。",
+      "type": "string",
+      "pattern": "^skills/[a-z0-9][a-z0-9-]*$"
+    },
+    "merge_instance": {
+      "description": "对应的 merge 实例目录，形如 merges/<id>；kind 为 original 时必须为 null。",
+      "type": ["string", "null"],
+      "pattern": "^merges/[a-z0-9][a-z0-9-]*$"
+    },
+    "replacement": {
+      "description": "这个 skill 被停用后由哪个 skill 取代，写取代者的 id；没有取代者写 null。",
+      "type": ["string", "null"],
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "archived_at": {
+      "description": "停用时间，ISO 8601 date-time；未停用写 null。",
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "reason": {
+      "description": "当前 status 的理由，主要用于 archived 和 planned；不需要时写 null。",
+      "type": ["string", "null"]
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "original" } }, "required": ["kind"] },
+      "then": {
+        "description": "original 类型没有 merge 实例。",
+        "properties": { "merge_instance": { "type": "null" } }
+      }
+    },
+    {
+      "if": {
+        "properties": { "kind": { "enum": ["adapted", "aggregated"] } },
+        "required": ["kind"]
+      },
+      "then": {
+        "description": "adapted 和 aggregated 必须指向一个 merge 实例。",
+        "properties": { "merge_instance": { "type": "string" } },
+        "required": ["merge_instance"]
+      }
+    },
+    {
+      "if": { "properties": { "status": { "const": "archived" } }, "required": ["status"] },
+      "then": {
+        "description": "停用的 skill 必须写明停用时间和理由。",
+        "properties": {
+          "archived_at": { "type": "string" },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "required": ["archived_at", "reason"]
+      }
+    }
+  ]
+}
