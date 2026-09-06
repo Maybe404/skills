@@ -1,0 +1,23 @@
+{
+  "skill_name": "en-zh-translation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把下面这段英文规则翻成中文，我要放进 ~/.claude/CLAUDE.md，读它的是模型：\n\nState acceptance as an observable outcome — what a user or a test can see — never as the implementation. An agent converges on the criterion it is handed: given \"do X\" it verifies only X; given \"achieve Y\" it finds the mechanism itself, including in files nobody pointed it at. Escalate, don't retry: one re-prompt at the same tier, then move it up — or into the main loop if it was already Opus. Unattended session (no user to ask): proceed per Split out or keep.",
+      "expected_output": "中文译文：定义句有标记；\"An agent converges…\"保留主语；\"one re-prompt\"译成一次而不是两次；\"it was already Opus\"的\"自己做\"写清是谁；括号里的条件展开成\"……时\"；术语 agent/Opus 保留；附不确定项（例如 Split out or keep 是文件里某一节的标题还是泛指）。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Anthropic 文档里有这段 system prompt 建议，帮我翻成中文放到项目的 CLAUDE.md 里，注意读者是模型：\n\nIf, while working or testing, you find a pre-existing bug, a performance concern, or behavior the task doesn't mention, don't fix, optimize or extend it in this change unless the requested behavior cannot work without it; report it as a follow-up in your summary. Commit tests only where the task asks for them or this repository already keeps tests for this kind of change, sized like the neighboring test files — roughly one focused test per stated behavior — and don't turn scratch checks into additional permanent test files.",
+      "expected_output": "中文译文：extend 不译成\"可扩展的行为\"而是写成动作；unless 的方向正确；\"roughly one focused test per stated behavior\"的数量限定保留；follow-up 不译成\"追问\"；情态词（不要/只在）都在；没有加原文没有的强调词。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "这段中文是别人从英文翻过来的，我总觉得读起来逻辑不通，帮我看看问题在哪并改好：\n\n矫饰的文字用比喻和修辞替代直白的陈述。不写\"一个值得调整的参数\"，而写成\"一个值得拧动的旋钮\"；不写\"这一点仍然重要\"，而写成\"这一点没有白占位置\"。这类说法的作用是展示作者，而不是传达意思，读者是看得出来的。解决办法是把意思直接说出来。\n\n英文原文是：Mannered prose substitutes metaphor and flourish for direct statement. Instead of \"a parameter worth varying,\" the mannered writer produces \"a dial worth turning.\" Instead of \"this point still matters,\" they write \"this point earns its keep.\" The phrases exist to display the writer, not to convey the idea, and readers can tell. That is why mannered prose irritates: it makes the reader work harder so the writer can perform. It is also imprecise. Metaphors drag in connotations the writer did not choose and cannot control. The fix is to say what you mean. When a literal phrase is available, use it.",
+      "expected_output": "指出两个问题：第一句缺定义标记会读成祈使句；第二句丢了主语\"the mannered writer\"导致方向反转。同时指出译文漏了原文的两个论点（为什么烦躁、不精确）。给出修正版：加\"所谓……就是……\"，补\"写这种文字的人\"，补回漏掉的论点，不添加原文没有的比喻和强调词。",
+      "files": []
+    }
+  ]
+}
