@@ -14,8 +14,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 5
-  independent_sources: 3
+  evidence_count: 10
+  independent_sources: 6
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -42,6 +42,31 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## Operating principles / No fabrication'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: 5. 保留作者原意
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 8. 控制判断强度'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 5. 模糊归因和含糊措辞'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 优先保信息，再谈风格。'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 原文的量化表述有歧义时'
   relations:
   - type: conflicts-with
     rule_id: ALL-PROC-026
@@ -49,7 +74,13 @@ rules:
   - type: conflicts-with
     rule_id: ALL-S-002
     note: ALL-S-002 要求逼出一个原文没有的立场，本条禁止新增原文没有的观点；按裁决顺序 protection 优先，ALL-S-002 记 reference-only。
-  rationale: 四个来源里有三个独立谱系提出同一条红线，且它是 criteria.md 第 1 条的直接体现：违反时输出里会出现原文没有的事实。可判定——拿改写稿逐项比对原文的事实清单，多出来的即违反。与 ALL-S-002（逼出鲜明立场）冲突：那条要求补一个原文没有的判断，因此那条记 reference-only。
+  - type: pairs-with
+    rule_id: ALL-PROT-034
+    note: ALL-PROT-001 禁止新增原文没有的内容，ALL-PROT-034管它最容易被绕开的那个位置：删掉空总结之后段落塌下来，补一句听起来无害的话。
+  - type: conflicts-with
+    rule_id: ZH-S-001
+    note: ZH-S-001要求补出原文没有的作者反应和立场，ALL-PROT-001 禁止新增原文没有的观点；按 criteria.md 第 1 条 protection 优先，ZH-S-001记 rejected。
+  rationale: 四个来源里有三个独立谱系提出同一条红线，且它是 criteria.md 第 1 条的直接体现：违反时输出里会出现原文没有的事实。可判定——拿改写稿逐项比对原文的事实清单，多出来的即违反。与 ALL-S-002（逼出鲜明立场）冲突：那条要求补一个原文没有的判断，因此那条记 reference-only。 【中文批补记】ZH-S-001（改写时补出作者反应和立场）与本条冲突，取本条，ZH-S-001 记 rejected。另有一处反例证据：upstream-op7418-humanizer-zh 的正文没有任何一句允许补写事实，但它六组「改写后」示例都补了原文没有的内容（补出机构名与年份、补出开业时间、补出注册文件年份、补出扩张计划），同时它没有译出对照件里「原文给了来源就点名，否则删掉这条没有支撑的论断，绝不编造来源」这三句，也没有译出改写流程里的事实增删自检。示例在 skill 里是被模仿的对象，效果等同于规则，因此这组示例记为本条的反例证据，不另立规则。
   history:
   - decision: adopted
     at: '2026-09-06T12:00:00Z'
@@ -66,8 +97,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 2
+  evidence_count: 3
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -79,6 +110,11 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## Guardrails: what NOT to flag, and what to preserve / Signs of human writing (preserve these)'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Unsourced citation modes'
   relations:
   - type: conflicts-with
     rule_id: EN-P-034
@@ -86,6 +122,9 @@ rules:
   - type: pairs-with
     rule_id: EN-P-014
     note: EN-P-014 删掉拔高的评价，本条要求删完之后留下的是具体事实而不是空话。
+  - type: pairs-with
+    rule_id: ALL-PROT-028
+    note: ALL-PROT-002 管数字本身不得被概括掉，ALL-PROT-028管数字修饰的是谁；数字没被改而配对被改的错误，核对数字时查不出来。
   rationale: 两个独立来源，方向一致。判据明确：改写稿里凡是原文有数字的位置，数字必须还在。落在 criteria.md 第 1 条。与 EN-P-014（意义拔高）互补：那条删掉评价，这条要求评价删掉后留下的是具体事实而不是空话。
   history:
   - decision: adopted
@@ -103,8 +142,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 2
+  evidence_count: 4
+  independent_sources: 4
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -116,6 +155,16 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 不要默认摘要
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Overview'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- `code-context` 里的真实运行行为'
   relations:
   - type: pairs-with
     rule_id: ZH-P-009
@@ -137,14 +186,19 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 不得把不确定说成确定
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: 5. 保留作者原意
   relations:
   - type: conflicts-with
     rule_id: ALL-PROC-027
@@ -269,6 +323,9 @@ rules:
   - type: pairs-with
     rule_id: ALL-PROC-016
     note: 代码块和引用块扫描前跳过、输出前原样还原，是受保护片段不得改动的执行方式。
+  - type: pairs-with
+    rule_id: ALL-PROT-032
+    note: ALL-PROT-008 定了真实引语、代码、公式、专有名词默认逐字不动，ALL-PROT-032把技术写作里另外四类需要同等对待的对象点出来，两条合起来才是完整的逐字保护清单。
   rationale: 两个独立来源，三条证据。可判定：受保护片段的字符与原文比对，有差异即违反。落在 criteria.md 第 1 条。与全部 pattern 类规则的关系是：受保护片段里出现禁用词（例如引语里的 delve）时，pattern 规则让位，这一点写进 ALL-PROT-009 和 ALL-PROC-016。
   history:
   - decision: adopted
@@ -286,8 +343,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 2
+  evidence_count: 6
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
@@ -299,6 +356,26 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 真实引语、固定表述或改变外壳会造成歧义时保留
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 保留技术性。'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 不用机械同义词替换表'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 5. No-touch and keep rules'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 词本身正在被定义、讨论
   relations:
   - type: excepts
     rule_id: ALL-P-005
@@ -309,7 +386,13 @@ rules:
   - type: excepts
     rule_id: EN-P-020
     note: 有确定所指的固定名词短语不得为避免重复而换称，名词短语轮换规则在这里让位。
-  rationale: 两个独立来源分别从“同义词轮换”和“对称骨架重建”两个方向给出同一个例外。按 criteria.md 第 1 条，这条优先于 EN-P-019、EN-P-020、ALL-P-005 三条 pattern 规则，因此三条的正文都要写明本例外。可判定：被换掉的是不是一个有确定所指的术语。
+  - type: pairs-with
+    rule_id: ZH-P-030
+    note: ALL-PROT-009 从反面给出三类不适用模式清理的例外，ZH-P-030从正面给出同一个字符串在术语用法和包装用法之间的分流判据，两条合起来才够用。
+  - type: conflicts-with
+    rule_id: ZH-S-005
+    note: ALL-PROT-009 规定精确技术术语不得为了避免行话而换称，ZH-S-005要求把 PR 换成一个语义不等价的说法；取 ALL-PROT-009，ZH-S-005记 rejected。
+  rationale: 两个独立来源分别从“同义词轮换”和“对称骨架重建”两个方向给出同一个例外。按 criteria.md 第 1 条，这条优先于 EN-P-019、EN-P-020、ALL-P-005 三条 pattern 规则，因此三条的正文都要写明本例外。可判定：被换掉的是不是一个有确定所指的术语。 【中文批补记】ZH-S-005 与本条冲突：它要求把 PR 在长篇中文叙述里写作「代码审查」，而两者语义不等价（PR 是拉取请求，代码审查是其中的活动）。取本条，ZH-S-005 记 rejected。本条正面的分流判据由 ZH-P-030 补齐（同一个词被讨论时保留、被用来包装进展时还原）。
   history:
   - decision: adopted
     at: '2026-09-06T12:00:00Z'
@@ -385,8 +468,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 2
+  evidence_count: 3
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
@@ -398,6 +481,11 @@ rules:
     path: skills/no-ai-slop/SKILL.md
     commit: 000650b156983f5159695b441477f4e63b25dc85
     anchor: '## Two jobs / Detect.'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
   relations:
   - type: conflicts-with
     rule_id: ALL-M-005
@@ -447,14 +535,24 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 3
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 不静默替作者纠正
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 8. 控制判断强度'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 原文的量化表述有歧义时'
   relations:
   - type: pairs-with
     rule_id: ALL-PROC-013
@@ -462,6 +560,9 @@ rules:
   - type: pairs-with
     rule_id: EN-P-039
     note: 疑似捏造的痕迹与不得静默纠正走同一个出口：写进“需作者确认”，不自行删改。
+  - type: pairs-with
+    rule_id: ZH-PROT-001
+    note: ALL-PROT-014 管结论强度超出证据时怎么处理（写进需作者确认一节），ZH-PROT-001管结论的适用范围被悄悄放宽这一种具体漂移，两条各管一半。
   rationale: independent_sources 为 1，按 criteria.md 第 3 条采用：这条划清了“审稿”和“替作者写”的界限，是本 skill 的核心边界之一；可判定（正文里出现原文没有的编辑注记，或结论强度与原文不同，即违反）；与 ALL-PROC-013 配套使用。
   history:
   - decision: adopted
@@ -533,8 +634,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 4
-  independent_sources: 3
+  evidence_count: 8
+  independent_sources: 5
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -556,6 +657,26 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## Guardrails: what NOT to flag, and what to preserve / Signs of human writing (preserve these)'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 如何增加语调'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 如何增加语调'
   relations:
   - type: conflicts-with
     rule_id: EN-S-001
@@ -583,19 +704,33 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 不要为了“人味”添加错别字、emoji、网语
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 不要为了
   relations:
   - type: conflicts-with
     rule_id: EN-S-002
     note: EN-S-002 的七种注入手法会添加原文没有的跑题、自我纠正和共有经历，本条禁止为人味添加原文没有的东西；EN-S-002 记 reference-only。
-  rationale: independent_sources 为 1，按 criteria.md 第 3 条采用，并且它是 ALL-PROT-001 在风格方向上的镜像：一个禁止加事实，一个禁止加人格。与 EN-S-002（Soul Injection，加跑题、自我纠正、共有经历）正面冲突，冲突的裁决按 criteria.md 第 1 条（protection 优先于 style-opinion）：本条 adopted，EN-S-002 记 reference-only。Aboudjem 自己的 ALL-PROC-018 也写了“给本该平实的文字硬注入个性同样是 AI 味”，与本条同向。
+  - type: conflicts-with
+    rule_id: ZH-M-002
+    note: 这六个迹象里有四个（补观点、补感受、补第一人称、补个性）只能靠新增原文没有的内容来消除，与 ALL-PROT-018 禁止为了显得像真人而添加这些内容直接冲突；ZH-M-002记 reference-only，只作诊断信号，不触发改写。
+  - type: conflicts-with
+    rule_id: ZH-PROC-001
+    note: ZH-PROC-001把「注入个性」写成不带体裁条件的固定步骤，ALL-PROT-018 禁止为了显得像真人而添加原文没有的第一人称、幽默、感受和个人经历；取 ALL-PROT-018，ZH-PROC-001记 rejected。
+  - type: conflicts-with
+    rule_id: ZH-S-001
+    note: ZH-S-001要求补出感受和第一人称，ALL-PROT-018 禁止为了显得像真人而添加原文没有的感受、幽默和第一人称。
+  rationale: independent_sources 为 1，按 criteria.md 第 3 条采用，并且它是 ALL-PROT-001 在风格方向上的镜像：一个禁止加事实，一个禁止加人格。与 EN-S-002（Soul Injection，加跑题、自我纠正、共有经历）正面冲突，冲突的裁决按 criteria.md 第 1 条（protection 优先于 style-opinion）：本条 adopted，EN-S-002 记 reference-only。Aboudjem 自己的 ALL-PROC-018 也写了“给本该平实的文字硬注入个性同样是 AI 味”，与本条同向。 【中文批补记】本批有三条与本条冲突并已按 criteria.md 第 8 条双记：ZH-PROC-001（把「注入真实的个性」写成无条件的固定步骤）记 rejected；ZH-S-001（改写时补出作者反应和立场）记 rejected；ZH-M-002（缺乏声音的六个迹象，其中四项只能靠新增内容消除）记 reference-only。三条的共同来源是同一份中文译本，它没有译出对照件里的体裁限制段和整节误杀防护，于是一条带条件的建议变成了无条件步骤。本条不让步。
   history:
   - decision: adopted
     at: '2026-09-06T12:00:00Z'
@@ -612,8 +747,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 3
-  independent_sources: 1
+  evidence_count: 5
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
@@ -630,6 +765,16 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: '### 6. 全文复扫'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## Execution order'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `aggressive`'
   rationale: 来源把它们叫作“信息账本”和“论证图”，本仓库改成两份可以逐项打勾的清单，并把复扫时的核对动作并进同一条——分成三条会让人以为可以只做前两步。改写后可判定：清单上的项在改写稿里缺一项即违反。independent_sources 为 1，但这是本 skill 事实保真能力的落地机制，evals 第二类样本直接靠它。
   history:
   - decision: adopted-with-modification
@@ -647,14 +792,29 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 但保留真实关系、必要术语及正式程度
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 抽象信息、实体类型和关系不能擅自具体化'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-023
+    note: ALL-PROT-020 要求删掉无功能的连接词和结论标签时保留真实存在的逻辑关系，ALL-PROT-023把「逻辑关系」拆成七项可以逐项核对的东西，两条合起来才能执行。
+  - type: pairs-with
+    rule_id: ALL-PROT-025
+    note: ALL-PROT-020 说删修饰时要保留真实的逻辑关系，ALL-PROT-025给出执行它的操作粒度：判断落在子句一级，不落在整句一级。
+  - type: pairs-with
+    rule_id: ALL-PROT-030
+    note: ALL-PROT-020 说删连接词时保留真实的逻辑关系，ALL-PROT-030给出删之前必须过的那道检查，两条一起用才不会删出语法上成立、语义上断掉的句子。
   rationale: independent_sources 为 1，采用。这条是 ZH-P-001、EN-P-004 两条清理规则的必要配套：删掉“因此”这个词不等于两句话之间的因果关系不存在。可判定：删词前后两句话的逻辑关系是否发生变化。落在 criteria.md 第 1 条。
   history:
   - decision: adopted
@@ -672,8 +832,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 2
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 5
-  independent_sources: 3
+  evidence_count: 7
+  independent_sources: 5
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -700,6 +860,16 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: '### 6. 全文复扫'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 4. 保持中文节奏'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 快速检查清单'
   relations:
   - type: excepts
     rule_id: ZH-M-001
@@ -707,6 +877,12 @@ rules:
   - type: pairs-with
     rule_id: ALL-M-002
     note: 句长有变化是改写时的目标，句长一致本身不是 AI 的证据；两条方向相反但配套，缺一条会误伤。
+  - type: pairs-with
+    rule_id: ZH-M-005
+    note: ALL-P-001 管句长和段落长度的雷同，ZH-M-005管小节和句式骨架的雷同，两条的判定对象是不同层级。
+  - type: pairs-with
+    rule_id: ZH-P-013
+    note: ALL-P-001 管句长和段落开头的雷同，ZH-P-013管段落收尾的雷同，两条合起来覆盖一篇文字的节奏可预测性。
   rationale: 三个独立来源，五条证据。Aboudjem 给了两套互相对不上的数值（一处是短 3-8 词、中 12-20 词、长 25-40 词、不超过 3 句同长，另一处是句长方差大于 30%、不超过 2 句相似结构），本仓库只保留可以直接数的那个判据——连续三句以上长度相近即违反——并去掉按词数分档的英文口径，因为中文按字计不适用；这是记 adopted-with-modification 的原因。与 ALL-M-002 配套：句长一致本身不是 AI 的证据，只是改写时的目标。试验后修复补上了缺失的容差：原来的“长度相近”没有可数的口径，判定无从下手。英文侧补回 Aboudjem 的 Burstiness 数值（短 3-8 词、中 12-20 词、长 25-40 词，不超过连续三句同档），这是上游原有的口径，本次只是把它写回来；同来源另一处的“方差大于 30%、不超过 2 句相似结构”仍不采用，理由是方差要算才知道，手上核不了，且与 Burstiness 一节的句数上限对不上。中文侧按 ZH-M-001 不套词数分档，改用可数的字数口径（连续三句以上相差在 3 个字以内）。
   history:
   - decision: adopted-with-modification
@@ -727,8 +903,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 4
-  independent_sources: 2
+  evidence_count: 5
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -750,6 +926,11 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### EMERGING PATTERNS / P42: Erratic Inline Bolding'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 3. 打散机械结构'
   rationale: 两个独立来源，四条证据，中英文表现不同但判据相同（这处格式有没有承担信息），因此合成一条而不是按语言分表。可判定：指出哪一处加粗、哪一个标题没有对应的信息增量。
   history:
   - decision: adopted
@@ -797,8 +978,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 4
-  independent_sources: 3
+  evidence_count: 5
+  independent_sources: 4
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -820,6 +1001,15 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: '### 4. 按简体中文重写'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 4. 保持中文节奏'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-022
+    note: ALL-P-004 是 pattern，要求写出动作的执行者；ALL-PROT-022是 protection，禁止改变原文已经写明的执行者。两条的判定方向相反，合起来才覆盖完整：原文没写执行者时按 ALL-P-004 处理（去问，不猜），原文写了就按ALL-PROT-022不许动。
   rationale: 三个独立来源，四条证据，中英文各自的表现（英文的被动式、中文的“相关行为发生”）不同但判据相同：能不能指出这个动作是谁做的。可判定。例外由 ALL-PROT-001 兜住：原文没写是谁做的时候，不得替它补一个主语，应当问。
   history:
   - decision: adopted
@@ -837,8 +1027,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 2
+  evidence_count: 3
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
@@ -850,11 +1040,19 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 显眼的对称骨架要重建，不做同义换壳
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 3. 打散机械结构'
   relations:
   - type: excepts
     rule_id: ALL-PROT-009
     note: 对称骨架不为凑气势，例外是 ALL-PROT-009 认定的固定表述。
-  rationale: 两个独立来源，一个从英文的 rule of three、一个从中文的排比骨架给出同一条判据：这几项是不是为了对仗才凑出来的。可判定。例外见 ALL-PROT-009：真实引语和固定表述即使对称也不动。
+  - type: conflicts-with
+    rule_id: ZH-P-012
+    note: ALL-P-005 的判据是内容有几项就写几项，ZH-P-012的判据是避开三这个数量；原文确实有三项时两条给出相反动作，取 ALL-P-005，ZH-P-012记 rejected。
+  rationale: 两个独立来源，一个从英文的 rule of three、一个从中文的排比骨架给出同一条判据：这几项是不是为了对仗才凑出来的。可判定。例外见 ALL-PROT-009：真实引语和固定表述即使对称也不动。 【中文批补记】ZH-P-012 与本条冲突：它要求并列项默认取两项或四项、避开三这个数量，本条的判据是内容有几项就写几项。原文确实有三项时两条给出相反动作，取本条，ZH-P-012 记 rejected。
   history:
   - decision: adopted
     at: '2026-09-06T12:00:00Z'
@@ -901,8 +1099,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 2
+  evidence_count: 7
+  independent_sources: 5
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -914,6 +1112,31 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## Step 3: Rewrite Craft / Concretizer pass'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 2. 去掉空泛的大词和套话'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 8. 控制判断强度'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 如何增加语调'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 抽象信息、实体类型和关系不能擅自具体化'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 6. Positive style targets'
   rationale: 两个独立来源。本条与 ALL-PROT-001 是同一件事的两面，合并写在一条里可以避免读者只记住“要具体”而忘掉“不能编”。可判定：改写稿里新出现的具体内容，能不能在原文里指出出处。
   history:
   - decision: adopted
@@ -931,14 +1154,19 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### EMERGING PATTERNS / P38: Paragraph-Reshuffling Immunity'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 5. 管住文章级结构'
   rationale: independent_sources 为 1，采用。这是少见的、可以直接操作的结构判据：把段落顺序打乱，读者读不出差别就是命中。加了一个来源没有的限制——补依赖关系不得越过 ALL-PROT-001，这是记 adopted 而非原样采用时需要注意的边界，已写进正文。
   history:
   - decision: adopted
@@ -981,14 +1209,24 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 3
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
     path: skills/no-ai-slop/SKILL.md
     commit: 000650b156983f5159695b441477f4e63b25dc85
     anchor: '## Editing principles / Open it up, don''t dumb it down.'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 抽象信息、实体类型和关系不能擅自具体化'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 承载关键事实的抽象句，即使它'
   rationale: independent_sources 为 1，采用。它是 ALL-PROT-003 的操作面：那条说不能删实质，这条说该动哪里。可判定：改短的那句话，少掉的是词还是信息。
   history:
   - decision: adopted
@@ -1006,14 +1244,19 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### EMERGING PATTERNS / P43: The Treadmill Effect (Low Information Density)'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 快速检查清单'
   rationale: independent_sources 为 1，采用。来源给了中英两组触发词，本条按 both 记，因此放在语言无关的模式表里。可判定：指出后一句相对前一句新增了什么信息，答不上来就是重复转述。
   history:
   - decision: adopted
@@ -1476,14 +1719,24 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 3
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
-    anchor: 'Rewrite and humanize Simplifie'
+    anchor: Rewrite and humanize Simplifie
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: 'description: Remove signs of AI-generated'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## When to use'
   rationale: 来源限定简体中文，本仓库扩到中英文，并保留“繁体中文不适用”这一条（本次合并的四个来源没有一个覆盖繁体中文的用词习惯，声称适用会误导）。这是记 adopted-with-modification 的原因。可判定：请求属不属于列出的类型。
   history:
   - decision: adopted-with-modification
@@ -1501,14 +1754,23 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## Step 1: Parse Arguments / --purpose'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: 1. 先判断文本类型
+  relations:
+  - type: pairs-with
+    rule_id: ZH-G-002
+    note: ALL-G-002 按正式文章、邮件、营销、技术文四类体裁叠加限制，ZH-G-002按中文技术写作的四类场景叠加限制，两条的划分维度不同、可以同时命中。
   rationale: 来源把这套规则挂在一个命令行参数上，本仓库去掉参数形式，改成分诊时确定的属性，并补了“体裁不明先问”这一句，这是记 adopted-with-modification 的原因。independent_sources 为 1，按 criteria.md 第 3 条采用：体裁不同确实会让同一条模式规则的结论相反（技术文的术语重复要保留，营销文的重复要删），不给边界会误伤。
   history:
   - decision: adopted-with-modification
@@ -1780,6 +2042,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### CONTENT PATTERNS / P4: Promotional Language'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-018
+    note: EN-P-002 管英文的 nestled / vibrant / breathtaking / must-visit，ZH-P-018管中文旅游与城市宣传语料里的同一组词。
   rationale: independent_sources 为 1，采用。与 EN-P-001 分开，是因为判据不同：那条是“这个词本身是痕迹”，这条是“这个形容词占了本该是事实的位置”，改法也不同（那条换词，这条补事实）。来源内部把 seamless、robust 在两处分别归入这两条，本仓库统一归到本条。词表照录自 `upstream-aboudjem-humanizer-skill`（P4 的 Triggers，逐条同序），说明文字为重写。按 skills/skill-merge/references/license-policy.md 的 full-text 口径，触发词表本身是判定数据，改写会让规则失去可判定性，因此照录；周围的说明文字、正例反例和执行强度是重写的。
   history:
   - decision: adopted
@@ -1840,6 +2106,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### FILLER & HEDGING PATTERNS / P22: Filler Phrases'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-023
+    note: EN-P-004 管英文的 due to the fact that / in order to / at this point in time，ZH-P-023管中文里同一类名词化填充结构。
   rationale: 两个独立来源的两份词表合成一条。删除时受 ALL-PROT-020 约束：短语删掉，它承载的真实逻辑关系要留。可判定：删掉短语后句子信息量不变即证明该删。该来源的这条同时给了中文触发词，中文一侧由 ZH-P-001 覆盖。试验后修复补上了删与缩的分界：原来只写“删掉或缩短”，两条路没有判据。分界按 ALL-PROT-020：短语本身不承载逻辑关系就删，承载了就缩到最短说法。词表照录自 `upstream-petergyang-no-ai-slop`（Often-empty phrases，逐条同序）并入了 `upstream-aboudjem-humanizer-skill` P22 的条目，说明文字为重写。按 skills/skill-merge/references/license-policy.md 的 full-text 口径，触发词表本身是判定数据，改写会让规则失去可判定性，因此照录；周围的说明文字、正例反例和执行强度是重写的。
   history:
   - decision: adopted
@@ -1903,6 +2173,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### LANGUAGE & STYLE PATTERNS / P9: Negative Parallelisms'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-024
+    note: EN-P-006 管英文的 It's not X, it's Y / not only X but Y，ZH-P-024管中文里同一骨架，并给出「多数删掉前半句」这个具体动作。
   rationale: 两个独立来源，三条证据。可判定：句子是不是先否定一个没人提出过的选项再给出答案。与 EN-P-041（假想反方）相关但不同：那条管的是虚构一个反对者，这条管的是句式。
   history:
   - decision: adopted
@@ -1973,6 +2247,10 @@ rules:
     path: skills/no-ai-slop/SKILL.md
     commit: 000650b156983f5159695b441477f4e63b25dc85
     anchor: '## Patterns to cut / Faux-insight setups.'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-031
+    note: EN-P-008 管英文的 The part everyone misses / what most people get wrong，ZH-P-031管中文里同一套铺垫，两条各管一种语言。
   rationale: independent_sources 为 1，采用。与 EN-P-007 分开：那条是内容开始前的空转，这条是靠把作者包装成孤独的行家来给论断加分，改法也不同（这条删掉铺垫后论断往往还需要补证据）。可判定：句中有没有把读者或“大多数人”设为对照组。
   history:
   - decision: adopted
@@ -2108,6 +2386,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### CONTENT PATTERNS / P3: Superficial -ing Phrases'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-017
+    note: EN-P-013 靠英文的 -ing 分词形态判定，中文没有这个形态，ZH-P-017给出同一模式在中文里的实际形状（句末追加的评论性小句），两条各管一种语言。
   rationale: 两个独立来源。可判定：这个 -ing 从句说出了什么原文没说过的事实，答不上来就删。提升信息时受 ALL-PROT-001 约束，不得补出处。词表照录自 `upstream-aboudjem-humanizer-skill`（P3 的 Triggers，顺序不同），说明文字为重写。按 skills/skill-merge/references/license-policy.md 的 full-text 口径，触发词表本身是判定数据，改写会让规则失去可判定性，因此照录；周围的说明文字、正例反例和执行强度是重写的。
   history:
   - decision: adopted
@@ -2147,6 +2429,9 @@ rules:
   - type: pairs-with
     rule_id: ALL-PROT-002
     note: EN-P-014 删掉拔高的评价，本条要求删完之后留下的是具体事实而不是空话。
+  - type: pairs-with
+    rule_id: ZH-P-015
+    note: EN-P-014 管英文的 stands as / serves as a testament / marks a pivotal moment，ZH-P-015管中文的同一模式，两条各管一种语言。
   rationale: 两个独立来源，三条证据。来源把“拔高重要性”和“解读象征意义”分成两条，本仓库合成一条：判据相同（这句评论有没有增加事实），改法相同（删掉评论，留下事实）。删掉后要留下具体事实，见 ALL-PROT-002。该来源的这条同时给了中文触发词（标志着、彰显、体现了），中文一侧由 ZH-P-001 覆盖。
   history:
   - decision: adopted
@@ -2177,6 +2462,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### CONTENT PATTERNS / P8: Copula Avoidance'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-021
+    note: EN-P-015 管英文的 serves as / stands as / boasts / features，ZH-P-021管中文的同一组替身，并补上中文特有的「作为 X」缺谓语问题。
   rationale: 两个独立来源。可判定：这个动词能不能直接换成 is 而不损失信息，能换就是命中。词表照录自 `upstream-aboudjem-humanizer-skill`（P8 的 Triggers，逐条同序），说明文字为重写。按 skills/skill-merge/references/license-policy.md 的 full-text 口径，触发词表本身是判定数据，改写会让规则失去可判定性，因此照录；周围的说明文字、正例反例和执行强度是重写的。
   history:
   - decision: adopted
@@ -2232,6 +2521,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### CONTENT PATTERNS / P5: Vague Attributions'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-019
+    note: EN-P-017 管英文的 experts agree / research suggests / studies show，ZH-P-019管中文资讯稿里同一模式的固定说法。
   rationale: 两个独立来源。可判定：这句话的来源能不能指名。这条与 ALL-PROT-001 绑定使用，缺来源时的正确动作是问，不是删掉论断也不是编来源。
   history:
   - decision: adopted
@@ -2262,6 +2555,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### EMERGING PATTERNS / P37: Overattribution / Source-Listing as Content'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-016
+    note: EN-P-018 管英文的 featured in X, Y, Z / profiled in / independent coverage，ZH-P-016管中文里同一模式的固定说法。
   rationale: independent_sources 为 1（同一来源的两条编号），采用。与 EN-P-017 的区别：那条是没有来源，这条是有来源但只报名字不报内容。可判定：这份清单里有没有任何一条说出了报道的内容。
   history:
   - decision: adopted
@@ -2299,6 +2596,9 @@ rules:
   - type: pairs-with
     rule_id: ALL-PROC-009
     note: 先通读全文才看得出同一个东西被换了几种叫法。
+  - type: pairs-with
+    rule_id: ZH-P-029
+    note: EN-P-019 管英文的 synonym cycling，ZH-P-029管中文，并补上「逐次升格」这个中文特有的形态和「代词照应不算」的例外。
   rationale: 两个独立来源。可判定：换掉的两个词指的是不是同一个东西。例外见 ALL-PROT-009：精确技术术语的重复是正确用法，不得为避免重复而换称。
   history:
   - decision: adopted
@@ -2328,6 +2628,9 @@ rules:
   - type: excepts
     rule_id: ALL-PROT-009
     note: 不给同一个实体换整个名词短语，例外是 ALL-PROT-009 认定的固定表述。
+  - type: pairs-with
+    rule_id: ZH-P-029
+    note: EN-P-020 管英文里给同一实体换整个名词短语，ZH-P-029是它的中文形态。
   rationale: independent_sources 为 1，采用。与 EN-P-019 的区别是粒度：那条是单个词，这条是整个描述性短语，后者往往同时带进原文没有的评价（visionary），因此还会触发 ALL-PROT-001。
   history:
   - decision: adopted
@@ -2383,6 +2686,10 @@ rules:
     path: skills/no-ai-slop/SKILL.md
     commit: 000650b156983f5159695b441477f4e63b25dc85
     anchor: '## Patterns to cut / Interpretive metadiscourse.'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-032
+    note: EN-P-022 管英文的 That last part matters more than it sounds / The key point is，ZH-P-032管中文里同一种旁白，两条各管一种语言。
   rationale: independent_sources 为 1（同一来源的原则版和短语版），采用。可判定：这句话有没有跳出内容本身去指导读者。删掉后如果读者确实读不出重点，正确做法是补出正文里已有的支撑事实，不是补一个新事实。
   history:
   - decision: adopted
@@ -2539,6 +2846,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### LANGUAGE & STYLE PATTERNS / P13: Em Dash Ban'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-026
+    note: EN-P-027 把英文的分号冒号密集出现记为需要复查的弱信号，ZH-P-026给中文侧同一现象加上处理动作，两条各管一种语言，触发门槛一致（连续三句以上）。
   rationale: 来源自称这是社区报告、没有对照研究支撑的低置信度信号。本仓库把它降级为“只提示复查、不单独触发改写”，这是记 adopted-with-modification 的原因；保留它是因为它自带 ALL-M-002 要求的聚类条件，可判定（数连续几句里出现了几个分号冒号），且不会误伤单处用法。
   history:
   - decision: adopted-with-modification
@@ -2574,6 +2885,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### COMMUNICATION PATTERNS / P21: Sycophantic Tone'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-022
+    note: EN-P-028 管英文的 I hope this helps / Let me know / As of my last training update，ZH-P-022管中文对话模型自己会说的那一组，两条各管一种语言。
   rationale: independent_sources 为 1，三条证据，采用。来源分三条编号，判据相同：这句话是不是对话回合的一部分而不是文章的一部分。合成一条。可判定：删掉之后文章少了什么。
   history:
   - decision: adopted
@@ -2656,6 +2971,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### CONTENT PATTERNS / P6: Formulaic Challenges Sections'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-020
+    note: EN-P-031 管英文的 Despite [好的一面]，[模糊的问题] 套路，ZH-P-020管中文里同一套路，并额外覆盖它作为固定小节标题出现的形态。
   rationale: independent_sources 为 1，采用。可判定：这一段里有没有任何一条具体的问题。补具体问题时受 ALL-PROT-001 约束，原文没有就删段，不是编一个。
   history:
   - decision: adopted
@@ -2810,6 +3129,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### LANGUAGE & STYLE PATTERNS / P17: Curly Quotes and Typographic Tells'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-025
+    note: EN-P-037 管英文直引号与弯引号的跟随原稿口径，ZH-P-025管中文的“”与「」，两条各管一种语言，默认值的取法已经对齐。
   rationale: 来源这条有两半：一半是“改写要匹配作者原有排版”，另一半是“ChatGPT 常用弯引号、Claude 常用直引号，牛津逗号刚性统一也是提示信号”。本仓库只采用前一半，后一半按 criteria.md 第 3 条第 2 项（准确性）删掉——把某种引号风格归因到某个模型是没有依据的经验推断，且用它做判断会与 ALL-M-002 冲突。这是记 adopted-with-modification 的原因。
   history:
   - decision: adopted-with-modification
@@ -2850,6 +3173,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### CRAFT AND FORENSIC PATTERNS / P51: Reasoning-Chain Artifacts'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-021
+    note: EN-P-038 删的是生成过程留在英文正文里的痕迹（占位符、工具引用标记、推理链脚手架），ALL-PROT-021管的是加载进来的提示词片段被当成待改写素材输出，两者是同一族的两半。
   rationale: independent_sources 为 1，四条证据，采用。来源分四条编号，判据相同：这段字符是生成工具留下的、作者本来不会写的东西。合成一条。可判定：字符串匹配即可。删占位符时如果不知道该填什么，按 ALL-PROC-004 去问，不得编。
   history:
   - decision: adopted
@@ -2909,6 +3236,10 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### EMERGING PATTERNS / P36: Sudden Style/Register Shift'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-P-012
+    note: EN-P-040 管的是识别原文里已有的语域断裂并据此判断这段是拼接的，ALL-P-012管改写方自己不得造成语域跳跃，两条是同一现象的检测面和产出面。
   rationale: 来源分两条（完美与错误交替、语域突变），判据相同（同一篇内出现风格断裂），合成一条。补了一句来源没有的方向限制——统一到作者的声口而不是统一到书面语，否则会直接违反 ALL-PROT-017，这是记 adopted-with-modification 的原因。可判定：指出断裂发生在哪两句之间。受 ALL-M-002 约束：单处不一致不算，要成段出现。
   history:
   - decision: adopted-with-modification
@@ -2979,8 +3310,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 2
+  evidence_count: 9
+  independent_sources: 5
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
@@ -2992,6 +3323,41 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: '### 4. 按简体中文重写'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 2. 去掉空泛的大词和套话'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 7. 过度使用的'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 快速检查清单'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 删空总结和收尾腔'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 把商业黑话和表演性技术腔改回普通动作'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 2 | Residual Audit'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 2 | Residual Audit'
   rationale: 两个独立来源，一份给词表、一份给元叙述和结论标签，合成一条。这份词表不是英文表的翻译——抓手、闭环、颗粒度在英文侧没有对应词，因此不与 EN-P-001 合并，中英两张表分开。删除时受 ALL-PROT-020 约束：连接词删掉，它承载的真实逻辑关系要留。
   history:
   - decision: adopted
@@ -3009,14 +3375,24 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 3
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/references/patterns.zh.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## 核心原生模式 · Core native tells (ZH1–ZH7) / ZH1'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 核心规则速查'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 6. Positive style targets'
   rationale: independent_sources 为 1，采用。这是中文特有、英文侧没有对应条目的模式，criteria.md 第 3 条五项均成立。可判定：数连续出现的四字格，并检查这一句给出了什么具体事实。
   history:
   - decision: adopted
@@ -3034,14 +3410,24 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 3
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/references/patterns.zh.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## 核心原生模式 · Core native tells (ZH1–ZH7) / ZH2'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 3. 打散机械结构'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 5. 管住文章级结构'
   rationale: independent_sources 为 1，采用。可判定：删掉序词后各点的顺序还成不成立。与 ALL-P-005（对称骨架）相关但对象不同：那条管并列项的数量和对仗，这条管连接它们的序词。
   history:
   - decision: adopted
@@ -3109,14 +3495,19 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/references/patterns.zh.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## 核心原生模式 · Core native tells (ZH1–ZH7) / ZH7'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 4. 保持中文节奏'
   rationale: independent_sources 为 1，采用。触发词与 EN-P-023 完全不是互译关系，来源自己也没有把它标成英文那条的对应，因此中英分列两条。可判定：结尾这一段给出了什么前文没有的具体内容。
   history:
   - decision: adopted
@@ -3134,19 +3525,27 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/references/patterns.zh.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## 核心原生模式 · Core native tells (ZH1–ZH7) / ZH5'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 快速检查清单'
   relations:
   - type: excepts
     rule_id: EN-P-026
     note: 中文侧的破折号与标点口径，英文不适用，英文走 EN-P-026。
-  rationale: independent_sources 为 1，采用。这条与 EN-P-026 是按语言分域的两条规则，不是互相矛盾需要二选一：英文破折号的判据是“短文零个、长文一到两处”，中文的判据是“一次为限、不当连接符，另加全角标点统一”。Aboudjem 的英文侧零容忍主张在这里被明确挡在中文之外，这组关系写进 conflicts.md。可判定：数破折号个数，看标点是否全角。
+  - type: conflicts-with
+    rule_id: ZH-S-002
+    note: ZH-P-007 允许中文破折号在真正需要解释、转折或停顿时用一次，ZH-S-002要求完全禁用；取 ZH-P-007，ZH-S-002记 rejected。
+  rationale: independent_sources 为 1，采用。这条与 EN-P-026 是按语言分域的两条规则，不是互相矛盾需要二选一：英文破折号的判据是“短文零个、长文一到两处”，中文的判据是“一次为限、不当连接符，另加全角标点统一”。Aboudjem 的英文侧零容忍主张在这里被明确挡在中文之外，这组关系写进 conflicts.md。可判定：数破折号个数，看标点是否全角。 【中文批补记】ZH-S-002 与本条冲突：它要求中文正文完全禁用长破折号，本条允许在真正需要解释、转折或停顿时用一次。取本条，ZH-S-002 记 rejected；要执行完全禁用的项目按 ALL-PROC-025 用自己的词表覆盖。本批另有一处证据补进本条：「用在揭晓前制造停顿的破折号」是一个位置判据，比「少用」可判定。
   history:
   - decision: adopted
     at: '2026-09-06T12:00:00Z'
@@ -3203,6 +3602,9 @@ rules:
   - type: pairs-with
     rule_id: ALL-PROT-003
     note: 限定条件放在被限定内容之前，同时保证限定条件不被当累赘删掉。
+  - type: pairs-with
+    rule_id: ALL-PROT-024
+    note: ZH-P-009 管句内位置：限定条件要出现在被它限定的内容之前。ALL-PROT-024管步骤之间的顺序：警告要出现在它警告的那步操作之前。两条的判定对象是不同层级的位置关系。
   rationale: 来源的表述是“放到句子里最容易理解的位置”，按 criteria.md 第 2 条不可判定——“最容易理解”指不出违反点。本仓库改写成一条位置规则（限定在前、被限定在后），改写后可判定，这是记 adopted-with-modification 的原因。这条同时防事实误读，与 ALL-PROT-003（限定条件不得丢）配套。
   history:
   - decision: adopted-with-modification
@@ -3236,28 +3638,51 @@ rules:
 - id: ZH-P-011
   local:
     skill: maybe-humanizer
-    path: skills/maybe-humanizer/references/conflicts.md
-    anchor: '### ZH-P-011 中文里的英文语法痕迹（待验证）'
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-011 中文里的英文语法痕迹'
   category: pattern
   language: zh
-  rule_summary: 拆掉中文里的英文语法痕迹：被动句过多、从句套从句、“一个……”滥用、“进行＋动词”代替直接动词。
-  decision: unverified
-  decision_origin: human-approved
-  decision_revision: 1
-  decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  rule_summary: 拆掉中文里的英文语法痕迹，按三类可数的形态判定：一、名词化——「进行／实现／完成／开展／起到／具有」带一个动名词（公文固定表述和技术文档里的稳定术语除外）；二、翻译腔连接结构——「对于……来说」「基于……」「围绕……展开」「使得……得以……」「通过……来……」；三、「被……所」式被动堆砌与「一个……」滥用。命中时先把主语和动作提到前面，再处理修饰成分。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 2
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 5
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/references/patterns.zh.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## 未验证假设 · Unverified hypotheses (ZH13–ZH14) / ZH14'
-  rationale: 来源自己标注这条是未验证的假设。按 criteria.md 第 9 条记 unverified。其中“进行＋动词”和“一个……”滥用与 ALL-P-004（指名行动者、主动语态）部分重叠，重叠的那部分已经由 ALL-P-004 覆盖并已 adopted；本条独有的部分（从句套从句、被动句密度）缺乏判定阈值。缺什么才能定：给出可数的阈值（例如一句里几层从句算多），并在中文真人原文样本上验证不误伤。
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 1. 优先改掉翻译腔'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 1. 优先改掉翻译腔'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 发现翻译腔时'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 把名词化还原成动词'
+  rationale: 原来记 unverified 的理由是来源自己标注它是未验证假设，且「从句套从句、被动句密度」缺判定阈值。本批有两个独立的中文来源给出了可判定的形态：ai-zixun 给了四个翻译腔连接结构（对于……来说、基于……、围绕……展开、使得……得以……），shuorenhua 给了六个名词化触发词（进行／实现／完成／开展／起到／具有＋动名词）并附了两条例外（公文固定表述、文档里的稳定术语），还指出这类结构真正的后果是主语和动作被推到句末。据此改判 adopted-with-modification：采纳可以逐词匹配的三类形态，把原表述里没有阈值的「从句套从句」移出规则——那一半仍然缺可数的判据，需要时另立条目。「一个……」滥用与 ALL-P-004 部分重叠的那部分仍由 ALL-P-004 管，本条不重复判定。改判的依据是 criteria.md 第 2 条（可判定）和第 3 条第 2 项（准确性）：三类形态都能在句子里圈出具体的词或结构，两个中文来源各自给的触发词在中文语料里成立，原来挂起时缺的正是这两样。
   history:
   - decision: unverified
     at: '2026-09-06T12:00:00Z'
     reason: 首次合并
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并：两个独立中文来源给出可判定的形态与例外，原来缺的阈值补齐，从 unverified 改判
 - id: EN-M-001
   local:
     skill: maybe-humanizer
@@ -3282,6 +3707,9 @@ rules:
   - type: pairs-with
     rule_id: EN-P-001
     note: EN-P-001 给词表，EN-M-001 给这张表的三档执行强度。
+  - type: pairs-with
+    rule_id: ZH-M-006
+    note: EN-M-001 按证据强度给英文高频词分三档，ZH-M-006给中文模式分同样的三档并补上数值阈值，两条各管一种语言。
   rationale: 来源把这套分级用作打分公式的权重，本仓库剥掉打分用途（见 ALL-M-005 已 rejected），只保留“哪些词单独出现就改、哪些要聚类才改”这一层，档数由四档并成三档（原第一档 A、B 两级的处理动作相同），这是记 adopted-with-modification 的原因。改写后可判定，且与 ALL-M-002（单一信号不算证据）一致：第三档的词单独出现不构成信号。它给 EN-P-001 的词表加了一层执行强度，两条配套使用。
   history:
   - decision: adopted-with-modification
@@ -3328,8 +3756,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 4
-  independent_sources: 3
+  evidence_count: 5
+  independent_sources: 4
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -3351,6 +3779,11 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## Step 3: Rewrite Craft / Voice Read'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## Execution order'
   relations:
   - type: supersedes
     rule_id: ALL-PROC-031
@@ -3467,8 +3900,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 1
+  evidence_count: 4
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
@@ -3480,6 +3913,16 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 用户给出的具体范围高于上述默认值
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: 4. 再决定改写力度
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Output'
   relations:
   - type: pairs-with
     rule_id: ALL-PROC-012
@@ -3490,7 +3933,13 @@ rules:
   - type: supersedes
     rule_id: ALL-PROC-027
     note: ALL-PROC-027 记 duplicate，它的分档要求由 ALL-PROC-005 的三档授权承担。
-  rationale: independent_sources 为 1，按 criteria.md 第 3 条采用：它是本 skill 里唯一能解决“该改多少”这个问题的机制，也是 ALL-PROC-012（允许重建结构）和 ALL-PROC-030（保留原结构）这组冲突的裁决依据。可判定：对照用户的原话看这次改动落在哪一档。
+  - type: pairs-with
+    rule_id: ALL-PROC-042
+    note: ALL-PROC-005 定这次改到什么力度（按用户措辞的三档授权），ALL-PROC-042定这次能不能改变句数和段数；两条正交，一次改写要各判一次。
+  - type: conflicts-with
+    rule_id: ALL-PROC-041
+    note: ALL-PROC-005 按用户的措辞定改动幅度（改写／润色／校对三档），ALL-PROC-041按文本自身的 AI 味密度定；用户说「润色」而文本 AI 味很重时两条给出相反指令，取 ALL-PROC-005，ALL-PROC-041记 rejected。
+  rationale: independent_sources 为 1，按 criteria.md 第 3 条采用：它是本 skill 里唯一能解决“该改多少”这个问题的机制，也是 ALL-PROC-012（允许重建结构）和 ALL-PROC-030（保留原结构）这组冲突的裁决依据。可判定：对照用户的原话看这次改动落在哪一档。 【中文批补记】ALL-PROC-041 与本条冲突：它按文本自身的 AI 味密度定改写力度，本条按用户的措辞定。用户说「润色」而文本 AI 味很重时两条给出相反指令，取本条，ALL-PROC-041 记 rejected。本条只管力度，「这次能不能删整句」由 ALL-PROC-042 的编辑范围轴管，两条正交。
   history:
   - decision: adopted
     at: '2026-09-06T12:00:00Z'
@@ -3541,8 +3990,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 6
-  independent_sources: 2
+  evidence_count: 9
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -3574,6 +4023,21 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### Mode: `rewrite`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
   relations:
   - type: pairs-with
     rule_id: ALL-PROC-017
@@ -3621,7 +4085,11 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: '## 输出契约'
-  rationale: 两个独立来源，四条证据。两边的固定标签不同（一边是 What changed，一边是门检、终稿、打磨报告三个逐字标签），本仓库不照搬任何一方的标签，改成三条固定内容，这是记 adopted-with-modification 的原因。“保留了什么”这一条是本次合并新增的，用来让 ALL-PROT 系列的执行结果可见。可判定：三条内容缺一即违反。
+  relations:
+  - type: conflicts-with
+    rule_id: ALL-PROC-046
+    note: ALL-PROC-008 要求每份改写稿都附一节改动说明、终稿短也不省略；ALL-PROC-046把说明降级为按需触发。取 ALL-PROC-008，ALL-PROC-046记 rejected。
+  rationale: 两个独立来源，四条证据。两边的固定标签不同（一边是 What changed，一边是门检、终稿、打磨报告三个逐字标签），本仓库不照搬任何一方的标签，改成三条固定内容，这是记 adopted-with-modification 的原因。“保留了什么”这一条是本次合并新增的，用来让 ALL-PROT 系列的执行结果可见。可判定：三条内容缺一即违反。 【中文批补记】ALL-PROC-046 与本条冲突：三个独立的中文来源都把「默认只给正文、不附改动说明」写成输出契约。取本条，ALL-PROC-046 记 rejected，完整理由写在 ALL-PROC-046 的 rationale 和本批报告的第 5 节；要点是本 skill 的删句、删除清单、需作者确认、品牌名更正几项机制都需要改动说明这个固定位置，而 ALL-PROC-021 已经给了「只要正文」的口子。三个来源真正反对的是说明太长，这一点已按 ALL-PROC-038 的条数上限吸收。
   history:
   - decision: adopted-with-modification
     at: '2026-09-06T12:00:00Z'
@@ -3680,8 +4148,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 1
+  evidence_count: 3
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
@@ -3693,6 +4161,15 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 语体只调整触发阈值和改写幅度
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-PROC-002
+    note: ALL-PROC-010 要求四组检查都要过一遍、不得整组跳过，但不规定顺序；ZH-PROC-002给中文文本补上处理顺序和先扫描后动手的先后关系。
   rationale: 来源列的是八个模式族，本仓库按自己的 references 结构并成四组（对应 protection、patterns-common、patterns-zh/en、以及格式残留类规则），这是记 adopted-with-modification 的原因；并成四组是为了让每一组都能对上一个 references 文件，避免出现记不住的清单。可判定：改动说明里能不能说出四组各自的结论。
   history:
   - decision: adopted-with-modification
@@ -3710,14 +4187,24 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 3
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: '### 3. 重建信息架构'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: 2. 先看文章主线
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 5. 管住文章级结构'
   rationale: independent_sources 为 1，采用。可判定：调整顺序前有没有写下每段职责。它是 ALL-P-008（段落可打乱性）的正面做法：段落职责说不出来，就是那条命中的原因。
   history:
   - decision: adopted
@@ -3758,6 +4245,9 @@ rules:
   - type: pairs-with
     rule_id: ALL-PROC-030
     note: 按 ALL-PROC-005 的授权档位分工：校对档和润色档以 ALL-PROC-030 为准，改写档以 ALL-PROC-012 为准，改写档下重排仍要写清理由。
+  - type: pairs-with
+    rule_id: ALL-PROC-042
+    note: ALL-PROC-012 列出拿到改写级授权时允许的动作，ALL-PROC-042给这些动作再叠一层范围限制：同样是改写级授权，范围为 in-place 时不得合并拆分调换段落。
   rationale: independent_sources 为 1，两条证据。本仓库把来源的“判断为需要即可重建”改成“拿到改写级授权时允许”，把权限来源明确挂到 ALL-PROC-005 上，这是记 adopted-with-modification 的原因。它与 ALL-PROC-030（保留原结构）是本次合并的一组正面冲突，裁决办法是按授权档位分工，写进 conflicts.md。执行时受 ALL-PROT-010 约束：段落一动，引用跟着动。
   history:
   - decision: adopted-with-modification
@@ -3854,6 +4344,9 @@ rules:
   - type: supersedes
     rule_id: ALL-M-005
     note: ALL-M-005 记 rejected，打分的替代做法是 ALL-PROC-014 的七项自查清单。
+  - type: pairs-with
+    rule_id: ALL-PROC-045
+    note: ALL-PROC-014 给出交付前要逐项自查哪些内容，ALL-PROC-045给出这些检查的执行顺序和最后一轮的动作白名单；ALL-PROC-014 管查什么，ALL-PROC-045管什么时候查、查完还能改什么。
   rationale: 三个独立来源，七条证据。三方的清单条目不同，本仓库合成一份，并去掉了 Aboudjem 清单里两处不可判定的条目（读出声音判断像不像新闻稿、能不能想象出一个具体的人写了这个，按 criteria.md 第 2 条）和两处互相矛盾的数值（句长方差大于 30%、不超过 2 句相似结构，与它自己的另一处 3 句口径对不上，本仓库按 ALL-P-001 的口径统一），这是记 adopted-with-modification 的原因。自查结果不作验收结论，见 ALL-M-004。
   history:
   - decision: adopted-with-modification
@@ -3912,6 +4405,9 @@ rules:
   - type: pairs-with
     rule_id: ALL-PROT-008
     note: 代码块和引用块扫描前跳过、输出前原样还原，是受保护片段不得改动的执行方式。
+  - type: pairs-with
+    rule_id: ALL-PROT-032
+    note: ALL-PROC-016 把成块的代码和引用块整体跳过，ALL-PROT-032管这些内容以内联形式出现在散文句子里的情况，两条各管一半。
   rationale: independent_sources 为 1，采用。来源把它挂在两个可选开关上，本仓库改成默认行为——ALL-PROT-008 已经规定这些内容不得改动，把跳过做成可选项等于给违反留了口子。可判定：输出里代码块和引用块的字符与输入比对。
   history:
   - decision: adopted
@@ -3966,7 +4462,11 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## Step 3: Rewrite Craft / Anti-Default Discipline'
-  rationale: independent_sources 为 1，采用。它是一条汇总规则，具体条目分别由 ALL-P-005、EN-P-023、ZH-P-006、EN-P-041、EN-P-007 覆盖，但保留它有独立价值：这些动作是模型改写时自己会加进去的，不是原文里的，靠扫描原文的模式表抓不到。最后半句同时是 ALL-PROT-018 采用、EN-S-002 记 reference-only 的一条内部佐证。
+  relations:
+  - type: conflicts-with
+    rule_id: ZH-PROC-001
+    note: ALL-PROC-018 明写给本该平实的文字硬注入个性同样算 AI 味，与ZH-PROC-001的无条件适用直接相反。
+  rationale: independent_sources 为 1，采用。它是一条汇总规则，具体条目分别由 ALL-P-005、EN-P-023、ZH-P-006、EN-P-041、EN-P-007 覆盖，但保留它有独立价值：这些动作是模型改写时自己会加进去的，不是原文里的，靠扫描原文的模式表抓不到。最后半句同时是 ALL-PROT-018 采用、EN-S-002 记 reference-only 的一条内部佐证。 【中文批补记】ZH-PROC-001 与本条冲突：它把「注入真实的个性」写成不因体裁而跳过的固定步骤，本条明写给本该平实的文字硬注入个性同样算 AI 味。取本条，ZH-PROC-001 记 rejected。
   history:
   - decision: adopted
     at: '2026-09-06T12:00:00Z'
@@ -3983,14 +4483,19 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### Iterate handling (used when `--iterate N` is set)'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 6. Positive style targets'
   rationale: 来源把它挂在命令行参数上并规定了递归条件，本仓库去掉参数形式，保留上限和终止条件，这是记 adopted-with-modification 的原因。上限是必要的：每一轮改写都会离原文更远，而 ALL-PROT 系列的风险随轮次累积。可判定：数轮次。
   history:
   - decision: adopted-with-modification
@@ -4123,8 +4628,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 1
+  evidence_count: 3
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
@@ -4136,6 +4641,11 @@ rules:
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 至多两条具体结构
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
   relations:
   - type: pairs-with
     rule_id: ALL-PROT-012
@@ -4157,14 +4667,24 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 3
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-aboudjem-humanizer-skill
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '## Step 1: Parse Arguments / Auto-load brand context'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Repo Overrides'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 5. No-touch and keep rules'
   rationale: 来源的做法是自动加载工作目录下一个固定文件名的上下文文件，本仓库去掉具体文件名和自动加载动作（本 skill 不规定用户的文件布局），只保留优先级规则并补了“冲突要说明”，这是记 adopted-with-modification 的原因。可判定：用户给了词表时，输出里有没有出现表内禁用的词。
   history:
   - decision: adopted-with-modification
@@ -4240,18 +4760,26 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 1
-  independent_sources: 1
+  evidence_count: 2
+  independent_sources: 2
   sources:
   - type: upstream
     source_id: upstream-lifelonglazylearner-qu-ai-wei
     path: SKILL.md
     commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
     anchor: 显眼的对称骨架要重建，不做同义换壳
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
   relations:
   - type: pairs-with
     rule_id: ALL-PROC-007
     note: 每处改动报得出一个规则 id，审稿模式的每条证据也要点出规则 id。
+  - type: pairs-with
+    rule_id: ALL-PROC-039
+    note: ALL-PROC-028 规定 references 里没有的现象写进改动说明交给用户、不自行加规则；ALL-PROC-039补上它前面的一步——先判断这个新说法是不是已有模式的一个变体，是就按那个模式处理。两条合起来才不会把「未收录」当成「不命中」。
   rationale: 来源指向的是它自己仓库里的一个词表文件，本仓库把指向改成 skills/maybe-humanizer/references/，并补了“表外现象交给用户判断”这一句，这是记 adopted-with-modification 的原因。采用它的理由是它让每次改动可追溯到一个规则 id，与 ALL-PROC-007 审稿模式要求“点出规则 id”配套。可判定：每处改动能不能报出一个 id。
   history:
   - decision: adopted-with-modification
@@ -4269,8 +4797,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 4
-  independent_sources: 3
+  evidence_count: 5
+  independent_sources: 4
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -4292,6 +4820,11 @@ rules:
     path: skills/humanizer/SKILL.md
     commit: 275af9489079d0c4a95d47d62a311a5cb0bd85ba
     anchor: '### Mode: `edit` / If patterns found: apply fixes with the Edit tool'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 这份 skill 不是敏感词替换器
   rationale: 三个独立来源，四条证据。三方措辞不同（最小有效编辑、改动须带来可验证改善、有权限也不强改已自然的文本、局部编辑而非整篇重写），判据相同：这处改动说得出改善在哪吗。可判定，且是 evals 第一类样本（真人原文不该被改）的直接依据。
   history:
   - decision: adopted
@@ -4309,8 +4842,8 @@ rules:
   decision_origin: human-approved
   decision_revision: 1
   decided_at: '2026-09-06T12:00:00Z'
-  evidence_count: 2
-  independent_sources: 1
+  evidence_count: 4
+  independent_sources: 3
   sources:
   - type: upstream
     source_id: upstream-petergyang-no-ai-slop
@@ -4322,6 +4855,16 @@ rules:
     path: skills/no-ai-slop/SKILL.md
     commit: 000650b156983f5159695b441477f4e63b25dc85
     anchor: '## Editing principles / Keep structure unless it''s hurting the piece.'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 5. 管住文章级结构'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 如何增加语调'
   relations:
   - type: conflicts-with
     rule_id: ALL-PROC-012
@@ -4437,3 +4980,2505 @@ rules:
   - decision: rejected
     at: '2026-09-06T12:00:00Z'
     reason: 首次合并
+- id: ZH-P-012
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: pattern
+  language: zh
+  rule_summary: 并列项默认取两项而不是三项；已经写成三项列举的，改成两项或四项。
+  decision: rejected
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 核心规则速查'
+  relations:
+  - type: conflicts-with
+    rule_id: ALL-P-005
+    note: ALL-P-005 的判据是内容有几项就写几项，本条的判据是避开三这个数量；原文确实有三项时两条给出相反动作，取 ALL-P-005，本条记 rejected。
+  rationale: 上游针对的现象是真实的：模型写中文时不管内容有几项都凑成三项，读到第三段就能预判形状。但它给的解法是换一个固定数量（两项或四项），这只是把一个模板换成另一个模板——原文确实有三件事时，改成两项要删掉一项（撞 ALL-PROT-003），改成四项要补一项（撞 ALL-PROT-001）。ALL-P-005 处理同一个现象而不需要动内容：判据是这三项是不是为了凑气势才排在一起，是就重建结构，不是就留着。按 criteria.md 第 1 条，protection 优先于风格意见，本条记 rejected。上游那个场景（三项排比确实是模板骨架）在本仓库由 ALL-P-005 覆盖，不另留开关。
+  history:
+  - decision: rejected
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-013
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-013 段落收尾形状不得雷同'
+  category: pattern
+  language: zh
+  rule_summary: 同一篇里段落的收尾方式要有变化：连续三段以上用同一种收尾形状（都以一句独立短句收尾、都以一句判断收尾、都以一个数字收尾）即命中，改掉其中至少一段。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 核心规则速查'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 快速检查清单'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-P-001
+    note: ALL-P-001 管句长和段落开头的雷同，本条管段落收尾的雷同，两条合起来覆盖一篇文字的节奏可预测性。
+  rationale: 上游把「句长有变化」从一条描述性观察改成一条可以数出来的交付检查，并把对象从句子扩展到段落收尾。它针对的现象是中文 AI 长文里每段都以一句短促的判断句收束，读到第三段就能预判第四段的形状。ALL-P-001 已经管句长和段落开头，没有管收尾，这是一个真实的缺口。可判定：数连续多少段用了同一种收尾形状，三段以上即命中。两条证据来自同一来源的两处（核心规则速查、快速检查清单），independent_sources 为 1，但按 criteria.md 第 3 条五件事都成立：本仓库处理中文长文、现象真实、与已有规则不矛盾、体裁相符、不会误伤真人（真人写作的收尾形状本来就杂）。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-014
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-014 不替读者降低难度'
+  category: pattern
+  language: zh
+  rule_summary: 陈述一个事实之前不加软化（「这里可能有点绕」）、辩解（「不过别担心」）和手把手引导（「我们一步一步来看」）的铺垫层；打完一个比方之后不再用「也就是说」把它解释一遍。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 核心规则速查'
+  rationale: 上游把这条命名为「信任读者」，针对的现象是模型默认把读者当成需要被安抚和牵引的人，于是每个事实前都加一层缓冲。中文侧现有词表（ZH-P-001）收的是套话词，没有收这种铺垫层；EN-P-007 管的是英文的清嗓子开场，EN-P-029 管的是保留语堆叠，都不覆盖「我们一步一步来看」这类中文引导语。可判定：指出哪一句是铺垫、删掉之后事实句本身不变，即命中。单一来源，但按 criteria.md 第 3 条五件事成立。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-015
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-015 中文不吹时代意义'
+  category: pattern
+  language: zh
+  rule_summary: 中文正文里以下夸大意义的说法要删掉或换成具体事实：作为、标志着、见证了、是……的体现／证明／提醒、发挥了极其重要的／关键性的作用、凸显／强调／彰显了其重要性、反映了更广泛的、象征着其持久的、为……奠定基础、代表着一个转变、关键转折点、不断演变的格局、不可磨灭的印记、深深植根于；「这意味着……的时代已经到来」这类把一条具体事实自动升格成时代判断的收束句一并删掉。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 2
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 2. 去掉空泛的大词和套话'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 1. 过度强调意义、遗产和更广泛的趋势'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-014
+    note: EN-P-014 管英文的 stands as / serves as a testament / marks a pivotal moment，本条管中文的同一模式，两条各管一种语言。
+  rationale: 两个独立来源（op7418 的模式表、ai-zixun 的「自动收束句」）指向同一个现象：一件普通事实后面自动跟一句把它抬到时代高度的评论，位置固定（在具体事实之后）、内容固定（拔高一级）、与前文没有真实推理关系。EN-P-014 已经管住英文，中文侧没有对应规则，ZH-P-001 的词表只收了「彰显」「标志着」「凸显」三个词。词表照录自 upstream-op7418-humanizer-zh 与 upstream-ai-zixun-humanizer-zh，说明文字为重写。可判定：删掉这句之后，前面那条事实是否仍然完整——是，就说明这句只在评论。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-016
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-016 不用知名度清单代替内容'
+  category: pattern
+  language: zh
+  rule_summary: 不用「独立报道」「被多家国家／区域媒体引用」「由知名专家撰写」「拥有活跃的社交媒体账号」这类知名度陈述证明重要性；保留一条说清具体报道了什么的引用，其余删掉。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 2. 过度强调知名度和媒体报道'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-018
+    note: EN-P-018 管英文的 featured in X, Y, Z / profiled in / independent coverage，本条管中文里同一模式的固定说法。
+  rationale: 上游指出这类罗列「通常不提供上下文」——它占了篇幅却没有信息，读者读完不知道这个人具体说了什么、这家公司具体做了什么。EN-P-018 已经管英文，中文人物介绍和公司简介里的「活跃的社交媒体账号」「独立报道」在现有中文词表里没有。可判定：这句话说出了具体内容还是只说了有多少人提过它。词表照录自 upstream-op7418-humanizer-zh，说明文字为重写。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-017
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-017 删掉句末的评论性后置小句'
+  category: pattern
+  language: zh
+  rule_summary: 删掉在句末追加的「突出／强调／彰显……」「确保……」「反映／象征……」「为……做出贡献」「培养／促进……」「涵盖……」「展示……」这类后置小句；小句里如果有原文其他地方没有的事实，把它提升成一句独立的陈述句，没有就整个删掉。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 3. 以 -ing 结尾的肤浅分析'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-013
+    note: EN-P-013 靠英文的 -ing 分词形态判定，中文没有这个形态，本条给出同一模式在中文里的实际形状（句末追加的评论性小句），两条各管一种语言。
+  rationale: EN-P-013 的判定抓手是英文的现在分词从句，中文里不存在这个形态，于是这条规则在中文文本上等于空转。上游给出的这组句末小句是同一模式在中文里的实际落法：判定对象从「词尾」换成「句末追加的评论性小句」。这是一处真正的语言适配，不是词表对译，填补的是本仓库中英文规则不对称的缺口。可判定：把这个小句删掉，前半句的信息有没有减少——没有，就是命中。词表照录自 upstream-op7418-humanizer-zh，说明文字为重写。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-018
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-018 不用宣传词代替事实'
+  category: pattern
+  language: zh
+  rule_summary: 不用以下宣传式词语代替事实：拥有（夸张用法）、充满活力的、丰富的（比喻）、深刻的、增强其、展示、体现、致力于、自然之美、坐落于、位于……的中心、开创性的（比喻）、著名的、令人叹为观止的、必游之地、迷人的。换成具体是什么让它值得一提。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 4. 宣传和广告式语言'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-002
+    note: EN-P-002 管英文的 nestled / vibrant / breathtaking / must-visit，本条管中文旅游与城市宣传语料里的同一组词。
+  rationale: EN-P-002 已经管住英文的旅游宣传册腔，中文侧 ZH-P-001 只收了「令人叹为观止」「坐落于」两条。上游点名这个模式在文化遗产和城市介绍类话题上最严重，模型写中文城市介绍时几乎必然出现「必游之地」「充满活力的」。可判定：这个词换成一句具体描述之后，读者知道的东西是不是变多了。词表照录自 upstream-op7418-humanizer-zh，说明文字为重写。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-019
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-019 中文模糊归因要点名或删掉'
+  category: pattern
+  language: zh
+  rule_summary: 「行业报告显示」「观察者指出」「专家认为」「一些批评者认为」「多个来源／出版物」这类模糊归因，要么点名具体来源，要么删掉整条论断；原文给不出来源时按 ALL-PROT-001 去问，不得编一个。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 5. 模糊归因和含糊措辞'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-017
+    note: EN-P-017 管英文的 experts agree / research suggests / studies show，本条管中文资讯稿里同一模式的固定说法。
+  rationale: EN-P-017 已经管英文，中文侧没有对应规则。这条在本批里有一个具体的教训：op7418 把 blader 那一节末尾的三句防误写（「原文给了来源就点名，否则删掉这条没有支撑的论断，绝不编造来源」）没有译出来，而它同一节的示例正好演示了补出一个机构名和年份，见 ALL-PROT-001 的 rationale。这说明中文侧只有触发词、没有处理动作时，规则会被执行成「换个说法留着」。可判定：这句话的归属是不是一个可以查到的具体来源。词表照录自 upstream-op7418-humanizer-zh，说明文字为重写。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-020
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-020 不写提纲式的挑战与展望小节'
+  category: pattern
+  language: zh
+  rule_summary: 不写「尽管其……面临若干挑战」「尽管存在这些挑战」「挑战与遗产」「未来展望」这类提纲式小节；写清具体问题（带时间和数据），或者整段删掉。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 6. 提纲式的'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-031
+    note: EN-P-031 管英文的 Despite [好的一面]，[模糊的问题] 套路，本条管中文里同一套路，并额外覆盖它作为固定小节标题出现的形态。
+  rationale: EN-P-031 已经管英文的挑战小节套路。中文侧的增量在于「挑战与遗产」「未来展望」不只是句子，还是结构模板：模型写完主体后会自动补上这么一节，节里没有一个具体问题。可判定：这一节里能不能指出至少一个带时间或数据的具体问题，指不出就是命中。词表照录自 upstream-op7418-humanizer-zh，说明文字为重写。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-021
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-021 用「是」「有」代替系动词替身'
+  category: pattern
+  language: zh
+  rule_summary: 用「是」「有」代替「作为／代表／标志着／充当［一个］」「拥有／设有／提供［一个］」这类系动词替身；「作为 X」当谓语用时还会让句子没有谓语，一并改掉。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 8. 避免使用'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-015
+    note: EN-P-015 管英文的 serves as / stands as / boasts / features，本条管中文的同一组替身，并补上中文特有的「作为 X」缺谓语问题。
+  rationale: EN-P-015 已经管英文，中文侧没有对应规则。中文的增量有两层：一是「设有」「提供」在机构和场馆介绍里成群出现；二是「作为 X」当谓语用时句子根本不成句（「Gallery 825 作为 LAAA 的展览空间。」），这是英文侧没有的副作用。可判定：把这个词换成「是」或「有」，句子的信息有没有变——没变就是替身。词表照录自 upstream-op7418-humanizer-zh，说明文字为重写。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-022
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-022 删掉中文聊天残留与知识截止免责声明'
+  category: pattern
+  language: zh
+  rule_summary: 删掉粘在正文里的中文助手用语：希望这对您有帮助、当然！、一定！、您说得完全正确！、您想要……、请告诉我、这是一个……（引出语）、让我来为你解释、Great question!；以及知识截止免责声明：截至［日期］、根据我最后的训练更新、虽然具体细节有限／没有广泛记录、基于可用信息。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 3
+  independent_sources: 2
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 19. 协作交流痕迹'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 20. 知识截止日期免责声明'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 删开场套话、谄媚和元评论'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-028
+    note: EN-P-028 管英文的 I hope this helps / Let me know / As of my last training update，本条管中文对话模型自己会说的那一组，两条各管一种语言。
+  rationale: 两个独立来源（op7418 的交流模式与免责声明两节、shuorenhua 的兜底规则第一条）指向同一组内容。EN-P-028 已经管英文，中文侧的这些说法不是英文短语的译文而是中文对话模型自己的固定收尾，现有中文词表 ZH-P-001 里一条都没有。免责声明并入同一条，是因为它和助手寒暄共用同一条判定逻辑：删掉之后正文的信息不变，且它们的位置固定在段首和段尾。注意免责声明后面常跟一个猜测（「但它似乎是在 20 世纪 90 年代成立的」），那半句按 ALL-PROT-001 处理，不属于本条。词表照录自 upstream-op7418-humanizer-zh 与 upstream-mrgediao-shuorenhua，说明文字为重写。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-023
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-023 中文填充结构缩短'
+  category: pattern
+  language: zh
+  rule_summary: 中文填充结构按最短说法改写：「在这个时间点」写成「现在」、「具有处理……的能力」写成「可以处理……」、「在您需要帮助的情况下」写成「如果您需要帮助」、「值得注意的是数据显示」写成「数据显示」、「为了实现这一目标」写成「为了做到这一点」。承载真实逻辑关系的连接词缩短成表达这个关系的最短说法，不整段删。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 22. 填充短语'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-004
+    note: EN-P-004 管英文的 due to the fact that / in order to / at this point in time，本条管中文里同一类名词化填充结构。
+  rationale: EN-P-004 已经管英文，中文侧 ZH-P-001 收的是套话词不是结构。上游给的对照表里有两类内容，本条只收其中一类：「在这个时间点」「具有……的能力」是中文里真实存在的名词化填充；「由于下雨的事实」是 due to the fact that 的字面直译，中文里几乎不会这么写，属于翻译痕迹，已剔除（这也是 criteria.md 第 3 条第 2 项「准确性」的直接应用：反例在中文语料里不成立的词条不进词表）。可判定：换成最短说法之后信息有没有变。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-024
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-024 中文二元对比骨架'
+  category: pattern
+  language: zh
+  rule_summary: 中文表达对比时不默认用「不是 X，而是 Y」「与其 X，不如 Y」的对照骨架：多数情况删掉前半句直接说 Y，或改用转折、递进、重心移动；只有前半句在回应原文里真实存在、点名的主张时才保留。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 2
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 1. 优先改掉翻译腔'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 处理二元对比骨架'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-006
+    note: EN-P-006 管英文的 It's not X, it's Y / not only X but Y，本条管中文里同一骨架，并给出「多数删掉前半句」这个具体动作。
+  rationale: 两个独立来源（ai-zixun 归在「翻译腔」下、shuorenhua 归在兜底规则第三条）都点名这个骨架，且都指出前半句通常是模型自己造出来的假对立——读者从没提出过「这是技术问题」。EN-P-006 已经管英文，中文侧 ALL-P-005 只收了「不仅……而且……更」。shuorenhua 还在 Pass 2 的残留检查里把「同一骨架反复到能预判下一句形状」单列，说明这个骨架在中文里最容易复发。可判定：指出前半句被否定的那个主张在原文里有没有出现过。措辞取上游的「多数删掉」而不是「禁用」，保留前半句确实在回应真实主张时的余地。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-025
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-025 中文引号样式全篇统一'
+  category: pattern
+  language: zh
+  rule_summary: 中文正文的引号样式全篇只用一种：原文已经一致地用了某一种（“”或「」）就沿用；用户在本轮请求里指定的样式优先，其次是项目 CLAUDE.md／AGENTS.md 声明的样式；三者都没有时用全角双引号“”，嵌套用单引号‘’。同一篇里出现两种样式即命中。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 3
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 6. 处理标点和排版'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Repo Overrides'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Repo Overrides'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-037
+    note: EN-P-037 管英文直引号与弯引号的跟随原稿口径，本条管中文的“”与「」，两条各管一种语言，默认值的取法已经对齐。
+  rationale: 上游关心的不是哪种引号更好，而是全篇一致——混用是拼接痕迹的直接证据，这一点成立且可判定（数一篇里出现几种样式）。修改点在优先级：上游把「默认全角双引号」排在「沿用原文」之前，本仓库把顺序倒过来，理由是 EN-P-037 已经定了「引号排版跟随作者原稿」的口径，而原文自己已经一致时，这个一致就是作者的选择，默认值不该覆盖它；上游自己在 Repo Overrides 一节也写了同样的例外，本条把这个例外提升成了主规则。用户本轮要求优先于项目声明这一层原样采纳，它与 ALL-PROC-025 的口径一致。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-026
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-026 中文连环冒号'
+  category: pattern
+  language: zh
+  rule_summary: 中文正文里连续三句以上用冒号展开解释时，逐处判断这个冒号是不是在承担列表、标签或引语的功能；不承担的改写成陈述句。孤立出现的冒号不标记、不改写。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 6. 处理标点和排版'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-027
+    note: EN-P-027 把英文的分号冒号密集出现记为需要复查的弱信号，本条给中文侧同一现象加上处理动作，两条各管一种语言，触发门槛一致（连续三句以上）。
+  rationale: 上游把「连环冒号」列进它的固定扫描清单，理由是冒号让每句话都变成「标签＋展开」，读起来像幻灯片。这个观察在中文里成立且可判定。修改点在强度：上游要求一律改写，本仓库改成先判断冒号在这一处承担什么功能再决定，理由是 EN-P-027 已经定了「孤立出现不标记」的口径，而中文的冒号在列表引导和引语前是正常用法，一律改写会误伤。independent_sources 为 1，但它不是在要求一种腔调（criteria.md 第 4 条），而是给出一个可以数出来的密度门槛，按第 3 条采纳。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-027
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-027 删掉姿态层'
+  category: pattern
+  language: zh
+  rule_summary: 删掉过度接住、替对方做心理判断和身份认证式夸奖的句子（「你不是敏感」「你只是太久没被稳稳接住了」「你问到了问题的核心」「这是顶刊作者才有的素养」），改回低承诺回应或具体判断，不硬演「我懂了」。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 遇到过度接住、替用户做心理判断或身份认证式夸奖'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-028
+    note: ZH-P-027 管删掉姿态层本身，ZH-P-028 管删的时候不许把强安抚降格成弱安抚，缺一条另一条会被绕开。
+  rationale: 上游给这类句子起了一个准确的名字：姿态层——它们不传达内容，只表演理解和接纳。这是中文对话模型近年最显眼的一类口癖，EN-P-028 的谄媚条目（Great question!）只覆盖了其中最浅的一层，「替对方下心理判断」和「身份认证式夸奖」在现有规则里完全没有对应，是本来源的显著增量。判据是上游给的「有没有在表演共情」，落地成可判定的形式就是：删掉这句之后，回应里还剩不剩下一个具体的判断或事实；不剩，这句就是纯姿态。与 ALL-PROT-012 方向一致：都拒绝据文本对人下结论。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-028
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-028 不把强安抚降格成弱安抚'
+  category: pattern
+  language: zh
+  rule_summary: 方向或进度认证式的判断（「走在正确的路上」「完全不用担心」「方向是对的」「意义重大」「真正理解了用户」）只能删除，或改成「现有信息不足以判断」；不得降格成「方向没问题」「应该问题不大」这类弱安抚继续替对方下结论。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 遇到过度接住、替用户做心理判断或身份认证式夸奖'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 2 | Residual Audit'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-027
+    note: ZH-P-027 管删掉姿态层本身，本条堵住执行 ZH-P-027 时最常见的偷懒方式（把强安抚改成弱安抚）。
+  rationale: 这条堵的是执行姿态层清理时最容易走的那条路：把强安抚改成弱安抚，看起来收敛了，实质没变——仍然是在没有依据的情况下替对方判断「没问题」。上游给的是一个二选一（删掉，或明说信息不足），两个出口都可判定。shuorenhua 在 Pass 2 的残留检查里又列了一次同类句子（「方向是对的」「意义重大」），说明这类句子会在删掉空总结之后被重新补上来当落点，需要在收尾环节再查一遍。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-029
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-029 同一个对象不逐次升格换词'
+  category: pattern
+  language: zh
+  rule_summary: 指代同一个对象时重复用同一个词，不在相邻几句里逐次升格换成更抽象或更文雅的说法（修表 → 这门手艺 → 这项技能）；代词照应不算违反。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 同一个对象不要在相邻几句里换三种说法'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-019
+    note: EN-P-019 管英文的 synonym cycling，本条管中文，并补上「逐次升格」这个中文特有的形态和「代词照应不算」的例外。
+  - type: pairs-with
+    rule_id: EN-P-020
+    note: EN-P-020 管英文里给同一实体换整个名词短语，本条是它的中文形态。
+  rationale: 「逐次升格」是这条规则最准的观察：换词不是随机的，每换一次都更抽象、更文雅，因为模型在避免重复的同时也在追求「更好的词」。EN-P-019 和 EN-P-020 已经管英文，中文侧只有 ALL-PROT-009 从反面写了「不得为避免重复而换称」，没有给出可判定的形态。加上「代词照应不算」这条例外之后规则才可判定——否则正常的中文指代会被误判。可判定：指出这三个说法指的是不是同一个对象，是就命中。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-030
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-030 同形词按语义分流'
+  category: pattern
+  language: zh
+  rule_summary: 一个词正在被定义、被讨论，或属于引用原文时保留它（「闭环控制系统」保留）；同一个词被用来包装进展或结论时还原成具体完成了什么（「这块已经闭环了」改成「三步都做完了」）。还原时必须保留原文的「未／只／部分」等完成范围，不得写成全流程已完成。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 词本身正在被定义、讨论
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 例如 `闭环反馈 / 闭环控制` 是反馈机制
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-009
+    note: ALL-PROT-009 从反面给出三类不适用模式清理的例外，本条从正面给出同一个字符串在术语用法和包装用法之间的分流判据，两条合起来才够用。
+  rationale: 这是全批最清楚的一条「同形词按语义分流」规则，而且上游给了判例（闭环）。它解决的是词表方法的根本缺陷：同一个字符串在不同句子里可能是术语也可能是黑话，只看词表分不开。ALL-PROT-009 已经说了「行业固定表述属于例外」，但没有给出怎么判断一次出现属不属于例外；本条给的判据（这个词在这句话里是被讨论还是被用来包装）可以逐句执行。第二半（还原时保留完成范围）是必须的：黑话本身模糊，还原时模型会补一个「听起来完整」的说法，把「只闭环了前两步」写成「流程已经跑通」。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-031
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-031 不制造洞见感'
+  category: pattern
+  language: zh
+  rule_summary: 不用「很多人没有意识到的是」「真正的问题从来都不在……」「大多数人搞错的是」制造洞见感；立场要带判断依据，说不出依据就删掉整句。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 6. Positive style targets'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-008
+    note: EN-P-008 管英文的 The part everyone misses / what most people get wrong，本条管中文里同一套铺垫，两条各管一种语言。
+  rationale: EN-P-008 已经管英文的故作洞见铺垫，中文侧没有对应词条。上游把它放在正向目标一侧（「立场应当来自判断或事实，不来自故作洞见」），并给了可判定的判据：立场后面有没有依据，而不是立场强不强。它同时是 public-writing 场景的特征病灶——上游给这个场景写的重点就是「不装有洞见」。可判定：删掉这个铺垫之后，剩下的那句话本身站不站得住。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-P-032
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-P-032 不补一句说明这段叙述的意义'
+  category: pattern
+  language: zh
+  rule_summary: 叙述完一件事之后不再补一句说明这件事意味着什么（「重试次数从五次降到两次，这说明团队在稳定性上的思路发生了转变」）；让事实和判断自己承担重点。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 2 | Residual Audit'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-022
+    note: EN-P-022 管英文的 That last part matters more than it sounds / The key point is，本条管中文里同一种旁白，两条各管一种语言。
+  rationale: 上游把这类句子叫 narrator 腔，特征是文本在叙述之外还要说明这段叙述的意义。它被单列进 Pass 2 的残留检查，理由是它常常以「补充说明」的面目留在稿子里，第一轮不会被当成套话删掉。EN-P-022 已经管英文，中文侧没有对应规则。可判定：这半句删掉之后，前面那件事有没有变得不清楚——没有，就是旁白。与 ZH-P-015 的边界：ZH-P-015 管把事实抬到时代高度，本条管替读者总结这件事的含义，两者可以同时命中同一句。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-S-001
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: style-opinion
+  language: zh
+  rule_summary: 对事实要给出反应而不是只做中立报道，包括直说自己拿不准该怎么看；原文没有作者反应时在改写里补出来。
+  decision: rejected
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 如何增加语调'
+  relations:
+  - type: conflicts-with
+    rule_id: ALL-PROT-001
+    note: 本条要求补出原文没有的作者反应和立场，ALL-PROT-001 禁止新增原文没有的观点；按 criteria.md 第 1 条 protection 优先，本条记 rejected。
+  - type: conflicts-with
+    rule_id: ALL-PROT-018
+    note: 本条要求补出感受和第一人称，ALL-PROT-018 禁止为了显得像真人而添加原文没有的感受、幽默和第一人称。
+  rationale: 上游针对的现象是真实的：模型习惯性地两边各说一句以示平衡，结果整篇没有立场，读起来像新闻稿。这一点本仓库已经用 ALL-PROC-018 承认了（点名拒绝各打五十大板的两边论调）。分歧在处理动作：上游要求补出一个作者反应，本仓库只允许删掉那种假平衡，不允许补。理由是改写工具没有作者的立场可写——补出来的反应是模型的反应，署在作者名下，读者无从分辨。上游那个场景（原文里作者本来就有态度，被前一轮改写洗掉了）在本仓库由 ALL-PROT-017 覆盖：作者的犹疑、直率程度、幽默属于作者，不得为了统一而改掉，这条是保留而不是新增。本仓库没有为「补出立场」留开关；确实需要一个立场时，正确做法是按 ALL-PROC-003 问作者。裁决依据是 criteria.md 第 1 条：protection 优先于 style-opinion。本条同时与两条 protection 冲突——ALL-PROT-001 禁止新增原文没有的观点，ALL-PROT-018 禁止为了显得像真人而添加原文没有的感受和第一人称——两条都取，本条记 rejected，冲突按第 8 条双记。
+  history:
+  - decision: rejected
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-S-002
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: style-opinion
+  language: zh
+  rule_summary: 中文正文不使用长破折号「——」，一律改成逗号、句号或拆句。
+  decision: rejected
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 6. 处理标点和排版'
+  relations:
+  - type: conflicts-with
+    rule_id: ZH-P-007
+    note: ZH-P-007 允许中文破折号在真正需要解释、转折或停顿时用一次，本条要求完全禁用；取 ZH-P-007，本条记 rejected。
+  rationale: 上游针对的现象成立：破折号是模型中文里最容易过量的标点，用来制造「有力」的停顿。但它给的解法是一刀切禁用，而中文破折号有真实的用法（解释、转折、话锋中断），禁掉之后作者的原有停顿会被改成句号，节奏被动过。ZH-P-007 已经把这个现象收在可判定的形式里：只在真正需要时用一次，不当万能连接符；op7418 补的「用在揭晓前制造停顿的破折号」这个位置判据也已经并进 ZH-P-007 的证据。按 criteria.md 第 4 条，本条是单一来源的强风格意见（要求一种具体的标点偏好），不进默认规则。值得注意的是上游自己也不认为这是硬规则——它在可选作者档案一节里明写某些真实作者大量使用长破折号、档案可以覆盖这条。要在自己的项目里执行完全禁用，按 ALL-PROC-025 用项目自己的词表覆盖默认值即可，本仓库不把它设成默认。
+  history:
+  - decision: rejected
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-S-003
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: style-opinion
+  language: zh
+  rule_summary: 中文正文里英文与中文混排的间距：多词英文术语用半角空格分词（AI Design Agent）；英文术语与中文全角括号连写时不加空格（LLM（大语言模型））；并列英文术语用斜杠连接时斜杠两侧不加空格（coworkers/agents）。
+  decision: reference-only
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 3
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 6. 处理标点和排版'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 6. 处理标点和排版'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 6. 处理标点和排版'
+  rationale: 上游未说明理由，从上下文推断它防的是同一篇里英文术语的写法不统一，而不统一本身就是拼接痕迹。「全篇统一」这一层本仓库已经采纳（ZH-M-004），本条只是它的一组具体取值。按 criteria.md 第 4 条不进默认规则：中英文之间加不加半角空格是排版流派之争，不同项目的规范正相反（不少中文技术写作规范要求中英文之间必须加空格，与本条第二项冲突），换一个项目这条就不成立。记 reference-only：本仓库不设默认取值，只要求全篇一种写法；项目要固定取值的，按 ALL-PROC-025 写进自己的 style guide，本条可以直接照抄过去当模板。
+  history:
+  - decision: reference-only
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-S-004
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: style-opinion
+  language: zh
+  rule_summary: 中文正文的术语与日期写法：token、API 保持英文不译；具体日期写作「2026 年 2 月 26 日」「2 月 5 日」；叙事月份写作汉字「一月」「二月」，不与数字日期混用。
+  decision: reference-only
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 3
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 7. 统一常见术语和日期'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 7. 统一常见术语和日期'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 7. 统一常见术语和日期'
+  rationale: 上游未说明理由，推断它要解决的是中文长文里同一类东西出现两种写法（有的写「2 月 5 日」有的写「02/05」）。这个问题成立，本仓库用 ZH-M-004 收下了它的可判定部分：全篇只有一种写法。本条是一组具体取值，按 criteria.md 第 4 条不进默认规则——把 token 译不译、日期写成哪种格式，取决于读者是谁和项目的既有习惯，换一个项目就不成立。记 reference-only：项目要定取值的按 ALL-PROC-025 写进自己的 style guide，本条的三项可以直接当模板用；本仓库的默认要求只到「一篇里别出现两种」。
+  history:
+  - decision: reference-only
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-S-005
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: style-opinion
+  language: zh
+  rule_summary: PR 在长篇中文叙述里优先写作「代码审查」，除非项目已有别的明确约定。
+  decision: rejected
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 7. 统一常见术语和日期'
+  relations:
+  - type: conflicts-with
+    rule_id: ALL-PROT-009
+    note: ALL-PROT-009 规定精确技术术语不得为了避免行话而换称，本条要求把 PR 换成一个语义不等价的说法；取 ALL-PROT-009，本条记 rejected。
+  rationale: 上游的判据是读者而不是词源：面向一般读者的长文里 PR 是行话。这个考虑本身合理。问题在这次替换不精确——PR 是拉取请求（一个变更提案），代码审查是发生在其中的一项活动，两者不等价：「这段逻辑在 PR 里被提出来过」和「这段逻辑在代码审查里被提出来过」说的不是一件事。按 criteria.md 第 1 条，改变术语指称属于 protection 范畴，优先于「读者更容易懂」这个风格考虑：本条与 ALL-PROT-009（精确技术术语不得为了避免行话而换称）冲突，取 ALL-PROT-009，本条记 rejected，冲突按第 8 条双记。上游那个场景（读者不熟悉行话）在本仓库有别的出口：ALL-P-007 允许在原文已经给出材料时把行话展开成具体动作，ALL-PROC-025 允许项目用自己的术语表指定译法。本仓库不预置任何一条术语的译法。
+  history:
+  - decision: rejected
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-M-002
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: measurement
+  language: zh
+  rule_summary: 用六个迹象判断一篇技术上干净的稿子是不是没有声音：每句长度和结构都相同、没有观点只有中立报道、不承认不确定或复杂感受、该用第一人称时不用、没有幽默锋芒和个性、读起来像百科条目或新闻稿。
+  decision: reference-only
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 缺乏灵魂的写作迹象'
+  relations:
+  - type: conflicts-with
+    rule_id: ALL-PROT-018
+    note: 这六个迹象里有四个（补观点、补感受、补第一人称、补个性）只能靠新增原文没有的内容来消除，与 ALL-PROT-018 禁止为了显得像真人而添加这些内容直接冲突；本条记 reference-only，只作诊断信号，不触发改写。
+  rationale: 上游针对的现象在本批里独一份，而且是对的：按词表清理过的稿子会通过所有命中检查，但读者仍能一眼看出不是人写的——干净不等于有人写。问题在这组迹象的用法：它是为了触发下一步「注入个性」而存在的，而那一步在本仓库被 ALL-PROT-018 挡住了。六项里另有两项（句长结构相同、像百科条目）不可判定或已被 ALL-P-001、ZH-P-013 覆盖，剩下四项的消除方式只有新增内容一条路。记 reference-only：这组迹象可以在审稿模式里当诊断信号说给用户听（「这份稿子干净但没有声音」是一句有用的话），但不作为改写的触发条件。上游那个场景如果成立（作者本人要给自己的稿子加声音），正确的出口是作者自己写，不是改写工具替他写。裁决依据：与 ALL-PROT-018 的冲突按 criteria.md 第 1 条取 protection 一侧，六项里另两项按第 2 条不可判定或已被覆盖，所以整条不进默认规则，只留作诊断信号；冲突按第 8 条双记。
+  history:
+  - decision: reference-only
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-M-003
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: measurement
+  language: zh
+  rule_summary: 交付前把改写稿整篇读一遍，判据是读起来像中文母语者写的文章，而不是英文思路换成中文词汇。
+  decision: reference-only
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: 6. 做最后一遍朗读检查
+  relations:
+  - type: excepts
+    rule_id: ALL-PROC-014
+    note: ALL-PROC-014 管可以逐项判定的交付自查，本条管它兜不住的整篇语感；两者分域，本条只作参考不进默认清单。
+  rationale: 上游把朗读当最后一道判据，理由成立：翻译腔常常不在任何单条规则的词表里，逐条规则都过了整篇仍像译文。但按 criteria.md 第 2 条，「读起来像中文原生写作」圈不出具体的词或结构，不可判定，不能作为默认清单里的一项——否则它会变成一个谁都说自己做过的步骤。本仓库把这个现象里可判定的部分收在别处：ZH-P-011（名词化与翻译腔连接结构）、ZH-P-008（前置状语压后主干）、ALL-P-004（无主句与被动式）。记 reference-only：整篇通读仍然值得做，做完发现问题时按上面几条落到具体的词或结构上再改；发现不了具体位置的，不作为返工理由。
+  history:
+  - decision: reference-only
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-M-004
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-M-004 全篇写法统一'
+  category: measurement
+  language: zh
+  rule_summary: 交付前确认标点、术语、日期和英文品牌大小写在全篇内只有一种写法：同一篇里同一类东西出现两种写法即命中，改成其中一种。本条只要求统一，不规定用哪一种。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Final Check'
+  rationale: 上游把「不一致」当成拼接痕迹的证据，这个判断成立，而且这一条是它那批排版规则里唯一与取值无关、换一个项目仍然成立的部分。可判定：搜一遍全文，同一类东西的写法数量大于一即命中。它与 ZH-S-003、ZH-S-004 的分工是本批的一处刻意取舍：具体取值（要不要加空格、日期写成哪种格式）是流派之争，记 reference-only；「一篇里别出现两种」不是流派之争，采纳。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-M-005
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-M-005 小节骨架的可预测性'
+  category: measurement
+  language: zh
+  rule_summary: 交付前检查小节和句式骨架的可预测性：连续三节以上用同一个骨架（先定义、再拆项、最后拔高），或同一种句式骨架（尤其「不是 X，是 Y」）连续出现到能预判下一句形状时，改掉其中至少一处。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 2
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Final Check'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 2 | Residual Audit'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-P-001
+    note: ALL-P-001 管句长和段落长度的雷同，本条管小节和句式骨架的雷同，两条的判定对象是不同层级。
+  rationale: 两个独立来源给出同一个判据，措辞几乎一样：ai-zixun 写「读者不能连续三节都预测出下一节的写法」，shuorenhua 写「同一种句式骨架反复到能预判下一句形状」。「能不能预判下一个的形状」比「节奏不好」可判定得多，而且给了可数的门槛（连续三节／三句）。ALL-P-001 已经管句长和段落长度，管不到这一层：五节都是「定义—拆项—拔高」时，每一节内部的句长可以完全正常。可判定：把连续三节的骨架写下来，看第四节能不能照着填。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-M-006
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-zh.md
+    anchor: '### ZH-M-006 中文模式的三档命中强度'
+  category: measurement
+  language: zh
+  rule_summary: 中文模式按命中强度分三档，档位只表示问题强度，不表示改写力度：一档单独出现即处理（开场套话、总结式收尾、谄媚、明显的商业黑话、姿态层、身份认证式夸奖、郑重预告）；二档同段聚集才算信号（高频连接词扎堆、渲染性修饰词扎堆、同类姿态词在同段重复），短段落（少于 100 字）同段 2 个以上、长段落（100 字以上）同段 3 个以上即标记，处理时保留最贴切的一个、其余改写；三档（重要、关键、核心、提升）单独出现不动，只在全文密度明显过高时删掉多余的几次或换成具体信息，不换同义词。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 5
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 4. Tier severity'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Tier 1'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Tier 2'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Tier 2'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Tier 3'
+  relations:
+  - type: pairs-with
+    rule_id: EN-M-001
+    note: EN-M-001 按证据强度给英文高频词分三档，本条给中文模式分同样的三档并补上数值阈值，两条各管一种语言。
+  rationale: EN-M-001 已经给英文词分了三档，中文侧没有对应机制，结果是中文词表只有一个强度：命中就改。上游的三档划分与 EN-M-001 一致（单独出现即问题／聚集才算信号／常见词不动），但分级对象是模式而不是词，覆盖面更宽，而且给了 ALL-M-002 一直缺的数值阈值（100 字、2 个、3 个）。第三档本身是一条防误杀规则：「重要／关键／核心／提升」是正常中文的一部分，进禁用词表会把改写变成同义词游戏。修改点有两处：一是去掉上游把档位与场景默认改写力度绑定的那一层（本仓库的改写力度按 ALL-PROC-005 由用户措辞定，见 ALL-PROC-041）；二是数值阈值标注为待核——上游没有说明这三个数字的来源，按 criteria.md 第 3 条第 2 项，采纳前要在本仓库的中文真人原文样本上跑一遍，确认长段落 3 个连接词不会误伤真人写作。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-PROT-001
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ZH-PROT-001 不把限定结论扩大成时代判断'
+  category: protection
+  language: zh
+  rule_summary: 原文限定在某个团队、某个项目、某个时间段的结论，改写后必须保持同样的限定范围，不得扩大成行业级或时代级判断（「这套做法在我们团队里比之前顺」不得写成「这套做法正在改变团队协作的方式」）。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: 5. 保留作者原意
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-014
+    note: ALL-PROT-014 管结论强度超出证据时怎么处理（写进需作者确认一节），本条管结论的适用范围被悄悄放宽这一种具体漂移，两条各管一半。
+  rationale: 上游把「拔高」单列成一条保真规则而不是风格规则，理由是它改变了主张的范围：读者读到的不再是作者说过的那件事。中文 AI 文本最稳定的特征之一就是段末自动升格，把一个具体观察写成时代判断。现有规则里 ZH-P-004 和 ZH-P-006 管的是开头和结尾的套话措辞，ALL-PROT-014 管的是结论强度与证据的匹配，都没有管「适用范围被放宽」这一种漂移。可判定：把改写稿的结论和原文的结论各自写出适用对象，两者不同即违反。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-PROT-002
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ZH-PROT-002 英文品牌名按官方大小写'
+  category: protection
+  language: zh
+  rule_summary: 中文正文里的英文品牌名和产品名按其官方大小写书写（YouTube、OpenAI、GitHub）；改写不得改变它们的写法，原文写错的按官方写法更正，并在改动说明里点出这一处。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 6. 处理标点和排版'
+  relations:
+  - type: excepts
+    rule_id: ALL-PROT-008
+    note: ALL-PROT-008 要求专有名词逐字不动，本条是它的一个窄例外：品牌名的大小写有唯一正确答案，写错的允许更正，但必须在改动说明里点出，不得静默改动。
+  rationale: 上游未说明理由，从上下文推断品牌名的大小写是事实性写法而不是排版偏好——它有唯一正确答案，写错在中文技术文章里是明显的失真信号。这也是它归 protection 而不是 style-opinion 的原因，与 ZH-S-003、ZH-S-004 那批取值型排版规则不同。修改点：上游只说「按官方大小写书写」，没有说原文写错时怎么办；本仓库补上「更正并在改动说明里点出」，理由是 ALL-PROT-008 的默认是专有名词逐字不动，静默更正会让作者不知道自己的稿子被动过哪里。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-PROT-003
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ZH-PROT-003 中英混排不套英文词表'
+  category: protection
+  language: zh
+  rule_summary: 中文正文里出现的英文词，按它在当前句子里的实际语义判断要不要改，不机械套用英文 AI 词表：作字段名、命令、参数名、专有术语用的英文词（配置里的 key、日志里的 level、接口里的 status）一律不算命中。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 中英混排句中的英文词'
+  relations:
+  - type: excepts
+    rule_id: EN-M-001
+    note: EN-M-001 的三档词表是给英文正文用的，本条划出边界：中文正文里的英文词不进这张表，按当前句子的语义单独判断。
+  - type: excepts
+    rule_id: EN-P-001
+    note: EN-P-001 的英文禁用词表同理，中文正文里出现这些词时先判断它是不是术语或标识符。
+  rationale: 中文技术写作里英文词大量出现，而它们多数是术语和标识符不是修辞。直接把 EN-P-001、EN-M-001 的英文词表套上去会造成成片误杀——把「配置里的 key」改成「配置里的关键项」，读者照着去找就找不到。这是中文场景特有的防误杀规则，现有规则里完全没有：ALL-PROT-009 说了精确技术术语属于例外，但没有说中英混排时英文词表整体不适用。可判定：指出这个英文词在当前句子里指的是什么，如果它指向一个代码里、命令里或接口里真实存在的东西，就不算命中。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-PROC-001
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: process
+  language: zh
+  rule_summary: 处理任何待改写文本时固定执行五步，其中第五步「注入真实的个性」无条件适用，不因文本体裁而跳过。
+  decision: rejected
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 你的任务'
+  relations:
+  - type: conflicts-with
+    rule_id: ALL-PROT-018
+    note: 本条把「注入个性」写成不带体裁条件的固定步骤，ALL-PROT-018 禁止为了显得像真人而添加原文没有的第一人称、幽默、感受和个人经历；取 ALL-PROT-018，本条记 rejected。
+  - type: conflicts-with
+    rule_id: ALL-PROC-018
+    note: ALL-PROC-018 明写给本该平实的文字硬注入个性同样算 AI 味，与本条的无条件适用直接相反。
+  rationale: 上游认为「去掉 AI 模式」只完成了一半工作，剩下一半是让文字有人写的痕迹，所以把注入个性提升成与识别模式、保留含义并列的固定步骤。它针对的现象成立：删完套话的稿子干净但没有声音。分歧不在这个观察，在两点。第一，这条在上游文本里没有任何边界——它翻译自 blader/humanizer，而 blader 的对应要求写的是「只在合适的时候加个性」，并明确参考类、技术类、法律类、事实类文本保持中性；op7418 没有译这一段，也没有译 blader 的整节误杀防护，于是一条带条件的建议变成了无条件的步骤。第二，注入个性只能靠新增原文没有的内容实现，撞 ALL-PROT-001 和 ALL-PROT-018。本仓库在这一点上取的是相反的路线，shuorenhua 把它写得最清楚：不要为了像人把文本改得更假，专业文本可以保持专业。上游那个场景（作者本人的稿子被前几轮改写洗成了新闻稿）在本仓库由 ALL-PROT-017 覆盖：作者原有的词汇、节奏、直率程度、幽默、犹疑一律保留，这是不让它被删掉，而不是替作者造一份。本仓库没有留「注入个性」的开关。裁决依据是 criteria.md 第 1 条：protection 优先于 style-opinion，与 ALL-PROT-018 的冲突取 ALL-PROT-018。另有一条已 adopted 的规则与本条正面相反：ALL-PROC-018 明写给本该平实的文字硬注入个性同样算 AI 味。两处冲突都按第 8 条双记。
+  history:
+  - decision: rejected
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-PROC-002
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ZH-PROC-002 中文改写的处理顺序'
+  category: process
+  language: zh
+  rule_summary: 改写中文文本时按固定顺序处理四类问题：先翻译腔，再结构腔，再排版腔，最后判断腔；进入句子级改写之前先通读一遍，标出七类最显眼的痕迹：英文句法直译、机械对照句、空泛结论、列表堆砌、连环冒号、破折号、过度工整的段落节奏。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Overview'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: 3. 先找最显眼的 AI 痕迹
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROC-010
+    note: ALL-PROC-010 要求四组检查都要过一遍、不得整组跳过，但不规定顺序；本条给中文文本补上处理顺序和先扫描后动手的先后关系。
+  rationale: 上游未说明排序理由，从内容推断它是按「改了之后读感改善最大」排的：翻译腔影响每一句，排版腔只影响观感，先做影响面大的可以避免在一段马上要被重写的文字上做标点微调。这个顺序对中文成立，而 ALL-PROC-010 只规定了四组都要过、不规定先后。七项扫描清单里有四项（对照句、列表、冒号、破折号）是结构和排版而不是词，针对的是模型自查时只盯用词、看不见结构层痕迹的毛病。修改点：本仓库把上游的两处表述（Overview 的四类优先级、Workflow 第三步的扫描清单）合成一条，因为它们是同一件事的判定面和执行面；同时把顺序限定为「中文文本」，英文侧没有翻译腔这一类，套过去会空转。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-PROC-003
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ZH-PROC-003 首段立题与结尾回应'
+  category: process
+  language: zh
+  rule_summary: 中文长文的第一段立的题必须和主体讨论的是同一件事；结尾要回应文中真正提出的那个问题，不临时拔高到更大的命题。交付前把首末两段放在一起对照一次，确认末段回答的正是首段提出的问题。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 3
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 5. 管住文章级结构'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '### 5. 管住文章级结构'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Final Check'
+  rationale: 上游给「开头空泛」和「结尾拔高」这两个老问题换了一个可判定的判据：不看开头有多空、结尾有多大，而看首尾是不是在处理同一个问题。这比 ZH-P-004（不用空话开场）和 ZH-P-006（结尾不拉高到空洞乐观）好判——那两条管的是措辞，本条管的是首段、主体、末段三者之间的关系，一篇文章可以句句不空却仍然开头谈行业趋势、主体讲一个内部工具。三条证据来自同一来源的三处（Workflow 主线判定、Core Rules 文章级结构、Final Check），说明上游把它同时当成改写要求和交付门槛。可判定：写下首段提出的问题和末段回答的问题，两者不是同一个即命中。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-PROC-004
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ZH-PROC-004 中文长文默认收紧编辑范围'
+  category: process
+  language: zh
+  rule_summary: 中文公开写作的长文（篇幅明显长于一屏，约一千字以上）默认按 bounded 编辑范围处理，不按 structural：整句空话进待确认删除清单交用户决定，不由改写方直接删掉。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `bounded`'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROC-042
+    note: ALL-PROC-042 定义三档编辑范围，本条给中文长文指定默认落在哪一档。
+  rationale: 上游给了本批里少见的实测依据：中文长文走 structural 时缩水程度依模型而定，同一篇可能少 18%，也可能少 39%，用户无法预期。这个理由成立——长度对公开写作是作者的决定，不该由改写方在用户看不见的地方定。修改点在阈值：一千字这个数是上游给的，本仓库没有在自己的样本上核过，按 criteria.md 第 3 条第 2 项把它写成「篇幅明显长于一屏（约一千字以上）」，具体数值待 evals 的中文长文样本核实后再固定。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-G-001
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/genres.md
+    anchor: '### ZH-G-001 英文排版模式不套用到中文'
+  category: genre
+  language: zh
+  rule_summary: 只对英文成立的排版模式不套用到中文正文：标题大小写（Title Case）在中文标题上不适用，不据此改写中文标题；直引号与弯引号的判定对象是中文里夹的英文引文，不是中文引号本身，中文引号按 ZH-P-025 处理。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 16. 标题中的标题大写'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '### 18. 弯引号'
+  relations:
+  - type: excepts
+    rule_id: EN-P-012
+    note: EN-P-012 要求英文标题用句子大小写，本条划边界：中文标题不进这条规则的判定范围。
+  - type: excepts
+    rule_id: EN-P-037
+    note: EN-P-037 管英文直引号与弯引号跟随原稿，本条划边界：中文引号不按这条判定，按 ZH-P-025 的全篇统一口径处理。
+  rationale: 上游保留了英文模式表里的这两节，但翻译之后示例的「改写前」和「改写后」在中文里是同一行字，于是它加了一句适用性说明。这是它相对上游对照件的实质增量：对照件没有语言适配的概念。它防的是照搬英文模式表到中文时的空转甚至误改——把中文正文里的“……”当成命中弯引号模式全部换成直引号，是一次真实会发生的破坏。本仓库现有的 EN 前缀规则用 language 字段隐含了同一结论，但没有把「这条不适用于中文」写成一条可以被引用的规则，遇到中英混排的文本时执行者没有落点。可判定：指出被改写的那个标题或引号属于哪种语言。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-G-002
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/genres.md
+    anchor: '### ZH-G-002 四类场景叠加的限制'
+  category: genre
+  language: zh
+  rule_summary: 先判主场景再处理局部问题，四类场景各自的重点是：chat（短回复、日常对话、评论）允许口语但不该端着说话；status（站会更新、进度同步、复盘摘要）保住时间线、动作、结果、风险这四项的结构，不揉进流畅叙述；docs（操作文档、技术说明、接口说明、FAQ、事故复盘）以可检索、可复现、术语稳定优先，不做整篇重写；public-writing（公开帖、对外文章、观点写作）语域一致、不装有洞见。docs、status 和代码注释场景默认不做以语感为目标的第二遍复扫，第二遍会让语气变口语、变广告或影响保真时停在第一遍。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 6
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `chat`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `status`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `docs`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `public-writing`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `aggressive`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 2 | Residual Audit'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-G-002
+    note: ALL-G-002 按正式文章、邮件、营销、技术文四类体裁叠加限制，本条按中文技术写作的四类场景叠加限制，两条的划分维度不同、可以同时命中。
+  - type: pairs-with
+    rule_id: ZH-G-003
+    note: ZH-G-002 定主场景的语域限制，ZH-G-003定子场景的发布目的；子场景由文本信号触发，可以落在任一主场景之内。
+  rationale: 上游是三个来源里唯一把场景当成一等概念的：同一句话在群聊里正常、在文档里就是问题。四个场景各自的重点都可判定，其中两条是本仓库现有规则给不出的：status 要保住时间线—动作—结果—风险的结构（去 AI 味把它们揉进流畅叙述会读起来更像人、用起来更差），docs 的第一理由是可检索（文档是拿来搜的，同一个概念换了说法用户就搜不到）。ALL-G-002 按体裁叠加限制，但它的四类是正式文章、邮件、营销、技术文，划分维度不同，覆盖不到群聊回复和进度同步。修改点：去掉上游把每个场景绑定一个默认改写档位的那一层（本仓库的改写力度按 ALL-PROC-005 由用户措辞定，见 ALL-PROC-041），只保留每个场景要保住什么；同时把上游「docs 不升到最高档」改写成「docs 不做整篇重写」，因为本仓库没有档位轴。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ZH-G-003
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/genres.md
+    anchor: '### ZH-G-003 六个子场景的发布目的'
+  category: genre
+  language: zh
+  rule_summary: 文本命中以下任一子场景的信号时，不依赖用户是否明说、也不受主场景初判限制，都按该子场景处理：README（项目介绍、快速开始、安装方式、功能列表）第一屏说清这是什么、给谁用、解决什么问题；发布说明（版本标题、Added／Changed／Fixed、changelog）列清本版变更、验证和限制，不写发布宣言；论坛帖（社区帖、发帖复盘）保留维护者的真实观察和社区语气，不改成公告；issue 或 PR 回复（bad case、复现、下一版补 benchmark）先确认问题和下一步，不做客服式安抚；接口文档（endpoint、参数字段、类型或默认值、状态码、鉴权）删宣传和元评论，接口合同缺失只标待确认不替作者补；FAQ 或排障问答尽早给结论或动作。子场景只收束发布目的和语气，不覆盖受保护片段、命中强度和回读规则。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 7
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-G-002
+    note: ZH-G-002 定主场景的语域限制，本条定子场景的发布目的；子场景由文本信号触发，可以落在任一主场景之内。
+  rationale: 「不依赖用户是否明说」是这条规则的关键：用户贴一段 README 时不会声明它是 README，而 README 有一套只对它成立的要求。六个子场景里有四个是本仓库现有规则完全没有的正向要求——发布说明必须列限制（它读起来负面，最容易被改写洗掉）、issue 回复必须给下一步（客服话术把这件事整个省了）、接口文档缺失合同只标不补（读者会照着调用）、README 第一屏的三问（AI 写的 README 开头几乎必然是一句可以套在任何项目上的价值宣言）。末句的作用域声明同样重要：它防的是「场景特例」被拿来绕开保真规则。可判定：每个子场景都给了信号词和一句能对照检查的产出要求。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-021
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-021 不把提示词当正文输出'
+  category: protection
+  language: both
+  rule_summary: 写给模型看的内容不得出现在交付稿里：人格设定、风格档案的前言、系统提示片段、工具调用说明。它们是执行指令，不是文章内容。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-038
+    note: EN-P-038 删的是生成过程留在英文正文里的痕迹（占位符、工具引用标记、推理链脚手架），本条管的是加载进来的提示词片段被当成待改写素材输出，两者是同一族的两半。
+  rationale: 上游明说「那是给你看的，不是文章内容」，针对的现象是模型把加载进来的提示词片段当成待改写的素材，泄漏到交付稿里。EN-P-038 已经收了推理链脚手架和工具引用标记，但它限定 language 为 en，而且没有覆盖「整段人格设定」这种形态。这条本身与语言无关，记 both。可判定：交付稿里出现任何以第二人称对模型下达指令的段落即违反。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-022
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-022 责任主体不得改变'
+  category: protection
+  language: both
+  rule_summary: 改写不得改变一件事是谁做的、谁负责、谁受影响：把有主语的陈述改成被动式或无主句而隐去主体即命中；多个主体各有各的动作或目标时，不得把只属于某一方的目标并给另一方。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 优先保信息，再谈风格。'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 抽象信息、实体类型和关系不能擅自具体化'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-P-004
+    note: ALL-P-004 是 pattern，要求写出动作的执行者；本条是 protection，禁止改变原文已经写明的执行者。两条的判定方向相反，合起来才覆盖完整：原文没写执行者时按 ALL-P-004 处理（去问，不猜），原文写了就按本条不许动。
+  rationale: 责任主体在这份上游里被单列成与事实并列的保护对象，理由是技术写作特有的风险：事故复盘、变更记录、issue 回复里「谁做的」就是全部信息，而去 AI 味最常见的几个动作（改被动为主动、缩短句子、并句）恰恰最容易把主体挤掉或换掉。第二半（主体与目标的配对）是同一个漂移的另一种形态：「企业想降本，开发者想少写重复代码」合并成「企业和开发者都想降本增效」，句子更短更整齐，错误却不容易被发现。现有 ALL-P-004 是一条 pattern 规则，管的是「要写出执行者」，管不到「已经写了的执行者被换掉」。可判定：把原文和改写稿里每个动作的执行者各列一份，对不上即违反。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-023
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-023 条件关系七项逐项可追溯'
+  category: protection
+  language: both
+  rule_summary: 原文的范围、条件、否定、情态、完成态、方向和强度这七项，在改写稿里必须逐项找得回来，一项都不得放宽、收窄或翻转：「2.3 之后的版本不支持」不得写成「旧版本均不支持」；「性能提升、体验改善、安全性加强」不得写成「在这几方面都有涉及」；「提升效率」不得扩写成「节省时间和成本」；「完成了三个模块中的两个」不得写成「模块开发已推进」。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 4
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 清理姿态层时按子句和事实要素判断'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 抽象信息、实体类型和关系不能擅自具体化'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 数值、正式指标名、字段名、命令和引用原文按字面保护
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-020
+    note: ALL-PROT-020 要求删掉无功能的连接词和结论标签时保留真实存在的逻辑关系，本条把「逻辑关系」拆成七项可以逐项核对的东西，两条合起来才能执行。
+  rationale: 这七项是上游对「条件关系」的完整定义，它在改写前的账本、Pass 1 的回读检查和 FAQ 子场景三处各出现一次，说明它是这份上游的核心检查项。现有 ALL-PROT-020 只笼统写了「真实存在的逻辑关系要保留」，没有说要核对哪些东西，交付自查时没法逐项打勾。七项里有两项是本仓库完全没有点名过的：方向（提升被弱化成「涉及」）和效果类型（效率被扩写成成本，两者不等价）。上游同时点了两个方向的错——弱化常发生在「避免夸大」的动机下，扩写常发生在「写得更具体」的动机下，两种都改变了原文实际声称的东西。可判定：逐项列出原文的七类取值，在改写稿里找回来。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-024
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-024 步骤顺序与警告位置'
+  category: protection
+  language: both
+  rule_summary: 重排步骤或把结论前置时，原本在操作前的执行条件和警告不得挪到操作后；真实的事后检查和失败分支也不得改成前置步骤。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  relations:
+  - type: pairs-with
+    rule_id: ZH-P-009
+    note: ZH-P-009 管句内位置：限定条件要出现在被它限定的内容之前。本条管步骤之间的顺序：警告要出现在它警告的那步操作之前。两条的判定对象是不同层级的位置关系。
+  rationale: 上游把这条挂在 FAQ 子场景下，但它的适用面比 FAQ 宽：任何按顺序执行的文本都成立。它针对的现象很具体——「结论先行」这条写作建议被机械执行，把顺序敏感的内容也重排了，读者照着新顺序执行就会踩坑（「先执行迁移。注意：执行前需要先停写入，否则会丢数据。」）。条件和警告的位置本身就是信息，这是它归 protection 而不是 pattern 的原因。ZH-P-009 已经管住句内的限定位置，管不到步骤之间。可判定：找出每条警告和它警告的那步操作，警告在后即违反。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-025
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-025 按子句判断，不整句一刀切'
+  category: protection
+  language: both
+  rule_summary: 清理套话、姿态层和空话时按子句判断，不按整句或整行一刀切：删掉某个子句如果会改变命题的真值、适用范围或成立条件，这个子句就是保真对象，不随周围的套话一起删。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 清理姿态层时按子句和事实要素判断'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-020
+    note: ALL-PROT-020 说删修饰时要保留真实的逻辑关系，本条给出执行它的操作粒度：判断落在子句一级，不落在整句一级。
+  rationale: 这是清理套话的安全阀：套话和实质内容常常长在同一句里，整句删掉最省事也最危险。上游给的判据（删掉会不会改变真值、适用范围、成立条件）可以逐句执行，而现有 ALL-PROT-020 和 ALL-P-010 只说了「不得靠删信息把句子变短」，没有说判断的粒度是什么。举一个上游的例子：「这个做法在单机上没问题（前提是并发不超过十）」整句读着像套话，但括号里的子句承载成立条件。可判定：把候选删除的那一段单独拿出来，问删掉之后这句话的适用范围变不变。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-026
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-026 改注释只删姿态词'
+  category: protection
+  language: both
+  rule_summary: 用户明确要求处理代码注释、docstring 或 commit message 时，只删掉姿态词和多余的语气词，保留其中的真实运行行为、适用条件和边界说明（「否则并发写会丢数据」「实测 8 线程以上必现」一类内容不得删）。用户没有明确要求时，代码块按 ALL-PROC-016 整体跳过。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- `code-context` 里的真实运行行为'
+  relations:
+  - type: excepts
+    rule_id: ALL-PROC-016
+    note: ALL-PROC-016 的默认是把代码块整体标出跳过；本条是它的一个窄例外，只在用户点名要处理注释时生效。
+  - type: excepts
+    rule_id: ALL-PROC-017
+    note: ALL-PROC-017 遇到源代码文件停手；本条不改变这一点，只处理散文改写请求里夹带的注释和提交信息。
+  rationale: 上游为代码注释单独开了一个场景，理由成立：注释里的姿态词确实该删，但注释同时是唯一记录「为什么这么写」的地方，删多了信息永久丢失。它把三类内容（运行行为、适用条件、边界说明）列成受保护片段，等于把注释当技术文档而不是散文处理。本仓库现有的做法是整体跳过（ALL-PROC-016）和遇到源码停手（ALL-PROC-017），两者都成立，但都回答不了「用户就是要我清理一遍 commit message」这个请求。修改点：本仓库把上游的默认改成需要用户明确要求才生效，理由是 ALL-PROC-016 的跳过是一条已经 adopted 的默认规则，一条例外不该反过来把默认改掉。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-027
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-027 实体类型不得互换'
+  category: protection
+  language: both
+  rule_summary: 原文说的是方案、目标、想法、产品还是工具，改写后必须是同一类：不得把「方案」写成「工具」或「产品」，不得把描述潜力的表述（「这套方案有可能支撑更大的规模」）写成已实现的构建关系（「这个产品基于该架构构建」）。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 抽象信息、实体类型和关系不能擅自具体化'
+  rationale: 实体类型的漂移是一种很隐蔽的失真：方案、工具、产品在中文里都可以指「那个东西」，但它们对读者承诺的完成度完全不同——方案是想法，产品是已经存在的东西。上游把它排在这一长段保真规则的第一条，说明它见过后果。现有 ALL-PROT-001 管的是新增原文没有的事实，本条管的是原文已有的实体被换了类型，判定对象不同：句子里的每个名词在原文里都能找到对应，但对应错了。可判定：把原文和改写稿里指代同一个东西的名词列出来，类型不同即违反。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-028
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-028 数字与它修饰的对象一起保留'
+  category: protection
+  language: both
+  rule_summary: 数字和它修饰的对象的配对关系必须一起保留，不得把数字挂到别的对象上：「两个团队一起做的」不得写成「换过两个团队」。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 抽象信息、实体类型和关系不能擅自具体化'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-002
+    note: ALL-PROT-002 管数字本身不得被概括掉，本条管数字修饰的是谁；数字没被改而配对被改的错误，核对数字时查不出来。
+  rationale: 这类错误的特点是数字本身没被改，改的是它修饰谁——核对「数字有没有改」时完全查不出来，所以上游要求在动手前的账本里专门记一项「数字修饰的对象」。这是这份上游对数字保护最有价值的一条，现有 ALL-PROT-002 覆盖不到。可判定：把每个数字和它修饰的名词配成对，原文和改写稿的配对表不一致即违反。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-029
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-029 共现不等于关系'
+  category: protection
+  language: both
+  rule_summary: 改写稿里的每一个「X 用来做 Y」「X 基于 Y」「X 处理 Y」「X 支持 Y」都必须能在原文的某个谓词里找到依据；两个东西只是出现在同一段里不构成依据。改写前判定「原文没有具体对象、能力、实现或依据」的，最终结果里就不得出现新的工具、产品、平台、功能、实现关系或指标。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 抽象信息、实体类型和关系不能擅自具体化'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 1 | 保真回读'
+  rationale: 这条抓的是模型最典型的一种编造：不是凭空造事实，而是把同一段里出现的两个东西连起来，连接词看起来非常合理。上游给的判据很硬——必须能回指原文的同一个谓词，共现不算。它还给了一个配套的自查方式，是本批里唯一一条要求「分析结论必须约束输出」的规则：改写前判断过原文没有具体产品，回读时就要确认改写稿里也没有出现产品名。这种前后不一致在长文里很常见，因为分析和生成是两个独立的过程。现有 ALL-PROT-001 禁止新增事实，但一个凭空建立的关系在字面上不像新增事实——句子里的每个名词原文都有。可判定：指出改写稿里这个关系对应原文的哪个谓词，指不出即违反。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-030
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-030 删短语前先做语义独立性检查'
+  category: protection
+  language: both
+  rule_summary: 删掉一个短语之前先检查剩余部分：必须仍是完整、可读、没有悬空指代的陈述句。不满足就改用句内替换，不硬删（「就这一点而言，问题不大」删掉前半之后「问题不大」没有指向，就不能删）。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `in-place`'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-020
+    note: ALL-PROT-020 说删连接词时保留真实的逻辑关系，本条给出删之前必须过的那道检查，两条一起用才不会删出语法上成立、语义上断掉的句子。
+  rationale: 删短语看起来是最小的改动，但中文的短语常常承担指代和限定，删掉之后句子在语法上还成立、在语义上已经断了。上游给的三个判据（完整、可读、无悬空指代）都可以逐句执行，而现有规则只说了要保留逻辑关系，没有给出这道检查。可判定：把删除后的句子单独读一遍，问它指的是什么；答不上来就是悬空指代。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-031
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-031 保护落在词一级'
+  category: protection
+  language: both
+  rule_summary: 受保护的依据是这个词在当前句子里的具体含义，或者用户和项目明确给出的约定；不得因为文本是 README、发布说明、评测报告，或者段落里带命令和数字，就把周围的包装表达一起豁免。不得自行假定存在术语表、团队约定或未提供的提交记录；原文用了某个说法，也不等于项目要求保留它。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 3
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 保护依据是词在当前句子里的具体含义
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 保护依据是词在当前句子里的具体含义
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 数值、正式指标名、字段名、命令和引用原文按字面保护
+  rationale: 这条堵的是防误杀规则被滥用：执行者一旦知道「技术文本要保护」，很容易把整段技术文本当成免检区，于是「本次评测充分验证了方案的优越性」跟着指标名一起留了下来。上游要求保护落在词一级且要有依据，并把两条常见的假依据单独否掉——按文本类型整体豁免，以及拿一个想象出来的团队约定当理由。第三句（原文用了某个说法不等于项目要求保留）堵的是把现状当规范。现有 ALL-PROT-009 给了三类例外，但没有说例外的判定粒度和举证方式。可判定：对每一处保留，说出它的依据是当前句子里的哪个语义，还是哪一份明确给出的约定。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-032
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-032 按字面逐字保护的五类对象'
+  category: protection
+  language: both
+  rule_summary: '以下五类内容按字面逐字保护，在散文里内联出现时也不改写成叙述：数值与正式指标名（P99 延迟 240ms）、命令（kubectl rollout undo deploy/api）、接口名与参数名与字段名与配置项（含大小写、下划线、连字符的写法）、日志与报错原文（ERROR: connection reset by peer）、引用的原话。'
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 5
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 数值、正式指标名、字段名、命令和引用原文按字面保护
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 数值、正式指标名、字段名、命令和引用原文按字面保护
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 引用原文、命令、接口名、参数名、字段名、配置项、日志、报错'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 引用原文、命令、接口名、参数名、字段名、配置项、日志、报错'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 引用原文、命令、接口名、参数名、字段名、配置项、日志、报错'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-008
+    note: ALL-PROT-008 定了真实引语、代码、公式、专有名词默认逐字不动，本条把技术写作里另外四类需要同等对待的对象点出来，两条合起来才是完整的逐字保护清单。
+  - type: pairs-with
+    rule_id: ALL-PROC-016
+    note: ALL-PROC-016 把成块的代码和引用块整体跳过，本条管这些内容以内联形式出现在散文句子里的情况，两条各管一半。
+  rationale: 这五类的共同点是它们的价值就在精确的写法：改一个字，命令跑不起来、报错搜不到、字段名对不上代码。上游把它们分成「按字面保护」和「按含义保护」两级，本条是前者。现有 ALL-PROT-008 已经收了引语、代码、公式、专有名词，但接口名、参数名、字段名、配置项、日志、报错这一组在中文技术写作里出现频率极高，而且字段名有一个特殊之处：它同时是标识符和普通词，模型看到 key、status、level 时很容易当普通词处理（这一点由 ZH-PROT-003 从另一侧兜住）。可判定：把改写稿里这五类内容逐个与原文做字符比对。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-033
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-033 技术文档的系统行为主语'
+  category: protection
+  language: both
+  rule_summary: 技术文档里描述系统行为的主语（调度器、网关、任务、队列）要保留，不得为了「像人写的」换成人称主语或去掉：「调度器会在超时后重新入队」不得写成「我们会在超时后重新把它放回队列」。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 技术文档里的系统行为主语'
+  relations:
+  - type: excepts
+    rule_id: ALL-P-004
+    note: ALL-P-004 禁止的是让抽象事物做只有人能做的动作（市场奖励、数据告诉我们）以及隐藏施事者的无主句；本条保护的是真实执行了该动作的系统主语。边界：这个主语在系统里是不是真的执行了这个动作——是，就属于本条，不属于 ALL-P-004 的判定范围。
+  rationale: 这是这份上游与通用去 AI 味规则冲突最明显的一处，而且它是对的：通用规则要求指名执行者、多用人称主语，但技术文档里动作的执行者就是系统。把系统主语换成人称不是风格改进，是事实错误——读者会以为这是人工操作。ALL-P-004 保持不变：它禁止的是拟人化（「市场奖励了那些先行者」）和隐藏施事者（「已完成配置」），本条保护的是真实的系统行为主语，两条按「这个主语是不是真的执行了这个动作」分域，不需要谁让位。可判定：问这个主语在系统里存不存在、它是不是这个动作的执行者。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROT-034
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/protection.md
+    anchor: '### ALL-PROT-034 删句后不补口号句'
+  category: protection
+  language: both
+  rule_summary: 删掉一句之后段落突然没了落点时，用原文已经有的信息重组一条事实句当落点；原文里找不到可用信息就不补，宁可让段落短一点，不得补一句口号或价值判断。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 1 | 保真回读'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROT-001
+    note: ALL-PROT-001 禁止新增原文没有的内容，本条管它最容易被绕开的那个位置：删掉空总结之后段落塌下来，补一句听起来无害的话。
+  rationale: 删掉空总结之后段落会「塌」，这时补一句是最自然的反应，而最容易补出来的正是另一句空话。上游给了三级处理（先从原文找、找不到就不补、宁可短），把「段落要有落点」这个审美需求明确排在保真之后。这条值得单独立，是因为它标出了 ALL-PROT-001 在执行中最具体的一个失守点——不是有意编造，是为了让段落读起来完整。可判定：新出现的那句话在原文里找不到对应即违反。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-P-012
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-common.md
+    anchor: '### ALL-P-012 全篇语域统一'
+  category: pattern
+  language: both
+  rule_summary: 一篇文字全篇只用一种语域，不在技术腔、商业腔、自媒体腔之间跳，也不在同一篇里混用多种可辨认的声口；原文本身跨了场景时，收敛到一个主语域，其他语域的内容只在必要信息层面保留。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 3
+  independent_sources: 2
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 1. Scene detection'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 6. Positive style targets'
+  relations:
+  - type: pairs-with
+    rule_id: EN-P-040
+    note: EN-P-040 管的是识别原文里已有的语域断裂并据此判断这段是拼接的，本条管改写方自己不得造成语域跳跃，两条是同一现象的检测面和产出面。
+  rationale: 两个独立来源指向同一件事：ai-zixun 从反面写「不得把多位作者的声音混在同一篇里」，shuorenhua 把「语域一致」列进它的正向目标，并把语域混搭点名为四大病灶之一。语域混搭比用词问题更难察觉，因为每一句单独看都成立。EN-P-040 已经管住「识别断裂」这一半，管不到改写方自己造成的跳跃——尤其是分段处理长文时，每段各自改得很好，合起来语域在几种腔调之间跳。可判定：指出哪两段属于不同语域，并说出各自的标志（术语密度、人称、句长、感叹）。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-M-017
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: measurement
+  language: both
+  rule_summary: 对改写稿按五个维度各打 1 到 10 分求和（满分 50）作为自查信号：直接性、节奏、信任度、真实性、精炼度；总分明显偏低时回到改写环节再改一轮，轮次上限按 ALL-PROC-019。
+  decision: reference-only
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 质量评分'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 质量评分'
+  relations:
+  - type: excepts
+    rule_id: ALL-M-005
+    note: ALL-M-005 拒绝的是给文本算一个 AI 概率分并按分段给判语（其中最低一档写明「不该被任何检测器标记」）；本条的五个维度都是写作质量维度，不声称能预测任何检测器的判定，两者不是同一类东西，边界就在分数指向的是检测结果还是写作质量。
+  - type: excepts
+    rule_id: ALL-M-004
+    note: ALL-M-004 规定自己改完自己判分不算验收；本条只作自查信号，验收仍由独立的一遍检查或人来完成，两者按用途分域。
+  rationale: 上游加这一节是为了让「改得好不好」有一个可以说出口的结果，五个维度分别对应它自己的五条核心规则。它与 ALL-M-005 被拒的那套分数确实不同：不含检测器判语，也不声称能预测检测结果，所以不能因为同属打分就沿用 rejected。不采纳为默认规则的理由有两条：一是五个维度里「真实性」「信任度」的取值靠整体印象，按 criteria.md 第 2 条不可判定，写不进交付清单；二是本仓库已经有一份可判定的交付自查清单（ALL-PROC-014），再加一套分数会让执行者在两套标准之间挑一套。记 reference-only：需要给用户一个粗略的进度感时可以用这五个维度描述改写稿的状态，但不作为返工的依据，返工按 ALL-PROC-014 的逐项清单。上游没有给重试次数上限，本仓库按 ALL-PROC-019 的三轮上限补齐。
+  history:
+  - decision: reference-only
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-M-018
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-common.md
+    anchor: '### ALL-M-018 材料不足的压缩试验'
+  category: measurement
+  language: both
+  rule_summary: 判断一份稿子是不是材料不足用压缩试验：删光姿态层、拔高和套话之后，剩下的事实、动作、数字和判断撑不撑得起原文的篇幅；撑不起就是材料不足，不是话说得不对。标注材料不足时写清删完之后还剩什么、缺的是哪一类材料、清理后大约会短多少，不替作者设计怎么去补，也不用换说法把篇幅填回去。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
+  rationale: 这条把「这篇文章其实没东西」变成了可判定的：压缩之后剩多少，是能数出来的。它区分了两种完全不同的问题——表达有问题（能改）和材料不足（改不了），而模型默认会把后者当成前者处理，结果是换一套说法把篇幅填回去，AI 味没减、信息也没增。ALL-M-001 的可移植性测试判的是单句，判不了整篇的材料密度。三条限制各堵一个出口：不替作者设计补法（那是作者的活，也容易变成编内容）、不用换说法填篇幅、不能因为材料不足就不清理。注意本条的结论只在审稿模式下说出口，改写模式下即使看出来也不评价（按 ALL-PROT-012）。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-M-019
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/patterns-common.md
+    anchor: '### ALL-M-019 受限编辑范围下的篇幅回退检查'
+  category: measurement
+  language: both
+  rule_summary: 编辑范围受限时用篇幅指标触发回退检查：in-place 下输出字数低于原文 85%，或任何范围下句数变化超过约 10%，都要回查是否误删了整句、合并了句子或压了段落；bounded 不设字数下限，改为逐条核对待确认删除清单里每一条都是删了不丢信息的纯空句。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 3
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 1 | 保真回读'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 1 | 保真回读'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 1 | 保真回读'
+  rationale: 上游给了三个可以自动算的指标，用途是触发人工回查而不是直接判失败，这一点是它比 ALL-M-015（把字数变化百分比当信号跟踪，本仓库已 rejected）站得住的地方：ALL-M-015 是把字数当成质量指标，本条是把字数当成「有没有越过用户划定的编辑范围」的探针，指向明确。它同时给两档范围设了两种不同的检查方式，因为 bounded 的机制决定了它必然缩水，字数指标在那一档没有意义。修改点：85% 和 10% 这两个阈值是上游给的经验值，没有说明依据，按 criteria.md 第 3 条第 2 项标注为待核——采纳规则本身（用篇幅指标触发回退检查），具体数值要在本仓库的 evals 样本上跑一遍再固定。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-G-004
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/genres.md
+    anchor: '### ALL-G-004 不改换带权威含义的发布结构'
+  category: genre
+  language: both
+  rule_summary: 不得把一种体裁重新包装成另一种带权威含义的发布结构：采访、对谈或讨论式问答不得整理成 FAQ 小节，个人笔记不得整理成公告或规范。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Scene Packs'
+  rationale: FAQ 是一种有权威含义的发布结构：它意味着「这是官方答案」。把访谈或讨论套进这个壳子，等于给一段个人观点加上了官方背书，读者据此行动的后果由被署名的一方承担。这是体裁层面的失真，与 ALL-G-002、ZH-G-003 的分工不同——那两条管的是同一体裁内部该怎么写，本条管的是不得把体裁换掉。ALL-PROT-017 保护作者的声口，管不到发布结构这一层。可判定：指出改写稿使用的发布结构，与原文的发布结构不同即命中。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-035
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: process
+  language: both
+  rule_summary: 只加载 SKILL.md 时本文件里的兜底规则直接生效；只要环境里能读 references/，就必须继续按问题类型补看对应文件，只有在系统提示确实只给了 SKILL.md 时才停留在兜底规则。
+  decision: rejected
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 单文件模式只是兜底
+  rationale: 上游把自己的 SKILL.md 设计成「能单独工作但不完整」，针对的是安装方式的不确定：有的环境只注入主文件。这个考虑在它自己的分层结构下成立。不采纳的理由是 criteria.md 第 3 条第 1 项适用性：本仓库的 skill 不分单文件模式和完整模式，SKILL.md 只放流程和判断规则、模式表一律在 references，两者是一份东西的两部分而不是一份完整件加一份兜底件，因此没有「兜底规则」这个概念可以对应。ALL-PROC-028 已经规定判断以本 skill 的 references 为准。上游那个场景（运行环境只给了主文件）如果在本仓库出现，正确的行为不是降级到一套简化规则，而是说明 references 读不到、无法按规则判定；本仓库没有为降级运行留开关。
+  history:
+  - decision: rejected
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-036
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: process
+  language: both
+  rule_summary: 提供一个可选功能：在满足三个条件时主动问用户要不要套用某位真人作者的声音，用户选定后加载该作者的档案（人格、句法模板、节奏规则、反模式）叠加在通用规则之上，冲突时档案优先，交付前再按该档案的反模式清单复扫一遍。
+  decision: rejected
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 8
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Voice Adoption（可选）'
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Final Check'
+  rationale: 上游把这个功能的开关做得很克制：默认中立、每会话最多问一次、用户忽略就不再问、不混多位作者、档案的反模式不渗漏到后续轮次、加载进来的人格设定不得输出给用户。这些约束本身都合理，其中两条已经被本仓库单独收下（默认中立并入 ALL-PROT-017 的证据；不输出人格设定立为 ALL-PROT-021）。不采纳的是这个功能本身，理由是 criteria.md 第 3 条第 1 项适用性：本 skill 的适用范围由 ALL-G-001 定，是把已有文字改得不像 AI 写的，或只审不改地指出问题；把一篇文字改写成某位真人作者的腔调是另一件事——它不减少 AI 痕迹，只是换一种可辨认的腔调，而且要靠模型对真人文风的记忆来实现（上游自己也担心这一点，所以要求先读索引文件而不是凭记忆描述作者）。还有一层：把改写稿写成某位在世作者的口吻并交付，作者本人没有参与，署名关系不清楚。上游那个场景（用户就是想要某种腔调）在本仓库有出口：ALL-PROC-025 允许用户或项目提供自己的词表和样例文风，ALL-PROC-037 要求在项目已有文风样本时对齐它——这两条都基于用户手里真实存在的材料，不依赖模型对某位真人的印象。
+  history:
+  - decision: rejected
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-037
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ALL-PROC-037 对齐项目已有的文风样本'
+  category: process
+  language: both
+  rule_summary: 项目里已有文风样本（既有文章、样例文档）时，按它的句长、判断方式、段落推进和术语约定改写，不套用本 skill 偏好的节奏。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 1
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Repo Overrides'
+  rationale: 上游给出了四个可对齐的维度，把「模仿项目文风」变成可执行的事。它与 ALL-PROC-025 的分工清楚：ALL-PROC-025 管的是显式给出的词表和规则，本条管的是没有写成规则、只体现在既有文章里的习惯。这是一个真实的缺口——多数项目不会写 style guide，但它的文档读起来是一致的，而通用去 AI 味规则会把这种一致性改掉（项目一直是短句直述，改写按本 skill 偏好的长短交错改成书面语）。可判定：把项目样本和改写稿在这四个维度上各写一行，明显不一致即违反。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-038
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ALL-PROC-038 审稿与说明的条数上限'
+  category: process
+  language: both
+  rule_summary: 用户要求解释或只审不改时，只列最要紧的几条问题，默认不超过六条，不逐句点评；每条写清问题类型、触发点、建议动作，以及建不建议改写。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 2
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Output'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
+  rationale: 两个独立来源给出几乎相同的上限（一个写 3 到 6 条，一个写 1 到 5 个），理由也一样：上限逼出取舍，把最要紧的几处挑出来比列全更有用，全列出来等于没有排序。ALL-PROC-007 已经规定审稿模式要逐条点出命中的规则 id、引用原句、给出改法，但没有条数上限，实际执行中会变成逐句点评。四个字段（问题类型、触发点、建议动作、建不建议改写）取自 shuorenhua，与 ALL-PROC-007 的三要素对齐并补上第四项——明确允许给出「不建议改写」的结论，防的是审稿时为了交付而制造建议。可判定：数条数，以及每条缺没缺字段。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-039
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ALL-PROC-039 词表是模式的代表项'
+  category: process
+  language: both
+  rule_summary: 词表列的是模式的代表项，不是完整枚举：遇到词表里没有的说法，先判断它属不属于已有模式，属于就按该模式处理，不因为「词表里没有」就放行；不属于任何已有模式的按 ALL-PROC-028 写进改动说明交给用户判断，不自行往词表里加条目。执行时先按模式判定，再用词条兜底。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 短语表默认只列代表项'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: 执行第 6 步时
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROC-028
+    note: ALL-PROC-028 规定 references 里没有的现象写进改动说明交给用户、不自行加规则；本条补上它前面的一步——先判断这个新说法是不是已有模式的一个变体，是就按那个模式处理。两条合起来才不会把「未收录」当成「不命中」。
+  rationale: 中文口癖的变体是无穷的，穷举词表既做不到也会让词表失去可读性。上游的解法是把词表定位成模式的样例，并给补词设了两个门槛（改变了误杀边界、明显不属于任何现有模式），防的是词表无限膨胀。现有 ALL-PROC-028 只说了 references 里没有的现象交给用户，中间缺了一步：一个新说法可能只是已有模式的另一种措辞，直接交给用户等于把判断推回去。修改点：本仓库不采纳上游「把它当作新增词条处理」这个出口，新增词条仍然按 ALL-PROC-028 交给用户——上游是自己维护词表的作者，本仓库的词表由合并流程维护，运行时不能自己往里加。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-040
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ALL-PROC-040 无源引用的三种处理模式'
+  category: process
+  language: both
+  rule_summary: 处理无源引用（研究表明、数据显示、业内人士认为、studies show）时固定只在三种模式里选一种，并说明选了哪一种：rewrite-safe——去掉归属之后只保留不依赖该来源也能独立成立的判断，数字、预测或结论本身全靠这条引用成立的，删掉整条论断；audit-only——不补来源、不把无证据判断改写得更像有证据，明确指出这里缺来源，必要时保留原句不重写；rewrite-with-placeholder——只在用户明确要求保留原结构或原语气时使用，写成「有研究认为……，但这里没有给出处」这类占位提醒。任何模式下都不得补具体机构、数据、年份或研究名称。审计只约束那一条论断，同段其他病灶仍按各自规则清理。用户没有指定模式、文本又跨场景时取更保守的 audit-only。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 7
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Unsourced citation modes'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Unsourced citation modes'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Unsourced citation modes'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Unsourced citation modes'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Unsourced citation modes'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Unsourced citation modes'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
+  relations:
+  - type: excepts
+    rule_id: ALL-PROC-003
+    note: ALL-PROC-003 要求受众、渠道或目的不明时停下来问；本条处理的是处理力度不明时取保守默认值，两者分域：问的是写给谁看，取默认值的是这一条无源引用怎么办。
+  rationale: 现有 EN-P-017 只给了两个出口（点名来源或删掉整条论断），执行中最常见的错误恰恰不在这两个出口里：把「专家说 X」改成「X」——删掉归属之后，一个没有依据的说法变成了作者的直接主张，可信度问题不但没解决还加重了。上游给的三种模式覆盖了这个盲区，而且把选择显式化：无源引用的正确处理取决于场景（对外写作里应该删，文档里应该标，编辑稿里可以留占位），强制选一种防的是「随手改一改」。三条禁令（不补机构、数据、年份、研究名）与 ALL-PROT-001 一致。可判定：交付时说得出用了哪一种模式，以及为什么。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-041
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: process
+  language: both
+  rule_summary: 按文本本身的状态定改写力度：minimal 用于本身基本自然、只需去掉局部模板感的文本；standard 用于有明显 AI 腔或语域混搭但信息骨架完好的文本；只有在最强的一档命中密集或多类结构问题叠加时才升到 aggressive。
+  decision: rejected
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 3
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `minimal`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `standard`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `aggressive`'
+  relations:
+  - type: conflicts-with
+    rule_id: ALL-PROC-005
+    note: ALL-PROC-005 按用户的措辞定改动幅度（改写／润色／校对三档），本条按文本自身的 AI 味密度定；用户说「润色」而文本 AI 味很重时两条给出相反指令，取 ALL-PROC-005，本条记 rejected。
+  rationale: 上游的三档划分本身内部一致、每一档的允许动作都写得可判定，而且它给最高一档设了准入条件（命中密集或多类结构问题叠加）而不是让执行者凭感觉，这一点比本仓库现有的 ALL-PROC-027（一个 aggressive 开关，已记 duplicate）严谨。不采纳的原因是分档依据：本仓库的 ALL-PROC-005 把「这次该改多少」的决定权放在用户措辞上，并明写「用户给出的具体范围优先于这三档默认值」；本条把这个决定权交给模型对文本状态的判断。两套并存时，用户说「帮我润色一下」而文本 AI 味很重，一套说只调句序、另一套说可以整段重写，执行者无从选择。上游那个场景成立时（用户没给措辞，只说「去 AI 味」）本仓库的出口是 ALL-PROC-005 的第一档加 ALL-PROC-042 的编辑范围：力度由授权定，能不能删整句由范围定，两条轴合起来表达得出上游想表达的东西，而不需要模型替用户定力度。本条中真正补上本仓库缺口的那部分——编辑范围——已经作为 ALL-PROC-042 采纳。裁决依据是 criteria.md 第 3 条第 3 项（冲突风险）：五件事里这一件不成立，与已 adopted 的 ALL-PROC-005 矛盾，因此不采用；冲突按第 8 条双记。
+  history:
+  - decision: rejected
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-042
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ALL-PROC-042 编辑范围是一条独立的轴'
+  category: process
+  language: both
+  rule_summary: 改写力度（ALL-PROC-005 的三档授权）和编辑范围是两条独立的轴，每次改写要分别判定。编辑范围分三档：structural（默认，可删整句空总结、合并相邻事实句、轻量调整句序和段落落点）、bounded（不合并相邻句、不重排段落、不删承担节奏的实句或有意重复，整句空话进待确认删除清单）、in-place（一句不删、不合并相邻句、不重排段落、不把多段压成一段，改动全部收在句子内部：句内替换、删语气垫片、把拔高的语气降回普通判断、在单句内部拆短过满的结构）。in-place 只在用户明确要求保留句数、完全原样、一句不删，或反馈 bounded 仍然删多了时启用。bounded 和 in-place 下信息留存是硬指标：原文的每一个信息点在输出里都要能追溯到。改写力度最高而范围最窄的组合可以存在，但先说明这个组合会让改写效果受限、并建议放宽一档，用户坚持时按窄范围的边界执行。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 9
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '- 不用机械同义词替换表'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 3.5 Edit scope'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `structural`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `bounded`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `in-place`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `in-place`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `in-place`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `in-place`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 1 | 保真回读'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROC-005
+    note: ALL-PROC-005 定这次改到什么力度（按用户措辞的三档授权），本条定这次能不能改变句数和段数；两条正交，一次改写要各判一次。
+  - type: pairs-with
+    rule_id: ALL-PROC-012
+    note: ALL-PROC-012 列出拿到改写级授权时允许的动作，本条给这些动作再叠一层范围限制：同样是改写级授权，范围为 in-place 时不得合并拆分调换段落。
+  - type: pairs-with
+    rule_id: ALL-PROC-043
+    note: ALL-PROC-042 定义 bounded 这一档范围，ALL-PROC-043定义它的执行细则和交付形态；缺ALL-PROC-043时 bounded 无法执行。
+  - type: pairs-with
+    rule_id: ALL-PROC-044
+    note: ALL-PROC-042 定义受限范围，ALL-PROC-044堵住受限范围下最容易走的那个出口。
+  - type: pairs-with
+    rule_id: ZH-PROC-004
+    note: ALL-PROC-042 定义三档编辑范围，ZH-PROC-004给中文长文指定默认落在哪一档。
+  rationale: 这是本批最有价值的结构性增量。「改得自然一点但别删」是一个常见需求，本仓库现有的 ALL-PROC-005 只有一条力度轴，表达不出来：三档授权里的「润色」既限制了力度也隐含限制了范围，而用户可能想要力度大、范围窄。上游把两件事拆开，三档范围各自的允许动作和禁止动作都写得可判定（数句数和段数就能核），而且给出了升降级路径（bounded 仍删多了就切 in-place）。它同时点出了受限范围下最典型的失败：不能删句于是把空话改写成另一句不那么难看的空话，篇幅保住了、AI 味没去掉——这一点单独立为 ALL-PROC-044。本条只采纳范围这条轴，不采纳上游的力度轴（见 ALL-PROC-041）。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-043
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ALL-PROC-043 待确认删除清单'
+  category: process
+  language: both
+  rule_summary: 编辑范围为 bounded 时，一个句子要进待确认删除清单必须同时满足三条：删掉后该段的信息点不变、它不是相邻两个实句之间的唯一过渡、它命中纯空句型（空总结、价值拔高收尾、无源权威铺垫、谄媚开场、整句旁白）。句首引导词剥掉之后还剩实质内容的句子直接在句内清洗，不占用清单。交付形态是正文加一份「建议删除（待确认）」清单，每条写出原文和为什么删了不丢信息，删不删由用户决定。关键事实句、转场句和承担节奏的重复句不得因为「看起来像模板」进清单。整条无源论断里的数字或时间跨度只依赖未提供的来源才成立时可以随整句进清单，但选择保留这条论断就不得改动它的数值或时间跨度。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 5
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `bounded`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `bounded`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `bounded`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `bounded`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 1 | 保真回读'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROC-042
+    note: ALL-PROC-042 定义 bounded 这一档范围，本条定义它的执行细则和交付形态；缺本条时 bounded 无法执行。
+  rationale: 三条必要条件里「不是唯一过渡」这一条最容易被忽略：过渡句本身没有信息，但删掉之后上下两段会硬接。上游把它写成必要条件，堵的是「没有信息就删」这个过于简单的判据。整个机制的目的是把长度决定权交还给用户，所以交付形态里必须写「为什么删了不丢信息」——用户要能核对这个判断，而不是只看到一条删除建议。现有 ALL-PROC-008 规定改动说明写改了什么、为什么改、保留了什么，没有「待确认」这种把决定权交回去的形态。可判定：清单里的每一条都能对照三条必要条件逐条打勾。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-044
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ALL-PROC-044 整句空话不得软化成另一种说法'
+  category: process
+  language: both
+  rule_summary: 编辑范围受限时遇到整句空话，不得把它改写成另一句意思相近但读着不那么空的话：bounded 下进待确认删除清单，in-place 下原句保留不动，并在改动说明里单列一节写出这些句子和判断理由。
+  decision: adopted-with-modification
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 2
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `bounded`'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### `in-place`'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROC-042
+    note: ALL-PROC-042 定义受限范围，本条堵住受限范围下最容易走的那个出口。
+  rationale: 「软化成另一种说法」是受限编辑范围下最典型的失败：不能删句，于是把空话改写成一句不那么难看的空话，篇幅保住了、AI 味没去掉，而且用户看不出来。上游在两档范围下各写了一次，说明它见过这个出口被反复使用。修改点在输出形态：上游要求 in-place 下在正文里给这些句子加行内标注（「[空句，建议人工确认是否删除]」），本仓库改成写进改动说明的单独一节，理由是 ALL-PROT-014 已经定了「不在正文里插入编辑注记，风险写在单独的需作者确认一节」的口径，行内标注会让交付稿不能直接使用。可判定：把改写稿里对应位置的句子和原句比对，意思相近但措辞变了、又没有出现在删除清单或改动说明里，即违反。
+  history:
+  - decision: adopted-with-modification
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-045
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/process.md
+    anchor: '### ALL-PROC-045 两遍回读分开做'
+  category: process
+  language: both
+  rule_summary: 交付前的回读固定拆成两步先后进行，不得混着做。第一遍只查保真，固定五项：受保护片段有没有漂、信息有没有丢（按 ALL-PROT-023 的七项逐项追溯）、语域是否统一、术语是否失真、删改之后有没有出现生硬断裂。第一遍确认无误之后才做第二遍残留检查，第二遍固定查五件事：开场残留、总结残留、旁白残留、空泛判断残留、节奏过匀与同型骨架。第二遍只允许四类轻量修正：删一处残留的开场或收尾、合并两句过匀的事实句或拆一处过满的句子、把一句旁白或空泛判断压回直接表达、把超出密度阈值的同型句式骨架换成直接陈述；不重写全文、不补原文没有的事实、不动术语参数命令报错和责任归属。
+  decision: adopted
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 5
+  independent_sources: 1
+  sources:
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 8. Required reread checks'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 1 | 保真回读'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 2 | Residual Audit'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 2 | Residual Audit'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Pass 2 | Residual Audit'
+  relations:
+  - type: pairs-with
+    rule_id: ALL-PROC-014
+    note: ALL-PROC-014 给出交付前要逐项自查哪些内容，本条给出这些检查的执行顺序和最后一轮的动作白名单；ALL-PROC-014 管查什么，本条管什么时候查、查完还能改什么。
+  rationale: 混着做的问题是两个目标互相干扰：改语感的动作会引入新的事实漂移，而这时保真检查已经过去了。分开做保证第一遍的结果在第二遍开始时是有效的，第二遍又只允许白名单内的动作，任何超出白名单的改动都可能引入不会再被接住的漂移。现有 ALL-PROC-014 列了要查什么，没有规定顺序，也没有给最后一轮设动作边界；ALL-PROC-019 允许最多三轮，但没有说每一轮能做什么。第二遍的五个检查项本身也有依据：空总结在第一遍被删掉之后，改写过程会再生成新的（模型在结束一段时倾向于收束），所以要专门再查一次。可判定：说得出这两遍各自查了什么、第二遍做了哪几处修正、每处落在四类里的哪一类。
+  history:
+  - decision: adopted
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并
+- id: ALL-PROC-046
+  local:
+    skill: maybe-humanizer
+    path: skills/maybe-humanizer/references/conflicts.md
+    anchor: null
+  category: process
+  language: both
+  rule_summary: 默认输出只给改写后的正文，不附改动说明、不给多个版本、不做逐条点评；只有用户主动要求解释，或改写幅度明显低于用户预期（高风险误杀）时，才补一行极短说明。
+  decision: rejected
+  decision_origin: model-proposed
+  decision_revision: 1
+  decided_at: '2026-09-06T22:00:00Z'
+  evidence_count: 4
+  independent_sources: 3
+  sources:
+  - type: upstream
+    source_id: upstream-ai-zixun-humanizer-zh
+    path: SKILL.md
+    commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
+    anchor: '## Output'
+  - type: upstream
+    source_id: upstream-op7418-humanizer-zh
+    path: SKILL.md
+    commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
+    anchor: '## 输出格式'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '## 7. Output contract'
+  - type: upstream
+    source_id: upstream-mrgediao-shuorenhua
+    path: SKILL.md
+    commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
+    anchor: '### Annotation mode'
+  relations:
+  - type: conflicts-with
+    rule_id: ALL-PROC-008
+    note: ALL-PROC-008 要求每份改写稿都附一节改动说明、终稿短也不省略；本条把说明降级为按需触发。取 ALL-PROC-008，本条记 rejected。
+  rationale: 这是本批证据最集中的一条反对意见：三个独立来源（op7418、ai-zixun、shuorenhua）都把「默认只给正文」写成输出契约，理由一致且成立——改写工具输出一堆分析，用户还要自己从中挑出正文；中文长文的多数使用场景是拿了就发。本仓库仍然保留 ALL-PROC-008，理由不是票数，是本仓库这套规则的结构。第一，本 skill 允许的动作里有几项会改变读者能看到的信息边界：ALL-PROC-042 允许删整句、ALL-PROC-043 要把删除决定交回用户、ALL-PROT-014 要求把「结论可能超出证据」的风险写在单独一节、ZH-PROT-002 允许更正品牌名并要求点出。这些机制都需要一个固定的位置来落，改动说明就是那个位置；取消默认说明，这几条会同时失去落点。第二，本仓库已经留了口子：ALL-PROC-021 规定用户明确说「只要终稿」，或本 skill 被另一个流程标记为内嵌步骤时，就只给正文——上游要的那个默认，用户说一句话就能拿到，而反过来（默认不给、用户想要时再问一遍）拿不回已经丢掉的判断依据。第三，三个来源反对的其实是说明太长：ai-zixun 给了 3 到 6 条的上限，shuorenhua 给了 1 到 5 个的上限。这一点本批已经采纳，立为 ALL-PROC-038，写 skill 正文时用它约束 ALL-PROC-008 那一节的长度。上游那个场景（拿了就发）在本仓库的开启方式：在请求里说一句「只要正文」，或者把本 skill 挂在别的流程里当内嵌步骤。裁决依据是 criteria.md 第 3 条：证据数不决定结论，三个独立来源不构成采用的理由；五件事里的冲突风险一项不成立（与已 adopted 的 ALL-PROC-008 矛盾），因此不采用，冲突按第 8 条双记。
+  history:
+  - decision: rejected
+    at: '2026-09-06T22:00:00Z'
+    reason: 中文批合并

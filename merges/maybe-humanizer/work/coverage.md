@@ -1,6 +1,6 @@
 # 单元到规则的映射（覆盖检查）
 
-254 条单元，每条恰好归入一条规则，无遗漏、无重复引用。
+488 条单元，每条恰好归入一条规则，无遗漏、无重复引用。其中前 254 条来自首次合并，后 234 条来自中文批（op7418-humanizer-zh、ai-zixun-humanizer-zh、shuorenhua）。
 
 | 单元 id | 来源 | 上游锚点 | 规则 id | decision |
 |---|---|---|---|---|
@@ -256,5 +256,239 @@
 | U-abh-114 | aboudjem-humanizer | ## 核心原生模式 · Core native tells (ZH1–ZH7) / ZH6 | ZH-P-005 | adopted |
 | U-abh-115 | aboudjem-humanizer | ## 核心原生模式 · Core native tells (ZH1–ZH7) / ZH7 | ZH-P-006 | adopted |
 | U-abh-116 | aboudjem-humanizer | ## 未验证假设 · Unverified hypotheses (ZH13–ZH14) / ZH13 | ZH-P-010 | unverified |
-| U-abh-117 | aboudjem-humanizer | ## 未验证假设 · Unverified hypotheses (ZH13–ZH14) / ZH14 | ZH-P-011 | unverified |
+| U-abh-117 | aboudjem-humanizer | ## 未验证假设 · Unverified hypotheses (ZH13–ZH14) / ZH14 | ZH-P-011 | adopted-with-modification |
 | U-abh-118 | aboudjem-humanizer | ## ⚠️ 实验性 · PROVISIONAL — 请先读这里 | ZH-M-001 | adopted |
+| U-azh-001 | ai-zixun-humanizer-zh | description: Remove signs of AI-generated | ALL-G-001 | adopted-with-modification |
+| U-azh-002 | ai-zixun-humanizer-zh | ## Overview | ZH-PROC-002 | adopted-with-modification |
+| U-azh-003 | ai-zixun-humanizer-zh | ## Overview | ALL-PROT-003 | adopted |
+| U-azh-004 | ai-zixun-humanizer-zh | 1. 先判断文本类型 | ALL-G-002 | adopted-with-modification |
+| U-azh-005 | ai-zixun-humanizer-zh | 2. 先看文章主线 | ALL-PROC-011 | adopted |
+| U-azh-006 | ai-zixun-humanizer-zh | 3. 先找最显眼的 AI 痕迹 | ZH-PROC-002 | adopted-with-modification |
+| U-azh-007 | ai-zixun-humanizer-zh | 4. 再决定改写力度 | ALL-PROC-005 | adopted |
+| U-azh-008 | ai-zixun-humanizer-zh | 5. 保留作者原意 | ALL-PROT-001 | adopted |
+| U-azh-009 | ai-zixun-humanizer-zh | 5. 保留作者原意 | ALL-PROT-004 | adopted-with-modification |
+| U-azh-010 | ai-zixun-humanizer-zh | 5. 保留作者原意 | ZH-PROT-001 | adopted |
+| U-azh-011 | ai-zixun-humanizer-zh | 6. 做最后一遍朗读检查 | ZH-M-003 | reference-only |
+| U-azh-012 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROT-017 | adopted |
+| U-azh-013 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROC-036 | rejected |
+| U-azh-014 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROC-028 | adopted-with-modification |
+| U-azh-015 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROC-036 | rejected |
+| U-azh-016 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROC-036 | rejected |
+| U-azh-017 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROC-036 | rejected |
+| U-azh-018 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROC-036 | rejected |
+| U-azh-019 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROC-036 | rejected |
+| U-azh-020 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROT-017 | adopted |
+| U-azh-021 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-P-012 | adopted |
+| U-azh-022 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROT-021 | adopted |
+| U-azh-023 | ai-zixun-humanizer-zh | ## Voice Adoption（可选） | ALL-PROC-036 | rejected |
+| U-azh-024 | ai-zixun-humanizer-zh | ### 1. 优先改掉翻译腔 | ZH-P-011 | adopted-with-modification |
+| U-azh-025 | ai-zixun-humanizer-zh | ### 1. 优先改掉翻译腔 | ZH-P-011 | adopted-with-modification |
+| U-azh-026 | ai-zixun-humanizer-zh | ### 1. 优先改掉翻译腔 | ZH-P-024 | adopted |
+| U-azh-027 | ai-zixun-humanizer-zh | ### 2. 去掉空泛的大词和套话 | ZH-P-001 | adopted |
+| U-azh-028 | ai-zixun-humanizer-zh | ### 2. 去掉空泛的大词和套话 | ZH-P-015 | adopted |
+| U-azh-029 | ai-zixun-humanizer-zh | ### 2. 去掉空泛的大词和套话 | ALL-P-007 | adopted |
+| U-azh-030 | ai-zixun-humanizer-zh | ### 3. 打散机械结构 | ALL-P-005 | adopted |
+| U-azh-031 | ai-zixun-humanizer-zh | ### 3. 打散机械结构 | ZH-P-003 | adopted |
+| U-azh-032 | ai-zixun-humanizer-zh | ### 3. 打散机械结构 | ALL-P-002 | adopted |
+| U-azh-033 | ai-zixun-humanizer-zh | ### 4. 保持中文节奏 | ALL-P-001 | adopted-with-modification |
+| U-azh-034 | ai-zixun-humanizer-zh | ### 4. 保持中文节奏 | ALL-P-004 | adopted |
+| U-azh-035 | ai-zixun-humanizer-zh | ### 4. 保持中文节奏 | ZH-P-006 | adopted |
+| U-azh-036 | ai-zixun-humanizer-zh | ### 5. 管住文章级结构 | ZH-PROC-003 | adopted |
+| U-azh-037 | ai-zixun-humanizer-zh | ### 5. 管住文章级结构 | ALL-PROC-011 | adopted |
+| U-azh-038 | ai-zixun-humanizer-zh | ### 5. 管住文章级结构 | ALL-P-008 | adopted |
+| U-azh-039 | ai-zixun-humanizer-zh | ### 5. 管住文章级结构 | ZH-PROC-003 | adopted |
+| U-azh-040 | ai-zixun-humanizer-zh | ### 5. 管住文章级结构 | ALL-PROC-030 | adopted-with-modification |
+| U-azh-041 | ai-zixun-humanizer-zh | ### 5. 管住文章级结构 | ZH-P-003 | adopted |
+| U-azh-042 | ai-zixun-humanizer-zh | ### 6. 处理标点和排版 | ZH-P-025 | adopted-with-modification |
+| U-azh-043 | ai-zixun-humanizer-zh | ### 6. 处理标点和排版 | ZH-S-002 | rejected |
+| U-azh-044 | ai-zixun-humanizer-zh | ### 6. 处理标点和排版 | ZH-P-026 | adopted-with-modification |
+| U-azh-045 | ai-zixun-humanizer-zh | ### 6. 处理标点和排版 | ZH-S-003 | reference-only |
+| U-azh-046 | ai-zixun-humanizer-zh | ### 6. 处理标点和排版 | ZH-S-003 | reference-only |
+| U-azh-047 | ai-zixun-humanizer-zh | ### 6. 处理标点和排版 | ZH-S-003 | reference-only |
+| U-azh-048 | ai-zixun-humanizer-zh | ### 6. 处理标点和排版 | ZH-PROT-002 | adopted-with-modification |
+| U-azh-049 | ai-zixun-humanizer-zh | ### 7. 统一常见术语和日期 | ZH-S-004 | reference-only |
+| U-azh-050 | ai-zixun-humanizer-zh | ### 7. 统一常见术语和日期 | ZH-S-005 | rejected |
+| U-azh-051 | ai-zixun-humanizer-zh | ### 7. 统一常见术语和日期 | ZH-S-004 | reference-only |
+| U-azh-052 | ai-zixun-humanizer-zh | ### 7. 统一常见术语和日期 | ZH-S-004 | reference-only |
+| U-azh-053 | ai-zixun-humanizer-zh | ### 8. 控制判断强度 | ALL-PROT-014 | adopted |
+| U-azh-054 | ai-zixun-humanizer-zh | ### 8. 控制判断强度 | ALL-PROT-001 | adopted |
+| U-azh-055 | ai-zixun-humanizer-zh | ### 8. 控制判断强度 | ALL-P-007 | adopted |
+| U-azh-056 | ai-zixun-humanizer-zh | ## Repo Overrides | ALL-PROC-025 | adopted-with-modification |
+| U-azh-057 | ai-zixun-humanizer-zh | ## Repo Overrides | ALL-PROC-037 | adopted |
+| U-azh-058 | ai-zixun-humanizer-zh | ## Repo Overrides | ZH-P-025 | adopted-with-modification |
+| U-azh-059 | ai-zixun-humanizer-zh | ## Repo Overrides | ZH-P-025 | adopted-with-modification |
+| U-azh-060 | ai-zixun-humanizer-zh | ## Output | ALL-PROC-046 | rejected |
+| U-azh-061 | ai-zixun-humanizer-zh | ## Output | ALL-PROC-038 | adopted |
+| U-azh-062 | ai-zixun-humanizer-zh | ## Output | ALL-PROC-005 | adopted |
+| U-azh-063 | ai-zixun-humanizer-zh | ## Final Check | ZH-PROC-003 | adopted |
+| U-azh-064 | ai-zixun-humanizer-zh | ## Final Check | ZH-M-005 | adopted |
+| U-azh-065 | ai-zixun-humanizer-zh | ## Final Check | ZH-M-004 | adopted |
+| U-azh-066 | ai-zixun-humanizer-zh | ## Final Check | ALL-PROC-036 | rejected |
+| U-ohz-001 | op7418-humanizer-zh | ## 你的任务 | ZH-PROC-001 | rejected |
+| U-ohz-002 | op7418-humanizer-zh | ## 核心规则速查 | ZH-P-012 | rejected |
+| U-ohz-003 | op7418-humanizer-zh | ## 核心规则速查 | ZH-P-013 | adopted |
+| U-ohz-004 | op7418-humanizer-zh | ## 核心规则速查 | ZH-P-014 | adopted |
+| U-ohz-005 | op7418-humanizer-zh | ## 核心规则速查 | ZH-P-002 | adopted |
+| U-ohz-006 | op7418-humanizer-zh | ### 缺乏灵魂的写作迹象 | ZH-M-002 | reference-only |
+| U-ohz-007 | op7418-humanizer-zh | ### 如何增加语调 | ZH-S-001 | rejected |
+| U-ohz-008 | op7418-humanizer-zh | ### 如何增加语调 | ALL-PROT-017 | adopted |
+| U-ohz-009 | op7418-humanizer-zh | ### 如何增加语调 | ALL-PROT-017 | adopted |
+| U-ohz-010 | op7418-humanizer-zh | ### 如何增加语调 | ALL-PROC-030 | adopted-with-modification |
+| U-ohz-011 | op7418-humanizer-zh | ### 如何增加语调 | ALL-P-007 | adopted |
+| U-ohz-012 | op7418-humanizer-zh | ### 5. 模糊归因和含糊措辞 | ALL-PROT-001 | adopted |
+| U-ohz-013 | op7418-humanizer-zh | ### 1. 过度强调意义、遗产和更广泛的趋势 | ZH-P-015 | adopted |
+| U-ohz-014 | op7418-humanizer-zh | ### 2. 过度强调知名度和媒体报道 | ZH-P-016 | adopted |
+| U-ohz-015 | op7418-humanizer-zh | ### 3. 以 -ing 结尾的肤浅分析 | ZH-P-017 | adopted |
+| U-ohz-016 | op7418-humanizer-zh | ### 4. 宣传和广告式语言 | ZH-P-018 | adopted |
+| U-ohz-017 | op7418-humanizer-zh | ### 5. 模糊归因和含糊措辞 | ZH-P-019 | adopted |
+| U-ohz-018 | op7418-humanizer-zh | ### 6. 提纲式的 | ZH-P-020 | adopted |
+| U-ohz-019 | op7418-humanizer-zh | ### 7. 过度使用的 | ZH-P-001 | adopted |
+| U-ohz-020 | op7418-humanizer-zh | ### 8. 避免使用 | ZH-P-021 | adopted |
+| U-ohz-021 | op7418-humanizer-zh | ### 16. 标题中的标题大写 | ZH-G-001 | adopted |
+| U-ohz-022 | op7418-humanizer-zh | ### 18. 弯引号 | ZH-G-001 | adopted |
+| U-ohz-023 | op7418-humanizer-zh | ### 19. 协作交流痕迹 | ZH-P-022 | adopted |
+| U-ohz-024 | op7418-humanizer-zh | ### 20. 知识截止日期免责声明 | ZH-P-022 | adopted |
+| U-ohz-025 | op7418-humanizer-zh | ### 22. 填充短语 | ZH-P-023 | adopted |
+| U-ohz-026 | op7418-humanizer-zh | ## 快速检查清单 | ALL-P-001 | adopted-with-modification |
+| U-ohz-027 | op7418-humanizer-zh | ## 快速检查清单 | ZH-P-013 | adopted |
+| U-ohz-028 | op7418-humanizer-zh | ## 快速检查清单 | ZH-P-007 | adopted |
+| U-ohz-029 | op7418-humanizer-zh | ## 快速检查清单 | ALL-P-011 | adopted |
+| U-ohz-030 | op7418-humanizer-zh | ## 快速检查清单 | ZH-P-001 | adopted |
+| U-ohz-031 | op7418-humanizer-zh | ## 输出格式 | ALL-PROC-046 | rejected |
+| U-ohz-032 | op7418-humanizer-zh | ## 质量评分 | ALL-M-017 | reference-only |
+| U-ohz-033 | op7418-humanizer-zh | ## 质量评分 | ALL-M-017 | reference-only |
+| U-srh-001 | shuorenhua | ## When to use | ALL-G-001 | adopted-with-modification |
+| U-srh-002 | shuorenhua | 这份 skill 不是敏感词替换器 | ALL-PROC-029 | adopted |
+| U-srh-003 | shuorenhua | - 保留技术性。 | ALL-PROT-009 | adopted |
+| U-srh-004 | shuorenhua | - 优先保信息，再谈风格。 | ALL-PROT-001 | adopted |
+| U-srh-005 | shuorenhua | - 优先保信息，再谈风格。 | ALL-PROT-022 | adopted |
+| U-srh-006 | shuorenhua | - 原文的量化表述有歧义时 | ALL-PROT-014 | adopted |
+| U-srh-007 | shuorenhua | - 原文的量化表述有歧义时 | ALL-PROT-001 | adopted |
+| U-srh-008 | shuorenhua | - 不用机械同义词替换表 | ALL-PROT-009 | adopted |
+| U-srh-009 | shuorenhua | - 不用机械同义词替换表 | ALL-PROC-042 | adopted |
+| U-srh-010 | shuorenhua | - 短语表默认只列代表项 | ALL-PROC-039 | adopted-with-modification |
+| U-srh-011 | shuorenhua | ## Execution order | ALL-PROC-001 | adopted |
+| U-srh-012 | shuorenhua | ## Execution order | ALL-PROT-019 | adopted-with-modification |
+| U-srh-013 | shuorenhua | 执行第 6 步时 | ALL-PROC-039 | adopted-with-modification |
+| U-srh-014 | shuorenhua | ## 1. Scene detection | ALL-P-012 | adopted |
+| U-srh-015 | shuorenhua | ### `chat` | ZH-G-002 | adopted-with-modification |
+| U-srh-016 | shuorenhua | ### `status` | ZH-G-002 | adopted-with-modification |
+| U-srh-017 | shuorenhua | ### `docs` | ZH-G-002 | adopted-with-modification |
+| U-srh-018 | shuorenhua | ### `public-writing` | ZH-G-002 | adopted-with-modification |
+| U-srh-019 | shuorenhua | ### Scene Packs | ZH-G-003 | adopted |
+| U-srh-020 | shuorenhua | ### Scene Packs | ZH-G-003 | adopted |
+| U-srh-021 | shuorenhua | ### Scene Packs | ZH-G-003 | adopted |
+| U-srh-022 | shuorenhua | ### Scene Packs | ZH-G-003 | adopted |
+| U-srh-023 | shuorenhua | ### Scene Packs | ZH-G-003 | adopted |
+| U-srh-024 | shuorenhua | ### Scene Packs | ZH-G-003 | adopted |
+| U-srh-025 | shuorenhua | ### Scene Packs | ZH-G-003 | adopted |
+| U-srh-026 | shuorenhua | ### Scene Packs | ALL-PROT-024 | adopted |
+| U-srh-027 | shuorenhua | ### Scene Packs | ALL-PROT-023 | adopted |
+| U-srh-028 | shuorenhua | ### Scene Packs | ALL-G-004 | adopted |
+| U-srh-029 | shuorenhua | ### Scene Packs | ALL-PROC-010 | adopted-with-modification |
+| U-srh-030 | shuorenhua | 单文件模式只是兜底 | ALL-PROC-035 | rejected |
+| U-srh-031 | shuorenhua | - 删开场套话、谄媚和元评论 | ZH-P-022 | adopted |
+| U-srh-032 | shuorenhua | - 删空总结和收尾腔 | ZH-P-001 | adopted |
+| U-srh-033 | shuorenhua | - 处理二元对比骨架 | ZH-P-024 | adopted |
+| U-srh-034 | shuorenhua | - 把商业黑话和表演性技术腔改回普通动作 | ZH-P-001 | adopted |
+| U-srh-035 | shuorenhua | - 遇到过度接住、替用户做心理判断或身份认证式夸奖 | ZH-P-027 | adopted |
+| U-srh-036 | shuorenhua | - 遇到过度接住、替用户做心理判断或身份认证式夸奖 | ZH-P-028 | adopted |
+| U-srh-037 | shuorenhua | - 发现翻译腔时 | ZH-P-011 | adopted-with-modification |
+| U-srh-038 | shuorenhua | - 把名词化还原成动词 | ZH-P-011 | adopted-with-modification |
+| U-srh-039 | shuorenhua | - 同一个对象不要在相邻几句里换三种说法 | ZH-P-029 | adopted |
+| U-srh-040 | shuorenhua | - 清理姿态层时按子句和事实要素判断 | ALL-PROT-025 | adopted |
+| U-srh-041 | shuorenhua | - 清理姿态层时按子句和事实要素判断 | ALL-PROT-023 | adopted |
+| U-srh-042 | shuorenhua | - `code-context` 里的真实运行行为 | ALL-PROT-026 | adopted-with-modification |
+| U-srh-043 | shuorenhua | - `code-context` 里的真实运行行为 | ALL-PROT-003 | adopted |
+| U-srh-044 | shuorenhua | - 抽象信息、实体类型和关系不能擅自具体化 | ALL-PROT-027 | adopted |
+| U-srh-045 | shuorenhua | - 抽象信息、实体类型和关系不能擅自具体化 | ALL-PROT-028 | adopted |
+| U-srh-046 | shuorenhua | - 抽象信息、实体类型和关系不能擅自具体化 | ALL-PROT-022 | adopted |
+| U-srh-047 | shuorenhua | - 抽象信息、实体类型和关系不能擅自具体化 | ALL-PROT-023 | adopted |
+| U-srh-048 | shuorenhua | - 抽象信息、实体类型和关系不能擅自具体化 | ALL-PROT-020 | adopted |
+| U-srh-049 | shuorenhua | - 抽象信息、实体类型和关系不能擅自具体化 | ALL-PROT-029 | adopted |
+| U-srh-050 | shuorenhua | - 抽象信息、实体类型和关系不能擅自具体化 | ALL-P-010 | adopted |
+| U-srh-051 | shuorenhua | - 抽象信息、实体类型和关系不能擅自具体化 | ALL-P-007 | adopted |
+| U-srh-052 | shuorenhua | - 中英混排句中的英文词 | ZH-PROT-003 | adopted |
+| U-srh-053 | shuorenhua | ### Unsourced citation modes | ALL-PROC-040 | adopted |
+| U-srh-054 | shuorenhua | ### Unsourced citation modes | ALL-PROC-040 | adopted |
+| U-srh-055 | shuorenhua | ### Unsourced citation modes | ALL-PROT-002 | adopted |
+| U-srh-056 | shuorenhua | ### Unsourced citation modes | ALL-PROC-040 | adopted |
+| U-srh-057 | shuorenhua | ### Unsourced citation modes | ALL-PROC-040 | adopted |
+| U-srh-058 | shuorenhua | ### Unsourced citation modes | ALL-PROC-040 | adopted |
+| U-srh-059 | shuorenhua | ### Unsourced citation modes | ALL-PROC-040 | adopted |
+| U-srh-060 | shuorenhua | ### `minimal` | ALL-PROC-041 | rejected |
+| U-srh-061 | shuorenhua | ### `standard` | ALL-PROC-041 | rejected |
+| U-srh-062 | shuorenhua | ### `aggressive` | ALL-PROC-041 | rejected |
+| U-srh-063 | shuorenhua | ### `aggressive` | ALL-PROT-019 | adopted-with-modification |
+| U-srh-064 | shuorenhua | ### `aggressive` | ZH-G-002 | adopted-with-modification |
+| U-srh-065 | shuorenhua | ## 3.5 Edit scope | ALL-PROC-042 | adopted |
+| U-srh-066 | shuorenhua | ### `structural` | ALL-PROC-042 | adopted |
+| U-srh-067 | shuorenhua | ### `bounded` | ZH-PROC-004 | adopted-with-modification |
+| U-srh-068 | shuorenhua | ### `bounded` | ALL-PROC-042 | adopted |
+| U-srh-069 | shuorenhua | ### `bounded` | ALL-PROC-043 | adopted |
+| U-srh-070 | shuorenhua | ### `bounded` | ALL-PROC-043 | adopted |
+| U-srh-071 | shuorenhua | ### `bounded` | ALL-PROC-043 | adopted |
+| U-srh-072 | shuorenhua | ### `bounded` | ALL-PROC-044 | adopted-with-modification |
+| U-srh-073 | shuorenhua | ### `bounded` | ALL-PROC-043 | adopted |
+| U-srh-074 | shuorenhua | ### `in-place` | ALL-PROC-042 | adopted |
+| U-srh-075 | shuorenhua | ### `in-place` | ALL-PROC-042 | adopted |
+| U-srh-076 | shuorenhua | ### `in-place` | ALL-PROC-042 | adopted |
+| U-srh-077 | shuorenhua | ### `in-place` | ALL-PROT-030 | adopted |
+| U-srh-078 | shuorenhua | ### `in-place` | ALL-PROC-044 | adopted-with-modification |
+| U-srh-079 | shuorenhua | ### `in-place` | ALL-PROC-042 | adopted |
+| U-srh-080 | shuorenhua | ## 4. Tier severity | ZH-M-006 | adopted-with-modification |
+| U-srh-081 | shuorenhua | ### Tier 1 | ZH-M-006 | adopted-with-modification |
+| U-srh-082 | shuorenhua | ### Tier 2 | ZH-M-006 | adopted-with-modification |
+| U-srh-083 | shuorenhua | ### Tier 2 | ZH-M-006 | adopted-with-modification |
+| U-srh-084 | shuorenhua | ### Tier 3 | ZH-M-006 | adopted-with-modification |
+| U-srh-085 | shuorenhua | ## 5. No-touch and keep rules | ALL-PROC-025 | adopted-with-modification |
+| U-srh-086 | shuorenhua | ## 5. No-touch and keep rules | ALL-PROT-009 | adopted |
+| U-srh-087 | shuorenhua | 保护依据是词在当前句子里的具体含义 | ALL-PROT-031 | adopted |
+| U-srh-088 | shuorenhua | 保护依据是词在当前句子里的具体含义 | ALL-PROT-031 | adopted |
+| U-srh-089 | shuorenhua | 数值、正式指标名、字段名、命令和引用原文按字面保护 | ALL-PROT-032 | adopted |
+| U-srh-090 | shuorenhua | 数值、正式指标名、字段名、命令和引用原文按字面保护 | ALL-PROT-032 | adopted |
+| U-srh-091 | shuorenhua | - 引用原文、命令、接口名、参数名、字段名、配置项、日志、报错 | ALL-PROT-032 | adopted |
+| U-srh-092 | shuorenhua | - 引用原文、命令、接口名、参数名、字段名、配置项、日志、报错 | ALL-PROT-032 | adopted |
+| U-srh-093 | shuorenhua | - 引用原文、命令、接口名、参数名、字段名、配置项、日志、报错 | ALL-PROT-032 | adopted |
+| U-srh-094 | shuorenhua | - 技术文档里的系统行为主语 | ALL-PROT-033 | adopted |
+| U-srh-095 | shuorenhua | 数值、正式指标名、字段名、命令和引用原文按字面保护 | ALL-PROT-023 | adopted |
+| U-srh-096 | shuorenhua | 数值、正式指标名、字段名、命令和引用原文按字面保护 | ALL-PROT-031 | adopted |
+| U-srh-097 | shuorenhua | 词本身正在被定义、讨论 | ZH-P-030 | adopted |
+| U-srh-098 | shuorenhua | 例如 `闭环反馈 / 闭环控制` 是反馈机制 | ZH-P-030 | adopted |
+| U-srh-099 | shuorenhua | 词本身正在被定义、讨论 | ALL-PROT-009 | adopted |
+| U-srh-100 | shuorenhua | - 承载关键事实的抽象句，即使它 | ALL-P-010 | adopted |
+| U-srh-101 | shuorenhua | 不要为了 | ALL-PROT-018 | adopted |
+| U-srh-102 | shuorenhua | ## 6. Positive style targets | ALL-P-007 | adopted |
+| U-srh-103 | shuorenhua | ## 6. Positive style targets | ALL-P-012 | adopted |
+| U-srh-104 | shuorenhua | ## 6. Positive style targets | ALL-PROC-019 | adopted-with-modification |
+| U-srh-105 | shuorenhua | ## 6. Positive style targets | ZH-P-002 | adopted |
+| U-srh-106 | shuorenhua | ## 6. Positive style targets | ZH-P-031 | adopted |
+| U-srh-107 | shuorenhua | ## 7. Output contract | ALL-PROC-046 | rejected |
+| U-srh-108 | shuorenhua | ### Annotation mode | ALL-PROC-007 | adopted-with-modification |
+| U-srh-109 | shuorenhua | ### Annotation mode | ALL-PROC-038 | adopted |
+| U-srh-110 | shuorenhua | ### Annotation mode | ALL-PROC-007 | adopted-with-modification |
+| U-srh-111 | shuorenhua | ### Annotation mode | ALL-PROC-040 | adopted |
+| U-srh-112 | shuorenhua | ### Annotation mode | ALL-M-018 | adopted |
+| U-srh-113 | shuorenhua | ### Annotation mode | ALL-M-018 | adopted |
+| U-srh-114 | shuorenhua | ### Annotation mode | ALL-PROT-012 | adopted |
+| U-srh-115 | shuorenhua | ### Annotation mode | ALL-PROC-024 | adopted-with-modification |
+| U-srh-116 | shuorenhua | ### Annotation mode | ALL-PROC-007 | adopted-with-modification |
+| U-srh-117 | shuorenhua | ### Annotation mode | ALL-PROC-046 | rejected |
+| U-srh-118 | shuorenhua | ## 8. Required reread checks | ALL-PROC-045 | adopted |
+| U-srh-119 | shuorenhua | ### Pass 1 \| 保真回读 | ALL-PROC-045 | adopted |
+| U-srh-120 | shuorenhua | ### Pass 1 \| 保真回读 | ALL-PROT-029 | adopted |
+| U-srh-121 | shuorenhua | ### Pass 1 \| 保真回读 | ALL-PROT-034 | adopted |
+| U-srh-122 | shuorenhua | ### Pass 1 \| 保真回读 | ALL-PROC-042 | adopted |
+| U-srh-123 | shuorenhua | ### Pass 1 \| 保真回读 | ALL-M-019 | adopted-with-modification |
+| U-srh-124 | shuorenhua | ### Pass 1 \| 保真回读 | ALL-M-019 | adopted-with-modification |
+| U-srh-125 | shuorenhua | ### Pass 1 \| 保真回读 | ALL-M-019 | adopted-with-modification |
+| U-srh-126 | shuorenhua | ### Pass 1 \| 保真回读 | ALL-PROC-043 | adopted |
+| U-srh-127 | shuorenhua | ### Pass 2 \| Residual Audit | ALL-PROC-045 | adopted |
+| U-srh-128 | shuorenhua | ### Pass 2 \| Residual Audit | ZH-P-001 | adopted |
+| U-srh-129 | shuorenhua | ### Pass 2 \| Residual Audit | ZH-P-001 | adopted |
+| U-srh-130 | shuorenhua | ### Pass 2 \| Residual Audit | ZH-P-032 | adopted |
+| U-srh-131 | shuorenhua | ### Pass 2 \| Residual Audit | ZH-P-028 | adopted |
+| U-srh-132 | shuorenhua | ### Pass 2 \| Residual Audit | ZH-M-005 | adopted |
+| U-srh-133 | shuorenhua | ### Pass 2 \| Residual Audit | ALL-PROC-045 | adopted |
+| U-srh-134 | shuorenhua | ### Pass 2 \| Residual Audit | ALL-PROC-045 | adopted |
+| U-srh-135 | shuorenhua | ### Pass 2 \| Residual Audit | ZH-G-002 | adopted-with-modification |
