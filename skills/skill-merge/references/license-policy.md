@@ -9,6 +9,7 @@ snapshot_policy 只有两个取值，由 sources.yaml 里的 license 和 license
 允许：
 
 - 在 `merges/<id>/snapshots/<source_id>/` 保存 paths 里每个追踪文件的当前全文。目录结构沿用上游的路径，其中 `SKILL.md` 存为 `SKILL.source.md`，避免被当成本仓库自己的 skill 加载。
+- 同一目录下原样保存上游仓库的 LICENSE 文件。MIT 这类许可证要求副本附带许可声明，这份文件就是声明。
 - 在 decisions.yaml 的 rationale 里引用原文短句。
 - 在 `merges/<id>/reports/` 的报告里引用原文短句作为证据。
 - 在 skill 正文里复用规则的意思。

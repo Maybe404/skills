@@ -131,6 +131,17 @@ sources[] 每项：
 | open_issue | 关联的未关闭 issue |
 | availability | ok \| unreachable \| private \| gone |
 
+#### normalized_sha256 的归一化定义
+
+对每个追踪文件的原始字节做以下变换，再算 sha256，得到 normalized_sha256。变换顺序如下，不改变任何非空白字符：
+
+1. 统一换行：把 `\r\n` 和单独的 `\r` 都替换成 `\n`。
+2. 去掉每一行行尾的空格和制表符（行内空白不动，只去行尾）。
+3. 去掉文件末尾多余的空行。
+4. 保证文件以且仅以一个 `\n` 结尾（文件非空时；空文件不补）。
+
+文件级的 normalized_sha256 是这个文件归一化后字节的 sha256。来源级的 normalized_sha256 是把 sources.yaml 的 paths 按顺序逐个归一化、首尾直接拼接（不额外插入分隔符），再对拼接结果算 sha256；raw_sha256 同理，用原始字节而不是归一化字节拼接。
+
 ### merges/<id>/decisions.yaml
 
 顶层字段 `merge_id` 和 `rules[]`，rules 每条：
