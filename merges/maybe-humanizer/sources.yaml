@@ -1,93 +1,1289 @@
 merge_id: maybe-humanizer
 target_skill: maybe-humanizer
-
 sources:
-  - id: upstream-petergyang-no-ai-slop
-    source_type: github-skill
-    repository: petergyang/no-ai-slop
-    previous_repository: []
-    branch: main
-    paths:
-      - skills/no-ai-slop/SKILL.md
-    license: MIT
-    license_status: known
-    snapshot_policy: full-text
-    status: active
-    selection_status: representative
-    lineage: no-ai-slop
-    tracking_revision: 1
-    previous_paths: []
-    path_changed_at: null
-    baseline_reset_reason: null
-    status_changed_at: "2026-09-06T10:14:01Z"
-    reason: 可达；谱系 no-ai-slop 只有这一个来源，结构与词表和其余三个谱系不重合，作为代表入围进入拆规则。
-    notes: 英文审稿与改写，带 eval.md。仓库内还有 agents/ 和 scripts/，本轮不追踪。已核实与 qu-ai-wei、writing-style-skill、humanizer/aboudjem-humanizer 三个谱系互不同源：小节结构和模式表条目不重合。
-
-  - id: upstream-lifelonglazylearner-qu-ai-wei
-    source_type: github-skill
-    repository: LifelongLazyLearner/qu-ai-wei
-    previous_repository: []
-    branch: main
-    paths:
-      - SKILL.md
-    license: MIT
-    license_status: known
-    snapshot_policy: full-text
-    status: active
-    selection_status: representative
-    lineage: qu-ai-wei
-    tracking_revision: 1
-    previous_paths: []
-    path_changed_at: null
-    baseline_reset_reason: null
-    status_changed_at: "2026-09-06T10:14:01Z"
-    reason: 可达；谱系 qu-ai-wei 只有这一个来源，结构与词表和其余三个谱系不重合，作为代表入围进入拆规则。
-    notes: 简体中文保真改写。仓库另有 references/ 和 tests/，本轮只追踪 SKILL.md。已核实与 no-ai-slop、writing-style-skill、humanizer/aboudjem-humanizer 三个谱系互不同源：小节结构和模式表条目不重合。
-
-  - id: upstream-jzocb-writing-style-skill
-    source_type: github-skill
-    repository: jzOcb/writing-style-skill
-    previous_repository: []
-    branch: main
-    paths:
-      - SKILL.md
-      - scripts/observe.py
-      - scripts/improve.py
-    license: unknown
-    license_status: unknown
-    snapshot_policy: metadata-only
-    status: active
-    selection_status: representative
-    lineage: writing-style-skill
-    tracking_revision: 2
-    previous_paths:
-      - SKILL.md
-    path_changed_at: "2026-09-06T14:00:00Z"
-    baseline_reset_reason: 首次合并的拆规则阶段读了 scripts/observe.py 和 scripts/improve.py，ALL-M-009、ALL-M-010、ALL-M-015、ALL-M-016 的证据落在 observe.py，ALL-M-011、ALL-M-012、ALL-M-013 的证据落在 improve.py，而 paths 里只有 SKILL.md，这两个文件改动时监控不会发现，七条规则的证据基础会静默过期。补进 paths 使追踪范围与已有证据一致。两个文件是首次纳入追踪，没有旧基线可比，last_processed_commit 和 last_accepted_commit 保持 null；snapshot_policy 仍为 metadata-only，仓库内不保存这两个文件的内容。
-    status_changed_at: "2026-09-06T10:14:01Z"
-    reason: 可达；谱系 writing-style-skill 只有这一个来源，结构与词表和其余三个谱系不重合，metadata-only 作为代表入围进入拆规则。
-    notes: 仓库根目录没有 LICENSE 文件，GitHub API 也没有返回许可证，因此不保存原文，只记元数据。仓库内 scripts/ 只读不跑：observe.py 和 improve.py 在 paths 里，但只按 commit 临时拉取算 hash 和比对，不落盘、不执行。已核实与 no-ai-slop、qu-ai-wei、humanizer/aboudjem-humanizer 三个谱系互不同源：小节结构和模式表条目不重合。
-
-  - id: upstream-aboudjem-humanizer-skill
-    source_type: github-skill
-    repository: Aboudjem/humanizer-skill
-    previous_repository: []
-    branch: main
-    paths:
-      - skills/humanizer/SKILL.md
-      - skills/humanizer/references/always-on-templates.md
-      - skills/humanizer/references/patterns.md
-      - skills/humanizer/references/patterns.zh.md
-    license: MIT
-    license_status: known
-    snapshot_policy: full-text
-    status: active
-    selection_status: representative
-    lineage: aboudjem-humanizer
-    tracking_revision: 1
-    previous_paths: []
-    path_changed_at: null
-    baseline_reset_reason: null
-    status_changed_at: "2026-09-06T10:14:01Z"
-    reason: 可达；与 blader/humanizer 核实为各自独立引用同一个 Wikipedia 页面改编而成，非 fork/衍生关系，lineage 由 humanizer 改记为 aboudjem-humanizer，作为该谱系代表入围进入拆规则。
-    notes: "中英双语模式表。仓库内 cli/ 和 tools/ 不追踪、不执行。谱系核实结论：SKILL.md 和 references/patterns.md 明确写 P1-P30 核心模式表'derived mostly from Wikipedia: Signs of AI writing'，且 P11/P31 直接使用该页面的术语'Elegant Variation'；blader/humanizer 的 SKILL.md 末尾'Source'一节同样写'This skill is based on Wikipedia: Signs of AI writing'。两者与 blader 的触发词表（delve、tapestry、testament、nestled、in the heart of、serves as、stands as 等）高度重合，是因为都摘自这同一篇 Wikipedia 页面，而非互相转抄：GitHub 未记录 fork 关系（Aboudjem/humanizer-skill 的 fork 字段为 false，无 parent），SKILL.md 和 references 里也没有提到 blader。Aboudjem 仓库创建于 2026-03-06，晚于 blader 的 2026-01-18，但两者的整体结构（blader 是扁平的 35 条模式清单；Aboudjem 是 Step 1-5 的流程加 55 条分层模式表、5 种 voice、CLI 参数、评分和迭代机制）差异很大，P31-P55 的'emerging'和'craft/forensic'模式（如 P44 False Agency、P51 Reasoning-Chain Artifacts、P52 Unicode Obfuscation）在 blader 里完全没有对应，patterns.md 明确写这些是'described independently of any other project's pattern names or text'。结论：独立作品，不是 blader 的 fork、改编或扩展。"
+- id: upstream-petergyang-no-ai-slop
+  source_type: github-skill
+  repository: petergyang/no-ai-slop
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/no-ai-slop/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: no-ai-slop
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T10:14:01Z'
+  reason: 可达；谱系 no-ai-slop 只有这一个来源，结构与词表和其余三个谱系不重合，作为代表入围进入拆规则。
+  notes: 英文审稿与改写，带 eval.md。仓库内还有 agents/ 和 scripts/，本轮不追踪。已核实与 qu-ai-wei、writing-style-skill、humanizer/aboudjem-humanizer
+    三个谱系互不同源：小节结构和模式表条目不重合。
+- id: upstream-lifelonglazylearner-qu-ai-wei
+  source_type: github-skill
+  repository: LifelongLazyLearner/qu-ai-wei
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: qu-ai-wei
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T10:14:01Z'
+  reason: 可达；谱系 qu-ai-wei 只有这一个来源，结构与词表和其余三个谱系不重合，作为代表入围进入拆规则。
+  notes: 简体中文保真改写。仓库另有 references/ 和 tests/，本轮只追踪 SKILL.md。已核实与 no-ai-slop、writing-style-skill、humanizer/aboudjem-humanizer
+    三个谱系互不同源：小节结构和模式表条目不重合。
+- id: upstream-jzocb-writing-style-skill
+  source_type: github-skill
+  repository: jzOcb/writing-style-skill
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  - scripts/observe.py
+  - scripts/improve.py
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: low-priority
+  lineage: writing-style-skill
+  tracking_revision: 2
+  previous_paths:
+  - SKILL.md
+  path_changed_at: '2026-09-06T14:00:00Z'
+  baseline_reset_reason: 首次合并的拆规则阶段读了 scripts/observe.py 和 scripts/improve.py，ALL-M-009、ALL-M-010、ALL-M-015、ALL-M-016
+    的证据落在 observe.py，ALL-M-011、ALL-M-012、ALL-M-013 的证据落在 improve.py，而 paths 里只有 SKILL.md，这两个文件改动时监控不会发现，七条规则的证据基础会静默过期。补进
+    paths 使追踪范围与已有证据一致。两个文件是首次纳入追踪，没有旧基线可比，last_processed_commit 和 last_accepted_commit 保持 null；snapshot_policy
+    仍为 metadata-only，仓库内不保存这两个文件的内容。
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 可达；谱系 writing-style-skill 只有这一个来源，结构与词表和其余三个谱系不重合，metadata-only 作为代表入围进入拆规则。 2026-09-06 全量入围复核：调研
+    README 第五节把'像我'个人风格方向列为 design.md 类别 D（不进主流程），本次改 selection_status 为 low-priority，继续追踪但不作为默认改写规则来源。
+  notes: 仓库根目录没有 LICENSE 文件，GitHub API 也没有返回许可证，因此不保存原文，只记元数据。仓库内 scripts/ 只读不跑：observe.py 和 improve.py
+    在 paths 里，但只按 commit 临时拉取算 hash 和比对，不落盘、不执行。已核实与 no-ai-slop、qu-ai-wei、humanizer/aboudjem-humanizer
+    三个谱系互不同源：小节结构和模式表条目不重合。
+- id: upstream-aboudjem-humanizer-skill
+  source_type: github-skill
+  repository: Aboudjem/humanizer-skill
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/humanizer/SKILL.md
+  - skills/humanizer/references/always-on-templates.md
+  - skills/humanizer/references/patterns.md
+  - skills/humanizer/references/patterns.zh.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: aboudjem-humanizer
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T10:14:01Z'
+  reason: 可达；与 blader/humanizer 核实为各自独立引用同一个 Wikipedia 页面改编而成，非 fork/衍生关系，lineage 由 humanizer 改记为 aboudjem-humanizer，作为该谱系代表入围进入拆规则。
+  notes: '中英双语模式表。仓库内 cli/ 和 tools/ 不追踪、不执行。谱系核实结论：SKILL.md 和 references/patterns.md 明确写 P1-P30 核心模式表''derived
+    mostly from Wikipedia: Signs of AI writing''，且 P11/P31 直接使用该页面的术语''Elegant Variation''；blader/humanizer
+    的 SKILL.md 末尾''Source''一节同样写''This skill is based on Wikipedia: Signs of AI writing''。两者与 blader 的触发词表（delve、tapestry、testament、nestled、in
+    the heart of、serves as、stands as 等）高度重合，是因为都摘自这同一篇 Wikipedia 页面，而非互相转抄：GitHub 未记录 fork 关系（Aboudjem/humanizer-skill
+    的 fork 字段为 false，无 parent），SKILL.md 和 references 里也没有提到 blader。Aboudjem 仓库创建于 2026-03-06，晚于 blader
+    的 2026-01-18，但两者的整体结构（blader 是扁平的 35 条模式清单；Aboudjem 是 Step 1-5 的流程加 55 条分层模式表、5 种 voice、CLI 参数、评分和迭代机制）差异很大，P31-P55
+    的''emerging''和''craft/forensic''模式（如 P44 False Agency、P51 Reasoning-Chain Artifacts、P52 Unicode Obfuscation）在
+    blader 里完全没有对应，patterns.md 明确写这些是''described independently of any other project''s pattern names or
+    text''。结论：独立作品，不是 blader 的 fork、改编或扩展。'
+- id: upstream-mrgediao-shuorenhua
+  source_type: github-skill
+  repository: MrGeDiao/shuorenhua
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: mrgediao-shuorenhua
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先。
+  notes: 中文优先，技术文档、状态更新、论坛等场景；明确保护接口字段、命令、日志、责任主体和条件关系，比通用中文改写更强调技术文本场景。
+- id: upstream-op7418-humanizer-zh
+  source_type: github-skill
+  repository: op7418/Humanizer-zh
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: derivative
+  lineage: blader-humanizer
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T19:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先，也是第二节 blader/humanizer 的中文汉化版本。 谱系聚类：与 blader/humanizer 同属 blader-humanizer
+    谱系。人工比对标题结构确认 op7418 的24 条模式与 blader 的前 24 条模式逐条对应、顺序相同，是同一份模式表的翻译；但 op7418 在译文之外新增了'核心规则速查''质量评分''完整示例'等
+    blader 没有的小节，属于翻译基础上的实质增补，记 derivative（非 duplicate），差异部分（新增小节）留给步骤 2 拆规则。
+  notes: 英文 Humanizer 的中文适配，24 类模式；热度最高的中文基线，适合做对照，但不是中文所有体裁的标准答案。
+- id: upstream-ai-zixun-humanizer-zh
+  source_type: github-skill
+  repository: ai-zixun/humanizer-zh
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: ai-zixun-humanizer-zh
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先。
+  notes: 与 op7418 同名不同项目；处理中文母语表达、翻译腔、长文节奏，可选声音参考，结构为 Workflow+Core Rules，非模式清单式。
+- id: upstream-kkkkhazix-human-writing
+  source_type: github-skill
+  repository: KKKKhazix/human-writing
+  previous_repository: []
+  branch: main
+  paths:
+  - human-writing/SKILL.md
+  - human-writing/references/fiction.md
+  - human-writing/references/formats.md
+  - human-writing/references/forum-prose.md
+  - human-writing/references/reality.md
+  - human-writing/references/revision.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: kkkkhazix-human-writing
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先。
+  notes: 中文创作和改稿，强调具体人物的声音；README 标注为社区补充的强相关项目，仍需试写验证。
+- id: upstream-alchaincyf-tramstop-skill
+  source_type: github-skill
+  repository: alchaincyf/tramstop-skill
+  previous_repository: []
+  branch: master
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: alchaincyf-tramstop-skill
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先。
+  notes: 词汇、句式、结构、经验四层诊断，核心是向作者索要真实素材和原话；作者的实证效果未独立复现。
+- id: upstream-superchun-no-slop-zh
+  source_type: github-skill
+  repository: superchun/no-slop-zh
+  previous_repository: []
+  branch: main
+  paths:
+  - plugins/no-slop-zh/skills/no-slop-zh/SKILL.md
+  - plugins/no-slop-zh/skills/no-slop-zh/references/patterns-zh.md
+  - plugins/no-slop-zh/skills/no-slop-zh/references/protected.md
+  - plugins/no-slop-zh/skills/no-slop-zh/references/scenes.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: superchun-no-slop-zh
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先。
+  notes: 保留事实、术语、版本和命令，清理中文空话；轻量、低热度候选，适合加入对照。
+- id: upstream-chengzhi-c-natural-talk
+  source_type: github-skill
+  repository: chengzhi-c/natural-talk
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: chengzhi-c-natural-talk
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先。
+  notes: 对话与创作规则集，适合让日常回答别像模板，不只针对文章末端润色。
+- id: upstream-oubigfa-de-ai-prompt-enhancer-writer-booster-skill
+  source_type: github-skill
+  repository: OUBIGFA/De-AI-Prompt-Enhancer-Writer-Booster-SKILL
+  previous_repository: []
+  branch: main
+  paths:
+  - de-AI-writing/SKILL.md
+  - de-AI-writing/references/ai-trace-index.md
+  - de-AI-writing/references/discourse-pass.md
+  - de-AI-writing/references/narrative-pass.md
+  - de-AI-writing/references/syntax-pass.md
+  - de-AI-writing/references/translation-guardrails.md
+  - de-AI-writing/references/vocab-pass.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: oubigfa-de-ai-prompt-enhancer-writer-booster-skill
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先。
+  notes: 作者风格底座、de-AI-writing、风格审计脚本；约束细但风格强，不默认适合公文、技术说明或所有作者；仓库无 LICENSE。仅追踪 de-AI-writing 这个去 AI 味的子技能，.backup/
+    下另外两份是 Humanizer-zh 与 blader/humanizer 的备份副本，非原创内容，不追踪。
+- id: upstream-taxueseek-say-it-human
+  source_type: github-skill
+  repository: taxueseek/say-it-human
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/editor-revisor/SKILL.md
+  - skills/humanize-ai/SKILL.md
+  - skills/voice-dissolver/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: taxueseek-say-it-human
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先。
+  notes: 改稿手、AI 味处理、声音澄清三个模块（editor-revisor/humanize-ai/voice-dissolver）；部分示例的具体化程度需额外核实事实。
+- id: upstream-yyx20202020-natural-writing-skill
+  source_type: github-skill
+  repository: yyx20202020/natural-writing-skill
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/natural-writing/SKILL.md
+  - skills/natural-writing/references/chinese-writing.md
+  - skills/natural-writing/references/english-writing.md
+  - skills/natural-writing/references/long-form-workflow.md
+  - skills/natural-writing/references/protected-content.md
+  - skills/natural-writing/references/quality-gates.md
+  - skills/natural-writing/references/routing.md
+  - skills/natural-writing/references/voice-calibration.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: yyx20202020-natural-writing-skill
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先。
+  notes: 中英文、事实保护、场景路由、文风校准；规则方向合理，热度低，列为试用备选。
+- id: upstream-dongbeixiaohuo-writing-agent
+  source_type: github-skill
+  repository: dongbeixiaohuo/writing-agent
+  previous_repository: []
+  branch: main
+  paths:
+  - .claude/skills/style-modeler/SKILL.md
+  - .claude/skills/style-modeler/references/15-dimensions.md
+  - .claude/skills/style-modeler/references/style-core-and-validation.md
+  - .claude/skills/style-modeler/references/style-output-template.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: low-priority
+  lineage: dongbeixiaohuo-writing-agent
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第一节中文优先，但内容是完整写作 Workflow 而非单一去味过滤器，登记为 low-priority。
+  notes: 选题、真实素材、证据账本、风格建模、审稿、最终事实核查的完整流程；单段落润色场景过重，只挑 style-modeler 子技能追踪。
+- id: upstream-blader-humanizer
+  source_type: github-skill
+  repository: blader/humanizer
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: blader-humanizer
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T19:00:00Z'
+  reason: 登记依据：任务明确要求登记，为 Humanizer-zh 等多个本地化版本的根节点。 谱系聚类：与 op7418/Humanizer-zh、hairyf/skills、kevintsai1202/Humanizer-zh-TW、z0gSh1u/oh-my-writing-skill
+    同属 blader-humanizer 谱系（人工核实的翻译/复制/fork 关系，见 tools/upstream-monitor/prototype/lineage.py 的 KNOWN_RELATIONS）。选为该谱系代表：是被其余四个中文/繁体版本共同引用的原始英文根节点，且本
+    skill 需要中英文各自的例句（extraction.md 禁止把中文例句从英文直译），保留英文原文供英文规则取例；op7418 虽然章节比 blader 更全（新增质量评分等），但其内容是在
+    blader 的 24 条模式表基础上翻译并扩写而来，仍记为 derivative。
+  notes: 24 类 AI 写作模式，初稿后再次审视和改写；示例和实际事实边界要分开看；是本次调研里跨语言改写规则最广泛引用的英文原始来源。
+- id: upstream-hardikpandya-stop-slop
+  source_type: github-skill
+  repository: hardikpandya/stop-slop
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: hardikpandya-stop-slop
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: 删除铺垫、机械对照、套话，五维自评；对副词、被动语态等禁令强，不宜无脑套所有文体。
+- id: upstream-conorbronsdon-avoid-ai-writing
+  source_type: github-skill
+  repository: conorbronsdon/avoid-ai-writing
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: conorbronsdon-avoid-ai-writing
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: detect/rewrite/edit 三模式、分级问题、文风配置、可选迭代；对引文、表格、代码和文件范围有明确保护，README 认为值得重点试用。
+- id: upstream-jpeggdev-humanize-writing
+  source_type: github-skill
+  repository: jpeggdev/humanize-writing
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: jpeggdev-humanize-writing
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: 八轮编辑，从篇章到节奏和声音；安装量与仓库 stars 不一致，提醒不能只看单一热度指标。
+- id: upstream-jalaalrd-anti-ai-slop-writing
+  source_type: github-skill
+  repository: jalaalrd/anti-ai-slop-writing
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/anti-ai-slop-writing/SKILL.md
+  - skills/anti-ai-slop-writing/references/banned-words.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: jalaalrd-anti-ai-slop-writing
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: 结构、标点、文风约束与不编造规则；适合提取规则，但不代表外部检测器认可；仓库无 LICENSE。
+- id: upstream-adenaufal-anti-slop-writing
+  source_type: github-skill
+  repository: adenaufal/anti-slop-writing
+  previous_repository: []
+  branch: main
+  paths:
+  - english/SKILL.md
+  - english/references/structural-patterns.md
+  - english/references/vocabulary-banlist.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: adenaufal-anti-slop-writing
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: 通用系统 prompt/反模板规则；与同名的 adewale/anti-slop-writing 不是同一项目，只追踪 english/ 子目录。
+- id: upstream-adewale-anti-slop-writing
+  source_type: github-skill
+  repository: adewale/anti-slop-writing
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/anti-slop-writing/SKILL.md
+  - skills/anti-slop-writing/references/anti-slop-writing-doctrine.md
+  - skills/anti-slop-writing/references/flow-by-relation.md
+  - skills/anti-slop-writing/references/rewrite-patterns.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: adewale-anti-slop-writing
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: 英文 prose 编辑 skill，低热度备选。
+- id: upstream-theclaymethod-unslop
+  source_type: github-skill
+  repository: theclaymethod/unslop
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: theclaymethod-unslop
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: audit-only 或诊断后重构两阶段流程；从论坛扩搜补到，值得与 Humanizer 对照；仓库无 LICENSE。
+- id: upstream-asavvin-pixel-unslop
+  source_type: github-skill
+  repository: asavvin-pixel/unslop
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: asavvin-pixel-unslop
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: 排版、词汇、结构三层处理，可用作者样本校准；引用的论文和效果数字未独立核实。
+- id: upstream-aplaceforallmystuff-the-antislop
+  source_type: github-skill
+  repository: aplaceforallmystuff/the-antislop
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/antislop/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: aplaceforallmystuff-the-antislop
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: 35+ 模式、分层评分、编辑模式；本次只做了简介/目录核验，保留候选。
+- id: upstream-brandonwise-humanizer
+  source_type: github-skill
+  repository: brandonwise/humanizer
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: brandonwise-humanizer
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第二节英文通用。
+  notes: 面向 OpenClaw 的 Humanizer 方案；README 提示其规则同源于 blader，不应重复算成新方法，登记后交由聚类判断。
+- id: upstream-hylarucoder-ai-flavor-remover
+  source_type: github-prompt
+  repository: hylarucoder/ai-flavor-remover
+  previous_repository: []
+  branch: main
+  paths:
+  - README.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: hylarucoder-ai-flavor-remover
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务明确指定的处理方式（README 内的长 prompt，source_type 记 github-prompt）。
+  notes: README 内嵌的长 prompt，非独立 SKILL.md；作者仅报告在 Gemini 2.5 Pro 上的测试结果，且提示词描述扩写/重写两种用法；仓库无 LICENSE。
+- id: upstream-hairyf-skills
+  source_type: github-skill
+  repository: hairyf/skills
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/writing-humanizer-zh/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: duplicate
+  lineage: blader-humanizer
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T19:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配，人工核实其 writing-humanizer-zh 子技能内容与 op7418/Humanizer-zh 高度重合，属于有实际规则内容（而非空壳）的候选。
+    谱系聚类：与 op7418/Humanizer-zh 逐字比对 ratio=1.000（difflib，见 lineage.py 输出），标题、模式编号、小节顺序（含 op7418 独有的'质量评分'等增补小节）完全相同，判定为对op7418/Humanizer-zh
+    的直接复制，不含任何独立内容，记 duplicate。
+  notes: hairyf/skills 是一个大型个人技能集合（fork 自 antfu/skills），其中 writing-humanizer-zh 子技能的标题结构、模式编号与 op7418/Humanizer-zh
+    逐字相同，判定为复制版本，只追踪这一个子目录。
+- id: upstream-z0gsh1u-oh-my-writing-skill
+  source_type: github-skill
+  repository: z0gSh1u/oh-my-writing-skill
+  previous_repository: []
+  branch: master
+  paths:
+  - skills/humanizer-cn/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: duplicate
+  lineage: blader-humanizer
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T19:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。 谱系聚类：与 op7418/Humanizer-zh 同属 blader-humanizer 谱系。人工比对标题结构：分组（内容模式/语言和语法模式/风格模式/交流模式/填充和模糊）与
+    op7418 相同，模式数量从 24 条精简为 22 条，且没有 op7418 新增的'质量评分'等小节，是内容量更小的同源译本，未见新增规则，记 duplicate。
+  notes: 创作流程中的去味模块 humanizer-cn；自述参考 Wikipedia《Signs of AI writing》并做中文本地化，标题结构与 op7418 高度重合但模式数量更少。
+- id: upstream-sickn33-agentic-awesome-skills
+  source_type: github-skill
+  repository: sickn33/agentic-awesome-skills
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/humanize-chinese/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: sickn33-agentic-awesome-skills
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 大型集合中的 humanize-chinese 子模块；面向去 AI 味、降 AIGC、论文降重、知网/维普检测等场景，措辞与结构与 qu-ai-wei/Humanizer-zh 均不同，判断为独立内容。
+- id: upstream-smallnest-goal-workflow
+  source_type: github-skill
+  repository: smallnest/goal-workflow
+  previous_repository: []
+  branch: master
+  paths:
+  - skills/humanize-it/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: smallnest-goal-workflow
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: Workflow 中的 humanize-it 模块；本身是一个按 humanizer-zh/humanize-chinese/technical-writing 三种策略迭代改写的编排层，规则内容是编排逻辑而非模式表。
+- id: upstream-chujianyun-skills
+  source_type: github-skill
+  repository: chujianyun/skills
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/content/remove-ai-flavor/SKILL.md
+  - skills/content/remove-ai-flavor/references/anti-ai-flavor-rules.md
+  license: CC-BY-NC-SA-4.0
+  license_status: known
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: chujianyun-skills
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 中文去 AI 味技能 remove-ai-flavor；覆盖公众号稿、自媒体稿、口播稿等场景，措辞和分类与已收录来源不同，判断为独立内容；仓库许可证为 CC-BY-NC-SA-4.0。
+- id: upstream-jackywxsz-jacky-opc
+  source_type: github-skill
+  repository: Jackywxsz/jacky-opc
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/jacky-de-ai/SKILL.md
+  - skills/jacky-de-ai/references/ai-taste-database.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: jackywxsz-jacky-opc
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 中文创作流程候选 jacky-de-ai；六步流程改写，输出对照报告，内容独立于已收录来源。
+- id: upstream-aaaaqwq-agi-super-team
+  source_type: github-skill
+  repository: aAAaqwq/AGI-Super-Team
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/humanize-zh/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: aaaaqwq-agi-super-team
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 团队型 agent 体系中的 de-ai-ify 模块；实际目录已改名为 skills/humanize-zh，但 SKILL.md frontmatter 的 name 仍为 de-ai-ify，内容为原创的中文去味规则（同仓库另有一份基于
+    Wikipedia 模式表的 humanizer 副本，未追踪）。
+- id: upstream-hardydai-cell-qu-ai-wei
+  source_type: github-skill
+  repository: hardydai-cell/qu-ai-wei
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/qu-ai-wei/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: hardydai-cell-qu-ai-wei
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配，标注为'不同作者的同名项目'。
+  notes: 与 LifelongLazyLearner/qu-ai-wei 同名但内容和写法均不同（allowed-tools 声明、规则组织方式不同），判断为独立作品，登记后交由聚类核实相似度。
+- id: upstream-kevinaimonster-skill-hub
+  source_type: github-skill
+  repository: kevinaimonster/skill-hub
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/chinese-copyfix/SKILL.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: kevinaimonster-skill-hub
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 技能库中的 chinese-copyfix 子技能，帮用户把 AI 生成内容改写成自然人话；仓库无 LICENSE（frontmatter 自称 MIT 但不构成仓库许可证）。
+- id: upstream-lanyasheng-content-deai-engine
+  source_type: github-skill
+  repository: lanyasheng/content-deai-engine
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: lanyasheng-content-deai-engine
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 面向小红书、X、知乎等平台生成去 AI 味内容重写的技能，平台适配是其独立于其他来源的内容；仓库无 LICENSE。
+- id: upstream-peng-666-deai-zh
+  source_type: github-skill
+  repository: Peng-666/deai-zh
+  previous_repository: []
+  branch: master
+  paths:
+  - SKILL.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: peng-666-deai-zh
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 中文去 AI 化重写 deai-zh，面向技术博客、公众号、社交媒体；低热度中文重写候选，仓库无 LICENSE。
+- id: upstream-xcc864451691-gongwen-deai-skill
+  source_type: github-skill
+  repository: xcc864451691/gongwen-deai-skill
+  previous_repository: []
+  branch: main
+  paths:
+  - gongwen-deai/SKILL.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: xcc864451691-gongwen-deai-skill
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 公文、工作汇报方向的去 AI 味技能 gongwen-deai；场景（公文口吻）与已收录来源均不重合，判断为独立内容；仓库无 LICENSE。
+- id: upstream-cycleuser-skills
+  source_type: github-skill
+  repository: cycleuser/Skills
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/humanizer/SKILL.md
+  - skills/humanizer/rules/ai-features.md
+  - skills/humanizer/rules/anti-aigc.md
+  - skills/humanizer/rules/detection-methods.md
+  - skills/humanizer/rules/formal-humanization.md
+  - skills/humanizer/rules/humanization.md
+  - skills/humanizer/rules/iteration.md
+  license: GPL-3.0
+  license_status: known
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: cycleuser-skills
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 技能集合中的 humanizer 子技能；面向 AIGC 检测对抗的中文改写，仓库整体许可证为 GPL-3.0。
+- id: upstream-1-skill-shuorenhua
+  source_type: github-skill
+  repository: 1-SKILL/shuorenhua
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: 1-skill-shuorenhua
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配，标注为'不同于 MrGeDiao；查重宣传未验证'。
+  notes: 内容强调查重率量化下降（60%降到30%以内）等未验证的宣传性表述，文本组织与 MrGeDiao/shuorenhua 不同，判断为独立内容；仓库无 LICENSE。
+- id: upstream-yanyintingyou-stop-slop-cn-en
+  source_type: github-skill
+  repository: yanyintingyou/stop-slop-cn-en
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: yanyintingyou-stop-slop-cn-en
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：调研 README 第三节中文长尾与同源适配。
+  notes: 中英文适配版 stop-slop-cn-en；仓库 LICENSE 文件核实为标准 MIT 文本（版权人保留 hardikpandya/stop-slop 原作者署名，判断为基于 stop-slop
+    的再适配）。
+- id: upstream-stephenturner-skill-deslop
+  source_type: github-skill
+  repository: stephenturner/skill-deslop
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: stephenturner-skill-deslop
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定第四节学术与专业里的文本改写类五项之一。
+  notes: 面向英文科研文章、摘要、基金申请材料；科学语域比营销文案更匹配，仍要核查主动语态等硬规则。
+- id: upstream-redbaronyyyyy-eng-humanizer-zh-academic
+  source_type: github-skill
+  repository: redbaronyyyyy-eng/humanizer-zh-academic
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: redbaronyyyyy-eng-humanizer-zh-academic
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定第四节学术与专业里的文本改写类五项之一。
+  notes: 中文论文去味；作者报告的检测率下降数字（>50% 降至 11%）未复现，不能保证使用者的结果。
+- id: upstream-yzhao062-agent-style
+  source_type: github-skill
+  repository: yzhao062/agent-style
+  previous_repository: []
+  branch: main
+  paths:
+  - agents/anthropic-skill/SKILL.md
+  - skills/style-review/SKILL.md
+  - skills/style-review/references/revision-prompt.md
+  - skills/style-review/references/rule-detectors.md
+  license: unknown
+  license_status: unknown
+  snapshot_policy: metadata-only
+  status: active
+  selection_status: representative
+  lineage: yzhao062-agent-style
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定第四节学术与专业里的文本改写类五项之一。
+  notes: 面向技术文档、设计文档、研究写作的风格规则与评审工具（含测试夹具）；作者 bench 分数未在本次复现；仓库无 LICENSE。
+- id: upstream-momo2young-humanize-academic-writing
+  source_type: github-skill
+  repository: momo2young/humanize-academic-writing
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: momo2young-humanize-academic-writing
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定第四节学术与专业里的文本改写类五项之一。
+  notes: 英文社科论文写作；低 stars，需先检验术语、论证强度和引文保真再用。
+- id: upstream-stephenlzc-humanize-mba-text-skill
+  source_type: github-skill
+  repository: stephenlzc/humanize-mba-text-skill
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: stephenlzc-humanize-mba-text-skill
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定第四节学术与专业里的文本改写类五项之一。
+  notes: 中文 MBA 论文；规则数据化，有扫描流程，但不是通用中文最佳项。
+- id: upstream-jcarterjohnson-vibecoded-design-tells
+  source_type: github-skill
+  repository: JCarterJohnson/vibecoded-design-tells
+  previous_repository: []
+  branch: main
+  paths:
+  - unslop-ai-text/skill/SKILL.md
+  - unslop-ai-text/skill/references/tells.md
+  - unslop-ai-text/skill/references/writing-with-intent.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: jcarterjohnson-vibecoded-design-tells
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定第七节 vibecoded-design-tells 的 unslop-text 子模块。
+  notes: Reddit 数据研究衍生的写作子模块 unslop-ai-text；方法和原始数据值得参考，但社区抱怨频次不是写作质量的真值，只追踪文本方向子模块，不追踪同仓库的 UI/代码子模块。
+- id: upstream-sadhvikchirunomula-measured-humanizer
+  source_type: github-skill
+  repository: SadhvikChirunomula/measured-humanizer
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/measured-humanizer/SKILL.md
+  - skills/measured-humanizer/reference/calibration.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: sadhvikchirunomula-measured-humanizer
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定第七节 measured-humanizer。
+  notes: 校准、评分、改写循环；2 stars 的实验线索，没有独立跑过校准，不能当作已验证的检测器。
+- id: upstream-mjlens-spec-human-flavor-pipeline
+  source_type: github-skill
+  repository: mjlens-spec/human-flavor-pipeline
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/human-flavor-pipeline/SKILL.md
+  - skills/human-flavor-pipeline/references/design-notes.md
+  - skills/human-flavor-pipeline/references/editing-protocol.md
+  - skills/human-flavor-pipeline/references/feedback-loop.md
+  - skills/human-flavor-pipeline/references/report-format.md
+  - skills/human-flavor-pipeline/references/resource-router.md
+  - skills/human-flavor-pipeline/references/scoring.md
+  - skills/human-flavor-pipeline/references/self-audit.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: mjlens-spec-human-flavor-pipeline
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定最后一轮补到的 6 条线索之一。
+  notes: 中文六阶段处理流程，README 自述复用了 qu-ai-wei 的部分内容；只追踪 SKILL.md 和 references/ 下的规则说明，不追踪 patterns/、packs/、profiles/、corpus/
+    等大体量素材库（超出'规则文件'范围，留待后续按需评估）。
+- id: upstream-peakseazhu-humanizer-chinese
+  source_type: github-skill
+  repository: peakseazhu/humanizer-chinese
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: peakseazhu-humanizer-chinese
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定最后一轮补到的 6 条线索之一。
+  notes: 36 类中文写作模式；SKILL.md 自述'基于 blader/humanizer（Wikipedia Signs of AI writing）的中文本土化版本'，但人工比对标题结构后确认新增了语域门、语气校准、模型指纹速查、检测防误伤指南等
+    blader/op7418 都没有的独立小节，内容量和结构均超出翻译范围，判断为独立谱系。
+- id: upstream-oxforce-haning-humanize-writing-skill
+  source_type: github-skill
+  repository: Oxforce/haning-humanize-writing-skill
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: oxforce-haning-humanize-writing-skill
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定最后一轮补到的 6 条线索之一。
+  notes: 中文写作自然化，强调事实和披露保护；明确不承诺或优化任何 AI 检测器分数，边界写得清楚。
+- id: upstream-aazzaazzaazzaa-remove-chinese-ai-tics
+  source_type: github-skill
+  repository: AAzzAAzzAAzzAA/remove-chinese-ai-tics
+  previous_repository: []
+  branch: main
+  paths:
+  - remove-chinese-ai-tics/SKILL.md
+  - remove-chinese-ai-tics/references/creative-writing.md
+  - remove-chinese-ai-tics/references/domain-profiles.md
+  - remove-chinese-ai-tics/references/lexical-controls.md
+  - remove-chinese-ai-tics/references/pattern-catalog.md
+  - remove-chinese-ai-tics/references/semantic-preservation.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: representative
+  lineage: aazzaazzaazzaa-remove-chinese-ai-tics
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定最后一轮补到的 6 条线索之一。
+  notes: 简体中文口癖清理，搜索结果标注为 beta；强调保留事实、语体、作者或人物声口，不承诺绕过检测。
+- id: upstream-wuxiiing-wash-ink
+  source_type: github-skill
+  repository: wuxiiing/wash-ink
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: low-priority
+  lineage: wuxiiing-wash-ink
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定最后一轮补到的 6 条线索之一，但内容核实为古代题材小说专用体裁工具，改标 low-priority。
+  notes: 面向古言、武侠、仙侠、朝堂、穿越与历史衍生等古代题材中文小说的克制润色；以保留剧情、人物对白、事实信息和作者声线为硬约束，体裁边界很窄，不适合作为通用去味主规则来源。
+- id: upstream-z123-cloud-humanizer
+  source_type: github-skill
+  repository: z123-cloud/humanizer
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: derivative
+  lineage: qu-ai-wei
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T19:00:00Z'
+  reason: 登记依据：任务指定最后一轮补到的 6 条线索之一，README 标注'内容与 qu-ai-wei 相近，先按疑似同源线索处理'。 谱系聚类：与 upstream-lifelonglazylearner-qu-ai-wei
+    同属 qu-ai-wei 谱系。SKILL.md frontmatter的 name 为'qu-ai-wei'、描述措辞与 LifelongLazyLearner 版本高度重合，确认同源；但正文远比代表作详尽（51
+    条 AI 腔模式索引表、语体识别九分类、打磨报告、'过度消毒反制/保留毛边'等代表作没有的机制），含代表作没有的规则，记 derivative（非 duplicate），差异部分留给步骤 2。lineage
+    代表作沿用既有的 upstream-lifelonglazylearner-qu-ai-wei（decisions.yaml 已有 65 条规则以它为来源，不因新登记来源更换代表作，避免打乱既有归并结果）。
+  notes: SKILL.md frontmatter 的 name 为 qu-ai-wei、版本号 0.7.0，措辞与 LifelongLazyLearner/qu-ai-wei 高度重合，登记后交由聚类判定同源关系。
+- id: upstream-wantongc-journal-adapt-writing-skill
+  source_type: github-skill
+  repository: WantongC/journal-adapt-writing-skill
+  previous_repository: []
+  branch: main
+  paths:
+  - skill/SKILL.md
+  - skill/base_rules/cs_engineering.md
+  - skill/base_rules/economics.md
+  - skill/base_rules/general_academic.md
+  - skill/base_rules/ml_cv_nlp.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: low-priority
+  lineage: wantongc-journal-adapt-writing-skill
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定的 low-priority 项。
+  notes: 按目标期刊语料生成写作规范，属'学目标文体'而非靠禁词降检测率的方向，与本 skill 的默认去味规则定位不同，登记为 low-priority 保留候选。
+- id: upstream-zenstory-ai-oh-story-claudecode
+  source_type: github-skill
+  repository: zenstory-ai/oh-story-claudecode
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/story-deslop/SKILL.md
+  - skills/story-deslop/references/anti-ai-writing.md
+  - skills/story-deslop/references/author-memory.md
+  - skills/story-deslop/references/banned-words.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: low-priority
+  lineage: zenstory-ai-oh-story-claudecode
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定的 low-priority 项（中文网文体裁）。
+  notes: 中文网文专用的 story-deslop 子技能，强体裁约束，不适合作为商务/技术文档的默认去味方案。
+- id: upstream-tance-mang-chinese-webnovel-skills
+  source_type: github-skill
+  repository: tance-mang/chinese-webnovel-skills
+  previous_repository: []
+  branch: main
+  paths:
+  - skills/deslop/SKILL.md
+  - skills/dialogue/SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: low-priority
+  lineage: tance-mang-chinese-webnovel-skills
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T18:00:00Z'
+  reason: 登记依据：任务指定的 low-priority 项（中文网文体裁）。
+  notes: 中文网文 deslop 和 dialogue 两个子技能；体裁窄，登记为 low-priority 保留候选，供后续网文体裁边界说明参考。
+- id: upstream-kevintsai1202-humanizer-zh-tw
+  source_type: github-skill
+  repository: kevintsai1202/Humanizer-zh-TW
+  previous_repository: []
+  branch: main
+  paths:
+  - SKILL.md
+  license: MIT
+  license_status: known
+  snapshot_policy: full-text
+  status: active
+  selection_status: derivative
+  lineage: blader-humanizer
+  tracking_revision: 1
+  previous_paths: []
+  path_changed_at: null
+  baseline_reset_reason: null
+  status_changed_at: '2026-09-06T19:00:00Z'
+  reason: 登记依据：任务明确要求登记为 derivative（繁体中文，fork 自 op7418/Humanizer-zh）。 谱系聚类：GitHub API 确认 fork 自 op7418/Humanizer-zh（parent
+    字段），同属 blader-humanizer谱系；任务明确要求繁体版本登记为 derivative（简转繁的再适配，供繁体中文场景使用）。
+  notes: 繁体中文版本；GitHub API 的 parent 字段确认 fork 自 op7418/Humanizer-zh，内容为简转繁通译版本。
