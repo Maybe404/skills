@@ -24,12 +24,22 @@ source:
   path: <上游仓库内路径，或本仓库路径>
   commit: <40 位提交 id，或 null>
   anchor: <小节标题或稳定的行首文本>
+intent: 原作者为什么定这条规则——针对什么现象、想避免什么结果，两三句
+existing: 疑似对应 <规则 id> | 现有规则里没有
 notes: 拆分时的判断、与其他单元的关系、待确认的问题
 ```
 
 这个模板是拆规则阶段的中间产物，存放在 `merges/<id>/work/units/<source_id>.md`，聚类表和覆盖表存放在 `merges/<id>/work/`；它们不随 skill 分发，但要进仓库，覆盖校验和下一次全量合并都要读它们。拆规则阶段的 id 是临时编号，格式 `U-<来源简称>-<三位数>`，只在该来源的清单内唯一；正式的规则 id 在归并阶段分配，因为多个来源并行拆时无法保证全局唯一。归并阶段把单元写进 decisions.yaml：source 成为 sources 数组里的一条，category、language、rule_summary 同名对应。
 
-三个键在 decisions.schema.json 里没有同名字段：`positive` 和 `negative` 是拆规则时的自查工具，落到 decisions.yaml 时并入 rationale 或者写进 skill 正文当例子；`notes` 只出现在 sources.schema.json 里，这里借用同一个词记拆分时的判断，不进 decisions.yaml。`source` 是单数形式，对应 decisions.yaml 里 sources 数组的一条。其余的键都是 decisions.schema.json 里的字段名。
+五个键在 decisions.schema.json 里没有同名字段：`positive` 和 `negative` 是拆规则时的自查工具，落到 decisions.yaml 时并入 rationale 或者写进 skill 正文当例子；`intent` 落进 rationale，是那段说明的依据，不单独成字段；`existing` 只服务归并那一步，落进 decisions.yaml 时如果确认了对应关系，就体现为往那条规则的 sources 追加一条证据、或者往 relations 记一条关系；`notes` 只出现在 sources.schema.json 里，这里借用同一个词记拆分时的判断，不进 decisions.yaml。`source` 是单数形式，对应 decisions.yaml 里 sources 数组的一条。其余的键都是 decisions.schema.json 里的字段名。
+
+## intent 和 existing 两行必填
+
+空着这两行的单元不算拆完。
+
+`intent` 写原作者的理由，不写你自己的评价。上游明说了理由（某一节的开场解释、规则后面跟的一句"because…"）就照他的说法概括；没说的写"上游未说明"，再写你从上下文推断的理由并标明是推断。归并阶段写 rationale 里的"为什么采纳""冲突时为什么选了另一条""为什么淘汰"，依据就是这一行：不知道原作者针对的是什么现象，就判断不了这条规则在本仓库的场景里还成不成立，也给不出原作者读得懂的说明（标准见 `criteria.md` 第 10 条）。
+
+`existing` 是拆规则阶段先做一次的粗比对：拿这个单元的 rule_summary 与现有 decisions.yaml 里已落地规则的 rule_summary 对一遍，像的写"疑似对应 <规则 id>"（拿不准就多写几个 id），不像的写"现有规则里没有"。首次合并时 decisions.yaml 为空，全部写"现有规则里没有"。增量合并时归并阶段靠这一行省掉一轮全表扫描。它只是线索不是结论：写它的人只看过这一个来源，跨来源的重复它给不出，归并仍要按 `process.md` 的 sync 步骤 3 做锚点反查和语义比对。
 
 ## 前缀和类别码
 
@@ -62,7 +72,17 @@ anchor 用小节标题的原文，或者该段稳定的行首文本（前十到�
 - 规则在一张表里：用表格所在的小节标题，加上该行第一列的值，例如 `## Pattern table / "delve"`。
 - 上游没有标题：用该段的行首文本，并在 notes 里写清它在哪个大节之下。
 
-同一个来源里多条规则共用一个锚点是允许的，但要能靠 anchor 在文件里定位到不超过一屏的范围。
+上游标题里含字面反引号的，原样抄，包括反引号本身，不加反斜杠转义。anchor 是拿去做字面匹配的，多一个反斜杠就匹配不上。
+
+```
+上游那一行： ### Mode: `detect`
+anchor 写成： ### Mode: `detect`
+不要写成：   ### Mode: \`detect\`
+```
+
+同一个来源里多条规则共用一个小节时，anchor 不能只写小节标题，要在标题后面加上各自那一行的行首原文（写成 `<小节标题> / <行首文本>`），否则反查时几条规则指向同一处，分不出是哪一条。加的那一段必须是上游那一行的原文，不是你对位置的描述——"表格第二行""(step 4 verification list)"这类描述性文字定位不到。
+
+补上区分之后，靠 anchor 要能在文件里定位到不超过一屏的范围。
 
 ## metadata-only 来源怎么记
 
@@ -71,6 +91,8 @@ snapshot_policy 为 metadata-only 的来源，原文不进仓库。拆规则时�
 - rule_summary 用自己的话重写，不复述上游句式。判据：这句话拿给没读过上游的人看，反推不出原句。
 - positive 和 negative 自己造，不用上游的例句、词表条目、模式名。
 - anchor 照常记小节标题——标题是定位信息，不是正文内容；标题本身就是一整条规则的完整表述时（例如整节只有一句"Never invent statistics"），也自己改写。
+- intent 照常写，但用自己的话概括原作者的理由，不照抄他解释理由的那句话。
+- existing 照常写，它对的是本仓库的规则，与上游许可证无关。
 - notes 里写一行"来源为 metadata-only，本单元不含原文"。
 
 这类单元在归并阶段按 criteria.md 正常裁决，许可证不限制思路的采用；只要求 rule_summary、正反例、rationale 里反推不出上游原句。

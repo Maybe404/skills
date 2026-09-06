@@ -268,9 +268,9 @@ stars 只进 lock，随内容 PR 一起更新，或每月单独更新一次，�
 
 合并分五步：
 
-1. 入围：约 60 个文本方向候选，全部抓取元数据和目标文件；按 fork、语言、相似度聚成谱系；每个谱系读代表作并加分支差异；结果记入 selection_status。
-2. 拆规则：并行派发 subagent 处理。
-3. 归并。
+1. 入围：约 60 个文本方向候选，全部抓取元数据和目标文件；`upstream-monitor lineage` 按相似度和人工核实关系聚成谱系，代表作由人定；每个谱系读代表作并加分支差异；结果记入 selection_status。
+2. 拆规则：并行派发 subagent 处理，一个 subagent 一个来源，单元清单落在 `merges/<id>/work/units/`。这一步要判断原作者定这条规则的理由，用深度推理档的模型。
+3. 归并：一个上下文处理不了超过约 300 条单元，按 6 到 8 个来源一批，每批走增量路径与已有 decisions.yaml 比对，批间顺序进行；全部批次完成后做一次全局冲突复核。
 4. 写 skill：SKILL.md 只放流程，模式表进 references，中英文分表。
 5. 验证：evals 覆盖真人原文不该被改、带数字和命令的段落、套话段落；先核事实漂移，再看风格。
 
@@ -303,8 +303,8 @@ stars 只进 lock，随内容 PR 一起更新，或每月单独更新一次，�
 3. 写 skill-merge 最小版本。
 4. 用 no-ai-slop、qu-ai-wei、writing-style-skill、Aboudjem/humanizer-skill 四个上游试跑，验收六条：来源能追踪、规则能反查、快照能恢复、PR 幂等、sync 能区分 duplicate 和 conflict 和 adopted、报告能解释决定。
 5. 根据试跑结果修 schema 和报告格式。
-6. maybe-humanizer 全量合并。
-7. 写 upstream-monitor。
+6. maybe-humanizer 全量合并：先合并 10 个典型来源并跑通闭环（拆规则、归并、写 skill、validate、render、报告），再扩到全部已登记来源。
+7. 写 upstream-monitor。已完成：validate、check、snapshot、diff、locate、pr、approve、render、retire、report new、issue、lineage 十二个子命令都已实现，原型脚本已吸收进包内。
 8. 接入 GitHub Actions。
 9. 用真实的上游变化跑一次 sync。
 10. 补回归测试和上游文本指令抵抗测试。
