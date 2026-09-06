@@ -1774,7 +1774,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-M-005 AI 概率打分'
   category: measurement
   language: both
   rule_summary: 按公式给文本算一个 0-100 的“AI 味”分数并按分段给出判语（其中最低一档写明“不该被任何检测器标记”），以及按命中模式条数分严重等级、在输出首行打印分数。
@@ -1813,7 +1813,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ALL-M-006 风格维度分项打分'
   category: measurement
   language: both
   rule_summary: 把写作风格拆成几个互相独立、各自可以打分的维度分别定值，不用一句笼统的形容词描述。
@@ -1838,7 +1838,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ALL-M-007 维度证据不足先留空'
   category: measurement
   language: both
   rule_summary: 某个风格维度暂时判断不了时先留空，等积累了足够多的真实改稿记录再倒推取值，不凭第一印象填一个初值。
@@ -1913,7 +1913,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-M-010 用内容指纹配对'
   category: measurement
   language: both
   rule_summary: 配对初稿和定稿时用对内容本身算出的指纹匹配，不依赖文件名或保存顺序。
@@ -1967,7 +1967,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-M-012 候选规则去重'
   category: measurement
   language: both
   rule_summary: 提炼出候选规则后先与已有规则比对，说的是同一件事就不重复添加。
@@ -1992,7 +1992,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-M-013 规则必须可照做'
   category: measurement
   language: both
   rule_summary: 每条提炼出的规则都要写成可以直接照做的具体指令，不能只写一句对改动的笼统印象。
@@ -2017,7 +2017,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-M-014 按出现次数自动生效'
   category: measurement
   language: both
   rule_summary: 按候选规则出现的次数分三档，出现次数最多的一档不经人工确认自动写入规则文件生效，中间一档等人工看过，最低一档只存档。
@@ -2046,7 +2046,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-M-015 字数变化百分比'
   category: measurement
   language: both
   rule_summary: 记录每次改稿时把定稿相对初稿的字数变化算成百分比，作为改动幅度的信号单独记下。
@@ -2071,7 +2071,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-M-016 未改动比例趋势'
   category: measurement
   language: both
   rule_summary: 把“未改动次数”与“被改动次数”的比例作为长期指标跟踪，用来判断当前规则整体好不好用。
@@ -2295,7 +2295,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### EN-S-002 注入个性的手法'
   category: style-opinion
   language: en
   rule_summary: 用七种手法注入个性：对事情给出真实反应而不是中立陈述、让确信度随论点强弱变化、引用读者共有的经历、允许简短跑题、从思路中途切入开头、回指前文、行文中途自我纠正。
@@ -2359,7 +2359,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-S-003 选第二三个想到的词'
   category: style-opinion
   language: en
   rule_summary: 用词要选第二或第三个想到的说法而不是第一反应的最常见说法，用领域黑话和源自个人经历的意外类比，提高文字的意外程度。
@@ -2384,7 +2384,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-S-001 北极星口号'
   category: style-opinion
   language: both
   rule_summary: 写作应当像人一样怪异、具体、不一致，因为语言模型会回归统计均值。
@@ -2409,7 +2409,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ALL-S-002 逼出鲜明立场'
   category: style-opinion
   language: both
   rule_summary: 对任何观点或论证都逼出一个站得住、足够鲜明的立场，并点名一个具体的反对对象；中性、技术和参考类文本跳过这一步。
@@ -3992,7 +3992,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### EN-P-034 用 you 代替 people'
   category: pattern
   language: en
   rule_summary: 不用悬浮在场景之上的疏离第三人称（people tend to、one might say、there is a sense that、nobody designed this），改用 you 把读者放进场景。
@@ -5946,7 +5946,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ALL-PROC-026 开头候选'
   category: process
   language: both
   rule_summary: 生成若干个尽量互不相同的开头候选（直白断言、具体场景、先问后答），挑一个并用一句话说明为什么它更强。
@@ -5975,7 +5975,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-PROC-027 更激进的档位'
   category: process
   language: both
   rule_summary: 设一个更激进的档位：句子更短、态度更鲜明、去掉所有保留语。
@@ -6163,7 +6163,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-PROC-031 按输入推断语体'
   category: process
   language: both
   rule_summary: 没有指定语体时，按输入文本本身的语域推断该用哪一档，不套一个固定默认值。
@@ -6188,7 +6188,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ALL-PROC-032 规则按三类归档'
   category: process
   language: both
   rule_summary: 积累出来的规则按三类归档：一般性行为要求、禁止使用的词、偏好的句式结构；新规则先判断属于哪一类再归档，不堆在一张不分类的清单里。
@@ -6238,7 +6238,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-PROC-034 改写前备份'
   category: process
   language: both
   rule_summary: 自动改写规则文件之前先备份被替换的旧版本，出问题时一步恢复。
@@ -6263,7 +6263,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ZH-P-012 两项优于三项'
   category: pattern
   language: zh
   rule_summary: 并列项默认取两项而不是三项；已经写成三项列举的，改成两项或四项。
@@ -6938,7 +6938,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ZH-S-001 改写时补出作者反应'
   category: style-opinion
   language: zh
   rule_summary: 对事实要给出反应而不是只做中立报道，包括直说自己拿不准该怎么看；原文没有作者反应时在改写里补出来。
@@ -6970,7 +6970,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ZH-S-002 中文完全禁用长破折号'
   category: style-opinion
   language: zh
   rule_summary: 中文正文不使用长破折号「——」，一律改成逗号、句号或拆句。
@@ -6999,7 +6999,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ZH-S-003 中英混排间距约定'
   category: style-opinion
   language: zh
   rule_summary: 中文正文里英文与中文混排的间距：多词英文术语用半角空格分词（AI Design Agent）；英文术语与中文全角括号连写时不加空格（LLM（大语言模型））；并列英文术语用斜杠连接时斜杠两侧不加空格（coworkers/agents）。
@@ -7038,7 +7038,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ZH-S-004 术语与日期的写法取值'
   category: style-opinion
   language: zh
   rule_summary: 中文正文的术语与日期写法：token、API 保持英文不译；具体日期写作「2026 年 2 月 26 日」「2 月 5 日」；叙事月份写作汉字「一月」「二月」，不与数字日期混用。
@@ -7077,7 +7077,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ZH-S-005 把 PR 译成代码审查'
   category: style-opinion
   language: zh
   rule_summary: PR 在长篇中文叙述里优先写作「代码审查」，除非项目已有别的明确约定。
@@ -7106,7 +7106,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ZH-M-002 缺乏声音的六个迹象'
   category: measurement
   language: zh
   rule_summary: 用六个迹象判断一篇技术上干净的稿子是不是没有声音：每句长度和结构都相同、没有观点只有中立报道、不承认不确定或复杂感受、该用第一人称时不用、没有幽默锋芒和个性、读起来像百科条目或新闻稿。
@@ -7138,7 +7138,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ZH-M-003 整篇朗读检查'
   category: measurement
   language: zh
   rule_summary: 交付前把改写稿整篇读一遍，判据是读起来像中文母语者写的文章，而不是英文思路换成中文词汇。
@@ -7381,7 +7381,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ZH-PROC-001 无条件注入个性'
   category: process
   language: zh
   rule_summary: 处理任何待改写文本时固定执行五步，其中第五步「注入真实的个性」无条件适用，不因文本体裁而跳过。
@@ -8186,7 +8186,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### ALL-M-017 五维自查评分'
   category: measurement
   language: both
   rule_summary: 对改写稿按五个维度各打 1 到 10 分求和（满分 50）作为自查信号：直接性、节奏、信任度、真实性、精炼度；总分明显偏低时回到改写环节再改一轮，轮次上限按 ALL-PROC-019。
@@ -8331,7 +8331,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-PROC-035 单文件兜底加载机制'
   category: process
   language: both
   rule_summary: 只加载 SKILL.md 时本文件里的兜底规则直接生效；只要环境里能读 references/，就必须继续按问题类型补看对应文件，只有在系统提示确实只给了 SKILL.md 时才停留在兜底规则。
@@ -8356,7 +8356,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-PROC-036 套用指定真人作者的声音'
   category: process
   language: both
   rule_summary: 提供一个可选功能：在满足三个条件时主动问用户要不要套用某位真人作者的声音，用户选定后加载该作者的档案（人格、句法模板、节奏规则、反模式）叠加在通用规则之上，冲突时档案优先，交付前再按该档案的反模式清单复扫一遍。
@@ -8583,7 +8583,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-PROC-041 按文本状态自动定改写档位'
   category: process
   language: both
   rule_summary: 按文本本身的状态定改写力度：minimal 用于本身基本自然、只需去掉局部模板感的文本；standard 用于有明显 AI 腔或语域混搭但信息骨架完好的文本；只有在最强的一档命中密集或多类结构问题叠加时才升到 aggressive。
@@ -8844,7 +8844,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-PROC-046 默认不附改动说明'
   category: process
   language: both
   rule_summary: 默认输出只给改写后的正文，不附改动说明、不给多个版本、不做逐条点评；只有用户主动要求解释，或改写幅度明显低于用户预期（高风险误杀）时，才补一行极短说明。
@@ -8888,7 +8888,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-PROT-035 改写时可以加观点'
   category: protection
   language: both
   rule_summary: 作者的声口需要时可以加入一个观点或一句反应，但不得加入事实主张。
@@ -9201,7 +9201,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-G-005 虚构文本豁免不得编造'
   category: genre
   language: both
   rule_summary: 虚构文本不受「不得编造细节」这条约束，因为编造细节本来就是虚构写作任务的一部分；其余规则照常适用。
@@ -9649,7 +9649,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-P-053 By the time X, I was Y. 叙事模板开场'
   category: pattern
   language: en
   rule_summary: 不用 "By the time X, I was Y." 这个叙事模板开场。
@@ -9678,7 +9678,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-P-054 X that isn''t Y 靠否定下定义'
   category: pattern
   language: en
   rule_summary: 不用 "X that isn't Y" 这种靠否定给事物下定义的说法，直接给出正面陈述（改写成 "X is broken"）。
@@ -9744,7 +9744,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-S-004 破折号禁令加样本例外'
   category: style-opinion
   language: en
   rule_summary: 最终稿里不出现 em dash（—）和 en dash（–），除非作者的写作样本用它们；替换成句号、逗号、冒号、括号，或者重写句子。
@@ -9773,7 +9773,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-S-005 删掉全部副词'
   category: style-opinion
   language: en
   rule_summary: 删掉全部副词，一个不留（"Kill all adverbs. No -ly words."），不区分这个副词有没有承担强调、不确定、对比或作者语感；上游点名的十五条为 really、just、literally、genuinely、honestly、simply、actually、deeply、truly、fundamentally、inherently、inevitably、interestingly、importantly、crucially。
@@ -9802,7 +9802,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-S-006 每句都要有人作主语'
   category: style-opinion
   language: en
   rule_summary: 每一个句子都要有一个「人」作主语并且在做一件事（"Every sentence needs a human subject doing something"）。
@@ -9831,7 +9831,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-S-007 禁所有被动语态'
   category: style-opinion
   language: en
   rule_summary: 一处被动语态都不留（"No passive constructions"）；发现被动就找出施事者，把施事者放到句首。
@@ -9860,7 +9860,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-S-008 三项改成两项'
   category: style-opinion
   language: en
   rule_summary: 并列项不用三项：SKILL.md 写成默认偏好（"Two items beat three"），references/structures.md 写成直接的修法（三项清单一律改成两项或一项）。
@@ -9889,7 +9889,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-S-009 无条件禁破折号'
   category: style-opinion
   language: en
   rule_summary: 全文一处破折号都不用（"No em dashes"、"Em-dash anywhere? Remove it."、"Remove. Use commas or periods. No em dashes at all."），不按篇幅、不按频率设上限；替代标点是逗号或句号。
@@ -9918,7 +9918,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### EN-S-010 句子不以 Wh- 词开头'
   category: style-opinion
   language: en
   rule_summary: 句子不以 What、When、Where、Which、Who、Why、How 开头；命中时重构句子，让主语或动词打头（"What makes this hard is..." 改成 "The constraint is..."），更好的做法是直接说出那个具体的约束。
@@ -9947,7 +9947,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-S-011 删掉全部保留语'
   category: style-opinion
   language: en
   rule_summary: 除副词之外，软化语、强化语和保留语一律不留（"No softeners, no intensifiers, no hedges."）；判据是这个词在做软化、加强或保留的活，不看它是不是副词，因此 most、to some extent 这类限定词也在范围内。
@@ -9976,7 +9976,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### EN-S-012 段落不以 So 开头'
   category: style-opinion
   language: en
   rule_summary: 段落不以 "So" 开头，改成从内容开始。
@@ -10769,7 +10769,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### ALL-PROC-059 命令行 style 参数的解析规则'
   category: process
   language: both
   rule_summary: '`--style <arg>` 参数的解析规则：一个路径、或一个能匹配 `examples/<name>.json` 的裸名字，按配置文件处理（套用并校验）；其余一律走凭记忆套用具名指南的分支。'
@@ -11202,7 +11202,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/conflicts.md
-    anchor: null
+    anchor: '### EN-P-065 无条件删保留语词表'
   category: pattern
   language: en
   rule_summary: 删掉保留语 perhaps、could potentially、it's important to note that、to be clear，把要说的直接说出来（上游给的是一张无条件删除的词表，不带任何例外）。
@@ -11784,7 +11784,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### EN-P-083 助动词反转'
   category: pattern
   language: en
   rule_summary: 反转落在一个光秃秃的助动词上即命中（The tool died; the data didn't.、Reading mostly passed. Writing didn't.）：单独一处是好句子，全篇反复出现就是习惯性动作。修法是省着用：一篇里已经有一处，下一处对比就写完整。
@@ -11848,7 +11848,7 @@ rules:
   local:
     skill: maybe-humanizer
     path: skills/maybe-humanizer/references/optional.md
-    anchor: null
+    anchor: '### EN-S-013 缺第一人称本身是信号'
   category: style-opinion
   language: en
   rule_summary: 该有作者在场的文章里没有第一人称、没有偏好、没有反应，这件缺席本身就是一处 AI 痕迹：这篇如果本来该有声口，I think、in my experience 或一个明确表态的缺席就是信号。
