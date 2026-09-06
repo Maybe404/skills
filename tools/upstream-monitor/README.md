@@ -186,6 +186,23 @@ sources.lock.json、`snapshots/*/LICENSE` 渲染
 `--readme-table` 时，改为从 catalog/ 生成一张 markdown 表格（id、类
 型、名称、状态）打到 stdout，供人工贴进 README，不自动写 README。
 
+SOURCES.md 按来源的 `status` 分表：
+
+- **来源表**（主表）只列 `status` 为 `active`、且在 decisions.yaml 里
+  至少有一条证据引用的来源，列不变（id、repository、branch、license、
+  snapshot_policy、lineage、selection_status、支持的规则数、落地的规
+  则数）。只有主表里的来源才有对应的"各来源详情"小节。
+- **已登记、尚未合并**：`status` 为 `candidate` 或 `paused` 的来源，以
+  及 `status` 为 `active` 但没有任何证据引用的来源，只给 id、
+  repository（带链接）、license、snapshot_policy、selection_status 五
+  列——这些来源已登记并被监控，规则尚未合并进本 skill，还没有可展示的
+  规则统计和详情。
+- **已移除的来源**不变，仍是 `status` 为 `removed` 的来源。
+
+`status` 为 `active` 但没有证据的来源，除了出现在"已登记、尚未合并"一
+节，CLI 还会在渲染完成后打印提醒，列出这些来源的 id，方便核对
+sources.yaml 里的 `status` 是不是记错了。
+
 ### retire
 
 ```bash

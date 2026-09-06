@@ -267,33 +267,39 @@ def validate_upstream_anchors(
         for sid, entry in L["sources"].items()
         for fe in entry["files"]
     }
-    cache: dict[tuple[str, str], str | None] = {}
+    cache: dict[tuple[str, str], tuple[str | None, str]] = {}
 
     def text_for(sid: str, path: str) -> tuple[str | None, str]:
         key = (sid, path)
         if key in cache:
-            return cache[key], "cached"
+            return cache[key]
         sp = stored.get(key, "MISSING")
         if sp == "MISSING":
-            cache[key] = None
-            return None, "lock 的 files[] 里没有这个路径"
+            result = (None, "lock 的 files[] 里没有这个路径")
+            cache[key] = result
+            return result
         if sp is None:
             if client is None:
-                cache[key] = None
-                return None, "metadata-only，未提供 GitHub client"
+                result = (None, "metadata-only，未提供 GitHub client")
+                cache[key] = result
+                return result
             repo = src_by_id[sid]["repository"]
             commit = L["sources"][sid]["last_seen_commit"]
             try:
                 content = client.get_file(repo, path, commit)
             except (FileNotFound, RepoNotFound, RepoPrivate, NetworkError) as e:
-                cache[key] = None
-                return None, f"拉取失败: {e}"
+                result = (None, f"拉取失败: {e}")
+                cache[key] = result
+                return result
             text = content.decode("utf-8", errors="replace")
-            cache[key] = text
-            return text, f"{repo}@{commit}:{path}"
+            result = (text, f"{repo}@{commit}:{path}")
+            cache[key] = result
+            return result
         p = root / sp
-        cache[key] = p.read_text(encoding="utf-8") if p.exists() else None
-        return cache[key], str(p)
+        text = p.read_text(encoding="utf-8") if p.exists() else None
+        result = (text, str(p))
+        cache[key] = result
+        return result
 
     for r in D["rules"]:
         for ev in r["sources"]:

@@ -110,12 +110,6 @@ def test_rationale_mentions_rule_id_with_matching_relation_is_not_flagged(repo_p
 
 def test_ambiguous_upstream_anchor_is_med_not_block(repo_paths):
     doc = _load(repo_paths)
-    # 去掉 EN-S-001：它和 ALL-P-001 一样引用 upstream-fixture-source-b:SKILL.md，
-    # validate_upstream_anchors 对同一 (source_id, path) 的第二次查找会命中内部缓存，
-    # 缓存只记"cached"这个通用理由、丢失了 metadata-only 的原始理由，导致误报 HIGH。
-    # 这是 text_for() 缓存逻辑本身的问题，与本次要修的两个 anchors 缺陷无关，
-    # 这里去掉这条规则只是为了不让本测试意外撞上它；该问题在报告的“未解决问题”里说明。
-    doc["rules"] = [r for r in doc["rules"] if r["id"] != "EN-S-001"]
     for r in doc["rules"]:
         if r["id"] == "ALL-PROT-001":
             r["sources"][0]["anchor"] = "## Anchor heading / never invent a fact"
@@ -139,6 +133,21 @@ def test_ambiguous_upstream_anchor_is_med_not_block(repo_paths):
 
     assert not rep.failed(), rep.render_text()
     assert any("弱定位有歧义" in m for m in rep.by_severity()["MED"])
+
+
+def test_metadata_only_source_shared_by_two_rules_both_report_med(repo_paths):
+    # upstream-fixture-source-b 是 metadata-only，本测试不传 client；
+    # ALL-P-001 和 EN-S-001 都引用它的 SKILL.md，第二次查找命中
+    # validate_upstream_anchors 里 text_for() 的内部缓存。缓存如果只存 text、
+    # 丢了第一次的失败原因（metadata-only 未提供 client），第二条就会从 MED
+    # 误判成 HIGH。
+    rep = validate(repo_paths, merge_id=MERGE_ID, branch="feature")
+
+    assert not rep.failed(), rep.render_text()
+    med_messages = rep.by_severity()["MED"]
+    assert any("ALL-P-001" in m and "metadata-only" in m for m in med_messages)
+    assert any("EN-S-001" in m and "metadata-only" in m for m in med_messages)
+    assert not any("EN-S-001" in m for m in rep.by_severity()["HIGH"])
 
 
 def test_gibberish_upstream_sub_anchor_is_high(repo_paths):

@@ -83,15 +83,48 @@ def decision_label(decision: str) -> str:
     return DECISION_LABELS.get(decision, decision)
 
 
-def render_source_table(sources_doc: dict, stats: dict[str, dict]) -> str:
+def classify_sources(sources_doc: dict, stats: dict[str, dict]) -> dict[str, list[dict]]:
+    """把 sources.yaml 的来源按主表/未合并/已移除三节分组。
+
+    - main：status 为 active，且在 decisions.yaml 里至少有一条证据。
+    - unmerged：status 为 candidate 或 paused；或 status 为 active 但没有任何
+      证据（这种情况额外记入 active_without_evidence，供调用方提醒）。
+    - removed：status 为 removed，不变。
+    """
+    main: list[dict] = []
+    unmerged: list[dict] = []
+    removed: list[dict] = []
+    active_without_evidence: list[dict] = []
+    for s in sources_doc.get("sources", []):
+        status = s.get("status")
+        if status == "removed":
+            removed.append(s)
+            continue
+        has_evidence = stats.get(s["id"], {"total": 0})["total"] > 0
+        if status == "active" and has_evidence:
+            main.append(s)
+        elif status == "active":
+            unmerged.append(s)
+            active_without_evidence.append(s)
+        else:
+            # candidate、paused，以及 schema 允许但此处未枚举的其他状态，
+            # 一律保守放进"已登记、尚未合并"一节，不静默丢弃。
+            unmerged.append(s)
+    return {
+        "main": main,
+        "unmerged": unmerged,
+        "removed": removed,
+        "active_without_evidence": active_without_evidence,
+    }
+
+
+def render_source_table(sources: list[dict], stats: dict[str, dict]) -> str:
     rows = [
         "| id | repository | branch | license | snapshot_policy | lineage | "
         "selection_status | 支持的规则数 | 落地的规则数 |",
         "|---|---|---|---|---|---|---|---|---|",
     ]
-    for s in sources_doc.get("sources", []):
-        if s.get("status") == "removed":
-            continue
+    for s in sources:
         sid = s["id"]
         st = stats.get(sid, {"total": 0, "landed": 0})
         license_cell = s["license"]
@@ -109,6 +142,29 @@ def render_source_table(sources_doc: dict, stats: dict[str, dict]) -> str:
                 selection=s["selection_status"],
                 total=st["total"],
                 landed=st["landed"],
+            )
+        )
+    return "\n".join(rows)
+
+
+def render_unmerged_source_table(sources: list[dict]) -> str:
+    if not sources:
+        return "无。"
+    rows = [
+        "| id | repository | license | snapshot_policy | selection_status |",
+        "|---|---|---|---|---|",
+    ]
+    for s in sources:
+        license_cell = s["license"]
+        if s["license"] == "unknown":
+            license_cell = "unknown（未取得许可证，本仓库不含其原文）"
+        rows.append(
+            "| {id} | {repo} | {license} | {policy} | {selection} |".format(
+                id=s["id"],
+                repo=repo_link(s["repository"]),
+                license=license_cell,
+                policy=s["snapshot_policy"],
+                selection=s["selection_status"],
             )
         )
     return "\n".join(rows)
@@ -192,6 +248,7 @@ def render_sources_md(
     generated_at: str | None = None,
 ) -> str:
     stats = compute_source_stats(sources_doc, decisions_doc)
+    groups = classify_sources(sources_doc, stats)
     target_skill = sources_doc.get("target_skill", sources_doc.get("merge_id"))
     merge_id = sources_doc.get("merge_id")
 
@@ -205,14 +262,18 @@ def render_sources_md(
         "",
         "## 来源表",
         "",
-        render_source_table(sources_doc, stats),
+        render_source_table(groups["main"], stats),
+        "",
+        "## 已登记、尚未合并",
+        "",
+        "这些来源已登记并被监控，规则尚未合并进本 skill。",
+        "",
+        render_unmerged_source_table(groups["unmerged"]),
         "",
         "## 各来源详情",
         "",
     ]
-    for s in sources_doc.get("sources", []):
-        if s.get("status") == "removed":
-            continue
+    for s in groups["main"]:
         sid = s["id"]
         entry = stats.get(sid, {"total": 0, "landed": 0, "by_decision": {}})
         if s["snapshot_policy"] == "full-text":
@@ -241,7 +302,15 @@ def render_sources_md(
     return "\n".join(parts)
 
 
-def render_sources_for_merge(paths: RepoPaths, merge_id: str, out_path: Path | None = None) -> str:
+def render_sources_for_merge(
+    paths: RepoPaths, merge_id: str, out_path: Path | None = None
+) -> tuple[str, list[str]]:
+    """渲染 SOURCES.md，返回 (markdown, active_without_evidence)。
+
+    active_without_evidence 是 status 为 active 但 decisions.yaml 里没有任何
+    证据引用的来源 id 列表——这些来源被放进了"已登记、尚未合并"一节，调用方
+    （cli）据此提醒使用者核对 sources.yaml 里的 status。
+    """
     sources_doc = load_yaml(paths.sources_yaml(merge_id))
     decisions_doc = load_yaml(paths.decisions_yaml(merge_id))
     lock_path = paths.lock_json(merge_id)
@@ -249,12 +318,16 @@ def render_sources_for_merge(paths: RepoPaths, merge_id: str, out_path: Path | N
     if lock_path.exists():
         generated_at = load_json(lock_path).get("generated_at")
 
+    stats = compute_source_stats(sources_doc, decisions_doc)
+    groups = classify_sources(sources_doc, stats)
+    active_without_evidence = [s["id"] for s in groups["active_without_evidence"]]
+
     md = render_sources_md(sources_doc, decisions_doc, paths.snapshots_dir(merge_id), generated_at)
 
     target = out_path or (paths.skills_dir / sources_doc["target_skill"] / "SOURCES.md")
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(md, encoding="utf-8")
-    return md
+    return md, active_without_evidence
 
 
 def render_readme_table(paths: RepoPaths) -> str:

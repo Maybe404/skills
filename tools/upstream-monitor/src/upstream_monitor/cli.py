@@ -156,8 +156,15 @@ def cmd_render(args: argparse.Namespace) -> int:
         print(render_mod.render_readme_table(paths))
         return 0
     out = Path(args.out).resolve() if args.out else None
-    render_mod.render_sources_for_merge(paths, args.merge, out_path=out)
+    _, active_without_evidence = render_mod.render_sources_for_merge(paths, args.merge, out_path=out)
     print(f"已渲染 {args.merge} 的 SOURCES.md")
+    if active_without_evidence:
+        print(
+            "以下来源 status 是 active，但 decisions.yaml 里没有任何证据引用，"
+            "已放进「已登记、尚未合并」一节，请核对 sources.yaml 里的 status 是否准确："
+        )
+        for sid in active_without_evidence:
+            print(f"  - {sid}")
     return 0
 
 
