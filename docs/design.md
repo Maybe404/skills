@@ -47,6 +47,7 @@ docs/
 | `decisions.yaml` | skill 写、代码校验 | 规则决定表 |
 | `reports/NNNN-YYYY-MM-DD-<slug>.md` | 代码骨架、模型填充 | 单次 merge 或 sync 的分析报告 |
 | `CHANGELOG.md` | 人工/skill | 面向用户的摘要 |
+| `work/` | skill | 拆规则阶段的规则单元清单、聚类表、覆盖表，供覆盖校验和重跑使用 |
 | `research/` | 人工 | 历史调研材料，不是运行时输入 |
 
 监控入口的唯一条件：catalog 里该 skill 的 `merge_instance` 非空。
@@ -131,6 +132,17 @@ sources[] 每项：
 | open_issue | 关联的未关闭 issue |
 | availability | ok \| unreachable \| private \| gone |
 
+#### normalized_sha256 的归一化定义
+
+对每个追踪文件的原始字节做以下变换，再算 sha256，得到 normalized_sha256。变换顺序如下，不改变任何非空白字符：
+
+1. 统一换行：把 `\r\n` 和单独的 `\r` 都替换成 `\n`。
+2. 去掉每一行行尾的空格和制表符（行内空白不动，只去行尾）。
+3. 去掉文件末尾多余的空行。
+4. 保证文件以且仅以一个 `\n` 结尾（文件非空时；空文件不补）。
+
+文件级的 normalized_sha256 是这个文件归一化后字节的 sha256。来源级的 normalized_sha256 是把 sources.yaml 的 paths 按顺序逐个归一化、首尾直接拼接（不额外插入分隔符），再对拼接结果算 sha256；raw_sha256 同理，用原始字节而不是归一化字节拼接。
+
 ### merges/<id>/decisions.yaml
 
 顶层字段 `merge_id` 和 `rules[]`，rules 每条：
@@ -149,6 +161,7 @@ sources[] 每项：
 | evidence_count | 证据数量 |
 | independent_sources | 独立来源数量 |
 | sources[] | 每项 {type(upstream\|self), source_id, path, commit, anchor} |
+| relations[] | 规则之间的关系，每项 {type, rule_id, note}。type 取 conflicts-with（互相矛盾，须裁决）、excepts（分域或互为例外，不同时适用）、pairs-with（配套，各管一半）、supersedes（本条取代对方）。conflicts-with 和 pairs-with 双向记录，excepts 和 supersedes 单向也成立。rule_id 必须是同一份文件里已有的规则 |
 | rationale | 理由 |
 | history[] | 每项 {decision, at, reason} |
 

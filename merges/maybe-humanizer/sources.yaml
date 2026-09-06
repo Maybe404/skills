@@ -12,16 +12,16 @@ sources:
     license: MIT
     license_status: known
     snapshot_policy: full-text
-    status: candidate
+    status: active
     selection_status: representative
     lineage: no-ai-slop
     tracking_revision: 1
     previous_paths: []
     path_changed_at: null
     baseline_reset_reason: null
-    status_changed_at: "2026-09-06T09:46:50Z"
-    reason: 从调研清单登记为试验上游，入围评估尚未做。
-    notes: 英文审稿与改写，带 eval.md。仓库内还有 agents/ 和 scripts/，本轮不追踪。
+    status_changed_at: "2026-09-06T10:14:01Z"
+    reason: 可达；谱系 no-ai-slop 只有这一个来源，结构与词表和其余三个谱系不重合，作为代表入围进入拆规则。
+    notes: 英文审稿与改写，带 eval.md。仓库内还有 agents/ 和 scripts/，本轮不追踪。已核实与 qu-ai-wei、writing-style-skill、humanizer/aboudjem-humanizer 三个谱系互不同源：小节结构和模式表条目不重合。
 
   - id: upstream-lifelonglazylearner-qu-ai-wei
     source_type: github-skill
@@ -33,16 +33,16 @@ sources:
     license: MIT
     license_status: known
     snapshot_policy: full-text
-    status: candidate
+    status: active
     selection_status: representative
     lineage: qu-ai-wei
     tracking_revision: 1
     previous_paths: []
     path_changed_at: null
     baseline_reset_reason: null
-    status_changed_at: "2026-09-06T09:46:50Z"
-    reason: 从调研清单登记为试验上游，入围评估尚未做。
-    notes: 简体中文保真改写。仓库另有 references/ 和 tests/，本轮只追踪 SKILL.md。
+    status_changed_at: "2026-09-06T10:14:01Z"
+    reason: 可达；谱系 qu-ai-wei 只有这一个来源，结构与词表和其余三个谱系不重合，作为代表入围进入拆规则。
+    notes: 简体中文保真改写。仓库另有 references/ 和 tests/，本轮只追踪 SKILL.md。已核实与 no-ai-slop、writing-style-skill、humanizer/aboudjem-humanizer 三个谱系互不同源：小节结构和模式表条目不重合。
 
   - id: upstream-jzocb-writing-style-skill
     source_type: github-skill
@@ -51,19 +51,22 @@ sources:
     branch: main
     paths:
       - SKILL.md
+      - scripts/observe.py
+      - scripts/improve.py
     license: unknown
     license_status: unknown
     snapshot_policy: metadata-only
-    status: candidate
+    status: active
     selection_status: representative
     lineage: writing-style-skill
-    tracking_revision: 1
-    previous_paths: []
-    path_changed_at: null
-    baseline_reset_reason: null
-    status_changed_at: "2026-09-06T09:46:50Z"
-    reason: 从调研清单登记为试验上游，入围评估尚未做。
-    notes: 仓库根目录没有 LICENSE 文件，GitHub API 也没有返回许可证，因此不保存原文，只记元数据。仓库内 scripts/ 只读不跑。
+    tracking_revision: 2
+    previous_paths:
+      - SKILL.md
+    path_changed_at: "2026-09-06T14:00:00Z"
+    baseline_reset_reason: 首次合并的拆规则阶段读了 scripts/observe.py 和 scripts/improve.py，ALL-M-009、ALL-M-010、ALL-M-015、ALL-M-016 的证据落在 observe.py，ALL-M-011、ALL-M-012、ALL-M-013 的证据落在 improve.py，而 paths 里只有 SKILL.md，这两个文件改动时监控不会发现，七条规则的证据基础会静默过期。补进 paths 使追踪范围与已有证据一致。两个文件是首次纳入追踪，没有旧基线可比，last_processed_commit 和 last_accepted_commit 保持 null；snapshot_policy 仍为 metadata-only，仓库内不保存这两个文件的内容。
+    status_changed_at: "2026-09-06T10:14:01Z"
+    reason: 可达；谱系 writing-style-skill 只有这一个来源，结构与词表和其余三个谱系不重合，metadata-only 作为代表入围进入拆规则。
+    notes: 仓库根目录没有 LICENSE 文件，GitHub API 也没有返回许可证，因此不保存原文，只记元数据。仓库内 scripts/ 只读不跑：observe.py 和 improve.py 在 paths 里，但只按 commit 临时拉取算 hash 和比对，不落盘、不执行。已核实与 no-ai-slop、qu-ai-wei、humanizer/aboudjem-humanizer 三个谱系互不同源：小节结构和模式表条目不重合。
 
   - id: upstream-aboudjem-humanizer-skill
     source_type: github-skill
@@ -78,13 +81,13 @@ sources:
     license: MIT
     license_status: known
     snapshot_policy: full-text
-    status: candidate
+    status: active
     selection_status: representative
-    lineage: humanizer
+    lineage: aboudjem-humanizer
     tracking_revision: 1
     previous_paths: []
     path_changed_at: null
     baseline_reset_reason: null
-    status_changed_at: "2026-09-06T09:46:50Z"
-    reason: 从调研清单登记为试验上游，入围评估尚未做。
-    notes: 中英双语模式表。lineage 暂记为 humanizer，与 blader/humanizer 是否同源要在入围阶段核实。仓库内 cli/ 和 tools/ 不追踪、不执行。
+    status_changed_at: "2026-09-06T10:14:01Z"
+    reason: 可达；与 blader/humanizer 核实为各自独立引用同一个 Wikipedia 页面改编而成，非 fork/衍生关系，lineage 由 humanizer 改记为 aboudjem-humanizer，作为该谱系代表入围进入拆规则。
+    notes: "中英双语模式表。仓库内 cli/ 和 tools/ 不追踪、不执行。谱系核实结论：SKILL.md 和 references/patterns.md 明确写 P1-P30 核心模式表'derived mostly from Wikipedia: Signs of AI writing'，且 P11/P31 直接使用该页面的术语'Elegant Variation'；blader/humanizer 的 SKILL.md 末尾'Source'一节同样写'This skill is based on Wikipedia: Signs of AI writing'。两者与 blader 的触发词表（delve、tapestry、testament、nestled、in the heart of、serves as、stands as 等）高度重合，是因为都摘自这同一篇 Wikipedia 页面，而非互相转抄：GitHub 未记录 fork 关系（Aboudjem/humanizer-skill 的 fork 字段为 false，无 parent），SKILL.md 和 references 里也没有提到 blader。Aboudjem 仓库创建于 2026-03-06，晚于 blader 的 2026-01-18，但两者的整体结构（blader 是扁平的 35 条模式清单；Aboudjem 是 Step 1-5 的流程加 55 条分层模式表、5 种 voice、CLI 参数、评分和迭代机制）差异很大，P31-P55 的'emerging'和'craft/forensic'模式（如 P44 False Agency、P51 Reasoning-Chain Artifacts、P52 Unicode Obfuscation）在 blader 里完全没有对应，patterns.md 明确写这些是'described independently of any other project's pattern names or text'。结论：独立作品，不是 blader 的 fork、改编或扩展。"

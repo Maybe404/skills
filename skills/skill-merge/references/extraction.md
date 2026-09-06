@@ -27,7 +27,7 @@ source:
 notes: 拆分时的判断、与其他单元的关系、待确认的问题
 ```
 
-这个模板是拆规则阶段的中间产物，不进仓库。归并阶段把它写进 decisions.yaml：单元的 id 直接成为 rule 的 id，source 成为 sources 数组里的一条，category、language、rule_summary 同名对应。
+这个模板是拆规则阶段的中间产物，存放在 `merges/<id>/work/units/<source_id>.md`，聚类表和覆盖表存放在 `merges/<id>/work/`；它们不随 skill 分发，但要进仓库，覆盖校验和下一次全量合并都要读它们。拆规则阶段的 id 是临时编号，格式 `U-<来源简称>-<三位数>`，只在该来源的清单内唯一；正式的规则 id 在归并阶段分配，因为多个来源并行拆时无法保证全局唯一。归并阶段把单元写进 decisions.yaml：source 成为 sources 数组里的一条，category、language、rule_summary 同名对应。
 
 三个键在 decisions.schema.json 里没有同名字段：`positive` 和 `negative` 是拆规则时的自查工具，落到 decisions.yaml 时并入 rationale 或者写进 skill 正文当例子；`notes` 只出现在 sources.schema.json 里，这里借用同一个词记拆分时的判断，不进 decisions.yaml。`source` 是单数形式，对应 decisions.yaml 里 sources 数组的一条。其余的键都是 decisions.schema.json 里的字段名。
 

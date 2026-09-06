@@ -9,4 +9,4 @@ path: skills/maybe-humanizer
 merge_instance: merges/maybe-humanizer
 replacement: null
 archived_at: null
-reason: 上游已登记为 candidate，尚未做入围和拆规则，skills/maybe-humanizer/ 还没有内容。
+reason: 四来源试验版。已完成入围、拆规则、归并和写 skill，decisions.yaml 有 144 条规则、skills/maybe-humanizer/ 有正文和 references，但只覆盖 4 个上游，且 evals 尚未运行、decision_origin 全部仍是 model-proposed。全量合并（约 60 个候选来源）完成、evals 三类样本跑过且第二类零失败之后再转 active。
