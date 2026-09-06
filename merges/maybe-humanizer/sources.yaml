@@ -382,16 +382,20 @@ sources:
   branch: main
   paths:
   - SKILL.md
+  - references/phrases.md
+  - references/structures.md
+  - references/examples.md
   license: MIT
   license_status: known
   snapshot_policy: full-text
   status: active
   selection_status: representative
   lineage: hardikpandya-stop-slop
-  tracking_revision: 1
-  previous_paths: []
-  path_changed_at: null
-  baseline_reset_reason: null
+  tracking_revision: 2
+  previous_paths:
+  - SKILL.md
+  path_changed_at: '2026-09-06T14:50:24Z'
+  baseline_reset_reason: 拆规则时发现规则表在 references/ 里，SKILL.md 只有模式名，扩大追踪范围。
   status_changed_at: '2026-09-06T18:00:00Z'
   reason: 登记依据：调研 README 第二节英文通用。
   notes: 删除铺垫、机械对照、套话，五维自评；对副词、被动语态等禁令强，不宜无脑套所有文体。
@@ -402,16 +406,18 @@ sources:
   branch: main
   paths:
   - SKILL.md
+  - references/patterns.md
   license: MIT
   license_status: known
   snapshot_policy: full-text
   status: active
   selection_status: representative
   lineage: conorbronsdon-avoid-ai-writing
-  tracking_revision: 1
-  previous_paths: []
-  path_changed_at: null
-  baseline_reset_reason: null
+  tracking_revision: 2
+  previous_paths:
+  - SKILL.md
+  path_changed_at: '2026-09-06T14:50:24Z'
+  baseline_reset_reason: 拆规则时发现 P0/P1/P2 模式目录在 references/patterns.md，SKILL.md 只有模式名，扩大追踪范围。
   status_changed_at: '2026-09-06T18:00:00Z'
   reason: 登记依据：调研 README 第二节英文通用。
   notes: detect/rewrite/edit 三模式、分级问题、文风配置、可选迭代；对引文、表格、代码和文件范围有明确保护，README 认为值得重点试用。

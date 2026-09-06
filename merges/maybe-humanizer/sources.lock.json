@@ -1,6 +1,6 @@
 {
   "merge_id": "maybe-humanizer",
-  "generated_at": "2026-09-06T18:00:00Z",
+  "generated_at": "2026-09-06T14:51:10Z",
   "sources": {
     "upstream-petergyang-no-ai-slop": {
       "last_seen_commit": "000650b156983f5159695b441477f4e63b25dc85",
@@ -26,11 +26,19 @@
         {
           "observed_at": "2026-09-06T10:14:01Z",
           "value": 7315
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 7336
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 7337
         }
       ],
-      "forks": 546,
+      "forks": 548,
       "installs": null,
-      "last_checked_at": "2026-09-06T10:14:01Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -60,11 +68,19 @@
         {
           "observed_at": "2026-09-06T10:14:01Z",
           "value": 531
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 531
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 531
         }
       ],
       "forks": 41,
       "installs": null,
-      "last_checked_at": "2026-09-06T10:14:01Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -106,11 +122,19 @@
         {
           "observed_at": "2026-09-06T10:14:01Z",
           "value": 264
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 264
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 264
         }
       ],
       "forks": 28,
       "installs": null,
-      "last_checked_at": "2026-09-06T10:14:01Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -158,11 +182,19 @@
         {
           "observed_at": "2026-09-06T10:14:01Z",
           "value": 215
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 215
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 215
         }
       ],
       "forks": 32,
       "installs": null,
-      "last_checked_at": "2026-09-06T10:14:01Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -188,11 +220,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 1445
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1445
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1445
         }
       ],
       "forks": 72,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -218,11 +258,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 16760
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 16764
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 16764
         }
       ],
       "forks": 1117,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -248,11 +296,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 138
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 138
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 138
         }
       ],
       "forks": 15,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -308,11 +364,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 3472
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 3473
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 3473
         }
       ],
       "forks": 268,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -338,11 +402,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 37
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 37
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 37
         }
       ],
       "forks": 7,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -386,11 +458,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 28
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 28
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 28
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -416,11 +496,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 38
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 38
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 38
         }
       ],
       "forks": 1,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -482,11 +570,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 753
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 753
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 753
         }
       ],
       "forks": 84,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -524,11 +620,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 65
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 65
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 65
         }
       ],
       "forks": 3,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -596,11 +700,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 14
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 14
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 14
         }
       ],
       "forks": 1,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -644,11 +756,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 403
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 403
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 403
         }
       ],
       "forks": 63,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -674,11 +794,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 43894
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 43941
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 43945
         }
       ],
       "forks": 3670,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -688,27 +816,53 @@
       "last_seen_commit": "8da1f030185bdfe8471220585162991eaeb970e9",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "7432a1d9ebdd42b27666da8458af252edf549f723fb14bcd4791425103930310",
-      "normalized_sha256": "7432a1d9ebdd42b27666da8458af252edf549f723fb14bcd4791425103930310",
-      "size": 2629,
-      "line_count": 68,
+      "raw_sha256": "02801cd3ea205e3c5ad89cec25ee91dd47814dce2dd6d3fef1e2ca3de840e66a",
+      "normalized_sha256": "02801cd3ea205e3c5ad89cec25ee91dd47814dce2dd6d3fef1e2ca3de840e66a",
+      "size": 12485,
+      "line_count": 389,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-hardikpandya-stop-slop/SKILL.source.md",
           "raw_sha256": "7432a1d9ebdd42b27666da8458af252edf549f723fb14bcd4791425103930310",
           "normalized_sha256": "7432a1d9ebdd42b27666da8458af252edf549f723fb14bcd4791425103930310"
+        },
+        {
+          "original_path": "references/phrases.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-hardikpandya-stop-slop/references/phrases.md",
+          "raw_sha256": "4ca1b7e97123b5c67eff3dc97e5e977332e0b24021265c1553888a93ec33fa93",
+          "normalized_sha256": "4ca1b7e97123b5c67eff3dc97e5e977332e0b24021265c1553888a93ec33fa93"
+        },
+        {
+          "original_path": "references/structures.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-hardikpandya-stop-slop/references/structures.md",
+          "raw_sha256": "ffbf1316c7fb5aaf552de005609a64a9639b546ecd76bfb0e482864d5bbe6f58",
+          "normalized_sha256": "ffbf1316c7fb5aaf552de005609a64a9639b546ecd76bfb0e482864d5bbe6f58"
+        },
+        {
+          "original_path": "references/examples.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-hardikpandya-stop-slop/references/examples.md",
+          "raw_sha256": "49c592899eb4457f95d0767e15e3143569e2cef50f2927c3174e62432984cd3d",
+          "normalized_sha256": "49c592899eb4457f95d0767e15e3143569e2cef50f2927c3174e62432984cd3d"
         }
       ],
       "stars_history": [
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 16848
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 16852
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 16853
         }
       ],
       "forks": 1218,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -718,27 +872,41 @@
       "last_seen_commit": "801c2360f360e38d4316a271b953138e5e166d54",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b",
-      "normalized_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b",
-      "size": 21204,
-      "line_count": 224,
+      "raw_sha256": "11304fcd8ff574e04103c273b34ac25ec72b7ce7500d620092d2725d5cf63257",
+      "normalized_sha256": "08bfcbe255a90563120d548af0d254d3de3596152236ed185f021089b5ba7fa5",
+      "size": 116191,
+      "line_count": 912,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-conorbronsdon-avoid-ai-writing/SKILL.source.md",
           "raw_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b",
           "normalized_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b"
+        },
+        {
+          "original_path": "references/patterns.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-conorbronsdon-avoid-ai-writing/references/patterns.md",
+          "raw_sha256": "81bc6e7faec77d61f709f9c55f75c493b434eb18768416097824ad03f8aa66c2",
+          "normalized_sha256": "6cb8b9f5edd343e214d80825fff0b15708f118bb8c27df28de7eaf334581d31d"
         }
       ],
       "stars_history": [
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 4144
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 4144
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 4144
         }
       ],
       "forks": 349,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -764,11 +932,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 59
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 59
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 59
         }
       ],
       "forks": 9,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -800,11 +976,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 441
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 441
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 441
         }
       ],
       "forks": 45,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -842,11 +1026,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 124
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 124
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 124
         }
       ],
       "forks": 7,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -890,11 +1082,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 17
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 17
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 17
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -920,11 +1120,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 357
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 357
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 357
         }
       ],
       "forks": 11,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -950,11 +1158,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 63
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 63
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 63
         }
       ],
       "forks": 5,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -980,11 +1196,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 28
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 28
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 28
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1010,11 +1234,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 119
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 119
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 119
         }
       ],
       "forks": 19,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1040,11 +1272,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 1148
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1149
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1149
         }
       ],
       "forks": 73,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1070,11 +1310,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 25
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 25
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 25
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1100,18 +1348,26 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 33
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 33
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 33
         }
       ],
       "forks": 7,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-sickn33-agentic-awesome-skills": {
-      "last_seen_commit": "49cd7f82045ef1e0696148519e732975a8869bde",
+      "last_seen_commit": "f8d5d2c82b0cdb54a8a022bced09db53db57e94c",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "59e8bd4a2a1cb60f332251e0e33fb0b55f6cd1b5d09f83d3aef7a9329f10ecfd",
@@ -1130,11 +1386,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 46052
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 46059
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 46059
         }
       ],
-      "forks": 6731,
+      "forks": 6732,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1160,11 +1424,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 278
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 278
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 278
         }
       ],
       "forks": 40,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1196,11 +1468,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 733
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 733
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 733
         }
       ],
       "forks": 99,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1232,11 +1512,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 35
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 35
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 35
         }
       ],
       "forks": 1,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1262,11 +1550,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 91
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 91
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 91
         }
       ],
       "forks": 22,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1292,11 +1588,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1322,11 +1626,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 3
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 3
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 3
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1352,11 +1664,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1382,11 +1702,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1412,11 +1740,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1426,10 +1762,10 @@
       "last_seen_commit": "068c2f8b96fc0759b724ec0e5f29bb3c217cb87f",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "e466eefba765e9554be545e99387cdf99541cf0cd4e34fa2990644afc0e533ec",
-      "normalized_sha256": "07feb8c7691029d763aa97bd64eab32751f262f6528f046da6afe1d7061dbb06",
-      "size": 106127,
-      "line_count": 3418,
+      "raw_sha256": "0384e31c8107dd104ba1ff4f8f6d1f0af8b1da74a0c73e26e634346f8324cf4e",
+      "normalized_sha256": "82f05cd4030395fc97611fa9d6b6a7ee9aa01bb2e30627941620f45e9353529c",
+      "size": 89304,
+      "line_count": 2771,
       "files": [
         {
           "original_path": "skills/humanizer/SKILL.md",
@@ -1446,8 +1782,8 @@
         {
           "original_path": "skills/humanizer/rules/anti-aigc.md",
           "stored_path": null,
-          "raw_sha256": "0dbfe7a287375327e98bbd88ecd56e187b2e3c28487840be64bd36d7cc4d3950",
-          "normalized_sha256": "be1a2421cc89929c0a9a1451c0dca92b262232808e2880a1f731f1cdff98ea54"
+          "raw_sha256": "fe7ebc7019dd584fa57e721482017dfe530019b1e3c4b91ac66c27d761174ae0",
+          "normalized_sha256": "fcbdb731b13e025a12358d27b559c6df20cdfa97d0571fb34659e7f5f5353fd0"
         },
         {
           "original_path": "skills/humanizer/rules/detection-methods.md",
@@ -1478,11 +1814,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 12
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 12
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 12
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1508,11 +1852,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 9
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 9
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 9
         }
       ],
       "forks": 1,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1538,11 +1890,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1568,11 +1928,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 381
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 381
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 381
         }
       ],
       "forks": 25,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1598,11 +1966,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 273
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 273
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 273
         }
       ],
       "forks": 21,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1646,11 +2022,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 671
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 671
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 671
         }
       ],
       "forks": 34,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1676,11 +2060,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 18
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 18
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 18
         }
       ],
       "forks": 3,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1706,11 +2098,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 43
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 43
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 43
         }
       ],
       "forks": 6,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1748,11 +2148,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 482
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 482
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 483
         }
       ],
       "forks": 29,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1784,11 +2192,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 2
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 2
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 2
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1856,11 +2272,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1886,11 +2310,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1916,11 +2348,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1976,11 +2416,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 20
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 20
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 20
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2006,11 +2454,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2036,11 +2492,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2090,11 +2554,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 770
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 770
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 770
         }
       ],
       "forks": 46,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2138,11 +2610,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 6561
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 6564
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 6564
         }
       ],
-      "forks": 961,
+      "forks": 962,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2174,11 +2654,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 48
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 48
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 48
         }
       ],
       "forks": 6,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2204,11 +2692,19 @@
         {
           "observed_at": "2026-09-06T18:00:00Z",
           "value": 831
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 831
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 831
         }
       ],
       "forks": 55,
       "installs": null,
-      "last_checked_at": "2026-09-06T18:00:00Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,

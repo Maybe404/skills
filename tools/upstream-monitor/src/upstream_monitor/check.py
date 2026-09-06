@@ -186,12 +186,13 @@ def check_one_source(
     entry["line_count"] = sum(fr["line_count"] for fr in files_result)
     entry["files"] = new_files
 
-    if meta.license_spdx and source["license"] != "unknown" and meta.license_spdx != source["license"]:
+    # 只有 GitHub 报出一个不同的具体 SPDX 才算许可证变化。
+    # None（仓库没有 LICENSE）和 NOASSERTION（有文件但 GitHub 认不出格式）都不算：
+    # 登记时人已经读过 LICENSE 文件，GitHub 识别不出不代表内容变了。
+    unrecognized = meta.license_spdx in (None, "NOASSERTION")
+    if (not unrecognized) and source["license"] != "unknown" and meta.license_spdx != source["license"]:
         result["license_changed"] = True
         result["license_detail"] = f"sources.yaml 记 {source['license']!r}，GitHub 现报 {meta.license_spdx!r}"
-    elif meta.license_spdx is None and source["license"] != "unknown":
-        result["license_changed"] = True
-        result["license_detail"] = f"sources.yaml 记 {source['license']!r}，GitHub 现无法识别许可证"
 
     if result["license_changed"]:
         result["issue_kind"] = "license-changed"
