@@ -148,7 +148,7 @@
 | U-abh-006 | aboudjem-humanizer | ### Voice Profiles / warm | EN-S-001 | adopted-with-modification |
 | U-abh-007 | aboudjem-humanizer | ### Voice Profiles / blunt | EN-S-001 | adopted-with-modification |
 | U-abh-008 | aboudjem-humanizer | ## Quick reference / Flags / --score | ALL-M-005 | rejected |
-| U-abh-009 | aboudjem-humanizer | ## Step 1: Parse Arguments / --aggressive | ALL-PROC-027 | duplicate |
+| U-abh-009 | aboudjem-humanizer | ## Step 1: Parse Arguments / --aggressive | ALL-PROC-027 | rejected |
 | U-abh-010 | aboudjem-humanizer | ## Step 1: Parse Arguments / --purpose | ALL-G-002 | adopted-with-modification |
 | U-abh-011 | aboudjem-humanizer | ## Quick reference / Flags / --ignore-code | ALL-PROC-016 | adopted |
 | U-abh-012 | aboudjem-humanizer | ## Step 1: Parse Arguments / Auto-load brand context | ALL-PROC-025 | adopted-with-modification |
@@ -457,7 +457,7 @@
 | U-srh-098 | shuorenhua | 例如 `闭环反馈 / 闭环控制` 是反馈机制 | ZH-P-030 | adopted |
 | U-srh-099 | shuorenhua | 词本身正在被定义、讨论 | ALL-PROT-009 | adopted |
 | U-srh-100 | shuorenhua | - 承载关键事实的抽象句，即使它 | ALL-P-010 | adopted |
-| U-srh-101 | shuorenhua | 不要为了 | ALL-PROT-018 | adopted |
+| U-srh-101 | shuorenhua | 不要为了“像人”把文本改得更假 | ALL-PROT-018 | adopted |
 | U-srh-102 | shuorenhua | ## 6. Positive style targets | ALL-P-007 | adopted |
 | U-srh-103 | shuorenhua | ## 6. Positive style targets | ALL-P-012 | adopted |
 | U-srh-104 | shuorenhua | ## 6. Positive style targets | ALL-PROC-019 | adopted-with-modification |

@@ -2047,7 +2047,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "不要为了"
+  anchor: "不要为了“像人”把文本改得更假"
 notes: |
   intent: 这是 Core stance 第一段那句"不反技术、不反抽象、不反专业"的收尾重申，位置在保护清单末尾，等于给整节做了个总结：保护清单的目的不是保守，是不让"像人"这个目标反过来制造失真。
   existing: 疑似对应 ALL-PROT-018（自然不等于口语化）与 ALL-PROC-018（给本该平实的文字硬注入个性同样算 AI 味）。
