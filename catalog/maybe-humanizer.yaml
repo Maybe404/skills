@@ -9,4 +9,4 @@ path: skills/maybe-humanizer
 merge_instance: merges/maybe-humanizer
 replacement: null
 archived_at: null
-reason: 四来源试验版已合并（144 条规则，已人工确认）；约 60 个候选的全量合并完成后转 active。
+reason: 10 个来源合并完成，待独立验证后转 active。
