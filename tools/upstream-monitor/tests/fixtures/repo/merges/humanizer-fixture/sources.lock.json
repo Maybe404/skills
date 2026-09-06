@@ -1,0 +1,60 @@
+{
+  "merge_id": "humanizer-fixture",
+  "generated_at": "2026-01-01T00:00:00Z",
+  "sources": {
+    "upstream-fixture-source-a": {
+      "last_seen_commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "191c5cade9ed250e00d1e8f6146b142b9ca4cff47a6f62284e984d6da27fe4e4",
+      "normalized_sha256": "191c5cade9ed250e00d1e8f6146b142b9ca4cff47a6f62284e984d6da27fe4e4",
+      "size": 222,
+      "line_count": 11,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/humanizer-fixture/snapshots/upstream-fixture-source-a/SKILL.source.md",
+          "raw_sha256": "191c5cade9ed250e00d1e8f6146b142b9ca4cff47a6f62284e984d6da27fe4e4",
+          "normalized_sha256": "191c5cade9ed250e00d1e8f6146b142b9ca4cff47a6f62284e984d6da27fe4e4"
+        }
+      ],
+      "stars_history": [
+        { "observed_at": "2026-01-01T00:00:00Z", "value": 10 }
+      ],
+      "forks": 1,
+      "installs": null,
+      "last_checked_at": "2026-01-01T00:00:00Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-fixture-source-b": {
+      "last_seen_commit": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": null,
+      "normalized_sha256": null,
+      "size": null,
+      "line_count": null,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": null,
+          "raw_sha256": null,
+          "normalized_sha256": null
+        }
+      ],
+      "stars_history": [
+        { "observed_at": "2026-01-01T00:00:00Z", "value": 5 }
+      ],
+      "forks": 2,
+      "installs": null,
+      "last_checked_at": "2026-01-01T00:00:00Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    }
+  }
+}

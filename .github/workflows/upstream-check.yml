@@ -1,0 +1,102 @@
+name: upstream-check
+
+on:
+  schedule:
+    # 每周一 00:00 UTC。
+    - cron: "0 0 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装 upstream-monitor
+        run: pip install -e tools/upstream-monitor
+
+      - name: git 身份
+        run: |
+          git config user.name "upstream-monitor"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: 拉取上游状态，更新 lock
+        run: upstream-monitor check --json | tee check-result.json
+
+      - name: 元数据变化走每月一次的 metadata PR
+        # stars、last_checked_at 这类元数据变化不直接推 main，也不单独为每个
+        # 来源开 PR：按 docs/design.md 第 6 节，随内容 PR 或每月一次更新。
+        # 做法：同一个月内所有 check 产生的 lock 变化都落到 upstream-metadata/<年-月>
+        # 分支上，第一次开 PR，之后只追加提交。内容有变化的来源在下一步各开自己的 PR，
+        # 那些 PR 从 main 切出，pr 命令会自己写入该来源的 lock。
+        run: |
+          base_branch="$(git rev-parse --abbrev-ref HEAD)"
+          git add merges/*/sources.lock.json merges/*/sources.yaml
+          if git diff --cached --quiet; then
+            echo "lock 和 sources.yaml 无变化"
+            exit 0
+          fi
+          month="$(date -u +%Y-%m)"
+          branch="upstream-metadata/${month}"
+          git stash push -q --staged -m metadata
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            git fetch -q origin "$branch"
+            git checkout -q -B "$branch" "origin/$branch"
+          else
+            git checkout -q -b "$branch"
+          fi
+          git stash pop -q
+          git add merges/*/sources.lock.json merges/*/sources.yaml
+          git commit -q -m "chore(upstream): metadata update $(date -u +%Y-%m-%d)"
+          git push -q -u origin "$branch"
+          if ! gh pr list --head "$branch" --state open --json number --jq '.[0].number' | grep -q .; then
+            gh pr create --base "$base_branch" --head "$branch" \
+              --title "chore(upstream): metadata ${month}" \
+              --body "每周 check 写回的 stars、hash、检查时间等元数据。无内容变化的来源只在这里更新；内容变化的来源各有自己的 PR。"
+          fi
+          git checkout -q "$base_branch"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 对内容有变化的来源逐个开 PR
+        run: |
+          base_branch="$(git rev-parse --abbrev-ref HEAD)"
+          python3 - "$base_branch" <<'PYEOF'
+          import json
+          import subprocess
+          import sys
+
+          base_branch = sys.argv[1]
+
+          with open("check-result.json", encoding="utf-8") as f:
+              results = json.load(f)
+
+          for r in results:
+              if r.get("change") != "content-change":
+                  continue
+              merge_id = r["merge_id"]
+              source_id = r["source_id"]
+              print(f"::notice::{merge_id}/{source_id} 内容有变化，跑 pr")
+              subprocess.run(
+                  ["upstream-monitor", "pr", "--merge", merge_id, "--source", source_id],
+                  check=True,
+              )
+              # pr 命令会切到 upstream-sync/<date>-<source_id> 分支并推送；
+              # 切回主分支再处理下一个来源，保证每个 PR 都从同一个基线切出。
+              subprocess.run(["git", "checkout", base_branch], check=True)
+          PYEOF
+
+      - name: validate
+        run: upstream-monitor validate

@@ -1,0 +1,84 @@
+merge_id: humanizer-fixture
+rules:
+  - id: ALL-PROT-001
+    local:
+      skill: humanizer-fixture
+      path: skills/humanizer-fixture/references/protection.md
+      anchor: '### ALL-PROT-001 test rule'
+    category: protection
+    language: both
+    rule_summary: 不得编造原文没有的事实、数字或引语。
+    decision: adopted
+    decision_origin: human-approved
+    decision_revision: 1
+    decided_at: "2026-01-01T00:00:00Z"
+    evidence_count: 1
+    independent_sources: 1
+    sources:
+      - type: upstream
+        source_id: upstream-fixture-source-a
+        path: SKILL.md
+        commit: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        anchor: '## Anchor heading'
+    rationale: 夹具规则，来自 source-a 的保护类主张。
+    history:
+      - decision: adopted
+        at: "2026-01-01T00:00:00Z"
+        reason: 夹具基线。
+
+  - id: ALL-P-001
+    local:
+      skill: humanizer-fixture
+      path: skills/humanizer-fixture/references/patterns.md
+      anchor: '### ALL-P-001 test pattern'
+    category: pattern
+    language: both
+    rule_summary: 句长和段落结构要有变化，不重复同一种句式。
+    decision: adopted
+    decision_origin: human-approved
+    decision_revision: 1
+    decided_at: "2026-01-01T00:00:00Z"
+    evidence_count: 2
+    independent_sources: 2
+    sources:
+      - type: upstream
+        source_id: upstream-fixture-source-a
+        path: SKILL.md
+        commit: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        anchor: '## Anchor heading'
+      - type: upstream
+        source_id: upstream-fixture-source-b
+        path: SKILL.md
+        commit: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        anchor: '## Source B idea'
+    rationale: 两个独立来源方向一致，metadata-only 的 source-b 只贡献思路，不引用原文。
+    history:
+      - decision: adopted
+        at: "2026-01-01T00:00:00Z"
+        reason: 夹具基线。
+
+  - id: EN-S-001
+    local:
+      skill: humanizer-fixture
+      path: skills/humanizer-fixture/references/patterns.md
+      anchor: null
+    category: style-opinion
+    language: en
+    rule_summary: source-b 提出的一种句尾语气偏好，仅单一来源，不进默认规则。
+    decision: reference-only
+    decision_origin: human-approved
+    decision_revision: 1
+    decided_at: "2026-01-01T00:00:00Z"
+    evidence_count: 1
+    independent_sources: 1
+    sources:
+      - type: upstream
+        source_id: upstream-fixture-source-b
+        path: SKILL.md
+        commit: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        anchor: '## Source B tone preference'
+    rationale: 单一来源的强风格意见，按 criteria.md 第 4 条不进默认规则，记 reference-only。
+    history:
+      - decision: reference-only
+        at: "2026-01-01T00:00:00Z"
+        reason: 夹具基线。

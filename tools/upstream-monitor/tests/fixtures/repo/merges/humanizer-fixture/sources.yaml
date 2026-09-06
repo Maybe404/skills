@@ -1,0 +1,45 @@
+merge_id: humanizer-fixture
+target_skill: humanizer-fixture
+
+sources:
+  - id: upstream-fixture-source-a
+    source_type: github-skill
+    repository: fixture-owner/source-a
+    previous_repository: []
+    branch: main
+    paths:
+      - SKILL.md
+    license: MIT
+    license_status: known
+    snapshot_policy: full-text
+    status: active
+    selection_status: representative
+    lineage: source-a
+    tracking_revision: 1
+    previous_paths: []
+    path_changed_at: null
+    baseline_reset_reason: null
+    status_changed_at: "2026-01-01T00:00:00Z"
+    reason: pytest 夹具。
+    notes: null
+
+  - id: upstream-fixture-source-b
+    source_type: github-skill
+    repository: fixture-owner/source-b
+    previous_repository: []
+    branch: main
+    paths:
+      - SKILL.md
+    license: unknown
+    license_status: unknown
+    snapshot_policy: metadata-only
+    status: active
+    selection_status: representative
+    lineage: source-b
+    tracking_revision: 1
+    previous_paths: []
+    path_changed_at: null
+    baseline_reset_reason: null
+    status_changed_at: "2026-01-01T00:00:00Z"
+    reason: pytest 夹具，无许可证。
+    notes: null
