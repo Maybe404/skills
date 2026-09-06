@@ -10,7 +10,7 @@ def hero(t):
     c = THEMES[t]
     # source nodes on the left of the diagram area, converge into one box
     srcs = [(720, 60), (720, 110), (720, 160), (720, 210), (720, 260)]
-    labels = ["humanizer", "no-ai-slop", "qu-ai-wei", "stop-slop", "…"]
+    labels = ["no-ai-slop", "qu-ai-wei", "humanizer-skill", "writing-style", "…"]
     paths, dots, nodes = [], [], []
     for i, (x, y) in enumerate(srcs):
         d = f"M{x+8},{y} C{x+140},{y} {x+150},160 {x+290},160"
@@ -34,7 +34,7 @@ def hero(t):
     {"".join(nodes)}
     <rect x="1010" y="132" width="132" height="56" rx="10" fill="{c["soft"]}" stroke="{c["accent"]}" stroke-width="1.4"/>
     <text x="1076" y="156" text-anchor="middle" font-family="{MONO}" font-size="13" fill="{c["accent"]}">maybe-humanizer</text>
-    <text x="1076" y="175" text-anchor="middle" font-family="{FONT}" font-size="11" fill="{c["muted"]}">一份，带来源</text>
+    <text x="1076" y="175" text-anchor="middle" font-family="{FONT}" font-size="11" fill="{c["muted"]}">合并后的一份</text>
     {"".join(dots)}
   </g>
 </svg>
