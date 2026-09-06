@@ -43,7 +43,7 @@ metadata-only 来源不交给 subagent 抓全文，由你按 `license-policy.md`
 1. 按语义聚类。同一条规则的不同表述进一个簇，措辞差异不算不同规则。
 2. 每个簇计 evidence_count（簇内单元数）和 independent_sources（簇内单元去掉同 lineage 重复后的来源数）。
 3. 按 `criteria.md` 逐条裁决，得到 decision。
-4. 写 decisions.yaml。规则 id 一经分配不改；改结论时 decision_revision 加一、旧值追加进 history。decision_origin 一律先写 model-proposed。
+4. 写 decisions.yaml。规则 id 一经分配不改；改结论时 decision_revision 加一、旧值追加进 history；只追加证据、补 relations 或改 rationale 而不改结论的，revision 和 history 都不动，decision_origin 也保持原值。新条目的 decision_origin 一律先写 model-proposed。
 5. 互相矛盾的簇不合并，两条都记，取舍写进报告。
 6. 把规则之间的关系落进 relations，见下面"规则关系要落成 relations"。
 
