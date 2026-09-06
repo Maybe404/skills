@@ -50,7 +50,7 @@ rule_summary: 模式命中只是写作质量信号，不是"这篇是 AI 写的"
 positive: "这段命中了三处 P1 模式，可以据此改写；它不能证明这篇文章是谁写的。"
 negative: "这篇命中了七处 AI 模式，可以判定为 AI 代写，按学术不端处理。" 违反点：把模式命中直接转成了作者身份判定，并作为处分依据。
 path: SKILL.md
-anchor: `## What this skill is and isn't`
+anchor: `## What this skill is and isn't / Just don't make them the sole basis for a consequential decision`
 notes:
 - intent: 作者说明了理由并给了三份出处：Liang 等人（Stanford，*Patterns* 2023）发现商用 AI 检测器对非母语英文写作者的假阳性率高于 60%；Jabarian 与 Imas（BFI Working Paper 2025-116）发现开源检测器整体误判率高于 70%；arXiv:2506.07001（2025）发现对抗性改写能把各种方法的检测准确率降低约 88%。作者据此把这份 skill 定位成写作工具而不是判决工具，结尾写成 "signals, not proof. Worth acting on; not worth ruining someone's day over."。它防的是拿模式清单去给人定罪的输出。
 - existing: 疑似对应 ALL-PROT-012。
@@ -63,7 +63,7 @@ rule_summary: 评估一段文字时要把模式信号与语境放在一起看：
 positive: "这段命中了三条，但作者是非母语写作者、这是赶在截稿前写的技术文档，这三条正好是这类写作本来就会命中的，信号很弱。"
 negative: "这段命中了三条，所以它是 AI 写的。" 违反点：只看命中条数，没有把作者、体裁和其他证据放进判断。
 path: SKILL.md
-anchor: `## What this skill is and isn't`
+anchor: `## What this skill is and isn't / Pair the signal with context:`
 notes:
 - intent: 作者的依据写在同一段里——"humans on autopilot — especially writing under deadline pressure, in unfamiliar genres, or in a second language — produce the same shapes"。他要防的是把一个统计上更常见于 LLM 输出的形状当成充分条件；他给出的补救不是删规则，而是要求把语境作为第二个输入。
 - existing: 疑似对应 ALL-M-002（多种痕迹聚集才构成信号），但 ALL-M-002 说的是"痕迹要聚集"，本条说的是"要把作者和体裁当证据"，判据不同，是现有规则没有的那一半。
@@ -200,7 +200,7 @@ rule_summary: 用户要求迭代（"iterate"、"keep going until it's clean"、`
 positive: 用户说"跑到干净为止"，跑了两轮，第二轮没有新命中，停下。
 negative: 用户说"跑到干净为止"，一共跑了四轮。违反点：超过了 N 上限 2。
 path: SKILL.md
-anchor: `**Iterate to convergence (optional).**`
+anchor: `**Iterate to convergence (optional).** / Cap **N at 2**:`
 notes:
 - intent: 作者给了理由——"a rewrite plus one corrective pass clears the flagged patterns, and a third pass costs a full regeneration while rarely finding more"。他把上限定在 2 是一个成本判断：第三轮的代价是整篇重新生成，收益接近零。
 - existing: 疑似对应 ALL-PROC-019（最多三轮），且与之冲突：现有规则的上限是三轮，本条是两轮。
@@ -212,7 +212,7 @@ rule_summary: rewrite 模式内置的那一遍纠正性复扫本身就是第 2 �
 positive: 用户传 `--iterate 2`，实际就是默认的改写加内置复扫，不额外再跑。
 negative: 用户传 `--iterate 2`，助手在内置复扫之后又跑了两轮。违反点：把 `--iterate` 的计数叠在了内置复扫之上。
 path: SKILL.md
-anchor: `**Iterate to convergence (optional).**`
+anchor: `**Iterate to convergence (optional).** / that built-in pass *is* pass 2`
 notes:
 - intent: 上游把这句写成 "that built-in pass *is* pass 2, so `--iterate` does not stack on top of it"，是对上一条上限的补充说明，防的是一个具体的误算——两个机制各自计数导致实际跑了四轮。
 - existing: 现有规则里没有。ALL-PROC-019 只写了轮数上限，没有处理"内置复扫算不算一轮"。
@@ -225,7 +225,7 @@ rule_summary: 报告一共跑了几轮（例如 "converged in 2 passes"）。
 positive: 输出末尾写 "converged in 2 passes"。
 negative: 跑了两轮但输出里没有提轮数。违反点：缺少轮数说明。
 path: SKILL.md
-anchor: `**Iterate to convergence (optional).**`
+anchor: `**Iterate to convergence (optional).** / Report how many passes it took`
 notes:
 - intent: 上游未说明。推断：轮数是读者判断这份改写稿可信度的一个输入——跑满上限还没收敛和一轮就干净，是两种不同的结果。推断依据是这条与上限规则写在同一段，且用了 "Report" 这个面向输出的动词。
 - existing: 疑似对应 ALL-PROC-019（在改动说明里写清跑了几轮）。
@@ -251,7 +251,7 @@ rule_summary: 改写之前先留一份原文副本；每次改写之后，按原
 positive: 改写前存一份原文，改写后按原文的引号用法把改动过的段落规范化，再做第二遍复扫。
 negative: 改完直接做第二遍复扫并交付，引号风格在改写稿里变成了混用。违反点：没有在复扫前跑规范化，也没有留原文副本作为参照。
 path: SKILL.md
-anchor: `**Automatic marks pass (rewrite and edit).**`
+anchor: `**Automatic marks pass (rewrite and edit).** / Keep a copy of the original document before rewriting.`
 notes:
 - intent: 上游未直接说明。推断：改写会把弯引号和直引号混进同一篇（模型输出倾向弯引号，原文可能是直引号），这是一个纯机械的、改写必然引入的副作用，因此作者用一个机械步骤而不是一条写作规则来处理它。推断依据是这一步被写成跑脚本、且明确要以原文为参照而不是以某种"正确"风格为参照。
 - existing: 疑似对应 EN-P-037（引号排版跟随作者原稿）；EN-P-037 是一条模式规则，本条是把它落成一个固定的执行步骤，现有规则里没有这个步骤。
@@ -263,7 +263,7 @@ rule_summary: 送去做引号规范化的只能是你改动过的可编辑段落
 positive: 把改过的四个段落抄进一个临时文件，只对这个文件跑规范化。
 negative: 图省事把整篇文档交给规范化命令处理。违反点：整篇文档里含有引语和表格，规范化命令不识别归属和表格语义，会一并改掉。
 path: SKILL.md
-anchor: `**Automatic marks pass (rewrite and edit).**`
+anchor: `**Automatic marks pass (rewrite and edit).** / Copy only the editable paragraphs you changed into a scratch file`
 notes:
 - intent: 作者写了理由——"The command processes all prose it receives; it does not recognize attribution or table semantics."。这是保护条款在工具边界上的延伸：保护是靠"不把受保护内容交给工具"实现的，不是靠工具自己识别。
 - existing: 现有规则里没有。ALL-PROT-008 和 ALL-PROC-016 规定了受保护片段不改，但没有规定"不得把受保护片段送进任何批量处理工具"。
@@ -275,7 +275,7 @@ rule_summary: 双引号和单引号（撇号）两族各自独立推断风格：
 positive: 原文双引号 12 处直引号、2 处弯引号，撇号全是弯的，就把改写稿的双引号统一成直引号、撇号保持弯的。
 negative: 原文双引号多数是直的，助手把双引号和撇号一起统一成了弯的。违反点：把两族绑在一起处理，且撇号那一族按另一族的多数改了。
 path: SKILL.md
-anchor: `**Automatic marks pass (rewrite and edit).**`
+anchor: `**Automatic marks pass (rewrite and edit).** / Double quotes and single quotes/apostrophes are inferred independently`
 notes:
 - intent: 上游未说明理由，只给了机制。推断：这条防的是过度归一化——一篇稿子里双引号和撇号的来源常常不同（正文手打、引语粘贴），把两族绑在一起统一会改掉原文里真实存在的区分。推断依据是规则明确写了三种情形（多数、打平、无证据）各自的处理，说明作者在意的是"不要在没有依据时替作者做决定"。
 - existing: 疑似对应 EN-P-037，但 EN-P-037 只写了"跟随作者原稿"，没有双引号族与撇号族分开推断、打平取首现、无证据不动这三层判据。
@@ -287,7 +287,7 @@ rule_summary: 有明确的 house style 引号设定时，设定覆盖从原文�
 positive: 项目规定用直引号，就按直引号执行，不再看原文的多数。
 negative: 项目规定用直引号，助手仍按原文的弯引号多数把改写稿统一成弯引号。违反点：让推断结果压过了明确的 house style 设定。
 path: SKILL.md
-anchor: `**Automatic marks pass (rewrite and edit).**`
+anchor: ``**Automatic marks pass (rewrite and edit).** / An explicit house-style quote setting overrides inference with `--quotes straight` or `--quotes curly```
 notes:
 - intent: 上游未说明。推断：推断只在没有明确规定时才是最优解；一旦有规定，推断就是在猜一件已经有答案的事。推断依据是这条与 U-aaw-060 的优先级规则（mechanics 压过一切）方向一致。
 - existing: 疑似对应 ALL-PROC-025（用户或项目提供的词表优先于本 skill 的默认词表），本条是同一原则在标点上的体现。
@@ -299,7 +299,7 @@ rule_summary: 规范化命令跑不起来时，手工按同一套约定处理，
 positive: "规范化脚本没跑起来，引号已按原文的直引号用法手工统一，这一遍未经机械校验。"
 negative: 脚本跑不起来就跳过这一步，输出里不提。违反点：既没有手工执行，也没有说明这一遍没做。
 path: SKILL.md
-anchor: `**Automatic marks pass (rewrite and edit).**`
+anchor: `**Automatic marks pass (rewrite and edit).** / If the bundled command cannot run,`
 notes:
 - intent: 上游未说明。推断：作者不允许"工具不可用"成为跳过一个步骤的理由，同时要求把降级如实标出来——这样读者知道这份稿子的哪一部分是有机械保证的、哪一部分不是。推断依据是同样的"点名当前跑的是哪种模式"要求在 `--style` 一节又出现了一次（U-aaw-059）。
 - existing: 现有规则里没有这条降级与声明的组合。
@@ -311,7 +311,7 @@ rule_summary: detect 模式永远不跑引号规范化这一遍。
 positive: detect 模式只列命中，不动任何标点。
 negative: detect 模式下顺手把引号统一了。违反点：detect 不得改动文本，规范化是改动。
 path: SKILL.md
-anchor: `**Automatic marks pass (rewrite and edit).**`
+anchor: `**Automatic marks pass (rewrite and edit).** / Detect mode never runs this pass.`
 notes:
 - intent: 上游只写了 "Detect mode never runs this pass."。推断的理由：detect 的全部承诺就是不动文本，任何自动步骤都不能例外，哪怕它只改标点。推断依据是 detect 一节列出的适用场合里有"审的是不想被改动的文本"。
 - existing: 疑似对应 ALL-PROC-007（审稿模式不重写全文）。
@@ -775,7 +775,7 @@ rule_summary: `--style` 是在始终运行的去 AI 味处理之上再叠一层 
 positive: 传了 `--style` 之后，去 AI 味照常跑，house style 的语域要求叠在结果上。
 negative: 传了 `--style` 之后就只按 house style 誊清，不再查 AI 味。违反点：把 `--style` 当成了替代而不是叠加。
 path: SKILL.md
-anchor: `## House style (optional): `--style <config-or-guide>``
+anchor: ``## House style (optional): `--style <config-or-guide>```
 notes:
 - intent: 上游写了 "which always runs"。它防的是把一个可选层当成开关用——house style 是附加要求，不是另一种模式。
 - existing: 现有规则里没有 house style 这一层。
@@ -787,7 +787,7 @@ rule_summary: `--style` 优先接受配置文件：配置是 JSON，含 `registe
 positive: 传 `--style ./house.json`，按其中的 register 执行声口，按 mechanics 执行体例，可校验的那部分跑校验。
 negative: 把配置里 `emDash` 的设定当成硬性校验项，校验不通过就报错退出。违反点：`emDash` 在这份配置里只是建议项，不是硬校验项。
 path: SKILL.md
-anchor: `**Preferred: a config file.**`
+anchor: `**Preferred: a config file.** / A config is JSON:`
 notes:
 - intent: 上游未直接说明。推断：把配置字段分成"可机械校验"和"只能靠模型执行"两类，是为了让输出里的合规声明只覆盖真正被校验过的部分——这与 U-aaw-059 要求点名当前跑的是哪种模式、U-aaw-061 要求对指南不作合规声明是同一个原则。推断依据是三处都在处理"哪些保证是真的"。
 - existing: 现有规则里没有。ALL-PROC-025 规定了用户词表优先，但没有配置文件这一层结构。
@@ -799,7 +799,7 @@ rule_summary: 用了配置就在输出开头点名解析到的那份配置（例
 positive: 输出第一行写明用了哪份配置、可校验的体例已通过校验。
 negative: 直接给出誊清后的稿子，不说明用的是配置还是凭记忆套的指南。违反点：读者无法分辨这份输出的保证强度。
 path: SKILL.md
-anchor: `**Preferred: a config file.**`
+anchor: `**Preferred: a config file.** / Open the output by naming the resolved config`
 notes:
 - intent: 上游写了理由——"the way the fallback below names its guide, so which mode ran is never ambiguous"。作者要防的是两种保证强度被混为一谈：一份经过机械校验的输出和一份凭记忆套用的输出，看起来是一样的。
 - existing: 疑似对应 ALL-PROC-008（改动说明要写改了什么、为什么、保留了什么），但"声明本次执行的保证强度"这一层现有规则里没有。
@@ -811,7 +811,7 @@ rule_summary: `--style`、`--voice`、`--context` 三条轴冲突时按窄的赢
 positive: `--voice blunt` 配上一份要求温和的配置，结果保持 blunt；那份配置里 `emDash: deliberate` 仍然管破折号。
 negative: 配置里的 register 要求温和，就把 `--voice blunt` 覆盖掉了。违反点：register 的优先级低于 `--voice`，不能覆盖它。
 path: SKILL.md
-anchor: `**How `--style` composes.**`
+anchor: ``**How `--style` composes.**``
 notes:
 - intent: 上游写了原则——"the narrowest wins"，并解释 mechanics 压过一切是因为 "they're checkable"。可校验的规则优先级最高，这与他整份文件里"能验证的才算数"的立场一致。
 - existing: 疑似对应 ALL-PROC-023（规则打架时的裁决顺序），但 ALL-PROC-023 的五档顺序是事实、用户指定、作者声口、自然表达、原有格式，与本条的四轴不是同一套。
@@ -823,7 +823,7 @@ rule_summary: 只给了指南名字（`--style "APA"`、`"Chicago"`）而没有�
 positive: 输出第一行写 "Applying APA from general knowledge (not verified; no compliance claim)."，正文按记得的规则处理。
 negative: 直接说"已按 APA 规范排版"。违反点：作出了合规声明，且没有说明这是凭一般知识套用、可能是旧版。
 path: SKILL.md
-anchor: `**Fallback: a named guide from memory.**`
+anchor: `**Fallback: a named guide from memory.** / you may apply it from general knowledge as best-effort, not as a feature`
 notes:
 - intent: 上游写明了 "as best-effort, not as a feature"。它防的是把一个不可靠的能力当成产品特性卖——凭记忆套用指南的结果没有任何保证，用户必须知道这一点才能决定要不要用。
 - existing: 现有规则里没有。
@@ -835,7 +835,7 @@ rule_summary: 不得复述这些体例指南受版权保护的正文；付费墙
 positive: 按记得的 APA 规则处理格式，不引用指南的条文原文。
 negative: 把 APA 手册里的条文原样抄进输出。违反点：复述了受版权保护的指南正文。
 path: SKILL.md
-anchor: `**Fallback: a named guide from memory.**`
+anchor: ``**Fallback: a named guide from memory.** / Do **not** reproduce the guide's copyrighted text``
 notes:
 - intent: 上游写了 "Do **not** reproduce the guide's copyrighted text"，并单独强调付费墙指南永不随包分发。这是许可证与版权层面的自我约束，与本仓库 references/license-policy.md 关心的是同一类问题。
 - existing: 现有规则里没有。这是三个英文来源里唯一一条关于第三方版权内容的约束。
@@ -847,7 +847,7 @@ rule_summary: `--style <arg>` 的解析：一个路径、或一个能匹配 `exa
 positive: `--style ./house.json` 和 `--style technical`（匹配 `examples/technical.json`）都按配置走。
 negative: `--style technical` 匹配到了 `examples/technical.json`，助手却按"凭记忆套指南"处理。违反点：能匹配到配置文件时应当走配置分支。
 path: SKILL.md
-anchor: `**Resolving `--style <arg>`.**`
+anchor: ``**Resolving `--style <arg>`.** / A path, or a bare name matching `examples/<name>.json`, loads that config``
 notes:
 - intent: 上游未说明。推断：解析规则写死，是为了让 U-aaw-058 的"点名跑的是哪种模式"有一个确定的答案——如果解析本身有歧义，声明就不可靠。推断依据是这条紧接在两个分支的定义之后。
 - existing: 现有规则里没有。
@@ -859,7 +859,7 @@ rule_summary: 指南的体例规定与 AI 味目录冲突时，那一条体例�
 positive: 按 CMOS 保留单个有意为之的破折号，同时把同一段里成串出现的破折号标出来。
 negative: 因为用了 CMOS 就不再检查破折号。违反点：体例赢的只是那一条 mechanic，AI 习惯本身还是要标。
 path: SKILL.md
-anchor: `**Resolving `--style <arg>`.**`
+anchor: ``**Resolving `--style <arg>`.** / When a guide's mechanics conflict with the AI-ism catalog``
 notes:
 - intent: 上游把两件事分开了——体例管的是"这个标点该不该用"，AI 味目录管的是"这个标点是不是被机械地堆出来的"。它防的是用一条体例规定豁免掉整类检查。
 - existing: 疑似对应 ALL-PROC-025（用户词表优先并在改动说明里点出冲突），但"体例赢那一条、AI 习惯仍要标"这个双轨处理，现有规则里没有。
@@ -871,7 +871,7 @@ rule_summary: 不给一个体裁套用不是为它写的指南；没有传 `--st
 positive: 一篇技术博客不套学术论文的引用体例。
 negative: 用户只说"去掉 AI 味"，助手顺手按学术体例改了引用格式。违反点：没有传 `--style`，不该叠体例层，且套用的体例不是为这个体裁写的。
 path: SKILL.md
-anchor: `**Resolving `--style <arg>`.**`
+anchor: ``**Resolving `--style <arg>`.** / don't apply a guide to a genre it wasn't written for``
 notes:
 - intent: 上游写了 "don't apply a guide to a genre it wasn't written for"。它防的是体例层的越界：体例是为特定出版场景写的，套到别的体裁上会产生看起来正确、实际上不合适的结果。
 - existing: 疑似对应 ALL-G-002（体裁在语体之上叠加限制）。
@@ -922,7 +922,7 @@ rule_summary: 第 4 节必须重读第 2 节的改写稿，找出第一遍没清
 positive: 第 4 节写"第二遍复扫发现两处：一处 Furthermore、一处 serves as，已改，改正后的段落如下……"。
 negative: 第 4 节写"复查通过"，但没有说复查了什么、也没有说是不是有残留。违反点：既没有列出残留、也没有明确说改写稿是干净的。
 path: SKILL.md
-anchor: `**4. Second-pass audit**`
+anchor: `**4. Second-pass audit** / Re-read the rewritten version from section 2.`
 notes:
 - intent: 上游未直接说明理由，但它是全文出现三次的同一设计（edit 模式的重读、iterate 的收敛、这一节）。推断：作者的判断是一遍改写必然留下残留，尤其是改写本身引入的新痕迹（回收的过渡词），因此复扫不是可选项。推断依据是他在 `**Iterate to convergence**` 里写明这一遍"*is* pass 2"，即它被算作正式的一轮。
 - existing: 疑似对应 ALL-PROC-014 与 ALL-PROC-019。
@@ -934,7 +934,7 @@ rule_summary: 第二遍复扫改动了任何东西时，必须用明确的话说
 positive: 第 4 节结尾写 "use this version, not section 2"。
 negative: 第 4 节修了两处但没有说明哪一版是最终稿。违反点：没有指明交付版本，读者会抄第 2 节。
 path: SKILL.md
-anchor: `**4. Second-pass audit**`
+anchor: `**4. Second-pass audit** / When this pass changed anything, the corrected text here is the deliverable`
 notes:
 - intent: 上游把理由完整写了出来——"a reader skimming for the finished text will otherwise copy section 2 and ship the tells this pass just fixed"。这是一条关于人怎么读输出的规则，不是关于文字本身的规则：它防的是一个正确的复扫因为版面顺序而白做。
 - existing: 现有规则里没有。**这是一条别处没有的输出安全规则。**
@@ -1098,7 +1098,7 @@ rule_summary: 删除只做完一半的活：一份清掉了每一处命中、但
 positive: 清完命中之后，检查这篇随笔有没有作者在场，并在原文本来就有反应的地方保住那个反应。
 negative: 清完所有命中就交付，改写稿读起来完全无菌。违反点："清零命中"被当成了完成标准。
 path: SKILL.md
-anchor: `Removal is half the job.`
+anchor: `Removal is half the job. / When the genre carries a voice (essays, posts, personal writing), put voice back on purpose`
 notes:
 - intent: 上游写明了出处——"Adapted from `blader/humanizer` ('Personality and soul')"，即这条是从本轮另一个来源 blader 借来的。它防的是一种可测量指标带来的失真：命中数可以归零，而归零之后的文字仍然一眼是机器写的。
 - existing: 疑似对应 ALL-PROC-018 的后半（"给本该平实的文字硬注入个性同样算 AI 味"）与 blader 的 "Add personality only when it fits"。
@@ -1111,7 +1111,7 @@ rule_summary: 百科、技术、法律类文本里，中性平实就是正确的
 positive: 一份 API 文档保持中性，不加第一人称和作者反应。
 negative: 给一份 API 参考文档加上"我个人特别喜欢这个接口的设计"。违反点：给不该有声口的体裁注入了个性。
 path: SKILL.md
-anchor: `Removal is half the job.`
+anchor: `Removal is half the job. / For encyclopedic, technical, or legal text`
 notes:
 - intent: 上游把这一句紧接在"要把声口放回去"之后，作用是划出那条指令的适用边界。它防的是把 U-aaw-082 当成通用指令执行。
 - existing: 疑似对应 ALL-G-002 与 ALL-PROC-018。
@@ -3058,7 +3058,7 @@ SKILL.md 里没有未归属的段落。
 
 4. **U-aaw-045 与 U-aaw-053 的 anchor 分处两个文件。**上游把这两条规则（3 个以上不同短语聚集、同一短语 2 次以上）写在 `references/patterns.md` 的同一行里，行首文本分不开；SKILL.md 的 P1 和 P2 两节是唯一分别称呼这两条规则的位置。我让 U-aaw-045 用 patterns.md 的小节标题（标题里的 "in clusters" 正是这一条），U-aaw-053 保留 SKILL.md 侧的 anchor。这是本清单里唯一一处同一组规则的 anchor 跨两个文件，归并时如果觉得不妥，把 U-aaw-053 也改成小节标题即可，代价是两条指向同一处。
 
-5. **首轮遗留的 anchor 共位问题本轮没有动。**核对脚本发现 9 组首轮单元的 anchor 指向同一行且没有行内区分：U-aaw-001/002（`## What this skill is and isn't`）、013/014/015（`**Iterate to convergence (optional).**`）、017 至 022（`**Automatic marks pass (rewrite and edit).**`）、057/058、060/061、062/063/064、068/069、082/083。按 extraction.md，共用小节的单元 anchor 要加各自那一行的行首原文。它们全部指向 SKILL.md，不在本轮补拆范围内，我只做记录没有改。U-aaw-006 至 012 也共位（SKILL.md 第 44 行是一整段），但它们各自带了引号里的上游原文，读者能分辨是哪一条。本轮改过一处：U-aaw-071 的 anchor 原为 `**1. Issues found**`，在 SKILL.md 里匹配 rewrite 和 detect 两处，已加上所属小节标题。另有五处首轮 anchor（U-aaw-056、059、062、063、064）含字面反引号却只用单反引号包住，与本清单第 1 节声明的写法（含反引号的 anchor 用双反引号包住）不一致，渲染时会断开；它们仍能定位，本轮没有改。
+5. **首轮遗留的 anchor 共位问题已在英文批二归并时修好。**核对脚本原先发现 9 组首轮单元的 anchor 指向同一行且没有行内区分：U-aaw-001/002（`## What this skill is and isn't`）、013/014/015（`**Iterate to convergence (optional).**`）、017 至 022（`**Automatic marks pass (rewrite and edit).**`）、057/058（`**Preferred: a config file.**`）、060/061（`**Fallback: a named guide from memory.**`）、062/063/064（``**Resolving `--style <arg>`.**``）、068/069（`**4. Second-pass audit**`）、082/083（`Removal is half the job.`）。按 extraction.md，共用一行的单元 anchor 要加各自的行内原文作区分；这 9 组的 24 个 anchor 已按上游原文逐条补上区分段（上游那几处是整段一行，行首文本分不开，因此取该行内的一段上游原话，写法与 U-aaw-100、U-aaw-103 一致）。同一轮里另修了 5 处含字面反引号却只用单反引号包住的 anchor（U-aaw-056、059、062、063、064），改成双反引号包住，反引号是上游原文的一部分，没有加转义。改完用 `upstream_monitor.anchors.locate` 对两份快照逐条跑过：204 条 anchor 全部命中、0 条 MISS，且 204 条 anchor 两两互不相同。U-aaw-006 至 012 也共位（SKILL.md 第 44 行是一整段），但它们各自带了引号里的上游原文，本来就能分辨，没有改。首轮改过的一处（U-aaw-071 的 anchor 原为 `**1. Issues found**`，在 SKILL.md 里匹配 rewrite 和 detect 两处，已加上所属小节标题）保持不变。
 
 6. **process 与 pattern 的比例变了，可能需要重判。**首轮 process 33 条、pattern 34 条；补拆之后 pattern 111 条、process 40 条。新增的 109 条绝大多数是模式目录，因此比例向 pattern 倾斜是预期内的。但有一组新增单元（U-aaw-190 至 U-aaw-204，语境档位与声口档位）我记成了 process / genre / style-opinion，它们其实是这个 skill 的配置层，与本仓库的 skill 未必相关；按 criteria.md 第 3 条第 1 项（本仓库的 skill 会用到这个体裁吗）逐条判断适用性，我没有替归并做这个判断。
 

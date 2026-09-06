@@ -1,6 +1,6 @@
 # 单元到规则的映射（覆盖检查）
 
-600 条单元，每条恰好归入一条规则，无遗漏、无重复引用。其中前 254 条来自首次合并，中间 234 条来自中文批（op7418-humanizer-zh、ai-zixun-humanizer-zh、shuorenhua），末尾 112 条来自英文批一（blader-humanizer 77 条、hardikpandya-stop-slop 35 条）。
+804 条单元，每条恰好归入一条规则，无遗漏、无重复引用。其中前 254 条来自首次合并，中间 234 条来自中文批（op7418-humanizer-zh、ai-zixun-humanizer-zh、shuorenhua），接着 112 条来自英文批一（blader-humanizer 77 条、hardikpandya-stop-slop 35 条），末尾 204 条来自英文批二（conorbronsdon-avoid-ai-writing）。
 
 | 单元 id | 来源 | 上游锚点 | 规则 id | decision |
 |---|---|---|---|---|
@@ -142,11 +142,11 @@
 | U-wss-016 | writing-style-skill | observe.py / show_stats | ALL-M-016 | rejected |
 | U-abh-001 | aboudjem-humanizer | ## Quick reference / Modes | ALL-PROC-007 | adopted-with-modification |
 | U-abh-002 | aboudjem-humanizer | ## Step 1: Parse Arguments / --voice | ALL-PROC-031 | duplicate |
-| U-abh-003 | aboudjem-humanizer | ### Voice Profiles / casual | EN-S-001 | reference-only |
-| U-abh-004 | aboudjem-humanizer | ### Voice Profiles / professional | EN-S-001 | reference-only |
-| U-abh-005 | aboudjem-humanizer | ### Voice Profiles / technical | EN-S-001 | reference-only |
-| U-abh-006 | aboudjem-humanizer | ### Voice Profiles / warm | EN-S-001 | reference-only |
-| U-abh-007 | aboudjem-humanizer | ### Voice Profiles / blunt | EN-S-001 | reference-only |
+| U-abh-003 | aboudjem-humanizer | ### Voice Profiles / casual | EN-S-001 | adopted-with-modification |
+| U-abh-004 | aboudjem-humanizer | ### Voice Profiles / professional | EN-S-001 | adopted-with-modification |
+| U-abh-005 | aboudjem-humanizer | ### Voice Profiles / technical | EN-S-001 | adopted-with-modification |
+| U-abh-006 | aboudjem-humanizer | ### Voice Profiles / warm | EN-S-001 | adopted-with-modification |
+| U-abh-007 | aboudjem-humanizer | ### Voice Profiles / blunt | EN-S-001 | adopted-with-modification |
 | U-abh-008 | aboudjem-humanizer | ## Quick reference / Flags / --score | ALL-M-005 | rejected |
 | U-abh-009 | aboudjem-humanizer | ## Step 1: Parse Arguments / --aggressive | ALL-PROC-027 | duplicate |
 | U-abh-010 | aboudjem-humanizer | ## Step 1: Parse Arguments / --purpose | ALL-G-002 | adopted-with-modification |
@@ -604,3 +604,207 @@
 | U-ssl-033 | hardikpandya-stop-slop | ## Sentence Starters to Avoid / \| Sentences starting with "Look," \| Remove \| | EN-P-007 | adopted |
 | U-ssl-034 | hardikpandya-stop-slop | ## Rhythm Patterns / \| Questions answered immediately \| Let questions breathe or cut them \| | EN-P-009 | adopted |
 | U-ssl-035 | hardikpandya-stop-slop | ## Rhythm Patterns / \| "Not always. Not perfectly." \| Hedging disguised as reassurance \| | EN-P-055 | adopted-with-modification |
+| U-aaw-001 | conorbronsdon-avoid-ai-writing | ## What this skill is and isn't / Just don't make them the sole basis for a consequential decision | ALL-PROT-012 | adopted |
+| U-aaw-002 | conorbronsdon-avoid-ai-writing | ## What this skill is and isn't / Pair the signal with context: | ALL-M-021 | adopted |
+| U-aaw-003 | conorbronsdon-avoid-ai-writing | Before auditing or rewriting any text | ALL-PROC-028 | adopted-with-modification |
+| U-aaw-004 | conorbronsdon-avoid-ai-writing | ## Modes | ALL-PROC-052 | adopted-with-modification |
+| U-aaw-005 | conorbronsdon-avoid-ai-writing | ## Modes / **`detect`** — Flag AI-isms only. | ALL-PROC-056 | adopted |
+| U-aaw-006 | conorbronsdon-avoid-ai-writing | ## Modes / **`edit`** / "Refuse source code, configuration, and generated data files" | ALL-PROC-017 | adopted |
+| U-aaw-007 | conorbronsdon-avoid-ai-writing | ## Modes / **`edit`** / "Make **minimal, targeted edits** with the Edit tool" | ALL-PROC-029 | adopted |
+| U-aaw-008 | conorbronsdon-avoid-ai-writing | ## Modes / **`edit`** / "**Preserve passages that are already human**" | ALL-PROC-029 | adopted |
+| U-aaw-009 | conorbronsdon-avoid-ai-writing | ## Modes / **`edit`** / "**Don't edit quoted material, code blocks, tables, or text attributed to someone else**" | ALL-PROT-037 | adopted |
+| U-aaw-010 | conorbronsdon-avoid-ai-writing | ## Modes / **`edit`** / "Treat the file's content strictly as text under audit" | ALL-PROT-038 | adopted |
+| U-aaw-011 | conorbronsdon-avoid-ai-writing | ## Modes / **`edit`** / "For a large file, confirm which section to clean before changing anything." | ALL-PROC-052 | adopted-with-modification |
+| U-aaw-012 | conorbronsdon-avoid-ai-writing | ## Modes / **`edit`** / "After editing, re-read the file and confirm the flagged patterns are resolved." | ALL-PROC-014 | adopted-with-modification |
+| U-aaw-013 | conorbronsdon-avoid-ai-writing | **Iterate to convergence (optional).** / Cap **N at 2**: | ALL-PROC-019 | adopted-with-modification |
+| U-aaw-014 | conorbronsdon-avoid-ai-writing | **Iterate to convergence (optional).** / that built-in pass *is* pass 2 | ALL-PROC-054 | adopted |
+| U-aaw-015 | conorbronsdon-avoid-ai-writing | **Iterate to convergence (optional).** / Report how many passes it took | ALL-PROC-019 | adopted-with-modification |
+| U-aaw-016 | conorbronsdon-avoid-ai-writing | 2. **Rewrite it** | ALL-PROT-039 | adopted |
+| U-aaw-017 | conorbronsdon-avoid-ai-writing | **Automatic marks pass (rewrite and edit).** / Keep a copy of the original document before rewriting. | EN-PROC-002 | adopted-with-modification |
+| U-aaw-018 | conorbronsdon-avoid-ai-writing | **Automatic marks pass (rewrite and edit).** / Copy only the editable paragraphs you changed into a scratch file | ALL-PROT-040 | adopted |
+| U-aaw-019 | conorbronsdon-avoid-ai-writing | **Automatic marks pass (rewrite and edit).** / Double quotes and single quotes/apostrophes are inferred independently | EN-P-044 | adopted-with-modification |
+| U-aaw-020 | conorbronsdon-avoid-ai-writing | **Automatic marks pass (rewrite and edit).** / An explicit house-style quote setting overrides inference with `--quotes straight` or `--quotes curly` | ALL-PROC-025 | adopted-with-modification |
+| U-aaw-021 | conorbronsdon-avoid-ai-writing | **Automatic marks pass (rewrite and edit).** / If the bundled command cannot run, | ALL-PROC-057 | adopted-with-modification |
+| U-aaw-022 | conorbronsdon-avoid-ai-writing | **Automatic marks pass (rewrite and edit).** / Detect mode never runs this pass. | ALL-PROC-007 | adopted-with-modification |
+| U-aaw-023 | conorbronsdon-avoid-ai-writing | ## Severity tiers | ALL-M-022 | adopted-with-modification |
+| U-aaw-024 | conorbronsdon-avoid-ai-writing | ### Cutoff disclaimers | EN-P-028 | adopted |
+| U-aaw-025 | conorbronsdon-avoid-ai-writing | ### Chatbot artifacts | EN-P-028 | adopted |
+| U-aaw-026 | conorbronsdon-avoid-ai-writing | ### Vague attributions | EN-P-017 | adopted |
+| U-aaw-027 | conorbronsdon-avoid-ai-writing | ### Significance inflation | EN-P-014 | adopted |
+| U-aaw-028 | conorbronsdon-avoid-ai-writing | ### Hashtag stuffing | EN-P-056 | adopted-with-modification |
+| U-aaw-029 | conorbronsdon-avoid-ai-writing | ### Words and phrases to replace / Words are organized into three tiers based on how reliably | EN-M-001 | adopted-with-modification |
+| U-aaw-030 | conorbronsdon-avoid-ai-writing | ### Template phrases (avoid) | ALL-M-001 | adopted |
+| U-aaw-031 | conorbronsdon-avoid-ai-writing | ### "Let's" constructions | EN-P-007 | adopted |
+| U-aaw-032 | conorbronsdon-avoid-ai-writing | ### Synonym cycling | EN-P-019 | adopted |
+| U-aaw-033 | conorbronsdon-avoid-ai-writing | ### Structural issues / - **Formulaic openings**: | EN-P-007 | adopted |
+| U-aaw-034 | conorbronsdon-avoid-ai-writing | ### Formatting / - **Bold overuse**: | ALL-P-002 | adopted |
+| U-aaw-035 | conorbronsdon-avoid-ai-writing | ### Formatting / - **Em dashes (— and --)**: | EN-P-026 | adopted-with-modification |
+| U-aaw-036 | conorbronsdon-avoid-ai-writing | ### Generic future-narrative closers | EN-P-023 | adopted |
+| U-aaw-037 | conorbronsdon-avoid-ai-writing | ### Social endorsement closers | EN-P-057 | adopted |
+| U-aaw-038 | conorbronsdon-avoid-ai-writing | ### Lingering-attention claims | EN-P-058 | adopted |
+| U-aaw-039 | conorbronsdon-avoid-ai-writing | ### Narrated candor | EN-P-059 | adopted |
+| U-aaw-040 | conorbronsdon-avoid-ai-writing | ### Hedge-stacked predictions | EN-P-029 | adopted |
+| U-aaw-041 | conorbronsdon-avoid-ai-writing | ### "Real/actual" adjective inflation | EN-P-060 | adopted |
+| U-aaw-042 | conorbronsdon-avoid-ai-writing | ### Moral-adjective category errors / - AI glues moral or character adjectives | EN-P-061 | adopted |
+| U-aaw-043 | conorbronsdon-avoid-ai-writing | ### Invented contrast-pair mirroring | EN-P-062 | adopted |
+| U-aaw-044 | conorbronsdon-avoid-ai-writing | ### Bullet lists of bare noun phrases | ALL-P-013 | adopted-with-modification |
+| U-aaw-045 | conorbronsdon-avoid-ai-writing | #### Tier 3 phrases — Flag at density or in clusters | EN-P-063 | adopted-with-modification |
+| U-aaw-046 | conorbronsdon-avoid-ai-writing | ### Generic conclusions | EN-P-023 | adopted |
+| U-aaw-047 | conorbronsdon-avoid-ai-writing | ### Manufactured punchlines and staccato drama / - **Repeated setup/reversal punchlines (P2, judgment-only).** | EN-P-064 | adopted-with-modification |
+| U-aaw-048 | conorbronsdon-avoid-ai-writing | ### P2 — Stylistic polish (fix when time allows) / - Judgment-only clarity checks | ALL-M-023 | adopted |
+| U-aaw-049 | conorbronsdon-avoid-ai-writing | ### Sentence structure / - **Compulsive rule of three**: | ALL-P-005 | adopted |
+| U-aaw-050 | conorbronsdon-avoid-ai-writing | ### Structural issues / - **Uniform paragraph length**: | ALL-P-001 | adopted-with-modification |
+| U-aaw-051 | conorbronsdon-avoid-ai-writing | ### Copula avoidance | EN-P-015 | adopted |
+| U-aaw-052 | conorbronsdon-avoid-ai-writing | ### Transition phrases to remove or rewrite | EN-P-004 | adopted |
+| U-aaw-053 | conorbronsdon-avoid-ai-writing | ### P2 — Stylistic polish (fix when time allows) / - Tier 3 phrase repetition | EN-P-063 | adopted-with-modification |
+| U-aaw-054 | conorbronsdon-avoid-ai-writing | ### Unnecessary hyphenation | EN-P-036 | adopted |
+| U-aaw-055 | conorbronsdon-avoid-ai-writing | ## Self-reference escape hatch | ALL-PROT-041 | adopted |
+| U-aaw-056 | conorbronsdon-avoid-ai-writing | ## House style (optional): `--style <config-or-guide>` | ALL-PROC-025 | adopted-with-modification |
+| U-aaw-057 | conorbronsdon-avoid-ai-writing | **Preferred: a config file.** / A config is JSON: | ALL-PROC-057 | adopted-with-modification |
+| U-aaw-058 | conorbronsdon-avoid-ai-writing | **Preferred: a config file.** / Open the output by naming the resolved config | ALL-PROC-057 | adopted-with-modification |
+| U-aaw-059 | conorbronsdon-avoid-ai-writing | **How `--style` composes.** | ALL-PROC-058 | adopted-with-modification |
+| U-aaw-060 | conorbronsdon-avoid-ai-writing | **Fallback: a named guide from memory.** / you may apply it from general knowledge as best-effort, not as a feature | ALL-PROC-057 | adopted-with-modification |
+| U-aaw-061 | conorbronsdon-avoid-ai-writing | **Fallback: a named guide from memory.** / Do **not** reproduce the guide's copyrighted text | ALL-PROT-042 | adopted |
+| U-aaw-062 | conorbronsdon-avoid-ai-writing | **Resolving `--style <arg>`.** / A path, or a bare name matching `examples/<name>.json`, loads that config | ALL-PROC-059 | rejected |
+| U-aaw-063 | conorbronsdon-avoid-ai-writing | **Resolving `--style <arg>`.** / When a guide's mechanics conflict with the AI-ism catalog | ALL-PROC-025 | adopted-with-modification |
+| U-aaw-064 | conorbronsdon-avoid-ai-writing | **Resolving `--style <arg>`.** / don't apply a guide to a genre it wasn't written for | ALL-G-002 | adopted-with-modification |
+| U-aaw-065 | conorbronsdon-avoid-ai-writing | ### Rewrite mode (default) | ALL-PROC-007 | adopted-with-modification |
+| U-aaw-066 | conorbronsdon-avoid-ai-writing | **2. Rewritten version** | ALL-PROT-002 | adopted |
+| U-aaw-067 | conorbronsdon-avoid-ai-writing | **3. What changed** | ALL-PROC-008 | adopted-with-modification |
+| U-aaw-068 | conorbronsdon-avoid-ai-writing | **4. Second-pass audit** / Re-read the rewritten version from section 2. | ALL-PROC-014 | adopted-with-modification |
+| U-aaw-069 | conorbronsdon-avoid-ai-writing | **4. Second-pass audit** / When this pass changed anything, the corrected text here is the deliverable | ALL-PROC-060 | adopted |
+| U-aaw-070 | conorbronsdon-avoid-ai-writing | ### Detect mode | ALL-PROC-024 | adopted-with-modification |
+| U-aaw-071 | conorbronsdon-avoid-ai-writing | ### Detect mode / **1. Issues found** | ALL-M-023 | adopted |
+| U-aaw-072 | conorbronsdon-avoid-ai-writing | **2. Assessment** | ALL-PROC-024 | adopted-with-modification |
+| U-aaw-073 | conorbronsdon-avoid-ai-writing | ### Edit mode | ALL-PROC-052 | adopted-with-modification |
+| U-aaw-074 | conorbronsdon-avoid-ai-writing | **2. Verification** | ALL-PROC-052 | adopted-with-modification |
+| U-aaw-075 | conorbronsdon-avoid-ai-writing | **Mechanical check (optional, recommended for edit mode).** | ALL-M-025 | adopted-with-modification |
+| U-aaw-076 | conorbronsdon-avoid-ai-writing | ## Tone calibration | EN-P-022 | adopted |
+| U-aaw-077 | conorbronsdon-avoid-ai-writing | ## Tone calibration / 1. **Vary sentence length** | ALL-P-001 | adopted-with-modification |
+| U-aaw-078 | conorbronsdon-avoid-ai-writing | ## Tone calibration / 2. **Be concrete** | ALL-P-007 | adopted |
+| U-aaw-079 | conorbronsdon-avoid-ai-writing | ## Tone calibration / 3. **Have a voice** | EN-S-002 | reference-only |
+| U-aaw-080 | conorbronsdon-avoid-ai-writing | ## Tone calibration / 4. **Cut the neutrality** | ALL-S-002 | reference-only |
+| U-aaw-081 | conorbronsdon-avoid-ai-writing | ## Tone calibration / 5. **Earn your emphasis** | EN-P-022 | adopted |
+| U-aaw-082 | conorbronsdon-avoid-ai-writing | Removal is half the job. / When the genre carries a voice (essays, posts, personal writing), put voice back on purpose | ALL-PROC-018 | adopted |
+| U-aaw-083 | conorbronsdon-avoid-ai-writing | Removal is half the job. / For encyclopedic, technical, or legal text | ALL-G-006 | adopted-with-modification |
+| U-aaw-084 | conorbronsdon-avoid-ai-writing | If the original writing is already strong | ALL-PROC-029 | adopted |
+| U-aaw-085 | conorbronsdon-avoid-ai-writing | The replacement table provides defaults, not mandates. | ALL-PROC-056 | adopted |
+| U-aaw-086 | conorbronsdon-avoid-ai-writing | ### Never inject these | ALL-PROT-018 | adopted |
+| U-aaw-087 | conorbronsdon-avoid-ai-writing | - **Fake first person.** | ALL-PROT-018 | adopted |
+| U-aaw-088 | conorbronsdon-avoid-ai-writing | - **Manufactured stakes.** | EN-PROT-001 | adopted |
+| U-aaw-089 | conorbronsdon-avoid-ai-writing | - **Forced contrarianism.** | ALL-PROT-001 | adopted |
+| U-aaw-090 | conorbronsdon-avoid-ai-writing | - **Performed candor.** | EN-PROT-001 | adopted |
+| U-aaw-091 | conorbronsdon-avoid-ai-writing | - **Em-dash theatrics.** | EN-PROT-001 | adopted |
+| U-aaw-092 | conorbronsdon-avoid-ai-writing | - **Staccato conversion.** | EN-PROT-001 | adopted |
+| U-aaw-093 | conorbronsdon-avoid-ai-writing | - **Invented specifics.** | ALL-PROT-001 | adopted |
+| U-aaw-094 | conorbronsdon-avoid-ai-writing | **The test.** | ALL-PROT-019 | adopted-with-modification |
+| U-aaw-095 | conorbronsdon-avoid-ai-writing | **Why it belongs here rather than in the pattern catalog.** | ALL-PROT-043 | adopted |
+| U-aaw-096 | conorbronsdon-avoid-ai-writing | ### Formatting / - **Emoji in headers**: | ALL-P-002 | adopted |
+| U-aaw-097 | conorbronsdon-avoid-ai-writing | ### Formatting / - **Excessive bullet lists**: | ALL-P-002 | adopted |
+| U-aaw-098 | conorbronsdon-avoid-ai-writing | ### Formatting / - **Curly quotation marks (“ ” ‘ ’) and apostrophes**: | ALL-M-002 | adopted |
+| U-aaw-099 | conorbronsdon-avoid-ai-writing | ### Formatting / - **Immaculate typography in casual registers**: | ALL-M-002 | adopted |
+| U-aaw-100 | conorbronsdon-avoid-ai-writing | ### Formatting / Inverse case worth flagging the other direction: | ALL-PROT-017 | adopted |
+| U-aaw-101 | conorbronsdon-avoid-ai-writing | ### Sentence structure / - **"It's not X — it's Y" / "This isn't about X, it's about Y"**: | EN-P-006 | adopted |
+| U-aaw-102 | conorbronsdon-avoid-ai-writing | ### Sentence structure / - **Hollow intensifiers**: | EN-P-003 | adopted |
+| U-aaw-103 | conorbronsdon-avoid-ai-writing | ### Sentence structure / The default fix for `actually` is deletion | EN-P-003 | adopted |
+| U-aaw-104 | conorbronsdon-avoid-ai-writing | ### Sentence structure / - **Vague endorsement ("worth [verb]ing")**: | EN-P-022 | adopted |
+| U-aaw-105 | conorbronsdon-avoid-ai-writing | ### Sentence structure / - **Hedging**: | EN-P-065 | rejected |
+| U-aaw-106 | conorbronsdon-avoid-ai-writing | ### Sentence structure / - **Missing bridge sentences**: | ALL-P-008 | adopted |
+| U-aaw-107 | conorbronsdon-avoid-ai-writing | ### Words and phrases to replace / **Match inflected forms.** | ALL-PROC-039 | adopted-with-modification |
+| U-aaw-108 | conorbronsdon-avoid-ai-writing | #### Tier 1 — Always replace / **1B — Clarity edits.** | ALL-M-023 | adopted |
+| U-aaw-109 | conorbronsdon-avoid-ai-writing | #### Tier 1 — Always replace / Caveat worth keeping visible: | ALL-M-024 | adopted |
+| U-aaw-110 | conorbronsdon-avoid-ai-writing | ##### Tier 1A — AI frequency markers / \| delve / delve into \| explore, dig into, look at \| | EN-P-001 | adopted |
+| U-aaw-111 | conorbronsdon-avoid-ai-writing | ##### Tier 1A — AI frequency markers / **Hyphen required:** | EN-P-066 | adopted |
+| U-aaw-112 | conorbronsdon-avoid-ai-writing | ##### Tier 1A — AI frequency markers / **Abstract-noun boundary:** | EN-P-066 | adopted |
+| U-aaw-113 | conorbronsdon-avoid-ai-writing | ##### Tier 1B — Clarity edits | EN-P-005 | adopted |
+| U-aaw-114 | conorbronsdon-avoid-ai-writing | #### Tier 2 — Flag when 2+ appear in the same paragraph / These words are legitimate on their own. | EN-M-001 | adopted-with-modification |
+| U-aaw-115 | conorbronsdon-avoid-ai-writing | #### Tier 2 — Flag when 2+ appear in the same paragraph / \| deeply *(significance collocations only | EN-P-003 | adopted |
+| U-aaw-116 | conorbronsdon-avoid-ai-writing | #### Tier 3 — Flag only at high density / These are normal words. | EN-M-001 | adopted-with-modification |
+| U-aaw-117 | conorbronsdon-avoid-ai-writing | #### Tier 3 — Flag only at high density / \| verbatim \| Usually redundant with the verb | ALL-PROT-009 | adopted |
+| U-aaw-118 | conorbronsdon-avoid-ai-writing | #### Tier 3 phrases — Flag at density or in clusters / \| community-driven \| Name what the community does. | EN-P-063 | adopted-with-modification |
+| U-aaw-119 | conorbronsdon-avoid-ai-writing | #### Audience-fit note: domain-term collision (judgment only) | ALL-PROT-009 | adopted |
+| U-aaw-120 | conorbronsdon-avoid-ai-writing | ### Structural issues / - **Suspiciously clean grammar**: | ALL-PROT-017 | adopted |
+| U-aaw-121 | conorbronsdon-avoid-ai-writing | ### Aphorism formulas | EN-P-024 | adopted |
+| U-aaw-122 | conorbronsdon-avoid-ai-writing | ### Moral-adjective category errors / - **Related — ontological slop on assumptions:** | EN-P-067 | adopted |
+| U-aaw-123 | conorbronsdon-avoid-ai-writing | ### Moral-adjective category errors / - **Related — gratuitous universal quantifiers:** | EN-P-047 | adopted-with-modification |
+| U-aaw-124 | conorbronsdon-avoid-ai-writing | ### Transformation crutch | EN-P-068 | adopted-with-modification |
+| U-aaw-125 | conorbronsdon-avoid-ai-writing | ### Hashtag stuffing / - **What doesn't count.** | EN-P-056 | adopted-with-modification |
+| U-aaw-126 | conorbronsdon-avoid-ai-writing | ### Subjectless fragments and agentless passives | ALL-P-004 | adopted |
+| U-aaw-127 | conorbronsdon-avoid-ai-writing | ### False agency | ALL-P-004 | adopted |
+| U-aaw-128 | conorbronsdon-avoid-ai-writing | ### Filler phrases | EN-P-004 | adopted |
+| U-aaw-129 | conorbronsdon-avoid-ai-writing | ### Notability name-dropping / - AI text piles on prestigious citations | EN-P-018 | adopted |
+| U-aaw-130 | conorbronsdon-avoid-ai-writing | ### Notability name-dropping / - Related — **historical analogy stacking**: | EN-P-069 | adopted |
+| U-aaw-131 | conorbronsdon-avoid-ai-writing | ### Vague third-party validation | EN-P-017 | adopted |
+| U-aaw-132 | conorbronsdon-avoid-ai-writing | ### Superficial -ing analyses | EN-P-013 | adopted |
+| U-aaw-133 | conorbronsdon-avoid-ai-writing | ### Promotional language | EN-P-002 | adopted |
+| U-aaw-134 | conorbronsdon-avoid-ai-writing | ### Formulaic challenges | EN-P-031 | adopted |
+| U-aaw-135 | conorbronsdon-avoid-ai-writing | ### Speculative scenario openers | EN-P-007 | adopted |
+| U-aaw-136 | conorbronsdon-avoid-ai-writing | ### False ranges | EN-P-021 | adopted |
+| U-aaw-137 | conorbronsdon-avoid-ai-writing | ### Inline-header lists | EN-P-070 | adopted |
+| U-aaw-138 | conorbronsdon-avoid-ai-writing | ### List-label periods | EN-P-071 | adopted-with-modification |
+| U-aaw-139 | conorbronsdon-avoid-ai-writing | ### Title case headings | EN-P-012 | adopted |
+| U-aaw-140 | conorbronsdon-avoid-ai-writing | ### Hyphenated modifier stacking | EN-P-072 | adopted |
+| U-aaw-141 | conorbronsdon-avoid-ai-writing | ### Speculative gap-filling | EN-P-045 | adopted |
+| U-aaw-142 | conorbronsdon-avoid-ai-writing | ### Unfilled placeholders | EN-P-038 | adopted |
+| U-aaw-143 | conorbronsdon-avoid-ai-writing | ### Chatbot citation markup leaks | EN-P-038 | adopted |
+| U-aaw-144 | conorbronsdon-avoid-ai-writing | ### AI-tool URL parameters | EN-P-038 | adopted |
+| U-aaw-145 | conorbronsdon-avoid-ai-writing | ### Novelty inflation / - AI text treats established concepts | EN-P-008 | adopted |
+| U-aaw-146 | conorbronsdon-avoid-ai-writing | ### Novelty inflation / - Also flag invented labels: | EN-P-073 | adopted |
+| U-aaw-147 | conorbronsdon-avoid-ai-writing | ### Infomercial engagement hooks / - Punchy fragment-hooks that tee up a reveal: | EN-P-009 | adopted |
+| U-aaw-148 | conorbronsdon-avoid-ai-writing | ### Infomercial engagement hooks / - The same move in a fake-candid register: | EN-P-007 | adopted |
+| U-aaw-149 | conorbronsdon-avoid-ai-writing | ### Launch-copy dramatic introductions / - "Enter Flowdesk." | EN-P-074 | adopted-with-modification |
+| U-aaw-150 | conorbronsdon-avoid-ai-writing | ### Launch-copy dramatic introductions / - What the detector actually matches, stated exactly: | EN-P-074 | adopted-with-modification |
+| U-aaw-151 | conorbronsdon-avoid-ai-writing | ### Fake-casual register | EN-P-075 | adopted-with-modification |
+| U-aaw-152 | conorbronsdon-avoid-ai-writing | ### Emotional flatline | EN-P-076 | adopted |
+| U-aaw-153 | conorbronsdon-avoid-ai-writing | ### False concession structure | EN-P-031 | adopted |
+| U-aaw-154 | conorbronsdon-avoid-ai-writing | ### Rhetorical question openers | EN-P-009 | adopted |
+| U-aaw-155 | conorbronsdon-avoid-ai-writing | ### Parenthetical hedging | EN-P-029 | adopted |
+| U-aaw-156 | conorbronsdon-avoid-ai-writing | ### Numbered list inflation | ALL-P-005 | adopted |
+| U-aaw-157 | conorbronsdon-avoid-ai-writing | ### Reasoning chain artifacts | EN-P-038 | adopted |
+| U-aaw-158 | conorbronsdon-avoid-ai-writing | ### Sycophantic tone | EN-P-028 | adopted |
+| U-aaw-159 | conorbronsdon-avoid-ai-writing | ### Acknowledgment loops | ALL-PROC-018 | adopted |
+| U-aaw-160 | conorbronsdon-avoid-ai-writing | ### Confidence calibration phrases / - "It's worth noting that," "Interestingly," | EN-P-003 | adopted |
+| U-aaw-161 | conorbronsdon-avoid-ai-writing | ### Confidence calibration phrases / - Related — **persuasive-authority tropes**: | EN-P-008 | adopted |
+| U-aaw-162 | conorbronsdon-avoid-ai-writing | ### Confidence calibration phrases / - **Consequence-free explanation:** | EN-P-022 | adopted |
+| U-aaw-163 | conorbronsdon-avoid-ai-writing | ### Self-labeling significance | EN-P-077 | adopted |
+| U-aaw-164 | conorbronsdon-avoid-ai-writing | ### Dramatized contrast against the crowd | EN-P-078 | adopted |
+| U-aaw-165 | conorbronsdon-avoid-ai-writing | ### Wall-of-text replies (missing line breaks) | EN-P-079 | adopted-with-modification |
+| U-aaw-166 | conorbronsdon-avoid-ai-writing | ### Recap-flattery opener | ALL-PROC-018 | adopted |
+| U-aaw-167 | conorbronsdon-avoid-ai-writing | ### Excessive structure / - Too many headers in short text: | EN-P-080 | adopted |
+| U-aaw-168 | conorbronsdon-avoid-ai-writing | ### Excessive structure / - Too many list items: | EN-P-080 | adopted |
+| U-aaw-169 | conorbronsdon-avoid-ai-writing | ### Excessive structure / - Formulaic section headers: | EN-P-081 | adopted |
+| U-aaw-170 | conorbronsdon-avoid-ai-writing | ### Excessive structure / - Fragmented headers: | EN-P-033 | adopted |
+| U-aaw-171 | conorbronsdon-avoid-ai-writing | ### Diff-anchored writing | EN-P-035 | adopted-with-modification |
+| U-aaw-172 | conorbronsdon-avoid-ai-writing | ### Performed-insight phrases | EN-P-008 | adopted |
+| U-aaw-173 | conorbronsdon-avoid-ai-writing | ### Negation chains | EN-P-082 | adopted-with-modification |
+| U-aaw-174 | conorbronsdon-avoid-ai-writing | ### Dev-blog boilerplate | EN-P-002 | adopted |
+| U-aaw-175 | conorbronsdon-avoid-ai-writing | ### Stacked rhetorical questions | EN-P-009 | adopted |
+| U-aaw-176 | conorbronsdon-avoid-ai-writing | ### Same-opener sentence runs | ALL-P-001 | adopted-with-modification |
+| U-aaw-177 | conorbronsdon-avoid-ai-writing | ### Stranded auxiliary contrast | EN-P-083 | reference-only |
+| U-aaw-178 | conorbronsdon-avoid-ai-writing | ### Colon into a triple | ALL-P-005 | adopted |
+| U-aaw-179 | conorbronsdon-avoid-ai-writing | ### Manufactured punchlines and staccato drama / - A run of clipped fragments engineered | EN-P-025 | adopted |
+| U-aaw-180 | conorbronsdon-avoid-ai-writing | ### Manufactured punchlines and staccato drama / - **Repeated empty concessions:** | EN-P-055 | adopted-with-modification |
+| U-aaw-181 | conorbronsdon-avoid-ai-writing | ### Rhythm and uniformity / **Structure is the #1 detection signal.** | ALL-M-026 | adopted-with-modification |
+| U-aaw-182 | conorbronsdon-avoid-ai-writing | ### Rhythm and uniformity / - **Sentence length uniformity**: | ALL-P-001 | adopted-with-modification |
+| U-aaw-183 | conorbronsdon-avoid-ai-writing | ### Rhythm and uniformity / - **Read-aloud test**: | ALL-PROC-051 | adopted-with-modification |
+| U-aaw-184 | conorbronsdon-avoid-ai-writing | ### Rhythm and uniformity / - **Missing first-person perspective**: | EN-S-013 | reference-only |
+| U-aaw-185 | conorbronsdon-avoid-ai-writing | ### Rhythm and uniformity / - **Over-polishing**: | ALL-PROC-056 | adopted |
+| U-aaw-186 | conorbronsdon-avoid-ai-writing | ### Vocabulary diversity (stylometric) | EN-M-002 | deferred |
+| U-aaw-187 | conorbronsdon-avoid-ai-writing | ### Paragraph-reshuffle immunity (structure test) | ALL-P-008 | adopted |
+| U-aaw-188 | conorbronsdon-avoid-ai-writing | ### Treadmill effect / low information density (content test) | ALL-M-018 | adopted |
+| U-aaw-189 | conorbronsdon-avoid-ai-writing | ### When to rewrite from scratch vs. patch | ALL-PROC-055 | adopted-with-modification |
+| U-aaw-190 | conorbronsdon-avoid-ai-writing | ## Context profiles / Pass an optional context hint to adjust rule strictness. | ALL-PROC-053 | adopted-with-modification |
+| U-aaw-191 | conorbronsdon-avoid-ai-writing | ### Profile definitions | ALL-G-007 | adopted-with-modification |
+| U-aaw-192 | conorbronsdon-avoid-ai-writing | ### Tolerance matrix / Rules not listed in the table apply at full strength across all profiles. | ALL-G-008 | adopted-with-modification |
+| U-aaw-193 | conorbronsdon-avoid-ai-writing | ### Tolerance matrix / **Technical-blog word table exceptions:** | EN-P-084 | adopted-with-modification |
+| U-aaw-194 | conorbronsdon-avoid-ai-writing | ### Auto-detection cues | ALL-PROC-053 | adopted-with-modification |
+| U-aaw-195 | conorbronsdon-avoid-ai-writing | ### Auto-detection cues / If auto-detection feels wrong, say which profile you're using and why. | ALL-PROC-057 | adopted-with-modification |
+| U-aaw-196 | conorbronsdon-avoid-ai-writing | ## Voice profiles / Context profiles (above) set *how strict* | ALL-PROC-058 | adopted-with-modification |
+| U-aaw-197 | conorbronsdon-avoid-ai-writing | ## Voice profiles / Every target below is bounded by the Never-inject guardrails: | EN-S-001 | adopted-with-modification |
+| U-aaw-198 | conorbronsdon-avoid-ai-writing | ## Voice profiles / **`casual`** — Contractions throughout; | EN-S-001 | adopted-with-modification |
+| U-aaw-199 | conorbronsdon-avoid-ai-writing | ## Voice profiles / **`professional`** — Active voice for most sentences. | EN-S-001 | adopted-with-modification |
+| U-aaw-200 | conorbronsdon-avoid-ai-writing | ## Voice profiles / **`technical`** — Prefer plain copulatives | EN-S-001 | adopted-with-modification |
+| U-aaw-201 | conorbronsdon-avoid-ai-writing | ## Voice profiles / **`warm`** — Address the reader directly | EN-S-001 | adopted-with-modification |
+| U-aaw-202 | conorbronsdon-avoid-ai-writing | ## Voice profiles / **`blunt`** — Lead with the claim; | EN-S-001 | adopted-with-modification |
+| U-aaw-203 | conorbronsdon-avoid-ai-writing | ## Voice profiles / **Calibrate to a sample (optional).** | ALL-PROC-037 | adopted |
+| U-aaw-204 | conorbronsdon-avoid-ai-writing | ## Voice profiles / **How voice composes with context.** | ALL-PROC-058 | adopted-with-modification |
