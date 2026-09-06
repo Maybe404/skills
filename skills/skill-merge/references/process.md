@@ -83,6 +83,10 @@ metadata-only 来源不交给 subagent 抓全文，由你按 `license-policy.md`
 1. 取 diff 和它触及的本地规则 id。
 2. metadata-only 来源按 commit 临时拉取比对，比完丢弃，不写进 snapshots/，不引用原文。
 3. 逐条与 decisions.yaml 比对：重述记 duplicate；矛盾的单列进"冲突与取舍"；新规则按 `extraction.md` 拆成单元。
+
+   找对照规则时，靠锚点反查只能找到 diff 直接触及的那几条。跨来源的重复和矛盾锚点反查不到，因此还要拿新单元的 rule_summary 与全部落地规则的 rule_summary 做一次语义比对。首次合并后的 sync 干跑里，hunk 2 与 ALL-PROT-018 的矛盾就是因为只走了锚点反查而漏掉的。
+
+   记 duplicate 时，只在新单元这一条上记，被它重复的那条规则不追加证据：同一段上游文本不能同时出现在两条规则的 sources 里，否则 evidence_count 和覆盖统计会把它重复计数。要把这段文本算成已有规则的新证据，就不记 duplicate，改为在那条规则上追加一条 sources 并把 decision_revision 加一。
 4. 按 `criteria.md` 裁决。
 5. 写 decisions.yaml，decision_origin 一律 model-proposed。
 6. 改 skill 正文。

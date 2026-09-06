@@ -121,6 +121,11 @@
           "type": "array",
           "items": { "$ref": "#/$defs/evidence" }
         },
+        "relations": {
+          "description": "这条规则与其他规则之间的关系。可选。rationale 里用自然语言写的关系，凡是指向另一条规则 id 的都要在这里再记一条结构化的，rationale 的文字不删。只记两条规则作为本仓库当前结论都成立时的关系，不记“上游原来的写法与某条冲突所以改写了”这类历史原因，那类只留在 rationale 里。",
+          "type": "array",
+          "items": { "$ref": "#/$defs/relation" }
+        },
         "rationale": {
           "description": "取舍理由。不得引用 snapshot_policy 为 metadata-only 的来源的原文，只写思路。",
           "type": "string",
@@ -148,6 +153,27 @@
             }
           },
           "default": []
+        }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "rule_id"],
+      "properties": {
+        "type": {
+          "description": "关系类型。conflicts-with 两条互相矛盾，同时命中时必须按裁决顺序取舍，双向记录（A 指 B 则 B 也要指 A）。excepts 两条按范围分域或互为例外，不同时适用，note 里写清边界。pairs-with 两条配套使用、各管一半，缺一条另一条不完整，双向记录。supersedes 本规则取代 rule_id 那条，被取代的一般记 duplicate 或 rejected，单向记录。",
+          "enum": ["conflicts-with", "excepts", "pairs-with", "supersedes"]
+        },
+        "rule_id": {
+          "description": "关系另一端的规则 id，格式与 rule.id 相同，且必须是同一份 decisions.yaml 里已存在的规则。",
+          "type": "string",
+          "pattern": "^(ZH|EN|ALL)-[A-Z]{1,5}-[0-9]{3}$"
+        },
+        "note": {
+          "description": "这条关系的具体内容：边界在哪、谁让位、怎么分工。可选。",
+          "type": "string",
+          "minLength": 1
         }
       }
     },

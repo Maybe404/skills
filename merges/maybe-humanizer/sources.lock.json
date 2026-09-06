@@ -74,16 +74,28 @@
       "last_seen_commit": "d94826e1cd48f5403b82a5a909efdfab96221259",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "8c965846e4c298e0de74d44d1cd61f931f54a946f305769cc09a0ee1d05f0488",
-      "normalized_sha256": "3a97524123e0bf6956eec6698bd67218edab73ddef1ee37b9c88068e509240a1",
-      "size": 5000,
-      "line_count": 206,
+      "raw_sha256": "4eb421f103305cfb5db9a31da7041a1dbe3aa1c13bb88a1d9b98936b692974b0",
+      "normalized_sha256": "c4b4c6db3df6af1d062185300c4c219b6e657a767a9e8f334b8f70546e02a81b",
+      "size": 28515,
+      "line_count": 941,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": null,
           "raw_sha256": "8c965846e4c298e0de74d44d1cd61f931f54a946f305769cc09a0ee1d05f0488",
           "normalized_sha256": "3a97524123e0bf6956eec6698bd67218edab73ddef1ee37b9c88068e509240a1"
+        },
+        {
+          "original_path": "scripts/observe.py",
+          "stored_path": null,
+          "raw_sha256": "2cca03bd16b380605387537875ddabe5abf445b359803746012f8ff44fbc6bae",
+          "normalized_sha256": "2cca03bd16b380605387537875ddabe5abf445b359803746012f8ff44fbc6bae"
+        },
+        {
+          "original_path": "scripts/improve.py",
+          "stored_path": null,
+          "raw_sha256": "8ffa7e305a6c7bdf08f718539d00ee092993ddfc9d66d115864f385afb5561e6",
+          "normalized_sha256": "8ffa7e305a6c7bdf08f718539d00ee092993ddfc9d66d115864f385afb5561e6"
         }
       ],
       "stars_history": [

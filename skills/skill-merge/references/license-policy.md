@@ -13,6 +13,7 @@ snapshot_policy 只有两个取值，由 sources.yaml 里的 license 和 license
 - 在 decisions.yaml 的 rationale 里引用原文短句。
 - 在 `merges/<id>/reports/` 的报告里引用原文短句作为证据。
 - 在 skill 正文里复用规则的意思。
+- 在 skill 正文里照录触发词表：禁用词、高频词、套话短语这类词条本身是触发数据，不是表述，改写会让规则失去可判定性——把 delve 换成别的词，这条规则就不管 delve 了。照录的范围只限词条本身，包括逐条同序；词表周围的说明文字、正例反例、执行强度必须重写。照录时在对应规则的 decisions.yaml rationale 里写一句"词表照录自 `<source_id>`，说明文字为重写"。
 
 禁止：
 

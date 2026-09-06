@@ -47,6 +47,7 @@ docs/
 | `decisions.yaml` | skill 写、代码校验 | 规则决定表 |
 | `reports/NNNN-YYYY-MM-DD-<slug>.md` | 代码骨架、模型填充 | 单次 merge 或 sync 的分析报告 |
 | `CHANGELOG.md` | 人工/skill | 面向用户的摘要 |
+| `work/` | skill | 拆规则阶段的规则单元清单、聚类表、覆盖表，供覆盖校验和重跑使用 |
 | `research/` | 人工 | 历史调研材料，不是运行时输入 |
 
 监控入口的唯一条件：catalog 里该 skill 的 `merge_instance` 非空。
@@ -160,6 +161,7 @@ sources[] 每项：
 | evidence_count | 证据数量 |
 | independent_sources | 独立来源数量 |
 | sources[] | 每项 {type(upstream\|self), source_id, path, commit, anchor} |
+| relations[] | 规则之间的关系，每项 {type, rule_id, note}。type 取 conflicts-with（互相矛盾，须裁决）、excepts（分域或互为例外，不同时适用）、pairs-with（配套，各管一半）、supersedes（本条取代对方）。conflicts-with 和 pairs-with 双向记录，excepts 和 supersedes 单向也成立。rule_id 必须是同一份文件里已有的规则 |
 | rationale | 理由 |
 | history[] | 每项 {decision, at, reason} |
 

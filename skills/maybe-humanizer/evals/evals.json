@@ -1,0 +1,89 @@
+{
+  "skill_name": "maybe-humanizer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我把这段改自然点：\n\n上周三凌晨两点被叫起来，是那个老问题又犯了。我盯着日志看了四十分钟没看出名堂，最后是同事一句话点醒我：缓存键里带了时间戳。行吧。修完躺下已经四点，第二天开会我一句话都没听进去。这事我记到现在，倒不是因为多难，是因为太蠢了。",
+      "expected_output": "第一类样本（真人原文，不该被改）。判据：ALL-PROC-029 生效，输出与输入的差异只在标点和排版，语义无变化，或者直接原样返回并说明无需改写。必须保留：口语过渡词「行吧」、自嘲的收尾「太蠢了」、长短句的自然起伏、「四十分钟」「两点」「四点」三个时间。失败条件：把「行吧」删掉、把最后一句改成中性表述、把段落拆成整齐的短句、补一句总结或教训。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "这段读着有点乱，帮我看看要不要改：\n\n我们试过微服务，团队七个人。光维护那套服务发现就吃掉两个人，剩下五个人写业务。后来砍回单体，部署慢了点，但没人再半夜起来看服务网格了。要说后悔吗，也不完全后悔，至少知道了它不适合我们这个规模。",
+      "expected_output": "第一类样本（真人原文，不该被改）。判据：ALL-PROT-017 保留作者声口，ALL-PROT-004 保留「也不完全后悔」这个犹疑。允许的改动只有标点和排版。失败条件：把「要说后悔吗，也不完全后悔」改成明确的肯定或否定立场（这正是 conflicts.md 里 ALL-S-002 被记为 reference-only 的场景）、删掉「七个人」「两个人」「五个人」中的任何一个数字、把口语的「砍回单体」改成书面表达。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Can you clean this up a bit?\n\nI spent two days convinced the bug was in our retry logic. It wasn't. It was a clock skew of about 400ms between two boxes, which I only found because I got bored and diffed the timestamps. Two days. For 400 milliseconds. I still think about it.",
+      "expected_output": "第一类样本（真人原文，不该被改）。判据：ALL-PROC-029 生效，只允许标点和排版层面的改动。必须保留：片段句 \"Two days. For 400 milliseconds.\"（ALL-PROT-017、EN-P-025 的例外）、\"I got bored\" 这个坦白、400ms 和 two days 两处数字。失败条件：把片段句合并成完整句、删掉 \"I still think about it.\"、把 \"got bored\" 换成中性说法、加一句 takeaway 式收尾。",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Rewrite this to sound more human:\n\nHonestly the docs were wrong. Not slightly wrong — the example didn't compile. I opened an issue, got no reply for three weeks, then someone closed it as \"working as intended.\" So now we vendor the library and patch it ourselves. Not proud of it.",
+      "expected_output": "第一类样本（真人原文，不该被改）。判据：ALL-PROC-029 与 ALL-PROT-017。这里的 \"Honestly\" 承担了真实的强调，按 EN-P-003 的例外保留。这段 44 词，按 EN-P-026 的 200 词分界属短文，短文口径是零处破折号；但这是真人原文，孤立一处破折号不算证据（ALL-M-002），它承担的是作者语感（ALL-PROT-017），按 ALL-PROC-023 第 3 级压第 4 级，保留，不按短文口径删掉。必须保留：three weeks、引号里的 \"working as intended\"（ALL-PROT-008 受保护片段）、\"Not proud of it.\"。失败条件：删掉 Honestly、删掉破折号、把引语改写、补一个积极的结尾。",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "帮我把这段改得通顺一些：\n\n从 2023 年 4 月 1 日起，仅对总部在职满 12 个月的正式员工，年假由 10 天调整为 15 天。调休需在当季度内使用，跨季度作废。执行命令为 `hr-tool grant-leave --scope hq --tenure 12m --days 15`，该命令须由 HR 系统管理员运行，普通账号运行会返回 403。相关调整可能与今年的编制变化有关，但人力资源部尚未确认。",
+      "expected_output": "第二类样本（事实不漂移）。逐项比对：2023 年 4 月 1 日、12 个月、10 天、15 天、403 必须一字不差；命令 `hr-tool grant-leave --scope hq --tenure 12m --days 15` 逐字符不变（ALL-PROT-008、ALL-PROC-016）；「仅对总部在职满 12 个月的正式员工」这个限定不得删也不得放到句末（ALL-PROT-003、ZH-P-009）；「跨季度作废」不得丢；「可能与编制变化有关，但尚未确认」不得改成确定表述（ALL-PROT-004、ALL-PROT-005）。一处不同即失败。可以改的只有语序和句子长度。",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "这段技术说明太啰嗦了，帮我改写一下：\n\n值得注意的是，在当前的架构背景下，基于对性能的综合考量，通过一系列的优化措施，我们将 p99 延迟从 900 毫秒降低到了 40 毫秒。需要指出的是，该优化仅在开启了 `--enable-cache` 参数时生效，且不适用于 v2.3 之前的版本。这一成果充分彰显了团队精益求精的工匠精神。",
+      "expected_output": "第二类样本（事实不漂移）＋第三类（套话应被清理）。预先标出的套话：「值得注意的是」「在当前的架构背景下」「基于……的综合考量」「通过一系列的优化措施」「需要指出的是」（ZH-P-001、ZH-P-008）、「充分彰显了……工匠精神」（ZH-P-001 的彰显、EN-P-014 的中文对应）。这些必须消失。同时必须保留：900 毫秒、40 毫秒、`--enable-cache` 逐字符不变、v2.3、「仅在开启参数时生效」和「不适用于 v2.3 之前的版本」两个限定条件。失败条件：任何一个数字或版本号变化、限定条件被删或被弱化、`--enable-cache` 被改写、或者把最后一句换成另一句意义拔高的话。",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Tighten this up:\n\nThe migration reduced p99 latency from 900ms to 40ms on the read path. It should be noted that this only applies to clients on SDK 4.2 or later; older clients still hit the legacy endpoint. Run `svc migrate --shard 7 --dry-run` first — it exits 2 if any shard is still draining. Experts suggest this pattern is becoming the industry standard.",
+      "expected_output": "第二类样本（事实不漂移）。必须保留且一字不差：900ms、40ms、SDK 4.2、`svc migrate --shard 7 --dry-run`、exits 2、\"older clients still hit the legacy endpoint\" 这个条件。应被清理：\"It should be noted that\"（EN-P-004、EN-P-005）、\"Experts suggest\"（EN-P-017，且原文没有来源，按 ALL-PROT-001 应当去问或删掉整个论断，不得编一个来源）、\"becoming the industry standard\" 这种无出处的断言。失败条件：数字或命令变化、条件从句被删、或者给 \"Experts suggest\" 补上一个具体的来源名。",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Make this less robotic:\n\nThe incident began at 02:14 UTC when node-3 stopped responding to health checks. Traffic was not rerouted automatically, due to the fact that the failover threshold was set to 5 consecutive failures rather than 3. The team failed over manually at 02:41. Root cause has not been confirmed; the leading hypothesis is a kernel-level network stall, but we have not reproduced it.",
+      "expected_output": "第二类样本（事实不漂移）。必须保留：02:14 UTC、node-3、5 consecutive failures、3、02:41；\"has not been confirmed\" 和 \"we have not reproduced it\" 两处不确定不得改成确定（ALL-PROT-004）；\"the leading hypothesis is\" 不得升级成结论（ALL-PROT-005）。应被清理：\"due to the fact that\"（EN-P-004）；\"Traffic was not rerouted automatically\" 是被动式，改写时若要指名施事者，只能用原文已有的信息，不得补一个原文没有的主体（ALL-P-004 与 ALL-PROT-001 的交界）。失败条件：把根因写成已确认、把假设写成结论、任一时间戳或阈值变化。",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "帮我把这段去去 AI 味：\n\n随着人工智能技术的飞速发展，各行各业正在经历前所未有的深刻变革。首先，它提升了效率；其次，它降低了成本；最后，它改善了用户体验。值得注意的是，构建数据闭环、打通底层逻辑，对于赋能业务增长至关重要。换句话说，只有夯实基础，才能行稳致远。我们有理由相信，在各方的共同努力下，未来必将一片光明，让我们拭目以待。",
+      "expected_output": "第三类样本（套话应被清理）。预先标出的套话，改写后必须全部消失：「随着……的飞速发展」「前所未有的深刻变革」（ZH-P-004）、「首先……其次……最后」（ZH-P-003）、「值得注意的是」「闭环」「底层逻辑」「赋能」「至关重要」（ZH-P-001）、「换句话说」（ALL-P-011）、「夯实基础，行稳致远」（ZH-P-002）、「我们有理由相信」「未来必将一片光明」「让我们拭目以待」（ZH-P-006）。同时不得引入新的套话，也不得为了填补内容而编造事实——这段原文几乎不含任何具体信息，正确的输出是大幅缩短并在改动说明里指出原文缺少具体内容、需要作者补充（ALL-PROT-001、ALL-P-007）。失败条件：套话被换成另一批套话、或者凭空补出数字和案例。",
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "这段是我们产品页的文案，帮我改得像人写的：\n\n🚀 **核心优势**：我们的**产品**拥有**强大**的**性能**和**卓越**的**体验**！在这个日新月异、瞬息万变的时代，技术的浪潮波澜壮阔、势不可挡。为什么选择我们？因为我们始终坚持以用户为中心。那么，它安全吗？答案是肯定的。它不仅高效，而且稳定，更兼具优雅、简洁与可扩展性。",
+      "expected_output": "第三类样本（套话应被清理）。预先标出的套话：emoji 小标题和逐词加粗（ALL-P-002）、「日新月异、瞬息万变、波澜壮阔、势不可挡」四个四字格连排（ZH-P-002）、「为什么选择我们？因为……」「那么，它安全吗？答案是肯定的」两组自问自答（ZH-P-005）、「不仅……而且……更」三连对仗（ALL-P-005）。这些必须消失。原文没有任何具体事实，因此正确的输出是把它压到很短，并在改动说明里指出需要作者补充具体的性能数字和安全依据，不得自行编造（ALL-PROT-001）。失败条件：保留任何一处加粗装饰或 emoji 标题、把四字格换成另一批四字格、编出一个性能数字。",
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "Please humanize this:\n\nIn today's rapidly evolving landscape, this comprehensive guide delves into the multifaceted intricacies of observability. It's worth noting that observability serves as a testament to modern engineering practices — a vibrant tapestry of metrics, logs, and traces. Experts agree that it plays a pivotal role. Whether you prefer open-source or commercial tooling, the future looks bright.",
+      "expected_output": "第三类样本（套话应被清理）。预先标出的套话：\"In today's rapidly evolving landscape\"、\"this comprehensive guide delves into\"（EN-P-007、EN-P-001 的 delve）、multifaceted、intricacies、tapestry、vibrant、pivotal（EN-P-001、EN-M-001 第一档）、\"It's worth noting that\"（EN-P-004）、\"serves as a testament to\"（EN-P-014、EN-P-015）、\"Experts agree\"（EN-P-017）、\"Whether you prefer... the future looks bright\"（EN-P-023）、成串破折号（EN-P-026）。全部必须消失。原文没有任何具体信息，正确输出是极短的一句，并说明需要作者提供具体内容；不得为了凑长度补出工具名、数字或来源（ALL-PROT-001）。失败条件：留下任一第一档词、给 \"Experts agree\" 补一个来源、或者换一个隐喻式收尾（EN-P-024 明确禁止改写成更好的隐喻）。",
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "Clean this up for a blog post:\n\nGreat question! Let me walk you through it. Here's the thing: caching is not just an optimization, it's a philosophy. As of my last training update, most teams underestimate this. Step 1: identify the hot path. In summary, caching is a step in the right direction. [INSERT BENCHMARK HERE] Let me know if you'd like me to expand on any section! https://example.com/caching?utm_source=chatgpt.com",
+      "expected_output": "第三类样本（套话应被清理）。预先标出的套话与残留：\"Great question!\"（EN-P-028 谄媚）、\"Let me walk you through it\"、\"Here's the thing\"（EN-P-007）、\"not just X, it's Y\"（EN-P-006）、\"As of my last training update\"（EN-P-028 知识截止免责）、\"Step 1:\"（EN-P-038 推理链脚手架）、\"In summary\"、\"a step in the right direction\"（EN-P-023）、\"[INSERT BENCHMARK HERE]\" 占位符与 \"utm_source=chatgpt.com\"（EN-P-038）、\"Let me know if you'd like me to expand\"（EN-P-028）。全部必须消失，URL 保留但去掉 utm 参数。占位符不得自行填一个基准数字，应按 ALL-PROC-004 指出这里缺内容。失败条件：保留任一残留标记、自行编出一个 benchmark 数字、或者把 utm 参数连同 URL 一起删掉。",
+      "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "看看这篇是不是 AI 写的：\n\n本次更新彰显了团队精益求精的工匠精神，标志着产品迈入了全新的阶段。此外，我们深入探讨了用户的核心诉求，并对底层逻辑进行了全面梳理。在当今瞬息万变的市场环境下，我们始终以用户为中心，持续赋能业务增长，为产品的长远发展保驾护航。综上所述，本次更新不可或缺，未来我们将继续打磨每一处细节，与用户共同书写新篇章，让我们拭目以待。",
+      "expected_output": "审稿模式样本。正文 146 个中文字，高于 ALL-M-003 的八十字门槛，可以给整体判定。判据：ALL-PROC-007 只报告不重写、ALL-PROC-024 给出四种判定之一且证据最多两条、ALL-PROT-012 不判断作者身份。正确输出形如：判定「命中 AI 高频写作模式」，证据两条（例如 ZH-P-001 的彰显／标志着／此外／深入探讨／底层逻辑／赋能／保驾护航／综上所述，ZH-P-002 的空心拔高与四字格堆砌），每条点出规则 id、引原句、给一句改法，然后停下并问要不要接着改。失败条件：输出里出现改写后的正文、给出「有百分之多少可能是 AI 写的」这类身份结论、给出 0 到 100 的分数（ALL-M-005 已不采纳）、证据列了三条以上，或者以样本过短为由拒绝给出整体判定。",
+      "files": []
+    },
+    {
+      "id": 14,
+      "prompt": "帮我校对一下这段，只改错字：\n\n我们在 2024 年 Q3 上线了新的检索层，把平均响应从 1.2 秒压到 300 毫秒。不过这个数字只在缓存命中时成立，缓存未命中的情况我们还没测。测试环景的数据可能不具代表性。",
+      "expected_output": "授权档位样本。判据：ALL-PROC-005 校对档只改错字、病句和明确错误，不做结构改动。正确输出：把「测试环景」改成「测试环境」，其余一字不动；不调整句序、不合并句子、不删「不过」。必须保留：2024 年 Q3、1.2 秒、300 毫秒、「只在缓存命中时成立」这个限定、「还没测」和「可能不具代表性」两处不确定（ALL-PROT-004）。失败条件：在校对档下重组了段落或句序、把「可能不具代表性」改成确定表述、或者顺手删掉了「不过」这类连接词。",
+      "files": []
+    }
+  ]
+}
