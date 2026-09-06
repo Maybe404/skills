@@ -74,7 +74,7 @@ def check_one_source(
 ) -> tuple[dict, dict]:
     """返回 (更新后的 lock_entry, 结果描述)。不修改传入的 lock_entry。"""
     sid = source["id"]
-    result: dict[str, Any] = {"source_id": sid, "license_changed": False}
+    result: dict[str, Any] = {"source_id": sid, "license_changed": False, "issue_kind": None}
     entry = dict(lock_entry) if lock_entry else _blank_lock_entry()
 
     if source["source_type"] not in GITHUB_SOURCE_TYPES:
@@ -90,17 +90,17 @@ def check_one_source(
     except RepoNotFound:
         entry["availability"] = "gone"
         entry["last_checked_at"] = now
-        result.update(change=CHANGE_GONE, detail=f"仓库不可达（404）：{repo}")
+        result.update(change=CHANGE_GONE, detail=f"仓库不可达（404）：{repo}", issue_kind="source-unavailable")
         return entry, result
     except RepoPrivate:
         entry["availability"] = "private"
         entry["last_checked_at"] = now
-        result.update(change=CHANGE_PRIVATE, detail=f"仓库已转为私有：{repo}")
+        result.update(change=CHANGE_PRIVATE, detail=f"仓库已转为私有：{repo}", issue_kind="source-unavailable")
         return entry, result
     except NetworkError as e:
         entry["availability"] = "unreachable"
         entry["last_checked_at"] = now
-        result.update(change=CHANGE_UNREACHABLE, detail=str(e))
+        result.update(change=CHANGE_UNREACHABLE, detail=str(e), issue_kind="source-unavailable")
         return entry, result
 
     try:
@@ -108,12 +108,12 @@ def check_one_source(
     except RepoNotFound:
         entry["availability"] = "gone"
         entry["last_checked_at"] = now
-        result.update(change=CHANGE_GONE, detail=f"分支不可达：{repo}@{source['branch']}")
+        result.update(change=CHANGE_GONE, detail=f"分支不可达：{repo}@{source['branch']}", issue_kind="source-unavailable")
         return entry, result
     except NetworkError as e:
         entry["availability"] = "unreachable"
         entry["last_checked_at"] = now
-        result.update(change=CHANGE_UNREACHABLE, detail=str(e))
+        result.update(change=CHANGE_UNREACHABLE, detail=str(e), issue_kind="source-unavailable")
         return entry, result
 
     file_raws: list[bytes] = []
@@ -147,7 +147,7 @@ def check_one_source(
 
     if unreachable_paths:
         entry["availability"] = "unreachable"
-        result.update(change=CHANGE_UNREACHABLE, detail=f"以下追踪文件不可达: {unreachable_paths}")
+        result.update(change=CHANGE_UNREACHABLE, detail=f"以下追踪文件不可达: {unreachable_paths}", issue_kind="source-unavailable")
         return entry, result
 
     entry["availability"] = "ok"
@@ -192,6 +192,9 @@ def check_one_source(
     elif meta.license_spdx is None and source["license"] != "unknown":
         result["license_changed"] = True
         result["license_detail"] = f"sources.yaml 记 {source['license']!r}，GitHub 现无法识别许可证"
+
+    if result["license_changed"]:
+        result["issue_kind"] = "license-changed"
 
     return entry, result
 

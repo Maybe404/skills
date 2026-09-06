@@ -112,3 +112,41 @@ def test_unreachable_when_file_missing():
 
     assert result["change"] == CHANGE_UNREACHABLE
     assert new_entry["availability"] == "unreachable"
+    assert result["issue_kind"] == "source-unavailable"
+
+
+def test_license_changed_sets_issue_kind():
+    content = b"# hello\nworld\n"
+    client = FakeGitHubClient(
+        {
+            REPO: {
+                "meta": {"stars": 42, "forks": 3, "license_spdx": "Apache-2.0"},
+                "branches": {"main": COMMIT_1},
+                "files": {(COMMIT_1, "SKILL.md"): content},
+            }
+        }
+    )
+    entry = base_lock_entry(content, COMMIT_1)
+
+    new_entry, result = check_one_source(client, SOURCE, entry, now="2026-02-01T00:00:00Z")
+
+    assert result["license_changed"] is True
+    assert result["issue_kind"] == "license-changed"
+
+
+def test_issue_kind_is_none_when_nothing_needs_attention():
+    content = b"# hello\nworld\n"
+    client = FakeGitHubClient(
+        {
+            REPO: {
+                "meta": {"stars": 42, "forks": 3, "license_spdx": "MIT"},  # 与 SOURCE 的 license 一致
+                "branches": {"main": COMMIT_1},
+                "files": {(COMMIT_1, "SKILL.md"): content},
+            }
+        }
+    )
+    entry = base_lock_entry(content, COMMIT_1)
+
+    _new_entry, result = check_one_source(client, SOURCE, entry, now="2026-02-01T00:00:00Z")
+
+    assert result["issue_kind"] is None

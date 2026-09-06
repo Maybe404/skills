@@ -10,6 +10,8 @@ from pathlib import Path
 from upstream_monitor import approve as approve_mod
 from upstream_monitor import check as check_mod
 from upstream_monitor import diff as diff_mod
+from upstream_monitor import issue as issue_mod
+from upstream_monitor import lineage as lineage_mod
 from upstream_monitor import locate as locate_mod
 from upstream_monitor import pr as pr_mod
 from upstream_monitor import render as render_mod
@@ -168,6 +170,38 @@ def cmd_retire(args: argparse.Namespace) -> int:
     return 0
 
 
+# ---------------------------------------------------------------- issue
+
+def cmd_issue(args: argparse.Namespace) -> int:
+    paths = _paths_from_args(args)
+    client = issue_mod.RealGhIssueClient(paths.root)
+    result = issue_mod.run_issue(
+        paths, client, args.merge, args.source, args.kind, detail=args.detail, dry_run=args.dry_run
+    )
+    if result.get("idempotent"):
+        print(result["message"])
+        return 0
+    if args.dry_run:
+        print(result["body"])
+        return 0
+    print(f"已开 issue: #{result['issue_number']}（{', '.join(result['labels'])}）")
+    return 0
+
+
+# ---------------------------------------------------------------- lineage
+
+def cmd_lineage(args: argparse.Namespace) -> int:
+    paths = _paths_from_args(args)
+    relations_path = Path(args.relations).resolve() if args.relations else None
+    result = lineage_mod.run_lineage(
+        paths, args.merge, threshold=args.threshold, relations_path=relations_path, write=args.write
+    )
+    print(lineage_mod.render_lineage_text(result))
+    if result["written"]:
+        print(f"\n已写回 {args.merge} 的 sources.yaml 的 lineage 字段。")
+    return 0
+
+
 # ---------------------------------------------------------------- report
 
 def cmd_report_new(args: argparse.Namespace) -> int:
@@ -248,6 +282,36 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--source", required=True)
     p.add_argument("--reason", required=True)
     p.set_defaults(func=cmd_retire)
+
+    p = sub.add_parser("issue", help="按情形开 issue，正文不含上游原文")
+    _add_common_args(p)
+    p.add_argument("--merge", required=True)
+    p.add_argument("--source", required=True)
+    p.add_argument(
+        "--kind",
+        required=True,
+        choices=[
+            "source-unavailable",
+            "license-changed",
+            "history-rewritten",
+            "needs-decision",
+            "retire-impact",
+            "new-candidate",
+        ],
+    )
+    p.add_argument("--detail", default=None, help="要做的决定的补充说明，不给时用该情形的默认提示")
+    p.add_argument("--dry-run", action="store_true", help="只打印正文")
+    p.set_defaults(func=cmd_issue)
+
+    p = sub.add_parser("lineage", help="按文本相似度和人工核实关系聚类同源来源")
+    _add_common_args(p)
+    p.add_argument("--merge", required=True)
+    p.add_argument("--threshold", type=float, default=lineage_mod.DEFAULT_THRESHOLD)
+    p.add_argument(
+        "--relations", default=None, help="人工核实关系文件，默认 merges/<id>/lineage-relations.yaml"
+    )
+    p.add_argument("--write", action="store_true", help="把聚类结果写回 sources.yaml 的 lineage 字段")
+    p.set_defaults(func=cmd_lineage)
 
     p_report = sub.add_parser("report", help="报告相关命令")
     report_sub = p_report.add_subparsers(dest="report_cmd", required=True)

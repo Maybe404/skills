@@ -371,7 +371,7 @@ sources:
   baseline_reset_reason: null
   status_changed_at: '2026-09-06T19:00:00Z'
   reason: 登记依据：任务明确要求登记，为 Humanizer-zh 等多个本地化版本的根节点。 谱系聚类：与 op7418/Humanizer-zh、hairyf/skills、kevintsai1202/Humanizer-zh-TW、z0gSh1u/oh-my-writing-skill
-    同属 blader-humanizer 谱系（人工核实的翻译/复制/fork 关系，见 tools/upstream-monitor/prototype/lineage.py 的 KNOWN_RELATIONS）。选为该谱系代表：是被其余四个中文/繁体版本共同引用的原始英文根节点，且本
+    同属 blader-humanizer 谱系（人工核实的翻译/复制/fork 关系，见 merges/maybe-humanizer/lineage-relations.yaml）。选为该谱系代表：是被其余四个中文/繁体版本共同引用的原始英文根节点，且本
     skill 需要中英文各自的例句（extraction.md 禁止把中文例句从英文直译），保留英文原文供英文规则取例；op7418 虽然章节比 blader 更全（新增质量评分等），但其内容是在
     blader 的 24 条模式表基础上翻译并扩写而来，仍记为 derivative。
   notes: 24 类 AI 写作模式，初稿后再次审视和改写；示例和实际事实边界要分开看；是本次调研里跨语言改写规则最广泛引用的英文原始来源。

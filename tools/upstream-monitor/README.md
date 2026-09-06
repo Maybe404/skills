@@ -187,6 +187,66 @@ upstream-monitor retire --merge <id> --source <source_id> --reason <text>
 decision、local）。不改 decisions.yaml——这些规则是否跟着撤下是
 `skill-merge` 的语义决定，不是这里的事。
 
+### issue
+
+```bash
+upstream-monitor issue --merge <id> --source <source_id> --kind <kind> [--detail <text>] [--dry-run]
+```
+
+按 `docs/design.md` 第 6 节，开 issue 只用于六种情形（`--kind` 枚举）：
+`source-unavailable`（上游不可达、消失或转私有）、`license-changed`（许可证
+变化）、`history-rewritten`（历史被重写）、`needs-decision`（sync 后仍不
+确定或涉及冲突/许可证）、`retire-impact`（removed 来源影响唯一来源规则）、
+`new-candidate`（新候选上游）。
+
+正文只放 source_id、repository、path、commit、hash、stars、影响范围、要
+做的决定，不放任何上游原文；`needs-decision` 和 `retire-impact` 额外附
+`locate`/`retire` 命令同样逻辑算出的受影响规则清单。`--detail` 给"要做的
+决定"追加说明，不给时用该情形的默认提示。
+
+标签固定为 `upstream:<merge_id>` 和 `<kind>`，仓库里不存在的标签会先创建
+再用。幂等：lock 的 `open_issue` 非空、且该 issue 仍处于 open 状态时不重
+复开，只打印已有编号；开成功后把 `open_issue` 写回 lock。
+
+`--dry-run` 只渲染并打印正文，不检查 `open_issue`、不建标签、不开
+issue、不写 lock。
+
+`check` 命令的结果里，来源的 availability 变成 `unreachable`、`private`、
+`gone`，或 `license_status` 变成 `changed` 时会带 `issue_kind` 字段
+（`check --json` 可见）；CI 里 `check` 之后对这些结果逐个跑 `issue`，见
+`.github/workflows/upstream-check.yml`。
+
+### lineage
+
+```bash
+upstream-monitor lineage --merge <id> [--threshold 0.55] [--relations <file>] [--write]
+```
+
+入围阶段的谱系聚类：把 `sources.yaml` 里未 `removed` 的候选来源按同源关系
+分组，供人工判断谁是代表作、谁是衍生版本。两类信号，任何一类满足即合
+并：
+
+- **文本相似度**：读每个来源的 SKILL 主文件（快照里的 `SKILL.source.md`，
+  `github-prompt` 类型用 `README.md`），按 `normalize_bytes` 归一化后用
+  `difflib.SequenceMatcher.ratio()` 两两比较，达到 `--threshold`（默认
+  0.55）即合并。只对 `snapshot_policy` 为 `full-text` 且已有快照的来源生
+  效；`metadata-only` 或快照缺失的来源记入跳过清单，不参与自动比较。
+- **人工核实关系**：读 `merges/<id>/lineage-relations.yaml`（不存在就只
+  用自动相似度），格式为列表，每项 `{from, to, relation, evidence}`，
+  `relation` 取 `translation`（翻译）、`adaptation`（结构相同的改编/精
+  简）、`fork`（GitHub fork 关系）、`copy`（直接复制）之一，`evidence` 是
+  一句人工判断依据。覆盖文本相似度信号覆盖不到的跨语言、跨仓库同源判
+  断——仅"参考了同一篇文章"不构成同源，须配合章节结构、模式编号的实际
+  比对。
+
+默认只打印簇表和相似度摘要，不改任何文件。`--write` 时把聚类结果写回
+`sources.yaml` 的 `lineage` 字段：同一簇的全部成员写入同一个值（簇内
+source id 字典序最小的一个），确定、可复现；不改 `selection_status`——
+代表作由人定。
+
+吸收自原 `prototype/lineage.py`，算法说明见 `lineage.py` 模块开头的注
+释；原型脚本已删除。
+
 ### report new
 
 ```bash
@@ -207,8 +267,11 @@ upstream-monitor report new --merge <id> --slug <slug>
 - 决定一条规则是否可判定、是否值得进默认规则。
 - 判断改写是否改变了原意。
 - 写 rationale、报告正文、CHANGELOG 条目里的人话说明。
-- 决定要不要因为许可证变化、来源消失联系上游作者，或者要不要开 issue
-  （issue 目前不由代码创建）。
+- 决定要不要因为许可证变化、来源消失联系上游作者。
+- 决定 `needs-decision`、`retire-impact`、`new-candidate`、
+  `history-rewritten` 这几种情形具体什么时候触发、该怎么裁决——代码只
+  负责把已经确定的情形（`--kind`）渲染成 issue 正文和标签，不判断"现在
+  是不是该开一个"。
 
 代码只保证：commit、hash、stars、可达性这些"事实"是准的；渲染结果和
 decisions.yaml、sources.yaml 一致；同一个变更不会被重复处理。

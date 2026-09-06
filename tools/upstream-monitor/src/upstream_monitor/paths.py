@@ -57,6 +57,9 @@ class RepoPaths:
     def work_dir(self, merge_id: str) -> Path:
         return self.merge_dir(merge_id) / "work"
 
+    def lineage_relations_yaml(self, merge_id: str) -> Path:
+        return self.merge_dir(merge_id) / "lineage-relations.yaml"
+
     def catalog_entries(self) -> list[Path]:
         if not self.catalog_dir.is_dir():
             return []

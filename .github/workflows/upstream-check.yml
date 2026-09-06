@@ -9,6 +9,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   check:
@@ -97,6 +98,34 @@ jobs:
               # 切回主分支再处理下一个来源，保证每个 PR 都从同一个基线切出。
               subprocess.run(["git", "checkout", base_branch], check=True)
           PYEOF
+
+      - name: 对不可达、转私有、许可证变化的来源开 issue
+        # check 的结果里，availability 变成 unreachable/private/gone，或
+        # license_status 变成 changed 时会带 issue_kind 字段；按 docs/design.md
+        # 第 6 节，这两类情形直接开 issue，不走 PR。issue 命令自己做幂等
+        # （lock 的 open_issue 非空且仍 open 时不重复开），这里不用再判断。
+        run: |
+          python3 - <<'PYEOF'
+          import json
+          import subprocess
+
+          with open("check-result.json", encoding="utf-8") as f:
+              results = json.load(f)
+
+          for r in results:
+              kind = r.get("issue_kind")
+              if not kind:
+                  continue
+              merge_id = r["merge_id"]
+              source_id = r["source_id"]
+              print(f"::notice::{merge_id}/{source_id} issue_kind={kind}，跑 issue")
+              subprocess.run(
+                  ["upstream-monitor", "issue", "--merge", merge_id, "--source", source_id, "--kind", kind],
+                  check=True,
+              )
+          PYEOF
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: validate
         run: upstream-monitor validate
