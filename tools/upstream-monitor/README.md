@@ -56,8 +56,19 @@ upstream-monitor validate [--merge <id>] [--branch <name>] [--offline]
 - 规则 id 格式、前缀、类别码、分组编号；`local.anchor` 能否在
   `local.path` 里唯一定位到；history 与 decision_revision 一致；
   relations 的完整性和双向性（conflicts-with、pairs-with）。
+- 同一条规则的多条证据若 (path, anchor) 完全相同，报 MED：共用锚点要
+  在标题后面加各自的行首文本区分，否则反查时分不出是哪一条证据。
+- decisions 的 rationale 里出现"与 <规则 id> 冲突/互补/例外/取代"这
+  类字样，但该规则的 relations 里没有一条指向那个 id，报 HIGH——
+  rationale 里用自然语言写的关系，必须在 relations 里再记一条结构化
+  的。
 - 上游证据的 anchor 能否在快照（full-text）或临时拉取的内容
-  （metadata-only，需要网络）里定位到。
+  （metadata-only，需要网络）里定位到。定位分带小节标题的 anchor（可
+  再加 ` / <行首或行内原文>` 的子锚点）和纯行首文本两种；子锚点找不
+  到时整条 anchor 按 MISS 处理（HIGH），不会退化成只核对小节标题或行
+  首文本本身。子串弱定位（anchor 只作为子串命中，不在行首/标题）按命
+  中次数分两档：命中 1 次报 LOW（弱定位，仍可用但不够精确）；命中不
+  止 1 次报 MED（歧义，指不清是文中哪一处，需要人工把 anchor 改精确）。
 - `merges/<id>/work/` 下单元清单、覆盖表、聚类表与 decisions.yaml 的一
   致性（work/ 不存在时跳过，记一条 LOW，不算失败）。
 - catalog 与 skills/、merges/ 的三方一致性：catalog 的 `path` 目录存

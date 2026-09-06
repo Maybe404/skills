@@ -216,6 +216,47 @@ def validate_relations(merge_id: str, rules: list[dict], rep: Report) -> None:
         rep.ok(f"{merge_id}: conflicts-with 与 pairs-with 全部双向")
 
 
+def validate_shared_evidence_anchors(merge_id: str, rules: list[dict], rep: Report) -> None:
+    """同一条规则的多条证据若 (path, anchor) 完全相同，说明共用锚点没有加各自的行首文本区分。"""
+    found = False
+    for r in rules:
+        counts = collections.Counter(
+            (ev["path"], ev["anchor"]) for ev in r["sources"] if ev.get("anchor")
+        )
+        for (path, anchor), n in sorted(counts.items()):
+            if n > 1:
+                found = True
+                rep.add(
+                    "MED",
+                    f"{merge_id}/{r['id']}: {n} 条证据共用同一个 (path, anchor)：{path!r} {anchor!r}，"
+                    f"共用锚点要加各自行首文本",
+                )
+    if not found:
+        rep.ok(f"{merge_id}: 同一规则内没有证据共用 (path, anchor)")
+
+
+RATIONALE_RELATION_MENTION = re.compile(
+    r"与\s*((?:ZH|EN|ALL)-[A-Z]{1,5}-\d{3})\s*(?:冲突|互补|例外|取代)"
+)
+
+
+def validate_rationale_relations(merge_id: str, rules: list[dict], rep: Report) -> None:
+    """rationale 里点名"与 <规则 id> 冲突/互补/例外/取代"，relations 里必须有一条指向该 id。"""
+    found = False
+    for r in rules:
+        mentioned = set(RATIONALE_RELATION_MENTION.findall(r.get("rationale") or ""))
+        related_ids = {e["rule_id"] for e in r.get("relations", [])}
+        for other_id in sorted(mentioned - related_ids):
+            found = True
+            rep.add(
+                "HIGH",
+                f"{merge_id}/{r['id']}: rationale 提到与 {other_id} 冲突/互补/例外/取代，"
+                f"但 relations 里没有指向 {other_id} 的条目",
+            )
+    if not found:
+        rep.ok(f"{merge_id}: rationale 里点名的规则关系都已在 relations 里落地")
+
+
 def validate_upstream_anchors(
     root: Path, merge_id: str, docs: dict, rep: Report, client: GitHubClient | None
 ) -> None:
@@ -274,6 +315,8 @@ def validate_upstream_anchors(
             st, detail = locate(txt, ev["anchor"] or "")
             if st == "MISS":
                 rep.add("HIGH", f"{merge_id}/{r['id']} ({sid}:{path}): anchor 定位不到 {ev['anchor']!r}；{detail}")
+            elif st == "ambiguous":
+                rep.add("MED", f"{merge_id}/{r['id']} ({sid}): 弱定位有歧义 {ev['anchor']!r}；{detail}")
             elif st in ("ok-substring", "weak-heading"):
                 rep.add("LOW", f"{merge_id}/{r['id']} ({sid}): 弱定位 {ev['anchor']!r}；{detail}")
 
@@ -365,6 +408,8 @@ def validate(
         validate_local_anchors(paths.root, mid, rules, rep)
         validate_history(mid, rules, rep)
         validate_relations(mid, rules, rep)
+        validate_shared_evidence_anchors(mid, rules, rep)
+        validate_rationale_relations(mid, rules, rep)
         if check_upstream_anchors:
             validate_upstream_anchors(paths.root, mid, docs, rep, client)
         validate_coverage_for_merge(paths, mid, docs["decisions"], rep)

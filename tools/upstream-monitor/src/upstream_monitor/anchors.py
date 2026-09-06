@@ -61,11 +61,33 @@ def section_bounds(heads: dict[int, tuple[int, str]], total: int, idx: int) -> t
     return idx, total
 
 
+def _match_rest_in_scope(rest: list[str], scope: list[str], scope_desc: str) -> tuple[str, str] | None:
+    """在 scope（若干行）内核对子锚点列表 rest。
+
+    子锚点在 scope 里若都能在行首命中，返回 ("ok-linestart", ...)。
+    第一个在行首命不中的子锚点，退而找它在 scope 内作为子串的命中次数：
+    1 次记 ok-substring，大于 1 次记 ambiguous（指不清是哪一处）。
+    这个子锚点在 scope 内连子串都找不到，返回 None，调用方按 MISS 处理。
+    """
+    for sub in rest:
+        target = sub.strip('"')
+        if any(strip_md(ln).startswith(sub) or strip_md(ln).startswith(target) for ln in scope):
+            continue
+        n = "\n".join(scope).count(target)
+        if n == 0:
+            return None
+        if n == 1:
+            return "ok-substring", f"子锚点 {sub!r} 只作为子串出现在{scope_desc}"
+        return "ambiguous", f"子锚点 {sub!r} 在{scope_desc}出现 {n} 次，指不清是哪一处"
+    return "ok-linestart", "子锚点均在行首"
+
+
 def locate(text: str, anchor: str) -> tuple[str, str]:
     """在 text 里定位 anchor。
 
     返回 (status, detail)，status 取值：
-    ok-heading / ok-linestart / ok-substring / weak-heading / MISS。
+    ok-heading / ok-linestart / ok-substring / weak-heading / ambiguous / MISS。
+    ambiguous 表示弱定位（子串匹配）命中了不止一处，指不清是哪一处。
     """
     lines = text.splitlines()
     heads = heading_lines(lines)
@@ -84,31 +106,38 @@ def locate(text: str, anchor: str) -> tuple[str, str]:
         for i in hits:
             a, b = section_bounds(heads, len(lines), i)
             body = lines[a:b]
-            for sub in rest:
-                target = sub.strip('"')
-                if any(
-                    strip_md(ln).startswith(sub) or strip_md(ln).startswith(target)
-                    for ln in body
-                ):
-                    continue
-                if any(target in ln for ln in body):
-                    return "ok-substring", f"{how}; 子锚点 {sub!r} 只作为子串出现在小节内"
-                break
-            else:
+            result = _match_rest_in_scope(rest, body, "小节内")
+            if result is None:
+                continue
+            status, detail = result
+            if status == "ok-linestart":
                 return (
                     "ok-linestart" if how == "heading-exact" else "weak-heading",
-                    f"{how}; 子锚点均在行首",
+                    f"{how}; {detail}",
                 )
+            return status, f"{how}; {detail}"
         return "MISS", f"小节 {head!r} 找到但子锚点 {rest} 定位不到"
 
-    for ln in lines:
+    head_line_idx = None
+    for i, ln in enumerate(lines):
         if strip_md(ln).startswith(head):
-            if not rest:
-                return "ok-linestart", "行首文本"
+            head_line_idx = i
             break
-    if any(head in ln for ln in lines):
+
+    if head_line_idx is not None:
+        if not rest:
+            return "ok-linestart", "行首文本"
+        result = _match_rest_in_scope(rest, [lines[head_line_idx]], "行内")
+        if result is None:
+            return "MISS", f"行首文本 {head!r} 找到但子锚点 {rest} 在该行内定位不到"
+        return result
+
+    n = count_occurrences(text, head)
+    if n == 0:
+        return "MISS", f"行首文本找不到: {head!r}"
+    if n == 1:
         return "ok-substring", "只作为子串出现，不在行首"
-    return "MISS", f"行首文本找不到: {head!r}"
+    return "ambiguous", f"只作为子串出现 {n} 次，不在行首，指不清是哪一处"
 
 
 def count_occurrences(text: str, anchor: str) -> int:
