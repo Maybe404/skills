@@ -253,7 +253,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Voice Adoption（可选）"
+  anchor: "## Voice Adoption（可选） / 默认情况下，humanizer-zh 保持中立的去 AI 味润色"
 notes: |
   intent: 上游给"声音模仿"这个功能加了一个默认关闭的开关，针对的现象是风格化改写很容易越权——用户要的是去 AI 味，拿回来的是别人的文风。
   existing: 疑似对应 ALL-PROT-017（获得改写授权不等于获得更换声口的授权）。
@@ -273,7 +273,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Voice Adoption（可选）"
+  anchor: "## Voice Adoption（可选） / 只有在以下条件同时满足时"
 notes: |
   intent: 三个条件加"每会话一次"的上限，是为了让这个可选功能不变成骚扰：上游明确写了"机会性地"，说明它知道主动提问本身有成本。
   existing: 现有规则里没有（现有的 ALL-PROC-003 讲的是信息不足时必须问，本条讲的是可选功能什么时候才允许主动问）。
@@ -313,7 +313,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Voice Adoption（可选）"
+  anchor: "## Voice Adoption（可选） / 用户拒绝或忽略"
 notes: |
   intent: 把"忽略"和"拒绝"同等对待，是因为用户不回答一个可选提议本身就是回答。这条防的是模型把沉默当成"还没决定"反复推销。
   existing: 现有规则里没有。
@@ -333,7 +333,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Voice Adoption（可选）"
+  anchor: "## Voice Adoption（可选） / 用户主动指名某位作者"
 notes: |
   intent: 针对的现象是把确认流程机械执行成"每次都要问一遍"，用户已经给出的信息被再问一次。
   existing: 现有规则里没有。
@@ -353,7 +353,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Voice Adoption（可选）"
+  anchor: "## Voice Adoption（可选） / 在改写时，把该文件的人格、句法模板、节奏规则、反模式叠加"
 notes: |
   intent: 上游用"叠加"这个词界定作者档案的作用范围，防的是一加载风格档案就整套规则失效。
   existing: 现有规则里没有（现有规则里没有"可选风格档案"这个机制）。
@@ -373,7 +373,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Voice Adoption（可选）"
+  anchor: "## Voice Adoption（可选） / 如果 voice 档案与 Core Rules 冲突"
 notes: |
   intent: 上游承认自己的标点和结构规则是通用默认值而不是真理——真实作者确实大量使用被它禁掉的写法。这条冲突裁决说明上游把"像某个真人"排在"符合本 skill 的风格偏好"之上。
   existing: 疑似对应 ALL-PROC-023（仲裁顺序）与 ALL-PROC-025（用户或项目提供的词表优先于默认词表）。本单元的优先项是"作者档案"，与两条的适用对象都不同，归并时要判断是否并入 ALL-PROC-025。
@@ -393,7 +393,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Voice Adoption（可选）"
+  anchor: "## Voice Adoption（可选） / 用户后续说「换成 X」时"
 notes: |
   intent: 明确"切换"的语义是替换而不是追加，为下一条（不混多位作者）提供操作层面的保证。
   existing: 现有规则里没有。
@@ -413,7 +413,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Voice Adoption（可选）"
+  anchor: "## Voice Adoption（可选） / 不要在用户没选时擅自模仿任何作者的口吻"
 notes: |
   intent: 与 U-azh-012 是同一件事的两种表述（默认中立 / 禁止擅自模仿），上游把它单列进反模式清单是为了让违反可判定。这条同时有署名层面的考虑：模仿真人文风而不声明，对被模仿者和读者都不诚实。
   existing: 疑似对应 ALL-PROT-017。与 U-azh-012 同一判定逻辑，归并时可能合并成一条。
@@ -473,7 +473,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Voice Adoption（可选）"
+  anchor: "## Voice Adoption（可选） / 不要把作者档案的反模式当成 humanizer-zh 的默认规则"
 notes: |
   intent: 防的是风格档案的规则渗漏——一次风格化改写之后，模型把某个作者的个人偏好当成了普遍的写作规范。上游在 Final Check 末尾又强调了一次"没有把它的口癖泄漏到默认润色里"。
   existing: 现有规则里没有。
@@ -493,7 +493,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 1. 优先改掉翻译腔"
+  anchor: "### 1. 优先改掉翻译腔 / 把英文句法硬套中文的句子拆开重写"
 notes: |
   intent: 上游把翻译腔排在 Core Rules 第一条，理由在 Overview 里：中文 AI 文本的底子常常是英文思路。它针对的现象是模型生成中文时沿用英文的句子结构（长定语、被动、从句嵌套），词都是中文词，句子不是中文句子。
   existing: 疑似对应 ZH-P-011（拆掉中文里的英文语法痕迹，decision 为 unverified）。本单元可以给 ZH-P-011 补证据。
@@ -513,7 +513,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 1. 优先改掉翻译腔"
+  anchor: "### 1. 优先改掉翻译腔 / 少用「对于……来说」"
 notes: |
   intent: 这是 U-azh-024 的可判定化：句法层面的"翻译腔"难以逐句判定，上游给了一份具体的连接结构清单当抓手。四个词条共用同一条判定逻辑（出现即视为翻译腔信号），按 extraction.md 合成一个单元。
   existing: 疑似对应 ZH-P-008（前置状语压后主干，含「基于……」）和 ZH-P-011。「对于……来说」「围绕……展开」「使得……得以……」三条在现有词表里没有。
@@ -733,7 +733,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 5. 管住文章级结构"
+  anchor: "### 5. 管住文章级结构 / 开头要尽快立题"
 notes: |
   intent: 上游针对的是 AI 长文的典型开头：先写一段可以放在任何文章前面的行业背景，真正的题目到第二三段才出现。判据是首段立的题与主体是不是同一件事。
   existing: 疑似对应 ZH-P-004（不用空话开场，从最具体的那句话开始）。ZH-P-004 管开场的措辞，本单元管开场与全文的关系。
@@ -793,7 +793,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 5. 管住文章级结构"
+  anchor: "### 5. 管住文章级结构 / 结尾要回应前文真正提出的问题"
 notes: |
   intent: 上游给"结尾拔高"加了一个可判定的判据：不是看结尾有多空，而是看它有没有回到开头提出的那个问题。这比"不要空洞乐观"好判。
   existing: 疑似对应 ZH-P-006 与 EN-P-023（结尾停在最后一个具体事实上）。"回应开头提出的问题"这个判据现有规则里没有。
@@ -913,7 +913,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 6. 处理标点和排版"
+  anchor: "### 6. 处理标点和排版 / 中文正文中的英文多词术语使用半角空格分词"
 notes: |
   intent: 上游未说明。推断（标明是推断）：这一组排版规则针对的是中文技术博客里英文术语的写法在同一篇内不统一，而不统一本身就是拼接痕迹。
   existing: 现有规则里没有。
@@ -933,7 +933,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 6. 处理标点和排版"
+  anchor: "### 6. 处理标点和排版 / 英文术语与中文括号连写时"
 notes: |
   intent: 上游未说明。推断（标明是推断）：全角括号自带留白，再加半角空格会出现双倍间距；这条与 U-azh-045 是一套排版约定的两面（该加空格的地方加、不该加的地方不加）。
   existing: 现有规则里没有。
@@ -953,7 +953,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 6. 处理标点和排版"
+  anchor: "### 6. 处理标点和排版 / 并列英文术语用斜杠连接时"
 notes: |
   intent: 上游未说明。推断（标明是推断）：与 U-azh-045、U-azh-046 同属一套排版约定，目的是让同一篇里英文与中文混排的间距处理一致。
   existing: 现有规则里没有。
@@ -993,7 +993,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 7. 统一常见术语和日期"
+  anchor: "### 7. 统一常见术语和日期 / token 保持英文"
 notes: |
   intent: 上游未说明。推断（标明是推断）：这两个词在中文技术写作里的通行写法就是英文，译成中文反而增加阅读成本；这条属于"术语稳定"而不是"要不要用外来词"的立场。
   existing: 疑似对应 ALL-PROT-009（精确技术术语不得为避免重复而换称）。本单元规定的是具体词条的写法，不是不换称。
@@ -1033,7 +1033,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 7. 统一常见术语和日期"
+  anchor: "### 7. 统一常见术语和日期 / 数字日期写作"
 notes: |
   intent: 上游未说明。推断（标明是推断）：日期格式在中文长文里最容易出现同篇不一致（有的写 2 月 5 日、有的写 02/05），统一格式是消除拼接痕迹的低成本手段。
   existing: 现有规则里没有。注意与 ALL-PROT-002（数字日期不得改写成概括说法）不冲突：本单元只改写法，不改值。
@@ -1053,7 +1053,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "### 7. 统一常见术语和日期"
+  anchor: "### 7. 统一常见术语和日期 / 中文月份叙事写作"
 notes: |
   intent: 上游未说明。推断（标明是推断）：与 U-azh-051 配套，把"具体日期"和"叙事月份"分成两种写法，避免正文里数字密度过高。
   existing: 现有规则里没有。
@@ -1173,7 +1173,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Repo Overrides"
+  anchor: "## Repo Overrides / 引号样式按以下顺序确定"
 notes: |
   intent: 上游给一个具体的排版分歧写了完整的优先级链，说明它认为引号样式是这类项目里最常见的反复修改点，值得单独定规矩。
   existing: 疑似对应 ALL-PROC-023（仲裁顺序）与 ALL-PROC-025。本单元是这两条在引号样式上的具体化。
@@ -1193,7 +1193,7 @@ source:
   source_id: upstream-ai-zixun-humanizer-zh
   path: SKILL.md
   commit: f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3
-  anchor: "## Repo Overrides"
+  anchor: "## Repo Overrides / 当原文整篇已经显著使用"
 notes: |
   intent: 这是对默认值的一条例外：原文自己已经一致时，一致本身就是作者的选择，默认值不该覆盖它。上游在意的是"全篇统一"，不是"用哪一种"。
   existing: 疑似对应 EN-P-037（引号排版跟随作者原稿）。两条的思路一致，只是语种不同，归并时可能合成一条。

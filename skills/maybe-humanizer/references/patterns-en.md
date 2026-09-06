@@ -51,7 +51,7 @@
 
 **判据。** 下列短语与连接词照录：it's worth noting、it's important to note、at the end of the day、when it comes to、at its core、in today's world、in the age of、the reality is、the truth is、in terms of、with regard to、in order to、due to the fact that、at this point in time、going forward、in connection with、associated with。处理动作分两种，按短语本身承不承载信息定：整体不承载信息的删掉（it's worth noting、at the end of the day、in today's world）；承载了真实的因果、条件、转折或时间关系的，缩短成表达这个关系的最短说法，不整段删（due to the fact that 写成 because，in order to 写成 to，at this point in time 写成 now 或直接给日期）。
 
-**通过条件。** 删掉的是词，不是词背后原文真实存在的逻辑关系，按 ALL-PROT-020 那层关系一律保留。EN-S-012 要求段落一律不以 So 开头，那条只作参考；承担真实逻辑关系的 So 归本条按"缩短"处理，不按"删掉"处理。ZH-P-023 管中文里同一类名词化填充结构，两条各管一种语言。
+**通过条件。** 删掉的是词，不是词背后原文真实存在的逻辑关系，按 ALL-PROT-020 那层关系一律保留。EN-S-012 要求段落一律不以 So 开头，那条只作参考；承担真实逻辑关系的 So 归本条按"缩短"处理，不按"删掉"处理。ZH-P-023 管中文里同一类名词化填充结构，两条各管一种语言。it's worth noting 同时在 EN-P-049 的词表里，同一处只计一次命中：作为不承载信息的短语删掉走本条，作为陈述事实之前的预先辩解删掉走 EN-P-049。
 
 **已知会漏掉什么。** 过渡词不在这份词表里：Moreover、Furthermore、Additionally、That said、In conclusion 属于同一类现象，但它们孤立出现一次是正当的，命中条件是堆叠，本条的逐条词表判不出堆叠。in a world where、It is important to note that 的完整从句形式也不在表内。
 

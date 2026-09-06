@@ -194,7 +194,7 @@ source:
   source_id: upstream-op7418-humanizer-zh
   path: SKILL.md
   commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
-  anchor: "### 如何增加语调"
+  anchor: "### 如何增加语调 / 承认复杂性"
 notes: |
   intent: 上游的理由是"真实的人有复杂的感受"，针对的现象是模型倾向于把评价收敛成一个方向。反例按"原文本来就有两种感受"来写，这样它同时是一条保真规则；如果原文只有单一感受而改写补出矛盾，那就落到 ALL-PROT-001 的禁区。
   existing: 疑似对应 ALL-PROT-017（作者的犹疑属于作者，不得为了统一而改掉）。blader 的对应表述是"keep the writer's ... mixed feelings"（保留），op7418 写成"增加"，是同一件事的两个方向。
@@ -214,7 +214,7 @@ source:
   source_id: upstream-op7418-humanizer-zh
   path: SKILL.md
   commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
-  anchor: "### 如何增加语调"
+  anchor: "### 如何增加语调 / 适当使用"
 notes: |
   intent: 上游的理由是"第一人称不是不专业，而是诚实"，针对的现象是模型把"正式"等同于"无人称"，于是把作者的第一人称洗掉。反例按"原文本来就有第一人称"来写，避免与不得新增第一人称的规则打架。
   existing: 疑似对应 ALL-PROT-017（保留作者的声口）与 ALL-PROT-018（不得为了像真人而添加原文没有的第一人称）。本单元如果按"补出第一人称"理解，与 ALL-PROT-018 冲突；按"不要删掉作者已有的第一人称"理解则与 ALL-PROT-017 一致。上游原文写的是"适当使用"，两种理解都读得出来，归并时需要择一并写明。
@@ -674,7 +674,7 @@ source:
   source_id: upstream-op7418-humanizer-zh
   path: SKILL.md
   commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
-  anchor: "## 质量评分"
+  anchor: "## 质量评分 / 对改写后的文本进行 1-10 分评估"
 notes: |
   intent: blader 没有任何评分机制。op7418 加这一节是为了让"改得好不好"有一个可以说出口的结果，五个维度分别对应它自己的五条核心规则（速查里的删填充、变节奏、信任读者、有个性、删金句）。推断（标明是推断）：它的用途是自查而不是对外报告，因为分档标准的落点是"要不要重新修订"。注意这套评分不声称能预测任何 AI 检测器的判定，与 criteria.md 第 5 条第 1 项禁止的那类分数不是一回事。
   existing: 疑似对应 ALL-M-005（按公式给文本算分并按分段给判语，decision 为 rejected）与 ALL-M-004（自己改完自己判分不算验收）。本单元的评分维度与 ALL-M-005 被拒的那套不同（不含"不该被任何检测器标记"这类判语），归并时要区分对待，不要因为同属"打分"就直接沿用 rejected。
@@ -694,7 +694,7 @@ source:
   source_id: upstream-op7418-humanizer-zh
   path: SKILL.md
   commit: 91f3d394db8419c20d67ebe22a96cf8fee0a404b
-  anchor: "## 质量评分"
+  anchor: "## 质量评分 / 45-50 分：优秀"
 notes: |
   intent: 这条把评分和动作挂上钩，否则打分只是装饰。上游没有给重试次数上限，推断（标明是推断）：这是一个疏漏，按字面执行可能在低分文本上反复重写。
   existing: 疑似对应 ALL-PROC-019（改完可以重跑检查再改一轮，最多三轮）。本单元缺少轮次上限，归并时如果采纳需要补上 ALL-PROC-019 的上限。

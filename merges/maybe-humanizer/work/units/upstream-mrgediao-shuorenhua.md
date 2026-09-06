@@ -397,7 +397,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Scene Packs"
+  anchor: "### Scene Packs / 如果文本本身命中下面任一子场景"
 notes: |
   intent: 子场景的触发条件被明确写成"不依赖用户是否明说"，针对的现象是用户贴一段 README 时不会声明它是 README，而 README 有一套只对它成立的要求（第一屏说清是什么）。"不受主场景初判限制"则防的是主场景判错时子场景跟着失效。
   existing: 现有规则里没有（现有的 ALL-G-002 按体裁叠加限制，但没有"信号触发、不依赖用户声明"这一层）。
@@ -417,7 +417,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Scene Packs"
+  anchor: "### Scene Packs / README：出现项目介绍"
 notes: |
   intent: README 的第一屏是读者决定要不要继续看的地方，而 AI 写的 README 开头几乎必然是一句可以套在任何项目上的价值宣言。三问（是什么、给谁用、解决什么问题）把这个场景的验收变成可判定的。
   existing: 现有规则里没有（现有的 ALL-M-001 可移植性测试可以判出反例，但没有 README 专属的三问要求）。
@@ -437,7 +437,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Scene Packs"
+  anchor: "### Scene Packs / release-note：出现版本标题"
 notes: |
   intent: 三项内容（变更、验证、限制）里"限制"最容易被删掉——它读起来负面，而 AI 的发布说明倾向于只留正面的部分。上游把它写进必须项，防的是改写把已知限制洗掉。
   existing: 疑似对应 ALL-G-002。发布说明的三项必须内容在现有规则里没有。
@@ -457,7 +457,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Scene Packs"
+  anchor: "### Scene Packs / forum-post：出现 Linux.do"
 notes: |
   intent: 论坛帖的价值恰恰在于它不是公告：真实的观察、带情绪的判断、没修饰的语气，是读者判断可信度的依据。去 AI 味在这个场景里最容易好心办坏事——把帖子改"规范"了，就把它改成了另一种模板。
   existing: 疑似对应 ALL-PROT-017（作者的词汇、直率程度、犹疑属于作者）。
@@ -477,7 +477,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Scene Packs"
+  anchor: "### Scene Packs / issue-reply：出现 issue"
 notes: |
   intent: issue 回复的读者要的是两件事：你认不认这个问题、下一步是什么。客服话术把这两件事都省了，还显得在敷衍。这条与本 skill 关于"过度接住"的规则同源：都是拒绝用姿态替代内容。
   existing: 疑似对应 EN-P-028（删掉聊天残留与谄媚）。issue 回复要"先确认问题和下一步"这个正向要求在现有规则里没有。
@@ -497,7 +497,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Scene Packs"
+  anchor: "### Scene Packs / api-reference：出现 endpoint"
 notes: |
   intent: 接口文档是"补一个看起来合理的值"后果最严重的场景：读者会照着调用。上游在这一节同时要求 method、path、字段、约束、字面量与恢复动作零漂移（这几项在本清单里按保护对象各自成条），本单元只承担这个子场景的两条特有要求。
   existing: 疑似对应 ALL-PROT-001 与 ALL-PROC-004（缺失部分影响事实时先问）。接口合同缺失只标不补这条在现有规则里没有。
@@ -517,7 +517,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Scene Packs"
+  anchor: "### Scene Packs / faq：出现 FAQ"
 notes: |
   intent: FAQ 的读者是带着一个具体故障来的，铺垫对他没有价值。这条是这个子场景唯一的正向结构要求，紧接着的三条限制（本清单 U-srh-026 至 U-srh-028）都是给它设边界的。
   existing: 疑似对应 ALL-G-002。
@@ -1083,7 +1083,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Unsourced citation modes"
+  anchor: "### Unsourced citation modes / 处理无源引用时，固定只在这 3 种模式里选一种"
 notes: |
   intent: 上游没有给一个统一处理方式，而是给了三种并要求显式选择，因为无源引用的正确处理取决于场景：对外写作里应该删，文档里应该标，编辑稿里可以留占位。强制选择防的是"随手改一改"。
   existing: 疑似对应 EN-P-017（模糊归因要点名来源或删掉整个论断）与 ALL-PROT-001。三模式机制在现有规则里没有。
@@ -1103,7 +1103,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Unsourced citation modes"
+  anchor: "### Unsourced citation modes / rewrite-safe"
 notes: |
   intent: 这条防的是最常见的错误处理：把"专家说 X"改成"X"。删掉归属之后，一个没有依据的说法反而变成了作者的直接主张，可信度问题不但没解决，还加重了。判据是"去掉来源之后这句还站不站得住"。
   existing: 疑似对应 EN-P-017。"删掉归属会让论断变成作者主张"这个判据在现有规则里没有明写。
@@ -1143,7 +1143,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Unsourced citation modes"
+  anchor: "### Unsourced citation modes / audit-only"
 notes: |
   intent: docs 和 status 里的无源引用不适合删——那里的每句话可能都是工作依据，删掉会丢事实。审计模式把问题暴露给作者，由作者补来源。这是三种模式里最保守的一种，所以也是跨场景时的默认。
   existing: 疑似对应 ALL-PROT-014（风险写进"需作者确认"一节，不在正文静默改动）与 ALL-PROT-015（默认不外部核实）。
@@ -1163,7 +1163,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Unsourced citation modes"
+  anchor: "### Unsourced citation modes / 只约束无源论断本身"
 notes: |
   intent: 这条防的是"保守"被执行成"什么都不做"：一处风险让整段停摆，用户拿到的是一份没有改过的稿子加一句免责说明。上游明确把审计的作用范围限定在那一条论断上。
   existing: 现有规则里没有。
@@ -1183,7 +1183,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Unsourced citation modes"
+  anchor: "### Unsourced citation modes / rewrite-with-placeholder"
 notes: |
   intent: 占位模式保留了一个空的论证位置，只有在作者打算自己去补来源时才有意义，所以上游把它锁在"用户明确要求"后面。禁止补具体机构、数据、年份、研究名这四项，是因为占位一旦被填成具体内容就变成了伪造。
   existing: 疑似对应 ALL-PROT-001 与 ALL-PROC-005（用户给出的具体范围优先）。
@@ -1203,7 +1203,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Unsourced citation modes"
+  anchor: "### Unsourced citation modes / 如果用户没指定模式"
 notes: |
   intent: "跨场景取保守"是一条兜底规则：场景判不准时，宁可少改。它与 U-srh-014（混合文本只保留一个主语域）不冲突——那条讲语域收敛，这条讲处理力度取下限。
   existing: 疑似对应 ALL-PROC-003（信息不明时先问）。本单元的做法是不问、直接取保守值，与现有规则的做法不同，归并时需要裁决。
@@ -1403,7 +1403,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### `bounded`"
+  anchor: "### `bounded` / 一句能进删除清单，必须同时满足三条"
 notes: |
   intent: 三条同时满足才能删，其中"唯一过渡"这一条是最容易被忽略的：过渡句本身没有信息，但删掉之后上下两段会硬接。上游把它写成必要条件，防的是"没有信息就删"这个过于简单的判据。
   existing: 疑似对应 ALL-PROT-003（独立信息一律保留）与 ALL-P-008。三条必要条件的组合在现有规则里没有。
@@ -1423,7 +1423,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### `bounded`"
+  anchor: "### `bounded` / 删掉后该段信息点不变"
 notes: |
   intent: 这条把"整句删"和"改数字"分成互斥的两个选项：要么整条拿掉，要么原样保留。中间状态（保留论断但模糊化数字）被明确禁止，理由与 U-srh-055 相同——那会让一个无依据的说法变得不可核查。
   existing: 疑似对应 ALL-PROT-002 与 U-srh-055（同一条禁令在两处出现）。
@@ -1443,7 +1443,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### `bounded`"
+  anchor: "### `bounded` / 句首可剥离的引导词"
 notes: |
   intent: 上游给了实测依据：长文里句首引导词模型能在句内清掉，整句空话在受限 scope 下删不掉，只会被软化成另一种说法。因此它把两类动作分开走——能句内解决的不占用用户的确认成本。
   existing: 疑似对应 ALL-PROT-020（删连接词时保留真实内容）。"两类动作分开走"这个操作区分在现有规则里没有。
@@ -1483,7 +1483,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### `bounded`"
+  anchor: "### `bounded` / 输出：正文给句内洗后的稿"
 notes: |
   intent: 清单里必须写"为什么删了不丢信息"，是为了让用户能核对这个判断，而不是只看到一个删除建议。整个 bounded 机制的目的就是把长度决定权交还给用户，输出形态是这个目的的落地。
   existing: 疑似对应 ALL-PROC-008（改动说明写改了什么、为什么改、保留了什么）。"待确认的删除清单"这种输出形态在现有规则里没有。
@@ -1503,7 +1503,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### `in-place`"
+  anchor: "### `in-place` / 用户 prompt 明确要求保留句数"
 notes: |
   intent: in-place 是三档里最受限的，改写效果最弱，所以上游要求明确触发而不是靠推测。第二个触发条件（bounded 仍删多了）说明这三档设计成了一条可以逐级收紧的路径。
   existing: 疑似对应 ALL-PROC-005（用户给出的具体范围优先于默认档位）。
@@ -1523,7 +1523,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### `in-place`"
+  anchor: "### `in-place` / 不删整句（即使整句是空话）"
 notes: |
   intent: 四条禁令覆盖了所有会改变句数和段数的动作，因为用户选 in-place 的诉求就是"形状不要变"。上游特意加了"即使整句是空话"这个括号，堵死最容易被合理化的例外。
   existing: 现有规则里没有对应档位。
@@ -1543,7 +1543,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### `in-place`"
+  anchor: "### `in-place` / 句内替换词或短语"
 notes: |
   intent: 允许清单说明 in-place 不是"不改"，而是把改动全部收进句子内部。"语气垫片"这个说法指的是那些只承担缓冲功能的词（其实、某种程度上、可以说），在中文里数量很大且删掉不影响句子成立。
   existing: 疑似对应 EN-P-003（不承担功能的副词删掉）与 ZH-P-001。
@@ -1603,7 +1603,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### `in-place`"
+  anchor: "### `in-place` / aggressive + in-place 可以存在"
 notes: |
   intent: 这个组合本身是矛盾的（要大改又不许动结构），上游没有禁止它，而是要求先把矛盾说清楚再执行。这体现了这份 skill 处理冲突需求的一贯方式：把选择权和后果一起交给用户。
   existing: 疑似对应 ALL-PROC-003（信息不明时停下来问）。本单元的做法是先提醒再执行，不是停下来等回答，两者不同。
@@ -1665,7 +1665,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Tier 2"
+  anchor: "### Tier 2 / 单独出现可以放行"
 notes: |
   intent: 带数值的阈值是这条规则的价值所在：没有阈值，"扎堆"无法判定，执行者要么放行一切要么见到就改。按段落长度分两档，是因为长段落里出现两个连接词本来就正常。
   existing: 疑似对应 ALL-M-002（单一痕迹不算证据，多种痕迹聚集才构成信号）。ALL-M-002 没有给数值阈值，本单元可以补上。
@@ -1685,7 +1685,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Tier 2"
+  anchor: "### Tier 2 / 默认处理：保留最贴切的一个"
 notes: |
   intent: "保留一个"是这条规则的关键：Tier 2 的问题是密度不是词本身，全删会让文字变干。上游在 Tier 3 也用了同样的思路（删掉多余的几次）。
   existing: 疑似对应 EN-M-001 的第二档（同一段出现两次以上才改）。"保留最贴切的一个"这个处理方式在现有规则里没有明写。
@@ -1767,7 +1767,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "保护依据是词在当前句子里的具体含义"
+  anchor: "## 5. No-touch and keep rules / 保护依据是词在当前句子里的具体含义"
 notes: |
   intent: 这条堵的是防误杀规则被滥用：执行者一旦发现"技术文本要保护"，容易把整段技术文本当成免检区。上游要求保护落在词一级，且要有依据（当前句子的语义，或明确约定）。最后一句"原文用了某个说法也不等于项目要求保留"堵的是另一个滥用——把现状当成规范。
   existing: 疑似对应 ALL-PROT-009。"不得按文本类型整体豁免"这一层在现有规则里没有。
@@ -1787,7 +1787,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "保护依据是词在当前句子里的具体含义"
+  anchor: "## 5. No-touch and keep rules / 不要自行假定存在术语表"
 notes: |
   intent: 与 U-srh-087 是一对：那条讲不能凭文本类型豁免，这条讲不能凭想象出来的约定豁免。两条一起把"保护"限制在有据可依的范围内。
   existing: 疑似对应 ALL-PROT-001（不得编造）与 ALL-PROC-025。
@@ -1807,7 +1807,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "数值、正式指标名、字段名、命令和引用原文按字面保护"
+  anchor: "数值、正式指标名、字段名、命令和引用原文按字面保护 / 数值、正式指标名"
 notes: |
   intent: 上游把保护分成"按字面"和"按含义"两类，数值和指标名属于前者：它们的价值就在于精确的写法，改写等于改数据。这是本 skill 保护对象里最硬的一类。
   existing: 疑似对应 ALL-PROT-002（数字不得改写成概括说法）与 ALL-PROT-008（正文默认逐字不动）。
@@ -1827,7 +1827,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "数值、正式指标名、字段名、命令和引用原文按字面保护"
+  anchor: "数值、正式指标名、字段名、命令和引用原文按字面保护 / 命令和引用原文"
 notes: |
   intent: 命令是文档里唯一会被直接复制粘贴执行的内容，任何改写都可能让它跑不起来或跑出别的结果。按对象拆条是任务要求，本条与字段名、日志、引用原文各自成条。
   existing: 疑似对应 ALL-PROT-008 与 ALL-PROC-016（代码块整体跳过）。ALL-PROC-016 的做法是跳过代码块，本单元保护的是散文里内联出现的命令，两者互补。
@@ -1847,7 +1847,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "- 引用原文、命令、接口名、参数名、字段名、配置项、日志、报错"
+  anchor: "引用原文、命令、接口名、参数名、字段名、配置项、日志、报错 / 接口名、参数名、字段名、配置项"
 notes: |
   intent: 这是本来源被登记时点名的保护对象之一。字段名的特殊之处在于它同时是标识符和词：模型看到 `key`、`status`、`level` 这类字段名时很容易把它当普通词处理，而字段名改了就对不上代码。api-reference 子场景里"字段与约束零漂移"讲的是同一件事。
   existing: 疑似对应 ALL-PROT-008（专有名词逐字不动）。接口名、参数名、字段名、配置项作为一类保护对象在现有规则里没有点名，是中文技术写作场景的缺口。
@@ -1867,7 +1867,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "- 引用原文、命令、接口名、参数名、字段名、配置项、日志、报错"
+  anchor: "引用原文、命令、接口名、参数名、字段名、配置项、日志、报错 / 日志、报错"
 notes: |
   intent: 报错和日志的用途是被搜索和被匹配——改一个字就搜不到了。这也是 When to use 里"文本主要是代码、日志、命令、配置、接口名、报错"时不适用本 skill 的原因：这类内容整体不该被风格改写。
   existing: 疑似对应 ALL-PROT-008 与 U-srh-001。
@@ -1887,7 +1887,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "- 引用原文、命令、接口名、参数名、字段名、配置项、日志、报错"
+  anchor: "引用原文、命令、接口名、参数名、字段名、配置项、日志、报错 / 引用原文"
 notes: |
   intent: 引语被改写是最严重的一类失真：它把模型写的话署到了别人名下。上游把它和命令、字段名并列在同一条按字面保护的清单里。
   existing: 疑似对应 ALL-PROT-008（真实引语默认逐字不动，真伪无法确认的引语一律不改）。
@@ -2187,7 +2187,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Annotation mode"
+  anchor: "### Annotation mode / 只有在用户明确要求下面这类事情时才启用"
 notes: |
   intent: 审稿模式与改写模式交付的东西完全不同，猜错会让用户拿到一份自己不要的东西。上游给了四类明确措辞作为触发条件，避免靠推测。
   existing: 疑似对应 ALL-PROC-007（审稿与改写两种工作模式）。触发条件的具体措辞清单在现有规则里没有。
@@ -2227,7 +2227,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Annotation mode"
+  anchor: "### Annotation mode / annotation mode 不直接给整段改写稿"
 notes: |
   intent: 四个字段把"哪里有问题"变成可核对的：问题族给分类、触发点给证据、建议动作给出路、是否建议改写给结论。缺任何一个，用户都要回来追问。
   existing: 疑似对应 ALL-PROC-007（审稿逐条点出命中的规则 id、引用原句、给出改法）。四字段结构与现有规则的三要素接近，可以对齐。
@@ -2267,7 +2267,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Annotation mode"
+  anchor: "### Annotation mode / 如果文本的问题是"
 notes: |
   intent: 这是一条把"这篇文章其实没东西"变成可判定的规则：压缩后剩多少，是能数出来的。它区分了两种不同的问题——表达有问题（能改）和材料不足（改不了），而模型默认会把后者当成前者来处理，结果是换一套说法把篇幅填回去。
   existing: 疑似对应 ALL-M-001（可移植性测试）。压缩试验是一个独立的判据，现有规则里没有。
@@ -2287,7 +2287,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Annotation mode"
+  anchor: "### Annotation mode / 不替作者设计怎么去补"
 notes: |
   intent: 三条限制各堵一个出口：不替作者设计补法（那是作者的活，也容易变成编内容）、不用换说法填篇幅（那是把问题藏起来）、不能因为材料不足就不清理（否则等于放弃改写）。最后一句"要同时说明改完会短很多"是对用户的预期管理。
   existing: 疑似对应 ALL-PROT-001 与 ALL-P-007（原文里找不到就标出缺口去问）。"不替作者设计怎么补"这条限制在现有规则里没有明写。
@@ -2347,7 +2347,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Annotation mode"
+  anchor: "### Annotation mode / 不要一边说"
 notes: |
   intent: 用户说"先别改"时，看到一份改好的稿子会直接影响他的判断——他很难再回到"要不要改"这个问题上。上游用"不要偷偷输出"这个措辞，说明这是个常见的越界。
   existing: 疑似对应 ALL-PROC-007（审稿模式不重写全文，给完报告就停下）。
@@ -2487,7 +2487,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Pass 1 | 保真回读"
+  anchor: "### Pass 1 | 保真回读 / in-place：输出字数低于原文 85% 时"
 notes: |
   intent: 字数比例是一个廉价但有效的自动检查：in-place 只做句内清洗，正常缩水幅度有限，掉到 85% 以下几乎一定是删了整句。上游用它作为触发回退检查的信号，而不是直接判定失败。
   existing: 现有规则里没有（现有规则没有任何篇幅口径的自查指标）。
@@ -2507,7 +2507,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Pass 1 | 保真回读"
+  anchor: "### Pass 1 | 保真回读 / bounded：字数会因删整句空话而下降"
 notes: |
   intent: bounded 的机制决定了它必然缩水，所以字数指标在这一档没有意义，检查必须落在"删的每一条是不是真的空"。上游为两档设了两种不同的检查方式，说明它清楚同一个指标不能通用。
   existing: 现有规则里没有。
@@ -2527,7 +2527,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Pass 1 | 保真回读"
+  anchor: "### Pass 1 | 保真回读 / 句数变化超过约 10% 时"
 notes: |
   intent: 句数是比字数更直接的结构指标：并句和删句都会改变句数，而句内清洗不会。10% 这个阈值给了正常波动的余量，超出就说明动了结构。
   existing: 现有规则里没有。
@@ -2567,7 +2567,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Pass 2 | Residual Audit"
+  anchor: "### Pass 2 | Residual Audit / 只有在第一遍已经保住事实"
 notes: |
   intent: 第二遍是可选的，且有前提。上游把"事实已保住"设成进入条件，是为了防止执行者在事实还没核完的时候就去追求语感——那样第二遍的改动会建立在一个可能已经漂了的稿子上。
   existing: 疑似对应 ALL-PROC-019（改完可以重跑一遍检查再改一轮）。"第二遍有进入条件"在现有规则里没有。
@@ -2587,7 +2587,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Pass 2 | Residual Audit"
+  anchor: "### Pass 2 | Residual Audit / 开场残留：还在用"
 notes: |
   intent: 这类提示层的特点是它在第一轮改写中常常被当成"结构清晰"的表现留下来，所以要在第二遍专门查一次。「结论先说」尤其容易漏，因为它看起来是在执行好的写作建议。
   existing: 疑似对应 ZH-P-001（含"值得注意的是"）与 EN-P-007（删掉清嗓子式开场）。「结论先说」「直接说结论」在现有中文词表里没有。
@@ -2607,7 +2607,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Pass 2 | Residual Audit"
+  anchor: "### Pass 2 | Residual Audit / 总结残留：还在用"
 notes: |
   intent: 空收尾在第一遍被删掉之后，改写过程本身会再生成新的——因为模型在结束一段时倾向于收束。第二遍专门查一次，是承认这个再生成的存在。
   existing: 疑似对应 ZH-P-001、ZH-P-006 与 U-srh-032（同一类问题在兜底规则里已有一条，本条是复扫环节的检查项）。
@@ -2687,7 +2687,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Pass 2 | Residual Audit"
+  anchor: "### Pass 2 | Residual Audit / 第二遍只允许做轻量修正"
 notes: |
   intent: 给第二遍设动作白名单，是因为这一遍发生在保真检查之后——任何超出白名单的改动都可能引入新的漂移，而不会再有一遍保真检查去接住它。
   existing: 疑似对应 ALL-PROC-019（最多三轮）。"最后一轮只允许白名单动作"在现有规则里没有。
@@ -2707,7 +2707,7 @@ source:
   source_id: upstream-mrgediao-shuorenhua
   path: SKILL.md
   commit: d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8
-  anchor: "### Pass 2 | Residual Audit"
+  anchor: "### Pass 2 | Residual Audit / 第二遍不要做的事"
 notes: |
   intent: 三条禁令对应三种在最后一轮最容易发生的破坏。第三条把术语、参数、命令、报错、责任归属再点了一遍，说明上游认为"更像人"这个动机在收尾阶段最危险——事实已经检查过了，执行者的注意力全在语感上。
   existing: 疑似对应 ALL-PROT-001、U-srh-005（责任主体）、U-srh-090 至 U-srh-093（各类按字面保护的对象）。

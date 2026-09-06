@@ -131,7 +131,7 @@
   source_id: upstream-jzocb-writing-style-skill
   path: scripts/observe.py
   commit: d94826e1cd48f5403b82a5a909efdfab96221259
-  anchor: "observe.py / record_final 里对 original 与 final 内容是否一致的判断"
+  anchor: "def record_final(args):"
 - notes: 来源为 metadata-only，本单元不含原文。此规则只能从脚本代码逻辑中读出，SKILL.md 正文没有明说，按要求归入 measurement。
 
 ## U-wss-009
@@ -146,7 +146,7 @@
   source_id: upstream-jzocb-writing-style-skill
   path: scripts/observe.py
   commit: d94826e1cd48f5403b82a5a909efdfab96221259
-  anchor: "observe.py / compute_hash"
+  anchor: "def compute_hash(content):"
 - notes: 来源为 metadata-only，本单元不含原文。此规则只能从脚本代码逻辑中读出，按要求归入 measurement。
 
 ## U-wss-010
@@ -161,7 +161,7 @@
   source_id: upstream-jzocb-writing-style-skill
   path: scripts/improve.py
   commit: d94826e1cd48f5403b82a5a909efdfab96221259
-  anchor: "improve.py / extract_improvements 里给提炼环节设定的采纳门槛"
+  anchor: "def extract_improvements(args):"
 - notes: 来源为 metadata-only，本单元不含原文。此规则来自脚本里嵌入的提炼要求，按要求归入 measurement。
 
 ## U-wss-011
@@ -176,7 +176,7 @@
   source_id: upstream-jzocb-writing-style-skill
   path: scripts/improve.py
   commit: d94826e1cd48f5403b82a5a909efdfab96221259
-  anchor: "improve.py / extract_improvements 里给提炼环节设定的采纳门槛"
+  anchor: "def extract_improvements(args):"
 - notes: 来源为 metadata-only，本单元不含原文。与 U-wss-010 共用同一处代码位置，二者分别对应"够不够格提炼"和"是否与已有规则重复"两个不同判定点。
 
 ## U-wss-012
@@ -191,7 +191,7 @@
   source_id: upstream-jzocb-writing-style-skill
   path: scripts/improve.py
   commit: d94826e1cd48f5403b82a5a909efdfab96221259
-  anchor: "improve.py / extract_improvements 里给提炼环节设定的采纳门槛"
+  anchor: "def extract_improvements(args):"
 - notes: 来源为 metadata-only，本单元不含原文。与本仓库 criteria.md 第 2 条"规则必须可判定"的判据高度一致，属于同一思路在提炼环节的体现，归并阶段可能直接判 duplicate。
 
 ## U-wss-013
@@ -236,7 +236,7 @@
   source_id: upstream-jzocb-writing-style-skill
   path: scripts/observe.py
   commit: d94826e1cd48f5403b82a5a909efdfab96221259
-  anchor: "observe.py / record_final 里的字数变化百分比计算"
+  anchor: "def record_final(args):"
 - notes: 来源为 metadata-only，本单元不含原文。此规则只能从脚本代码逻辑中读出，按要求归入 measurement。
 
 ## U-wss-016
@@ -251,7 +251,7 @@
   source_id: upstream-jzocb-writing-style-skill
   path: scripts/observe.py
   commit: d94826e1cd48f5403b82a5a909efdfab96221259
-  anchor: "observe.py / show_stats"
+  anchor: "def show_stats(args):"
 - notes: 来源为 metadata-only，本单元不含原文。此规则只能从脚本代码逻辑中读出，按要求归入 measurement。
 
 # 覆盖表
