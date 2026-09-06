@@ -1,6 +1,6 @@
 # 单元到规则的映射（覆盖检查）
 
-488 条单元，每条恰好归入一条规则，无遗漏、无重复引用。其中前 254 条来自首次合并，后 234 条来自中文批（op7418-humanizer-zh、ai-zixun-humanizer-zh、shuorenhua）。
+600 条单元，每条恰好归入一条规则，无遗漏、无重复引用。其中前 254 条来自首次合并，中间 234 条来自中文批（op7418-humanizer-zh、ai-zixun-humanizer-zh、shuorenhua），末尾 112 条来自英文批一（blader-humanizer 77 条、hardikpandya-stop-slop 35 条）。
 
 | 单元 id | 来源 | 上游锚点 | 规则 id | decision |
 |---|---|---|---|---|
@@ -492,3 +492,115 @@
 | U-srh-133 | shuorenhua | ### Pass 2 \| Residual Audit | ALL-PROC-045 | adopted |
 | U-srh-134 | shuorenhua | ### Pass 2 \| Residual Audit | ALL-PROC-045 | adopted |
 | U-srh-135 | shuorenhua | ### Pass 2 \| Residual Audit | ZH-G-002 | adopted-with-modification |
+| U-bld-001 | blader-humanizer | ## What to do / 1. **Find AI patterns.** | ALL-PROC-009 | adopted |
+| U-bld-002 | blader-humanizer | ## What to do / 2. **Keep every claim.** | ALL-PROT-003 | adopted |
+| U-bld-003 | blader-humanizer | ## What to do / 3. **Do not invent facts.** | ALL-PROT-001 | adopted |
+| U-bld-004 | blader-humanizer | ## What to do / 3. **Do not invent facts.** | ALL-PROC-047 | adopted |
+| U-bld-005 | blader-humanizer | ## What to do / 3. **Do not invent facts.** | ALL-PROT-035 | rejected |
+| U-bld-006 | blader-humanizer | ## What to do / 3. **Do not invent facts.** | ALL-G-005 | rejected |
+| U-bld-007 | blader-humanizer | ## What to do / 4. **Match the voice.** | ALL-G-002 | adopted-with-modification |
+| U-bld-008 | blader-humanizer | ## Match the writer's voice | ALL-PROC-048 | adopted |
+| U-bld-009 | blader-humanizer | ## Match the writer's voice / 2. Match those habits. | ALL-PROT-017 | adopted |
+| U-bld-010 | blader-humanizer | A writing sample takes priority over these style rules. | ALL-PROC-049 | adopted-with-modification |
+| U-bld-011 | blader-humanizer | ## Add personality only when it fits | ALL-PROC-014 | adopted-with-modification |
+| U-bld-012 | blader-humanizer | Use personality in blog posts, essays, opinions, and personal writing | ALL-G-006 | adopted-with-modification |
+| U-bld-013 | blader-humanizer | When personality fits, keep the writer's opinions | ALL-PROT-017 | adopted |
+| U-bld-014 | blader-humanizer | Never invent facts to make the text feel personal. | ALL-PROT-018 | adopted |
+| U-bld-015 | blader-humanizer | ### 1. Inflated claims about importance and legacy | EN-P-014 | adopted |
+| U-bld-016 | blader-humanizer | ### 2. Name-dropping to prove importance | EN-P-018 | adopted |
+| U-bld-017 | blader-humanizer | If the source explains what the person said and where | EN-P-018 | adopted |
+| U-bld-018 | blader-humanizer | ### 3. Shallow analysis with -ing phrases | EN-P-013 | adopted |
+| U-bld-019 | blader-humanizer | ### 4. Sales language | EN-P-002 | adopted |
+| U-bld-020 | blader-humanizer | ### 5. Vague sources | EN-P-017 | adopted |
+| U-bld-021 | blader-humanizer | Name a real source when the source text provides one. | EN-P-017 | adopted |
+| U-bld-022 | blader-humanizer | ### 6. Formulaic challenges and outlook sections | EN-P-031 | adopted |
+| U-bld-023 | blader-humanizer | Add details such as dates or public actions only when they come from the source or the user. | ALL-PROT-001 | adopted |
+| U-bld-024 | blader-humanizer | ### 7. Overused AI words | EN-P-001 | adopted |
+| U-bld-025 | blader-humanizer | ### 8. Avoiding is and are | EN-P-015 | adopted |
+| U-bld-026 | blader-humanizer | ### 9. Not X but Y and clipped negative endings | EN-P-006 | adopted |
+| U-bld-027 | blader-humanizer | ### 9. Not X but Y and clipped negative endings | EN-P-043 | adopted |
+| U-bld-028 | blader-humanizer | ### 10. Forced groups of three | ALL-P-005 | adopted |
+| U-bld-029 | blader-humanizer | ### 11. Changing names and repeating sentence openings | EN-P-020 | adopted |
+| U-bld-030 | blader-humanizer | ### 11. Changing names and repeating sentence openings | ALL-P-001 | adopted-with-modification |
+| U-bld-031 | blader-humanizer | Do not ban the repeated word. Fix the repeated sentence pattern. | ALL-PROT-009 | adopted |
+| U-bld-032 | blader-humanizer | ### 12. False from X to Y ranges | EN-P-021 | adopted |
+| U-bld-033 | blader-humanizer | ### 13. Passive voice and missing subjects | ALL-P-004 | adopted |
+| U-bld-034 | blader-humanizer | ### 14. Em and en dashes | EN-S-004 | rejected |
+| U-bld-035 | blader-humanizer | Before returning the rewrite, search for | EN-PROC-001 | adopted |
+| U-bld-036 | blader-humanizer | ### 15. Too much bold text | ALL-P-002 | adopted |
+| U-bld-037 | blader-humanizer | ### 16. Lists with bold mini-headings | ALL-P-002 | adopted |
+| U-bld-038 | blader-humanizer | ### 17. Title case in headings | EN-P-012 | adopted |
+| U-bld-039 | blader-humanizer | ### 18. Emojis | ALL-P-002 | adopted |
+| U-bld-040 | blader-humanizer | ### 19. Curly quotation marks | EN-P-044 | adopted-with-modification |
+| U-bld-041 | blader-humanizer | ### 20. Chatbot text left in the answer | EN-P-028 | adopted |
+| U-bld-042 | blader-humanizer | ### 21. Knowledge-limit disclaimers and guesses | EN-P-028 | adopted |
+| U-bld-043 | blader-humanizer | ### 21. Knowledge-limit disclaimers and guesses | EN-P-045 | adopted |
+| U-bld-044 | blader-humanizer | ### 22. Overly agreeable tone | EN-P-028 | adopted |
+| U-bld-045 | blader-humanizer | ### 23. Filler phrases | EN-P-004 | adopted |
+| U-bld-046 | blader-humanizer | ### 24. Too many qualifiers | EN-P-029 | adopted |
+| U-bld-047 | blader-humanizer | ### 25. Generic positive endings | EN-P-023 | adopted |
+| U-bld-048 | blader-humanizer | ### 26. Too many hyphenated word pairs | EN-P-036 | adopted |
+| U-bld-049 | blader-humanizer | ### 27. Pretending to reveal a deeper truth | EN-P-008 | adopted |
+| U-bld-050 | blader-humanizer | ### 28. Announcing the next point | EN-P-007 | adopted |
+| U-bld-051 | blader-humanizer | ### 29. A heading repeated in the first sentence | EN-P-033 | adopted |
+| U-bld-052 | blader-humanizer | ### 30. Writing about the previous version | EN-P-035 | adopted-with-modification |
+| U-bld-053 | blader-humanizer | ### 31. Forced punchlines and dramatic fragments | EN-P-025 | adopted |
+| U-bld-054 | blader-humanizer | ### 32. Formulaic sayings | EN-P-024 | adopted |
+| U-bld-055 | blader-humanizer | ### 33. Fake-candid openings | EN-P-007 | adopted |
+| U-bld-056 | blader-humanizer | ### 34. Answering objections no one raised | EN-P-041 | adopted |
+| U-bld-057 | blader-humanizer | Remove only the unsupported defense. | ALL-PROT-020 | adopted |
+| U-bld-058 | blader-humanizer | ### 35. Rejecting fake alternatives | EN-P-046 | adopted |
+| U-bld-059 | blader-humanizer | One rejected option may be valid. | EN-P-046 | adopted |
+| U-bld-060 | blader-humanizer | ### What not to flag | ALL-M-002 | adopted |
+| U-bld-061 | blader-humanizer | - **Useful limits and disclaimers.** | ALL-PROT-036 | adopted |
+| U-bld-062 | blader-humanizer | - **Secondhand text.** | ALL-PROT-008 | adopted |
+| U-bld-063 | blader-humanizer | - **Real alternatives.** | EN-P-046 | adopted |
+| U-bld-064 | blader-humanizer | When unsure, look for several patterns together. | ALL-M-002 | adopted |
+| U-bld-065 | blader-humanizer | ### Human details to keep | ALL-PROT-017 | adopted |
+| U-bld-066 | blader-humanizer | - **Edits made before November 30, 2022.** | ALL-M-020 | adopted-with-modification |
+| U-bld-067 | blader-humanizer | **Pasted text (default).** | ALL-PROC-050 | adopted-with-modification |
+| U-bld-068 | blader-humanizer | **File mode.** | ALL-PROC-021 | adopted-with-modification |
+| U-bld-069 | blader-humanizer | **File mode.** | ALL-PROT-037 | adopted |
+| U-bld-070 | blader-humanizer | **Embedded mode.** | ALL-PROC-021 | adopted-with-modification |
+| U-bld-071 | blader-humanizer | ## Rewrite process / 1. Read the source and mark each AI pattern. | ALL-PROC-009 | adopted |
+| U-bld-072 | blader-humanizer | ## Rewrite process / 2. Write a draft. Read it aloud. | ALL-PROC-051 | adopted-with-modification |
+| U-bld-073 | blader-humanizer | ## Rewrite process / 3. Ask two questions: | ALL-PROC-014 | adopted-with-modification |
+| U-bld-074 | blader-humanizer | ## Rewrite process / 3. Ask two questions: | ALL-PROT-019 | adopted-with-modification |
+| U-bld-075 | blader-humanizer | ## Rewrite process / 4. Write the final version. | ALL-PROC-012 | adopted-with-modification |
+| U-bld-076 | blader-humanizer | ## Rewrite process / 4. Write the final version. | ALL-PROC-011 | adopted |
+| U-bld-077 | blader-humanizer | ## Rewrite process / 4. Write the final version. | EN-PROC-001 | adopted |
+| U-ssl-001 | hardikpandya-stop-slop | ## Throat-Clearing Openers | EN-P-007 | adopted |
+| U-ssl-002 | hardikpandya-stop-slop | ## Emphasis Crutches | EN-P-022 | adopted |
+| U-ssl-003 | hardikpandya-stop-slop | ## Adverbs / Kill all adverbs. No -ly words. | EN-S-005 | rejected |
+| U-ssl-004 | hardikpandya-stop-slop | ## Binary Contrasts | EN-P-006 | adopted |
+| U-ssl-005 | hardikpandya-stop-slop | ## Negative Listing | EN-P-006 | adopted |
+| U-ssl-006 | hardikpandya-stop-slop | ## Dramatic Fragmentation | EN-P-025 | adopted |
+| U-ssl-007 | hardikpandya-stop-slop | ## Rhetorical Setups | EN-P-009 | adopted |
+| U-ssl-008 | hardikpandya-stop-slop | ## False Agency | ALL-P-004 | adopted |
+| U-ssl-009 | hardikpandya-stop-slop | ## Core Rules / 3. **Use active voice.** | EN-S-006 | rejected |
+| U-ssl-010 | hardikpandya-stop-slop | ## Passive Voice | EN-S-007 | rejected |
+| U-ssl-011 | hardikpandya-stop-slop | ## Vague Declaratives | ALL-P-007 | adopted |
+| U-ssl-012 | hardikpandya-stop-slop | ## Word Patterns / \| Lazy extremes (every, always, never, everyone, everybody, nobody) \| | EN-P-047 | adopted-with-modification |
+| U-ssl-013 | hardikpandya-stop-slop | ## Narrator-from-a-Distance | EN-P-034 | reference-only |
+| U-ssl-014 | hardikpandya-stop-slop | ## Core Rules / 6. **Vary rhythm.** | ALL-P-001 | adopted-with-modification |
+| U-ssl-015 | hardikpandya-stop-slop | ## Rhythm Patterns / \| Three-item lists \| Use two items or one \| | EN-S-008 | rejected |
+| U-ssl-016 | hardikpandya-stop-slop | ## Rhythm Patterns / \| Every paragraph ends punchily \| Vary endings \| | EN-P-048 | adopted |
+| U-ssl-017 | hardikpandya-stop-slop | ## Rhythm Patterns / \| Em-dashes \| Remove. Use commas or periods. No em dashes at all. \| | EN-S-009 | rejected |
+| U-ssl-018 | hardikpandya-stop-slop | ## Core Rules / 7. **Trust readers.** | EN-P-049 | adopted-with-modification |
+| U-ssl-019 | hardikpandya-stop-slop | ## Core Rules / 8. **Cut quotables.** | EN-P-024 | adopted |
+| U-ssl-020 | hardikpandya-stop-slop | ## Sentence Starters to Avoid / \| Sentences starting with What, When, Where, Which, Who, Why, How \| Restructure. Lead with the subject or the verb. \| | EN-S-010 | reference-only |
+| U-ssl-021 | hardikpandya-stop-slop | ## Meta-Commentary | EN-P-050 | adopted-with-modification |
+| U-ssl-022 | hardikpandya-stop-slop | ## Quick Checks / Before delivering prose: | ALL-PROC-014 | adopted-with-modification |
+| U-ssl-023 | hardikpandya-stop-slop | ## Scoring / Rate 1-10 on each dimension: | ALL-M-017 | reference-only |
+| U-ssl-024 | hardikpandya-stop-slop | ## Scoring / Below 35/50: revise. | ALL-M-017 | reference-only |
+| U-ssl-025 | hardikpandya-stop-slop | ## Business Jargon | EN-P-051 | adopted-with-modification |
+| U-ssl-026 | hardikpandya-stop-slop | ## Adverbs / No softeners, no intensifiers, no hedges. | EN-S-011 | rejected |
+| U-ssl-027 | hardikpandya-stop-slop | ## Adverbs / Also cut these filler phrases: | EN-P-004 | adopted |
+| U-ssl-028 | hardikpandya-stop-slop | ## Performative Emphasis | EN-P-052 | adopted-with-modification |
+| U-ssl-029 | hardikpandya-stop-slop | ## Telling Instead of Showing | EN-P-022 | adopted |
+| U-ssl-030 | hardikpandya-stop-slop | ## Formulaic Constructions / \| "By the time X, I was Y." \| Narrative template \| | EN-P-053 | rejected |
+| U-ssl-031 | hardikpandya-stop-slop | ## Formulaic Constructions / \| "X that isn't Y" \| Indirect. Say "X is broken" \| | EN-P-054 | rejected |
+| U-ssl-032 | hardikpandya-stop-slop | ## Sentence Starters to Avoid / \| Paragraphs starting with "So" \| Start with content \| | EN-S-012 | reference-only |
+| U-ssl-033 | hardikpandya-stop-slop | ## Sentence Starters to Avoid / \| Sentences starting with "Look," \| Remove \| | EN-P-007 | adopted |
+| U-ssl-034 | hardikpandya-stop-slop | ## Rhythm Patterns / \| Questions answered immediately \| Let questions breathe or cut them \| | EN-P-009 | adopted |
+| U-ssl-035 | hardikpandya-stop-slop | ## Rhythm Patterns / \| "Not always. Not perfectly." \| Hedging disguised as reassurance \| | EN-P-055 | adopted-with-modification |
