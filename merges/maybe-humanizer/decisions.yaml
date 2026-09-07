@@ -2661,11 +2661,11 @@ rules:
     anchor: '### EN-P-001 AI 高频词一律不用'
   category: pattern
   language: en
-  rule_summary: 以下词一律不用，换成大白话：delve、leverage、utilize、facilitate、foster、empower、streamline、multifaceted、tapestry、testament、underscore、interplay、realm、beacon、pivotal、crucial、paramount、meticulous、intricate、transformative、elevate、embark、supercharge、harness、garner、bolster、ever-evolving、paradigm
+  rule_summary: 以下词一律不用，换成大白话：delve、leverage、utilize、facilitate、foster、empower、streamline、multifaceted、tapestry、testament、underscore、interplay、realm、beacon、pivotal、crucial、paramount、meticulous、intricate、transformative、elevate、embark、supercharge、harness、garner、bolster、ever-evolving、paradigm命中后的处理强度按 EN-M-001 三档执行，出现即命中指记录而非一律删。
     shift、game changer。
   decision: adopted
   decision_origin: human-approved
-  decision_revision: 1
+  decision_revision: 2
   decided_at: '2026-09-06T12:00:00Z'
   evidence_count: 4
   independent_sources: 4
@@ -2724,6 +2724,9 @@ rules:
   - decision: adopted
     at: '2026-09-06T12:00:00Z'
     reason: 首次合并
+  - decision: adopted
+    at: '2026-09-07T04:38:48Z'
+    reason: review 后修正口径
 - id: EN-P-002
   local:
     skill: maybe-humanizer
@@ -4070,12 +4073,12 @@ rules:
     anchor: '### EN-P-026 英文破折号'
   category: pattern
   language: en
-  rule_summary: 英文破折号（em dash — 与两个连字符 -- 的替代写法，两种字形一并计入，标题与小标题与正文同样计入）按全文词数分界：200 词以下算短文，一处都不用；200 词以上按每千词至多一处折算，向下取整、至少允许一处（1000
+  rule_summary: 英文破折号（em dash — 与两个连字符 -- 的替代写法，两种字形一并计入，标题与小标题与正文同样计入）按全文词数分界：200 词以下算短文，一处都不用；200 词以上按每千词至多一处折算，向下取整、至少允许一处（1000反引号内、代码块内、命令行参数和 URL 里的 -- 不计；审稿模式下单独一处破折号按 ALL-M-002 不算信号。
     词内至多一处，2000 到 2999 词至多两处，3000 词至多三处）。不论篇幅，同一段里出现两处以上算成串，成串出现的和纯装饰性的一律去掉。一种豁免不计入频率：项目符号或编号列表项里、跟在加粗引导词或
     markdown 链接后面充当分隔符的破折号（`- **Term** — description`）；句中的插入用法照算，列表之外行首的 `**Bold lead** — 整句` 照算，两个连字符的写法永远不豁免。
   decision: adopted-with-modification
   decision_origin: human-approved
-  decision_revision: 3
+  decision_revision: 4
   decided_at: '2026-09-06T12:00:00Z'
   evidence_count: 3
   independent_sources: 3
@@ -4144,6 +4147,9 @@ rules:
   - decision: adopted-with-modification
     at: '2026-09-07T18:00:00Z'
     reason: 英文批二合并：并入第四方的每千词一处折算口径，补上两种字形一并计入、标题计入、列表项分隔符豁免三项误伤控制
+  - decision: adopted-with-modification
+    at: '2026-09-07T04:38:48Z'
+    reason: review 后修正口径
 - id: EN-P-027
   local:
     skill: maybe-humanizer
@@ -7295,10 +7301,10 @@ rules:
     anchor: '### ZH-P-024 中文二元对比骨架'
   category: pattern
   language: zh
-  rule_summary: 中文表达对比时不默认用「不是 X，而是 Y」「与其 X，不如 Y」的对照骨架：多数情况删掉前半句直接说 Y，或改用转折、递进、重心移动；只有前半句在回应原文里真实存在、点名的主张时才保留。
+  rule_summary: 中文表达对比时不默认用「不是 X，而是 Y」「与其 X，不如 Y」的对照骨架：多数情况删掉前半句直接说 Y，或改用转折、递进、重心移动；只有前半句在回应原文里真实存在、点名的主张时才保留。作者有意的自嘲、口语句和圈层表达按 ALL-PROT-017 保留。
   decision: adopted
   decision_origin: human-approved
-  decision_revision: 1
+  decision_revision: 2
   decided_at: '2026-09-06T22:00:00Z'
   evidence_count: 2
   independent_sources: 2
@@ -7323,6 +7329,9 @@ rules:
   - decision: adopted
     at: '2026-09-06T22:00:00Z'
     reason: 中文批合并
+  - decision: adopted
+    at: '2026-09-07T04:38:48Z'
+    reason: review 后修正口径
 - id: ZH-P-025
   local:
     skill: maybe-humanizer
@@ -9026,11 +9035,11 @@ rules:
     anchor: '### ALL-M-019 受限编辑范围下的篇幅回退检查'
   category: measurement
   language: both
-  rule_summary: 编辑范围受限时用篇幅指标触发回退检查：in-place 下输出字数低于原文 85%，或任何范围下句数变化超过约 10%，都要回查是否误删了整句、合并了句子或压了段落；bounded
+  rule_summary: 编辑范围受限时用篇幅指标触发回退检查：in-place 下输出字数低于原文 85%，或任何范围下句数变化超过约 10%，都要回查是否误删了整句、合并了句子或压了段落；bounded字数中文按字、英文按词，句数按句末标点计；信息点指 ALL-PROT-019 清单条目。
     不设字数下限，改为逐条核对待确认删除清单里每一条都是删了不丢信息的纯空句。85% 与 10% 两个数是上游经验值，未在本仓库核过，按 ALL-M-024 只作触发回查的信号，不作验收标准。
   decision: adopted-with-modification
   decision_origin: human-approved
-  decision_revision: 2
+  decision_revision: 3
   decided_at: '2026-09-07T18:00:00Z'
   evidence_count: 3
   independent_sources: 1
@@ -9060,6 +9069,9 @@ rules:
   - decision: adopted-with-modification
     at: '2026-09-07T18:00:00Z'
     reason: 按全局复核的统一口径，在 rule_summary 里标出字数与句数两个阈值是上游经验值、未在本仓库核过。decision 不变。
+  - decision: adopted-with-modification
+    at: '2026-09-07T04:38:48Z'
+    reason: review 后修正口径
 - id: ALL-G-004
   local:
     skill: maybe-humanizer
@@ -9416,11 +9428,11 @@ rules:
     anchor: '### ALL-PROC-042 编辑范围是一条独立的轴'
   category: process
   language: both
-  rule_summary: 改写力度（ALL-PROC-005 的三档授权）和编辑范围是两条独立的轴，每次改写要分别判定。编辑范围分三档：structural（默认，可删整句空总结、合并相邻事实句、轻量调整句序和段落落点）、bounded（不合并相邻句、不重排段落、不删承担节奏的实句或有意重复，整句空话进待确认删除清单）、in-place（一句不删、不合并相邻句、不重排段落、不把多段压成一段，改动全部收在句子内部：句内替换、删语气垫片、把拔高的语气降回普通判断、在单句内部拆短过满的结构）。in-place
+  rule_summary: 改写力度（ALL-PROC-005 的三档授权）和编辑范围是两条独立的轴，每次改写要分别判定。编辑范围分三档：structural（默认，可删整句空总结、合并相邻事实句、轻量调整句序和段落落点）、bounded（不合并相邻句、不重排段落、不删承担节奏的实句或有意重复，整句空话进待确认删除清单）、in-place（一句不删、不合并相邻句、不重排段落、不把多段压成一段，改动全部收在句子内部：句内替换、删语气垫片、把拔高的语气降回普通判断、在单句内部拆短过满的结构）。in-place信息点指 ALL-PROT-019 两份清单里的条目；字数中文按字、英文按词，句数按句末标点计。
     只在用户明确要求保留句数、完全原样、一句不删，或反馈 bounded 仍然删多了时启用。bounded 和 in-place 下信息留存是硬指标：原文的每一个信息点在输出里都要能追溯到。改写力度最高而范围最窄的组合可以存在，但先说明这个组合会让改写效果受限、并建议放宽一档，用户坚持时按窄范围的边界执行。
   decision: adopted
   decision_origin: human-approved
-  decision_revision: 1
+  decision_revision: 2
   decided_at: '2026-09-06T22:00:00Z'
   evidence_count: 9
   independent_sources: 1
@@ -9498,6 +9510,9 @@ rules:
   - decision: adopted
     at: '2026-09-06T22:00:00Z'
     reason: 中文批合并
+  - decision: adopted
+    at: '2026-09-07T04:38:48Z'
+    reason: review 后修正口径
 - id: ALL-PROC-043
   local:
     skill: maybe-humanizer
@@ -11596,11 +11611,11 @@ rules:
     anchor: '### ALL-PROC-053 体裁按形式线索判定，判定结果要亮出来'
   category: process
   language: both
-  rule_summary: 体裁不明时先按形式线索判定，线索是可核对的形式条件：不到 300 词且带话题标签或提及即社交帖；有代码块、接口引用或技术架构即技术长文；有称呼加上募资或投资措辞即商务邮件；分步说明、参数文档、README
+  rule_summary: 体裁不明时先按形式线索判定，线索是可核对的形式条件：不到 300 词且带话题标签或提及即社交帖；有代码块、接口引用或技术架构即技术长文；有称呼加上募资或投资措辞即商务邮件；分步说明、参数文档、README形式线索一条都不命中时落到 ALL-G-007 的默认档并在输出开头写明，只有体裁会改变保护决定时才提问。
     结构即文档。命中线索时按判定的体裁执行，并在输出开头写明用的是哪一档、依据是哪条线索，让用户可以覆盖。一条线索都不命中时不落到默认档，按 ALL-PROC-003 停下来问一个具体问题。
   decision: adopted-with-modification
   decision_origin: human-approved
-  decision_revision: 1
+  decision_revision: 2
   decided_at: '2026-09-07T18:00:00Z'
   evidence_count: 2
   independent_sources: 1
@@ -11640,6 +11655,9 @@ rules:
   - decision: adopted-with-modification
     at: '2026-09-07T18:00:00Z'
     reason: 英文批二合并
+  - decision: adopted-with-modification
+    at: '2026-09-07T04:38:48Z'
+    reason: review 后修正口径
 - id: ALL-PROC-054
   local:
     skill: maybe-humanizer
@@ -11984,11 +12002,11 @@ rules:
     anchor: '### ALL-G-007 六个语境档位各自的主要风险'
   category: genre
   language: both
-  rule_summary: 判定语境时按六档定位，每一档记的是这个体裁里的主要风险：短社交帖（碎片句和视觉排版本身有用，风险在标签与排版堆砌）、通用长文（默认，所有规则全强度）、技术长文（技术术语放行，风险在术语被当成词表命中改掉）、商务与投资邮件（受众信任成本高，一切收紧，宣传腔是最大的风险）、文档（清晰与可检索优先于声口）、随意语域（Slack、内部记录、快速回复，只处理最严重的一类）。档位由
+  rule_summary: 判定语境时按六档定位，每一档记的是这个体裁里的主要风险：短社交帖（碎片句和视觉排版本身有用，风险在标签与排版堆砌）、通用长文（默认，所有规则全强度）、技术长文（技术术语放行，风险在术语被当成词表命中改掉）、商务与投资邮件（受众信任成本高，一切收紧，宣传腔是最大的风险）、文档（清晰与可检索优先于声口）、随意语域（Slack、内部记录、快速回复，只处理最严重的一类）。档位由形式线索都不命中时以本条的通用长文档为落点。
     ALL-PROC-053 的形式线索判定。
   decision: adopted-with-modification
   decision_origin: human-approved
-  decision_revision: 1
+  decision_revision: 2
   decided_at: '2026-09-07T18:00:00Z'
   evidence_count: 1
   independent_sources: 1
@@ -12031,6 +12049,9 @@ rules:
   - decision: adopted-with-modification
     at: '2026-09-07T18:00:00Z'
     reason: 英文批二合并
+  - decision: adopted-with-modification
+    at: '2026-09-07T04:38:48Z'
+    reason: review 后修正口径
 - id: ALL-G-008
   local:
     skill: maybe-humanizer
