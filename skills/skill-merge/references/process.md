@@ -80,6 +80,8 @@ decision_origin 从 model-proposed 翻成 human-approved 由 `upstream-monitor a
 
 **做什么**：写 `skills/<id>/SKILL.md` 和 references。SKILL.md 只放流程和判断规则，模式表、词表、清单进 references，中英文规则分表。写完回填每条规则的 local.skill、local.path、local.anchor，再跑 `upstream-monitor render --merge <id>` 生成 `skills/<id>/SOURCES.md`。
 
+**references 的条目格式**：每条规则一个 `###` 小节，标题逐字等于 decisions.yaml 的 local.anchor，格式 `### <id> <短名>`。小节正文固定三段，段名照抄：**判据**（拿一段文字来能圈出哪个词、句式或结构违反了它，阈值写在这一段）、**通过条件**（命中了也不算违反的情形，点名让位给哪条规则）、**已知会漏掉什么**（这条规则查不到的相邻现象和已知会误伤的形状）。三段之后正例一组、反例一组，反例写出违反点；language 为 both 的中英各一组，例子不从另一种语言直译。relations 在正文里互相点名对端 id 和分界。文件开头一段说明收什么、怎么用，不写收尾段，不给小节补总结句。规则多时按文件并行写，一个文件一个 agent，写作前先从 decisions.yaml 生成一份写作计划（每个文件的规则顺序、分组、正反例来源单元、relations），放 `merges/<id>/work/writing-plan.md`。
+
 **输出**：`skills/<id>/SKILL.md`、`skills/<id>/references/*`、更新过 local 的 decisions.yaml、渲染出的 SOURCES.md。
 
 **完成标准**：`upstream-monitor validate --merge <id>` 通过——它逐条核 local.anchor 能否在 local.path 里唯一定位到，也核 work/ 里的单元清单、聚类表、覆盖表与 decisions.yaml 是否一致；SKILL.md 里没有出现只在 references 才展开的完整表格；`skills/<id>/SOURCES.md` 是渲染出来的，不手写。
