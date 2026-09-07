@@ -14,7 +14,7 @@
 
 ## 一 词表与短语
 
-### EN-P-001 AI 高频词一律不用
+### EN-P-001 AI 高频词表
 
 **判据。** 下列词出现在英文正文里即命中，换成大白话，不是换成另一个书面词：delve、leverage、utilize、facilitate、foster、empower、streamline、multifaceted、tapestry、testament、underscore、interplay、realm、beacon、pivotal、crucial、paramount、meticulous、intricate、transformative、elevate、embark、supercharge、harness、garner、bolster、ever-evolving、paradigm shift、game changer。「出现即命中」说的是记录，处理强度按 EN-M-001 的三档执行，不是一律删。
 
