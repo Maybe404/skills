@@ -195,36 +195,32 @@ stars 不放在 decisions.yaml 里，只在 sources.lock.json。
 
 ## 5. 职责边界
 
-| 代码 | 模型 |
+| 代码（upstream-monitor） | 模型（skill-merge） |
 |---|---|
-| 遍历 catalog 和 merges | 读变更 |
-| 拉取 sha、hash、stars、forks、license | 分类 |
-| 更新快照和 lock | 语义去重 |
-| 生成机械 diff | 冲突判断 |
-| 用 normalized hash 区分格式变化和内容变化 | 是否采用 |
-| 从 decisions.yaml 反查受影响规则和落点 | 改写 |
-| 算词面相似候选 | 改 skill 正文和 decisions.yaml |
-| 创建或更新 PR 和 issue | 写理由和语义分析报告 |
-| validate：schema、ID 唯一、落点存在、来源存在、main 分支上不允许 model-proposed | |
-| approve：把一个 PR 内的 model-proposed 批量改为 human-approved | |
+| 遍历 catalog 和 merges | 通读上游，理解每家为什么这么写 |
+| 拉取 sha、hash、stars、forks、license | 取舍：进、不进、做可选项，并写理由 |
+| 更新快照和 lock | 写 skill 正文和 references |
+| 生成上游 diff，用 normalized hash 区分格式变化和内容变化 | sync 时读 PR 里的 diff 和本仓库正文，判断并、不并、部分并 |
+| 创建或更新 PR（正文只放上游 diff 和元数据）和 issue | 写合并报告：每个来源吸收了什么、冲突怎么选、没采纳的为什么 |
+| validate：catalog、sources、lock 的 schema 与一致性 | review：以使用者身份通读合并稿，回到来源核对 |
 | 渲染 SOURCES.md、README 目录表、报告骨架 | |
 | 保持幂等 | |
 
-代码不决定：语义是否重复、冲突取舍、规则是否值得保留、改写是否改变原意。
+代码不决定：一条上游写法该不该进、冲突怎么取舍、改写是否改变原意。
 
-模型不决定：commit 是什么、stars 多少、文件有没有变、哪个路径受影响、PR 是否真的创建。
+模型不决定：commit 是什么、stars 多少、文件有没有变、PR 是否真的创建。
 
-上游的 SKILL.md、prompt、脚本一律是不可信数据。第一版只抓取和解析 markdown、YAML、JSON、纯文本，不执行上游脚本，不装上游依赖。
+上游的 SKILL.md、prompt、脚本一律是不可信数据。只抓取和解析 markdown、YAML、JSON、纯文本，不执行上游脚本，不装上游依赖。
+
+`locate`、`approve`、`retire` 三个命令只在有 decisions.yaml 的实例（目前只有 maybe-humanizer）上可用，当前流程不依赖它们。
 
 ## 6. 流转
 
 PR 优先，流程如下：
 
-1. check 每周跑一次，可手动触发。追踪文件有内容变化就更新快照或 lock，并开 PR；PR 正文含 sha 前后、受影响规则 id 和路径、词面最近的几条现有规则、merge_result 字段。
-2. 审核人手动跑 skill-merge sync，sync 产出的决定以 commit 推到同一分支。
-3. 采纳的改动更新 skill 正文和 decisions.yaml；不采纳的只改 decisions.yaml 和 lock。
-4. 跑 approve。
-5. 合并。每个 PR 都合并，不留待定 PR。
+1. check 每周跑一次，可手动触发。追踪文件有内容变化就更新快照或 lock，并开 PR；PR 正文是元数据（commit 前后、stars、许可证、快照策略）加完整的上游 diff，metadata-only 来源只给 commit 和 hash、不含原文。
+2. 审核人跑 `skill-merge sync <id> <pr号>`：读 diff 和本仓库现有的 skill 正文，逐个变更点判断并、不并、部分并，直接改正文，在 PR 正文追加一节判断和理由。
+3. 合并。每个 PR 都合并，不采纳的也合并，理由留在 PR 和 CHANGELOG 里。
 
 变更分三级：
 
@@ -234,13 +230,11 @@ PR 优先，流程如下：
 | 开 PR 等 sync | 其余情形 | 走上面的流程 |
 | needs-decision | sync 后仍不确定、涉及冲突或许可证 | 标 needs-decision 并开 issue |
 
-issue 只用于以下情形：新候选上游、上游不可达或消失或转私有、许可证变化、历史被重写、needs-decision、removed 来源影响唯一来源规则。issue 内容只放 source_id、repository、path、commit、hash、stars、影响范围、要做的决定，不放原文。
+issue 只用于以下情形：新候选上游、上游不可达或消失或转私有、许可证变化、历史被重写、needs-decision。issue 内容只放 source_id、repository、path、commit、hash、stars、要做的决定，不放原文。
 
 幂等键：`source_id:path:new_commit`。lock 记 last_change_key、open_pr、open_issue，避免重复开 PR 或 issue。
 
-stars 只进 lock，随内容 PR 一起更新，或每月单独更新一次，不为 stars 单独开 PR；仓库消失或转私有才为此开 issue。
-
-以后可接 claude-code-action，让 sync 在 CI 里对同一个 skill 自动跑。
+stars 只进 lock，随内容 PR 一起更新，或每月单独一个 metadata PR，不为 stars 单独开 PR；仓库消失或转私有才为此开 issue。
 
 ## 7. 生命周期
 
@@ -266,13 +260,9 @@ stars 只进 lock，随内容 PR 一起更新，或每月单独更新一次，�
 
 ## 9. 首个实例 maybe-humanizer
 
-合并分五步：
+合并的做法（skill-merge 的 merge 模式）：一个深度推理档的 agent 通读全部来源，理解每家为什么这么写，先定骨架（先保护事实，再清理模式，最后交代改了什么），按 criteria 取舍后写出一份；第二个 agent 以使用者身份通读合并稿并回到来源核对，实跑 evals，按 review 修一轮。
 
-1. 入围：约 60 个文本方向候选，全部抓取元数据和目标文件；`upstream-monitor lineage` 按相似度和人工核实关系聚成谱系，代表作由人定；每个谱系读代表作并加分支差异；结果记入 selection_status。
-2. 拆规则：并行派发 subagent 处理，一个 subagent 一个来源，单元清单落在 `merges/<id>/work/units/`。这一步要判断原作者定这条规则的理由，用深度推理档的模型。
-3. 归并：一个上下文处理不了超过约 300 条单元，按 6 到 8 个来源一批，每批走增量路径与已有 decisions.yaml 比对，批间顺序进行；全部批次完成后做一次全局冲突复核。
-4. 写 skill：SKILL.md 只放流程，模式表进 references，中英文分表。
-5. 验证：evals 覆盖真人原文不该被改、带数字和命令的段落、套话段落；先核事实漂移，再看风格。
+maybe-humanizer 的首次合并（2026-09-06 到 07，10 个来源）实际走的是一条更重的路：把上游拆成 684 条规则单元，聚成 307 条带来源、证据数、理由和关系的决定（`merges/maybe-humanizer/decisions.yaml`），按决定写正文，再做独立验证和通读式 review。这套产物保留在 `merges/maybe-humanizer/` 下作为记录和署名依据，不是后续实例的要求。
 
 调研已识别出七个功能类别，处理方式如下：
 
@@ -298,13 +288,13 @@ stars 只进 lock，随内容 PR 一起更新，或每月单独更新一次，�
 
 ## 11. 实施顺序
 
-1. 改名和目录重排，并验证 CLI 发现规则。
-2. 写四个 schema 和样例。
-3. 写 skill-merge 最小版本。
-4. 用 no-ai-slop、qu-ai-wei、writing-style-skill、Aboudjem/humanizer-skill 四个上游试跑，验收六条：来源能追踪、规则能反查、快照能恢复、PR 幂等、sync 能区分 duplicate 和 conflict 和 adopted、报告能解释决定。
-5. 根据试跑结果修 schema 和报告格式。
-6. maybe-humanizer 全量合并：先合并 10 个典型来源并跑通闭环（拆规则、归并、写 skill、validate、render、报告），再扩到全部已登记来源。
-7. 写 upstream-monitor。已完成：validate、check、snapshot、diff、locate、pr、approve、render、retire、report new、issue、lineage 十二个子命令都已实现，原型脚本已吸收进包内。
-8. 接入 GitHub Actions。
-9. 用真实的上游变化跑一次 sync。
-10. 补回归测试和上游文本指令抵抗测试。
+1. 改名和目录重排，并验证 CLI 发现规则。已完成。
+2. 写四个 schema 和样例。已完成。
+3. 写 skill-merge。已完成，2026-09-07 改为通读合并加 review 的轻量流程。
+4. 用四个上游试跑并验收。已完成。
+5. 按试跑结果修 schema 和报告格式。已完成。
+6. maybe-humanizer 合并 10 个典型来源，经 review 修正后转 active。已完成。其余 49 个已登记来源保持 candidate，只监控元数据；是否扩大合并范围另定。
+7. 写 upstream-monitor。已完成：validate、check、snapshot、diff、locate、pr、approve、render、retire、report new、issue、lineage 十二个子命令；PR 正文只放上游 diff，各命令在没有 decisions.yaml 的实例上也能跑。
+8. 接入 GitHub Actions。workflow 已写，等仓库 main 上第一次周一运行验证。
+9. 用真实的上游变化跑一次 sync。待第一个真实的上游变更 PR 出现。
+10. 补回归测试。已有 60 条 pytest；上游文本指令抵抗测试待补。

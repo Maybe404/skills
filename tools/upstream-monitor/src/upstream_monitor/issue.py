@@ -187,6 +187,8 @@ def render_issue_body(
 
 
 def _extra_markdown_for_kind(paths: RepoPaths, merge_id: str, source_id: str, kind: str) -> str | None:
+    if kind in ("needs-decision", "retire-impact") and not paths.decisions_yaml(merge_id).exists():
+        return "（该实例没有 decisions.yaml，影响范围请在 PR 或本地判断。）"
     if kind == "needs-decision":
         decisions = load_yaml(paths.decisions_yaml(merge_id))
         candidate_rules = rules_for_source(decisions, source_id)

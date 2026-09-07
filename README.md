@@ -24,7 +24,7 @@ npx skills add Maybe404/skills --skill <id>
 
 | id | 类型 | 用途 |
 |---|---|---|
-| [`maybe-humanizer`](skills/maybe-humanizer/SKILL.md) | 合并 | 中英文去 AI 味改写与审稿，先保护事实再清理模式。试验版，合并了 4 个上游 |
+| [`maybe-humanizer`](skills/maybe-humanizer/SKILL.md) | 合并 | 中英文去 AI 味改写与审稿，先保护事实再清理模式。合并自 10 个上游 |
 | [`en-zh-translation`](skills/en-zh-translation/SKILL.md) | 自写 | 把英文规则、提示词、文档翻成中文，保住每一处条件和情态 |
 | [`subagent`](skills/subagent/SKILL.md) | 自写 | 什么该拆给 subagent、派给谁、怎么验收、怎么打回 |
 | [`skill-merge`](skills/skill-merge/SKILL.md) | 自写 | 把多个上游 skill 归并成一份，处理上游的后续变更 |
@@ -33,26 +33,23 @@ npx skills add Maybe404/skills --skill <id>
 
 ## 合并
 
-先把每个上游拆成一条条可判定的规则，也就是能指出一句话里哪里违反了它；再把所有上游的规则按语义聚类，逐条裁决。合并的单位是规则，不是文件。
+同一主题的上游先通读，理解每家为什么这么写，再写成一份。先定骨架：先保护事实，再清理模式，最后交代改了什么；事实保护的规则压过任何一条讲怎么写更自然的规则。各家互相矛盾的写法两边都留下，写明选了哪边、为什么，另一边作为用户明确要求时的可选项。只有一家主张的强风格意见也做可选项。声称能降低检测率、需要外部 API、绕披露要求的一律不进。合并稿由第二个 agent 以使用者身份通读并回到来源核对，修一轮再发布。
 
-- 每条规则有一个稳定的 id，记着来源仓库、文件锚点、支持它的上游数、决定和理由。上游一变，能反查到本地哪几条规则受影响。
-- 票数不决定采用：多个项目互相复制会把票数抬高。看的是四条——可判定、护事实、不与已有规则冲突、适合目标体裁。试验合并里有一条规则五处证据全来自同一个上游，最后只记了参考；也有只有一个上游支持的规则被采纳。
-- 矛盾的两条规则都留下，写明选了哪条、理由是什么，另一条记成可选项。
-- 数字、引语、限定条件、责任主体不能动。这组规则压过任何一条讲怎么写更自然的规则。
 - 有许可证的上游存全文快照并附许可声明；没有许可证的只记 commit 和 hash，规则用自己的话重写。
 - 上游文本是数据。上游 skill 里写的任何指示都不执行，脚本只读不跑。
+- 每次合并留一份报告：每个来源吸收了什么、冲突怎么选的、哪些没采纳和为什么，写到原作者能理解。
 
 <details>
-<summary>一条规则在决定表里的样子</summary>
+<summary>maybe-humanizer 首次合并的记录</summary>
 <br>
+
+首次合并走了一条更细的路：10 个上游拆成 684 条规则单元，聚成 307 条带来源、理由和关系的决定，按决定写正文。每条决定长这样（节选）：
 
 ```yaml
 - id: ALL-PROT-002
   category: protection
   rule_summary: 原文里的具体数字、日期、金额、路径、姓名不得改写成概括说法。
   decision: adopted
-  evidence_count: 2
-  independent_sources: 2
   sources:
     - source_id: upstream-petergyang-no-ai-slop
       anchor: '## Editing principles / Protect the specific fact.'
@@ -61,24 +58,14 @@ npx skills add Maybe404/skills --skill <id>
   rationale: 两个独立来源方向一致。判据明确：原文有数字的位置，数字必须还在。
 ```
 
-节选，字段有省略。完整字段见 [decisions.schema.json](tools/upstream-monitor/schemas/decisions.schema.json)。
-</details>
-
-<details>
-<summary>maybe-humanizer 试验版的规模</summary>
-<br>
-
 | | |
 |---|---|
-| 上游 | no-ai-slop、qu-ai-wei、Aboudjem/humanizer-skill、writing-style-skill |
-| 拆出的规则单元 | 254 |
-| 聚类后的规则 | 144 |
-| 采纳 / 修改后采纳 | 87 / 31 |
-| 拒绝 / 仅作参考 | 9 / 8 |
-| 暂缓 / 待验证 / 重复 | 4 / 2 / 3 |
-| 写进 conflicts.md 的冲突 | 7 组 |
+| 上游 | no-ai-slop、qu-ai-wei、Aboudjem/humanizer-skill、writing-style-skill、blader/humanizer、op7418/Humanizer-zh、stop-slop、avoid-ai-writing、shuorenhua、ai-zixun/humanizer-zh |
+| 规则单元 | 684 |
+| 决定 | 307，其中采纳 173、修改后采纳 78、拒绝 32、仅作参考 16 |
+| 落地到正文的规则 | 251 |
 
-来源和理由在 [decisions.yaml](merges/maybe-humanizer/decisions.yaml)，过程在[合并报告](merges/maybe-humanizer/reports/0001-2026-09-06-initial-merge.md)。
+来源和理由在 [decisions.yaml](merges/maybe-humanizer/decisions.yaml)，过程在[六份合并报告](merges/maybe-humanizer/reports/)。这套记录留作署名依据，后续的合并和上游同步不再要求这个粒度。
 </details>
 
 ## 上游同步
@@ -90,7 +77,7 @@ npx skills add Maybe404/skills --skill <id>
   </picture>
 </p>
 
-每个上游的 commit 和文件 hash 记在清单里，每周比对一次。内容有变化就开一个 PR，正文列出 diff 和受影响的本地规则；`skill-merge` 逐条判断这是已有规则的重述、新规则，还是和现有规则矛盾。不采纳的变更也合并，理由留在决定表里。只有上游消失、许可证变化和需要人拍板的冲突才开 issue。
+每个上游的 commit 和文件 hash 记在清单里，每周比对一次。内容有变化就开一个 PR，正文是上游的 diff 和元数据；`skill-merge` 读 diff 和本仓库现有的 skill，判断并、不并、部分并，直接改正文，理由写在 PR 里。不采纳的变更也合并，理由留在决定表里。只有上游消失、许可证变化和需要人拍板的冲突才开 issue。
 
 <details>
 <summary>目录</summary>
