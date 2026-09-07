@@ -78,6 +78,12 @@ upstream-monitor validate [--merge <id>] [--branch <name>] [--offline]
   在 `decision_origin: model-proposed` 的规则即报错——main 分支上不允
   许未经人工确认的结论。
 
+以上除"四份 schema 校验"里的 sources/lock 和"三方一致性"外，全部依赖
+decisions.yaml。没有这份文件的实例（以后新建的 merge 实例都不再产出
+它，见下文"和 skill-merge 的分工"）只做 catalog、sources.yaml、
+sources.lock.json 的 schema 校验和三方一致性检查，其余规则/证据/覆盖
+相关的检查全部跳过，不因为文件缺失而报错。
+
 `--offline` 跳过需要网络的 metadata-only 来源锚点校验。退出码非零表示
 存在 BLOCK 或 HIGH 级问题；输出按严重程度分组。
 
@@ -126,9 +132,12 @@ upstream-monitor diff --merge <id> --source <source_id> [--from <commit>] [--to 
 ```
 
 默认取 `last_accepted_commit` 到 `last_seen_commit`，两个版本都从
-GitHub 按 commit 现取，输出统一 diff。metadata-only 来源的结果只打到
-stdout，开头有一行提示"原文不得写入仓库、PR 或 issue"；调用方（包括
-`pr` 命令）不会把这段内容落盘。
+GitHub 按 commit 现取，输出统一 diff。full-text 来源首次同步（没有
+`last_accepted_commit`，且没有显式传 `--from`）时没有基线 commit 可
+取，改读本地已有快照（`merges/<id>/snapshots/<source_id>/` 下 lock 记
+录的 `stored_path`）作为旧版本，不按"无基线"处理成整份文件都是新增。
+metadata-only 来源的结果只打到 stdout，开头有一行提示"原文不得写入仓
+库、PR 或 issue"；调用方（包括 `pr` 命令）不会把这段内容落盘。
 
 ### locate
 
@@ -142,17 +151,33 @@ upstream-monitor locate --merge <id> --source <source_id> [--diff <file>]
 部规则的 `rule_summary` 做字符 3-gram Jaccard 相似度，列出每个 hunk 最
 接近的三条。输出 markdown，可以直接贴进 PR 正文。
 
+仅在有 decisions.yaml 的实例上可用，当前流程不依赖：`pr` 命令不再调用
+它，PR 正文改成直接放上游 diff，见下文。
+
 ### pr
 
 ```bash
 upstream-monitor pr --merge <id> --source <source_id> [--dry-run]
 ```
 
-按 `skills/skill-merge/references/templates/pr-body.md` 的结构生成 PR
-正文（含 locate 输出、commit 前后、stars 变化、metadata-only 来源的原
-文声明），创建分支 `upstream-sync/<date>-<source_id>`，写快照
-（full-text）或只更新 lock（metadata-only），提交并用 `gh pr create`
-开 PR。
+PR 正文只放机械事实，不反查本地规则：
+
+- **元数据块**：merge_id、来源、提交区间（`last_accepted_commit` ..
+  `last_seen_commit`）、追踪文件、`snapshot_policy`、许可证、stars 和
+  forks 变化。
+- **上游 diff**（`snapshot_policy` 为 full-text 的来源）：复用 `diff`
+  命令的取版本逻辑——按 `last_accepted_commit` 到 `last_seen_commit`
+  取两个版本；首次没有 `last_accepted_commit` 时改与本地快照比较（见
+  `diff` 一节）。没有差异时正文写"无变化"。
+- **原文声明**（`snapshot_policy` 为 metadata-only 的来源）：不含任何
+  原文，只给 commit 和 hash，正文提示"原文请本地用 `upstream-monitor
+  diff` 查看"。
+
+PR 标题固定为 `chore(<merge_id>): sync upstream <source_id>`。创建分支
+`upstream-sync/<date>-<source_id>`，写快照（full-text）或只更新 lock
+（metadata-only），提交并用 `gh pr create` 开 PR。要不要采用、怎么改
+写不在这里判断，由 `skills/skill-merge` 读这份 diff 和本地 skill 正文
+决定，见下文"和 skill-merge 的分工"。
 
 幂等：变更键 `source_id:path:commit`（多路径来源的 `path` 段用逗号拼
 接）与 lock 的 `last_change_key` 相同、且 `open_pr` 非空时不重复开，只
@@ -173,6 +198,8 @@ upstream-monitor approve --merge <id> [--pr <n>] [--rule <id> ...]
 改全部 model-proposed。`history` 和 `decided_at` 不动——`decision_origin`
 本身不是一次新的决定。
 
+仅在有 decisions.yaml 的实例上可用，当前流程不依赖。
+
 ### render
 
 ```bash
@@ -180,13 +207,13 @@ upstream-monitor render --merge <id> [--out <path>]
 upstream-monitor render --readme-table
 ```
 
-不带 `--readme-table` 时，从 sources.yaml、decisions.yaml、
-sources.lock.json、`snapshots/*/LICENSE` 渲染
+不带 `--readme-table` 时，从 sources.yaml、sources.lock.json、
+`snapshots/*/LICENSE`（有 decisions.yaml 时还有它）渲染
 `skills/<id>/SOURCES.md`（或 `--out` 指定的路径）。带
 `--readme-table` 时，改为从 catalog/ 生成一张 markdown 表格（id、类
 型、名称、状态）打到 stdout，供人工贴进 README，不自动写 README。
 
-SOURCES.md 按来源的 `status` 分表：
+**有 decisions.yaml 时**，SOURCES.md 按来源的 `status` 分表：
 
 - **来源表**（主表）只列 `status` 为 `active`、且在 decisions.yaml 里
   至少有一条证据引用的来源，列不变（id、repository、branch、license、
@@ -203,11 +230,18 @@ SOURCES.md 按来源的 `status` 分表：
 节，CLI 还会在渲染完成后打印提醒，列出这些来源的 id，方便核对
 sources.yaml 里的 `status` 是不是记错了。
 
+**没有 decisions.yaml 时**（以后新建的 merge 实例都是这样）没有"证据"
+这个概念：主表直接列 `status` 为 `active` 的来源，去掉"支持的规则数、
+落地的规则数"两列，其余列不变；`status` 为 `candidate`/`paused` 的来
+源仍进"已登记、尚未合并"；上面那条"没有证据"的提醒不会出现。
+
 ### retire
 
 ```bash
 upstream-monitor retire --merge <id> --source <source_id> --reason <text>
 ```
+
+仅在有 decisions.yaml 的实例上可用，当前流程不依赖。
 
 把来源的 `status` 改成 `removed`，记 `status_changed_at` 和 `reason`；
 然后从 decisions.yaml 算出只有这一个来源支持的规则（`sources[]` 里出
@@ -288,21 +322,32 @@ upstream-monitor report new --merge <id> --slug <slug>
 
 ## 和 skill-merge 的分工
 
-以下事代码不做，一律留给 `skills/skill-merge`：
+代码只做机械的事：检测上游有没有变化（`check`）、写快照（`snapshot`）、
+算 diff（`diff`）、开 PR（`pr`）、开 issue（`issue`）、渲染 SOURCES.md
+和 README 表格（`render`）。代码只保证：commit、hash、stars、可达性这
+些"事实"是准的；渲染结果和 sources.yaml（有 decisions.yaml 时还有它）
+一致；同一个变更不会被重复处理。
 
-- 判断两条规则是不是在说同一件事、要不要合并、要不要保留。
-- 冲突取舍——两条规则互相矛盾时选哪条。
-- 决定一条规则是否可判定、是否值得进默认规则。
-- 判断改写是否改变了原意。
-- 写 rationale、报告正文、CHANGELOG 条目里的人话说明。
-- 决定要不要因为许可证变化、来源消失联系上游作者。
+判断"要不要采纳、怎么改写"这一半不在这里，一律留给
+`skills/skill-merge`：
+
+- 两条规则是不是在说同一件事、要不要合并、要不要保留；冲突时选哪条；
+  改写是否改变了原意；写 rationale、报告正文、CHANGELOG 条目里的人话
+  说明；要不要因为许可证变化、来源消失联系上游作者。
 - 决定 `needs-decision`、`retire-impact`、`new-candidate`、
   `history-rewritten` 这几种情形具体什么时候触发、该怎么裁决——代码只
   负责把已经确定的情形（`--kind`）渲染成 issue 正文和标签，不判断"现在
   是不是该开一个"。
 
-代码只保证：commit、hash、stars、可达性这些"事实"是准的；渲染结果和
-decisions.yaml、sources.yaml 一致；同一个变更不会被重复处理。
+流程简化后，`pr` 命令的正文直接放上游 diff 和元数据（commit 前后、
+stars 变化、许可证、快照策略、metadata-only 来源的原文声明），不再反
+查本地规则。`skill-merge` 读 PR 正文里的这份 diff 和本仓库现有的 skill
+正文，直接决定并直接改 skill 正文，不经过一套居中的规则台账去判断、
+再落地。`decisions.yaml`、`merges/<id>/work/` 这套（连同依赖它们的
+`locate`、`approve`、`retire` 三个命令）只是 `maybe-humanizer` 这一个
+实例的历史记录，是在流程简化前产出的；新建的 merge 实例不会再有它们，
+所有命令在没有 decisions.yaml 的实例上也要能跑（见上文 `validate`、
+`render`、`pr` 各节）。
 
 ## 测试
 

@@ -5,6 +5,11 @@
 - catalog 与 skills/、merges/ 的三方一致性：catalog 的 path 目录存在；
   merge_instance 非空则该目录存在，且其 sources.yaml 的 merge_id 与目录名一致。
 - main 分支上不允许存在 decision_origin 为 model-proposed 的规则。
+
+decisions.yaml 是否存在决定校验范围：没有这份文件的实例（以后的 merge 实例
+不再产出它，见 README）只校验 catalog、sources.yaml、lock 的 schema 和三方
+一致性，跳过全部规则/证据/覆盖相关检查，不因为文件缺失而报错；有的话行为
+不变。
 """
 from __future__ import annotations
 
@@ -48,17 +53,17 @@ def _validate_schema_one(schemas_dir: Path, name: str, target: Path, rep: Report
         rep.ok(f"{target} 通过 schema 校验")
 
 
-def validate_schema(paths: RepoPaths, merge_id: str, rep: Report) -> None:
+def validate_schema(paths: RepoPaths, merge_id: str, rep: Report, has_decisions: bool = True) -> None:
     f = {
         "sources": paths.sources_yaml(merge_id),
         "lock": paths.lock_json(merge_id),
-        "decisions": paths.decisions_yaml(merge_id),
     }
     for catalog_file in paths.catalog_entries():
         _validate_schema_one(paths.schemas_dir, "catalog", catalog_file, rep)
     _validate_schema_one(paths.schemas_dir, "sources", f["sources"], rep)
     _validate_schema_one(paths.schemas_dir, "lock", f["lock"], rep)
-    _validate_schema_one(paths.schemas_dir, "decisions", f["decisions"], rep)
+    if has_decisions:
+        _validate_schema_one(paths.schemas_dir, "decisions", paths.decisions_yaml(merge_id), rep)
 
 
 def validate_cross_refs(paths: RepoPaths, merge_id: str, rep: Report) -> dict:
@@ -123,6 +128,31 @@ def validate_cross_refs(paths: RepoPaths, merge_id: str, rep: Report) -> dict:
         rep.ok(f"{merge_id}: independent_sources 全部一致")
 
     return {"decisions": D, "sources": S, "lock": L}
+
+
+def validate_sources_lock_only(paths: RepoPaths, merge_id: str, rep: Report) -> None:
+    """没有 decisions.yaml 的实例：只核对 sources.yaml 与 lock 的 merge_id 和
+    来源 id 集合是否一致，不涉及任何规则/证据层面的检查。"""
+    S = load_yaml(paths.sources_yaml(merge_id))
+    L = load_json(paths.lock_json(merge_id))
+    if not (S["merge_id"] == L["merge_id"] == merge_id):
+        rep.add(
+            "BLOCK",
+            f"{merge_id}: merge_id 不一致: sources={S['merge_id']} lock={L['merge_id']} dir={merge_id}",
+        )
+    else:
+        rep.ok(f"{merge_id}: merge_id 一致（sources、lock；没有 decisions.yaml）")
+
+    src_by_id = {s["id"]: s for s in S["sources"]}
+    if set(L["sources"]) != set(src_by_id):
+        rep.add(
+            "HIGH",
+            f"{merge_id}: lock 与 sources 的 id 集合不一致: "
+            f"lock only={set(L['sources']) - set(src_by_id)} "
+            f"sources only={set(src_by_id) - set(L['sources'])}",
+        )
+    else:
+        rep.ok(f"{merge_id}: lock 与 sources id 集合一致")
 
 
 def validate_rule_ids(merge_id: str, rules: list[dict], rep: Report) -> None:
@@ -407,7 +437,14 @@ def validate(
 
     merge_ids = [merge_id] if merge_id else paths.merge_ids()
     for mid in merge_ids:
-        validate_schema(paths, mid, rep)
+        has_decisions = paths.decisions_yaml(mid).exists()
+        validate_schema(paths, mid, rep, has_decisions=has_decisions)
+        if not has_decisions:
+            # 以后的 merge 实例不再产出 decisions.yaml（见 tools/upstream-monitor/README.md），
+            # 只校验 sources/lock 的 schema 和一致性，decisions 相关检查全部跳过，不报错。
+            validate_sources_lock_only(paths, mid, rep)
+            rep.ok(f"{mid}: 没有 decisions.yaml，跳过规则、证据、覆盖等 decisions 相关校验")
+            continue
         docs = validate_cross_refs(paths, mid, rep)
         rules = docs["decisions"]["rules"]
         validate_rule_ids(mid, rules, rep)

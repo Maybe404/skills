@@ -83,13 +83,21 @@ def decision_label(decision: str) -> str:
     return DECISION_LABELS.get(decision, decision)
 
 
-def classify_sources(sources_doc: dict, stats: dict[str, dict]) -> dict[str, list[dict]]:
+def classify_sources(
+    sources_doc: dict, stats: dict[str, dict], has_decisions: bool = True
+) -> dict[str, list[dict]]:
     """把 sources.yaml 的来源按主表/未合并/已移除三节分组。
+
+    有 decisions.yaml 时（has_decisions=True）：
 
     - main：status 为 active，且在 decisions.yaml 里至少有一条证据。
     - unmerged：status 为 candidate 或 paused；或 status 为 active 但没有任何
       证据（这种情况额外记入 active_without_evidence，供调用方提醒）。
     - removed：status 为 removed，不变。
+
+    没有 decisions.yaml 时（has_decisions=False），没有证据数据可判断，主表
+    改为直接按 status 分：active 进主表，其余（candidate、paused 等）进
+    "已登记、尚未合并"；active_without_evidence 恒为空。
     """
     main: list[dict] = []
     unmerged: list[dict] = []
@@ -99,6 +107,12 @@ def classify_sources(sources_doc: dict, stats: dict[str, dict]) -> dict[str, lis
         status = s.get("status")
         if status == "removed":
             removed.append(s)
+            continue
+        if not has_decisions:
+            if status == "active":
+                main.append(s)
+            else:
+                unmerged.append(s)
             continue
         has_evidence = stats.get(s["id"], {"total": 0})["total"] > 0
         if status == "active" and has_evidence:
@@ -118,11 +132,13 @@ def classify_sources(sources_doc: dict, stats: dict[str, dict]) -> dict[str, lis
     }
 
 
-def render_source_table(sources: list[dict], stats: dict[str, dict]) -> str:
+def render_source_table(sources: list[dict], stats: dict[str, dict], has_decisions: bool = True) -> str:
+    header_cols = ["id", "repository", "branch", "license", "snapshot_policy", "lineage", "selection_status"]
+    if has_decisions:
+        header_cols += ["支持的规则数", "落地的规则数"]
     rows = [
-        "| id | repository | branch | license | snapshot_policy | lineage | "
-        "selection_status | 支持的规则数 | 落地的规则数 |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| " + " | ".join(header_cols) + " |",
+        "|" + "---|" * len(header_cols),
     ]
     for s in sources:
         sid = s["id"]
@@ -130,20 +146,18 @@ def render_source_table(sources: list[dict], stats: dict[str, dict]) -> str:
         license_cell = s["license"]
         if s["license"] == "unknown":
             license_cell = "unknown（未取得许可证，本仓库不含其原文）"
-        rows.append(
-            "| {id} | {repo} | {branch} | {license} | {policy} | {lineage} | "
-            "{selection} | {total} | {landed} |".format(
-                id=sid,
-                repo=repo_link(s["repository"]),
-                branch=s["branch"],
-                license=license_cell,
-                policy=s["snapshot_policy"],
-                lineage=s["lineage"],
-                selection=s["selection_status"],
-                total=st["total"],
-                landed=st["landed"],
-            )
-        )
+        cells = [
+            sid,
+            repo_link(s["repository"]),
+            s["branch"],
+            license_cell,
+            s["snapshot_policy"],
+            s["lineage"],
+            s["selection_status"],
+        ]
+        if has_decisions:
+            cells += [str(st["total"]), str(st["landed"])]
+        rows.append("| " + " | ".join(cells) + " |")
     return "\n".join(rows)
 
 
@@ -246,9 +260,10 @@ def render_sources_md(
     decisions_doc: dict,
     snapshots_dir: Path,
     generated_at: str | None = None,
+    has_decisions: bool = True,
 ) -> str:
     stats = compute_source_stats(sources_doc, decisions_doc)
-    groups = classify_sources(sources_doc, stats)
+    groups = classify_sources(sources_doc, stats, has_decisions=has_decisions)
     target_skill = sources_doc.get("target_skill", sources_doc.get("merge_id"))
     merge_id = sources_doc.get("merge_id")
 
@@ -262,7 +277,7 @@ def render_sources_md(
         "",
         "## 来源表",
         "",
-        render_source_table(groups["main"], stats),
+        render_source_table(groups["main"], stats, has_decisions=has_decisions),
         "",
         "## 已登记、尚未合并",
         "",
@@ -291,10 +306,16 @@ def render_sources_md(
     parts.append("")
     ts = generated_at or datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     parts.append(f"- 渲染时间：{ts}")
-    parts.append(
-        f"- 渲染依据：`merges/{merge_id}/decisions.yaml`（{len(decisions_doc.get('rules', []))} 条规则）"
-        f"与 `merges/{merge_id}/sources.yaml`（{len(sources_doc.get('sources', []))} 个来源）。"
-    )
+    if has_decisions:
+        parts.append(
+            f"- 渲染依据：`merges/{merge_id}/decisions.yaml`（{len(decisions_doc.get('rules', []))} 条规则）"
+            f"与 `merges/{merge_id}/sources.yaml`（{len(sources_doc.get('sources', []))} 个来源）。"
+        )
+    else:
+        parts.append(
+            f"- 渲染依据：`merges/{merge_id}/sources.yaml`（{len(sources_doc.get('sources', []))} 个来源）；"
+            "当前实例没有 decisions.yaml，不含规则统计。"
+        )
     parts.append("")
     parts.append("本文件由脚本从 decisions.yaml 和 sources.yaml 生成，不要手工编辑。")
     parts.append("")
@@ -309,20 +330,30 @@ def render_sources_for_merge(
 
     active_without_evidence 是 status 为 active 但 decisions.yaml 里没有任何
     证据引用的来源 id 列表——这些来源被放进了"已登记、尚未合并"一节，调用方
-    （cli）据此提醒使用者核对 sources.yaml 里的 status。
+    （cli）据此提醒使用者核对 sources.yaml 里的 status。没有 decisions.yaml
+    的实例（以后的 merge 实例都不再产出这份文件）恒为空列表，主表直接按
+    status 分（active 进主表），不再区分"有没有证据"。
     """
     sources_doc = load_yaml(paths.sources_yaml(merge_id))
-    decisions_doc = load_yaml(paths.decisions_yaml(merge_id))
+    decisions_path = paths.decisions_yaml(merge_id)
+    has_decisions = decisions_path.exists()
+    decisions_doc = load_yaml(decisions_path) if has_decisions else {"merge_id": merge_id, "rules": []}
     lock_path = paths.lock_json(merge_id)
     generated_at = None
     if lock_path.exists():
         generated_at = load_json(lock_path).get("generated_at")
 
     stats = compute_source_stats(sources_doc, decisions_doc)
-    groups = classify_sources(sources_doc, stats)
+    groups = classify_sources(sources_doc, stats, has_decisions=has_decisions)
     active_without_evidence = [s["id"] for s in groups["active_without_evidence"]]
 
-    md = render_sources_md(sources_doc, decisions_doc, paths.snapshots_dir(merge_id), generated_at)
+    md = render_sources_md(
+        sources_doc,
+        decisions_doc,
+        paths.snapshots_dir(merge_id),
+        generated_at,
+        has_decisions=has_decisions,
+    )
 
     target = out_path or (paths.skills_dir / sources_doc["target_skill"] / "SOURCES.md")
     target.parent.mkdir(parents=True, exist_ok=True)

@@ -1,7 +1,11 @@
 """`upstream-monitor pr` 的实现。
 
-按 skills/skill-merge/references/templates/pr-body.md 的结构生成 PR 正文，
-创建分支、写快照或只更新 lock、提交、用 `gh pr create` 开 PR。
+创建分支、写快照或只更新 lock、提交、用 `gh pr create` 开 PR。PR 正文只放
+机械事实：元数据块（commit 前后、stars、forks、许可证、快照策略）、
+full-text 来源的完整上游 diff、metadata-only 来源的原文声明（不含原文，只给
+commit 和 hash）。是否采用、怎么改写这些语义判断不在这里——PR 不反查本地
+decisions.yaml，也不附 locate 输出，由 skill-merge 读 PR 里的 diff 和本地
+skill 决定。
 
 幂等键 `source_id:path:commit`：path 段在来源只追踪一个文件时就是那个路径，
 追踪多个文件时用逗号拼接（schema 只要求不含冒号，没有规定多路径怎么表示，
@@ -19,34 +23,15 @@ from pathlib import Path
 
 from upstream_monitor.diff import run_diff
 from upstream_monitor.github_client import GitHubClient
-from upstream_monitor.locate import render_locate_markdown, rules_for_source
 from upstream_monitor.paths import RepoPaths
 from upstream_monitor.schemas import validate_doc
 from upstream_monitor.snapshot import snapshot_one_source
 from upstream_monitor.yamlio import dump_json, load_json, load_yaml
 
-DECISION_STRENGTH = [
-    "adopted",
-    "adopted-with-modification",
-    "duplicate",
-    "rejected",
-    "deferred",
-    "reference-only",
-    "unverified",
-    "retired",
-]
-
 
 def change_key_for(source_id: str, paths_list: list[str], commit: str) -> str:
     path_field = paths_list[0] if len(paths_list) == 1 else ",".join(paths_list)
     return f"{source_id}:{path_field}:{commit}"
-
-
-def strongest_decision(decisions: list[str]) -> str:
-    for d in DECISION_STRENGTH:
-        if d in decisions:
-            return d
-    return "rejected"
 
 
 def render_pr_title(merge_id: str, source_id: str) -> str:
@@ -57,8 +42,7 @@ def render_pr_body(
     merge_id: str,
     source: dict,
     entry: dict,
-    affected_rules: list[dict],
-    locate_md: str,
+    diff_text: str | None,
 ) -> str:
     source_id = source["id"]
     from_commit = entry.get("last_accepted_commit") or "(无基线)"
@@ -67,43 +51,38 @@ def render_pr_body(
     stars_before = stars_hist[-2]["value"] if len(stars_hist) >= 2 else None
     stars_after = stars_hist[-1]["value"] if stars_hist else None
 
-    decisions = [r["decision"] for r in affected_rules] or ["rejected"]
-    result = strongest_decision(decisions)
-
     lines: list[str] = []
-    lines.append(f"## merge_result\n\n`{result}`\n")
-    lines.append(
-        f"共 {len(affected_rules)} 条规则引用来源 `{source_id}`；"
-        f"逐条结论见下方受影响规则表和 locate 输出。\n"
-    )
-    lines.append("## 范围\n")
+    lines.append("## 元数据\n")
     lines.append(f"- merge_id：{merge_id}")
     lines.append(f"- 来源：{source_id}，{source['repository']}，{source['branch']}")
     lines.append(f"- 提交区间：{from_commit} .. {to_commit}")
     lines.append(f"- 追踪文件：{', '.join(source['paths'])}")
-    lines.append("")
-    lines.append("## 热度\n")
-    lines.append(f"- stars：{stars_before if stars_before is not None else '未知'} -> "
-                 f"{stars_after if stars_after is not None else '未知'}")
+    lines.append(f"- snapshot_policy：{source['snapshot_policy']}")
+    lines.append(f"- 许可证：{source['license']}")
+    lines.append(
+        f"- stars：{stars_before if stars_before is not None else '未知'} -> "
+        f"{stars_after if stars_after is not None else '未知'}"
+    )
     lines.append(f"- forks：{entry.get('forks', '未知')}")
     lines.append("")
-    lines.append("## 受影响规则\n")
-    lines.append("| 规则 id | rule_summary | decision | decision_revision |")
-    lines.append("|---|---|---|---|")
-    for r in affected_rules:
-        lines.append(f"| {r['id']} | {r['rule_summary']} | {r['decision']} | {r['decision_revision']} |")
-    if not affected_rules:
-        lines.append("| （无） | | | |")
-    lines.append("")
-    lines.append("这个 PR 里全部规则的 decision_origin 都是 model-proposed，合并前要改成 human-approved。\n")
-    lines.append("## 原文声明\n")
+
     if source["snapshot_policy"] == "metadata-only":
-        lines.append(f"本 PR 不含来源 `{source_id}` 的任何原文，snapshots/ 未新增内容，rationale 只写思路。")
+        lines.append("## 原文声明\n")
+        lines.append(f"本 PR 不含来源 `{source_id}` 的任何原文，snapshots/ 未新增内容。")
+        lines.append("")
+        lines.append(f"- commit：{to_commit}")
+        lines.append(f"- raw_sha256：{entry.get('raw_sha256')}")
+        lines.append(f"- normalized_sha256：{entry.get('normalized_sha256')}")
+        lines.append("")
+        lines.append(
+            f"原文请本地用 `upstream-monitor diff --merge {merge_id} --source {source_id}` 查看。"
+        )
     else:
-        lines.append("本 PR 不涉及 metadata-only 来源。")
+        lines.append("## 上游 diff\n")
+        text = (diff_text or "").strip()
+        lines.append(text if text else "无变化。")
+
     lines.append("")
-    lines.append("## locate 输出\n")
-    lines.append(locate_md)
     return "\n".join(lines)
 
 
@@ -144,13 +123,10 @@ def run_pr(
             "message": f"变更键 {change_key} 已经开过 PR #{entry['open_pr']}，不重复开。",
         }
 
-    decisions = load_yaml(paths.decisions_yaml(merge_id))
-    affected_rules = rules_for_source(decisions, source_id)
-    diff_text = run_diff(paths, client, merge_id, source_id)
-    locate_md = render_locate_markdown(
-        merge_id, source_id, affected_rules, decisions["rules"], diff_text
-    )
-    body = render_pr_body(merge_id, source, entry, affected_rules, locate_md)
+    diff_text = None
+    if source["snapshot_policy"] == "full-text":
+        diff_text = run_diff(paths, client, merge_id, source_id)
+    body = render_pr_body(merge_id, source, entry, diff_text)
     title = render_pr_title(merge_id, source_id)
     date = datetime.date.today().isoformat()
     branch = f"upstream-sync/{date}-{source_id}"

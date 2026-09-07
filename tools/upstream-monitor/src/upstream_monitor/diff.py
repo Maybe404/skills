@@ -1,8 +1,12 @@
 """`upstream-monitor diff` 的实现。
 
 默认取 last_accepted_commit 到 last_seen_commit，两个版本都从 GitHub 按
-commit 现取，输出统一 diff。metadata-only 来源的结果只能打到 stdout，
-调用方（cli.py）不得把返回值写入任何文件。
+commit 现取，输出统一 diff。full-text 来源首次同步（没有 last_accepted_commit，
+且调用方没有显式传 --from）时，没有基线 commit 可取，改用本地已有快照
+（merges/<id>/snapshots/<source_id>/ 下 lock 记录的 stored_path）作为旧版本，
+避免把"从未同步过"误判成"整份文件都是新增"；metadata-only 来源没有快照，
+这种情况仍按无基线处理。metadata-only 来源的结果只能打到 stdout，调用方
+（cli.py、pr.py）不得把返回值写入任何文件。
 """
 from __future__ import annotations
 
@@ -23,6 +27,36 @@ def _fetch_text(client: GitHubClient, repo: str, path: str, commit: str | None) 
     except FileNotFound:
         return []
     return raw.decode("utf-8", errors="replace").splitlines(keepends=True)
+
+
+def _old_version(
+    paths: RepoPaths,
+    client: GitHubClient,
+    source: dict,
+    entry: dict,
+    path: str,
+    from_commit: str | None,
+) -> tuple[list[str], str]:
+    """返回 (旧版本的行列表, diff 头部用的标签后缀)。
+
+    from_commit 非 None 时按常规从 GitHub 取该 commit 的内容。from_commit 为
+    None（没有显式 --from，且 lock 里也没有 last_accepted_commit）时，
+    full-text 来源改读本地快照；快照也没有（真正首次登记，从未跑过
+    snapshot）或来源是 metadata-only 时，退回"无基线"。
+    """
+    if from_commit is not None:
+        return _fetch_text(client, source["repository"], path, from_commit), from_commit
+    if source["snapshot_policy"] == "full-text":
+        stored = next(
+            (f.get("stored_path") for f in entry.get("files", []) if f.get("original_path") == path),
+            None,
+        )
+        if stored:
+            p = paths.root / stored
+            if p.exists():
+                text = p.read_text(encoding="utf-8", errors="replace")
+                return text.splitlines(keepends=True), f"本地快照 {stored}"
+    return [], "(无基线)"
 
 
 def run_diff(
@@ -56,9 +90,9 @@ def run_diff(
         return "\n".join(chunks)
 
     for path in source["paths"]:
-        old_lines = _fetch_text(client, repo, path, from_c)
+        old_lines, from_suffix = _old_version(paths, client, source, entry, path, from_c)
         new_lines = _fetch_text(client, repo, path, to_c)
-        from_label = f"{path}@{from_c or '(无基线)'}"
+        from_label = f"{path}@{from_suffix}"
         to_label = f"{path}@{to_c}"
         diff = difflib.unified_diff(old_lines, new_lines, fromfile=from_label, tofile=to_label)
         text = "".join(diff)

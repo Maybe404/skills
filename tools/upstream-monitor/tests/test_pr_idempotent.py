@@ -43,7 +43,8 @@ def test_pr_would_open_when_change_key_differs(repo_paths):
             }
         }
     )
-    # from_commit 为 None（尚无 last_accepted_commit）时 diff 直接跳过取旧版本。
+    # from_commit 为 None（尚无 last_accepted_commit）时，full-text 来源的 diff
+    # 改读本地已有快照作为旧版本（见 diff._old_version），不再是直接跳过。
     result = run_pr(repo_paths, client, merge_id, source_id, dry_run=True)
 
     assert result["idempotent"] is False
