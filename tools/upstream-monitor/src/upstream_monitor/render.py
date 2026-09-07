@@ -71,7 +71,13 @@ def read_license_text(snapshots_dir: Path, source_id: str) -> str | None:
 
 
 def extract_copyright_author(license_text: str) -> str | None:
-    m = re.search(r"^Copyright \(c\) \d{4}[a-z, ]*\s+(.+)$", license_text, re.MULTILINE)
+    # The name has to sit on the same line as the year; a bare "Copyright (c) 2026"
+    # line yields None instead of swallowing the next paragraph of the license.
+    m = re.search(
+        r"^Copyright \(c\) \d{4}(?:\s*[-–,]\s*(?:\d{4}|present))*[ \t]+(\S.*)$",
+        license_text,
+        re.MULTILINE | re.IGNORECASE,
+    )
     return m.group(1).strip() if m else None
 
 

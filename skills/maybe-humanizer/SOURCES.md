@@ -283,7 +283,7 @@ SOFTWARE.
 
 ### upstream-ai-zixun-humanizer-zh
 
-- 作者：Permission is hereby granted, free of charge, to any person obtaining a copy
+- 作者：aizixun
 - 仓库：[ai-zixun/humanizer-zh](https://github.com/ai-zixun/humanizer-zh)
 - 许可证：MIT
 
