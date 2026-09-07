@@ -16,7 +16,7 @@
 
 ### EN-P-001 AI 高频词一律不用
 
-**判据。** 下列词出现在英文正文里即命中，换成大白话，不是换成另一个书面词：delve、leverage、utilize、facilitate、foster、empower、streamline、multifaceted、tapestry、testament、underscore、interplay、realm、beacon、pivotal、crucial、paramount、meticulous、intricate、transformative、elevate、embark、supercharge、harness、garner、bolster、ever-evolving、paradigm shift、game changer。
+**判据。** 下列词出现在英文正文里即命中，换成大白话，不是换成另一个书面词：delve、leverage、utilize、facilitate、foster、empower、streamline、multifaceted、tapestry、testament、underscore、interplay、realm、beacon、pivotal、crucial、paramount、meticulous、intricate、transformative、elevate、embark、supercharge、harness、garner、bolster、ever-evolving、paradigm shift、game changer。「出现即命中」说的是记录，处理强度按 EN-M-001 的三档执行，不是一律删。
 
 **通过条件。** 引语、代码块、标题里的原文按 ALL-PROT-008 逐字不动，词表在这些位置不适用。某个词在当前领域承担精确技术含义时按 ALL-PROT-009 保留，判定依据是这个词在当前句子里的语义，不是文章属于哪个体裁。技术长文档位另有 EN-P-084 的逐词清单，那份清单放行 robust、leverage 一类，仍然要求处理 delve、tapestry、embark。本条只负责列出词条，这张表的三档执行强度在 EN-M-001。EN-P-051 收的是英文职场黑话，两份表只有 game changer 一条重合。
 
@@ -707,7 +707,7 @@
 
 **判据。** 英文破折号按全文词数分界。计入范围：em dash（—）与两个连字符（--）的替代写法，两种字形一并计入；标题、小标题与正文同样计入。200 词以下算短文，一处都不用。200 词以上按每千词至多一处折算，向下取整、至少允许一处：1000 词内至多一处，2000 到 2999 词至多两处，3000 词至多三处。不论篇幅，同一段里出现两处以上算成串，成串出现的和纯装饰性的一律去掉。
 
-**通过条件。** 一种豁免不计入频率：项目符号或编号列表项里、跟在加粗引导词或 markdown 链接后面充当分隔符的破折号（`- **Term** — description`）。句中的插入用法照算。列表之外行首的 `**Bold lead** — 整句` 照算，那本身就是一处痕迹。两个连字符的写法永远不豁免。中文不适用本条的口径，中文走 ZH-P-007。EN-S-004 是禁令加作者样本例外，EN-S-009 是无条件禁令、不设任何频率口径，两条与本条冲突，取本条；样本例外单独立成 ALL-PROC-049。EN-PROC-001 定交付前的查法和时机，本条只定密度口径。EN-P-026 是频率上限，EN-PROT-001 规定改写时一处都不得新增，频率没超上限不构成新增的豁免。
+**通过条件。** 一种豁免不计入频率：项目符号或编号列表项里、跟在加粗引导词或 markdown 链接后面充当分隔符的破折号（`- **Term** — description`）。句中的插入用法照算。列表之外行首的 `**Bold lead** — 整句` 照算，那本身就是一处痕迹。两个连字符在正文里照算；反引号内、代码块内（本来按 ALL-PROC-016 跳过）、命令行参数形式（`--flag`）和 URL 内的 `--` 不计。短文「一处都不用」是改写时的目标，不是审稿的证据：审稿模式下单独一处破折号按 ALL-M-002 不算信号、不据此改写，两处以上或成串才报。中文不适用本条的口径，中文走 ZH-P-007。EN-S-004 是禁令加作者样本例外，EN-S-009 是无条件禁令、不设任何频率口径，两条与本条冲突，取本条；样本例外单独立成 ALL-PROC-049。EN-PROC-001 定交付前的查法和时机，本条只定密度口径。EN-P-026 是频率上限，EN-PROT-001 规定改写时一处都不得新增，频率没超上限不构成新增的豁免。
 
 **已知会漏掉什么。** 三个上游在破折号上给了三种互不相同的口径，本条取的是密度口径，因此它放过的那些用法在另外两种口径下都算违反。豁免只按形式判，一个写在列表项里但实际是句中插入的破折号会被误豁免。
 

@@ -40,7 +40,7 @@
     {
       "id": 7,
       "prompt": "Tighten this up:\n\nThe migration reduced p99 latency from 900ms to 40ms on the read path. It should be noted that this only applies to clients on SDK 4.2 or later; older clients still hit the legacy endpoint. Run `svc migrate --shard 7 --dry-run` first — it exits 2 if any shard is still draining. Experts suggest this pattern is becoming the industry standard.",
-      "expected_output": "第二类样本（事实不漂移）。必须保留且一字不差：900ms、40ms、SDK 4.2、`svc migrate --shard 7 --dry-run`、exits 2、\"older clients still hit the legacy endpoint\" 这个条件。应被清理：\"It should be noted that\"（EN-P-004、EN-P-005）、\"Experts suggest\"（EN-P-017，且原文没有来源，按 ALL-PROT-001 应当去问或删掉整个论断，不得编一个来源）、\"becoming the industry standard\" 这种无出处的断言。失败条件：数字或命令变化、条件从句被删、或者给 \"Experts suggest\" 补上一个具体的来源名。",
+      "expected_output": "第二类样本（事实不漂移）。必须保留且一字不差：900ms、40ms、SDK 4.2、`svc migrate --shard 7 --dry-run`、exits 2、\"older clients still hit the legacy endpoint\" 这个条件。应被清理：\"It should be noted that\"（EN-P-004、EN-P-005）、\"Experts suggest ... industry standard\" 这句无出处的论断按 ALL-PROC-040 的默认处理：保留原句，在改动说明里标注它没有来源、建议作者补出处或删除；只有用户明确要求删或授权到改写档时才删掉整句。任何情况下不得编一个来源（ALL-PROT-001）。失败条件：数字或命令变化、条件从句被删、给 \"Experts suggest\" 补上一个具体的来源名、或者在没有授权的情况下静默删掉了这句而改动说明里没有提。",
       "files": []
     },
     {
@@ -130,7 +130,7 @@
     {
       "id": 22,
       "prompt": "帮我把这段去去 AI 味，但一句都别删，句子数量要和原文一样：\n\n毫无疑问，这次重构是一次意义深远的尝试。我们把鉴权中间件从三处重复实现收敛成了一处。收敛之后，新增一个受保护接口只需要改一行配置。坦率地讲，这个改动本身并不复杂。真正花时间的是把三处实现的差异逐条对齐，这部分做了两周。目前线上跑了一个月，没有出现鉴权相关的告警。",
-      "expected_output": "编辑范围样本（in-place）。用户明确要求保留句数，按 ALL-PROC-042 落 in-place：一句不删、不合并相邻句、不重排段落、不把多段压成一段，改动全部收在句子内部（句内替换、删语气垫片、把拔高的语气降回普通判断）。判据：ALL-M-019 的回退检查——输出字数低于原文 85%，或句数变化超过约 10%，都要回查是否误删了整句、合并了句子或压了段落。原文 6 句、131 字（不计标点与空白），输出必须仍是 6 句，字数不得低于 112 字（原文的 85%）。正确输出：第一句的「毫无疑问」「意义深远」在句内降回普通判断（ZH-P-001、ZH-P-002），保留这句的命题；「坦率地讲」作为语气垫片可在句内删掉，句子本身保留。必须保留：三处、一处、一行配置、两周、一个月、「没有出现鉴权相关的告警」。失败条件：句数变成 5 句或更少、把第一句整句删掉、把第一句与第二句合并、字数低于原文 85% 而没有做回查说明、或者在 in-place 档下重排了句序。",
+      "expected_output": "编辑范围样本（in-place）。用户明确要求保留句数，按 ALL-PROC-042 落 in-place：一句不删、不合并相邻句、不重排段落、不把多段压成一段，改动全部收在句子内部（句内替换、删语气垫片、把拔高的语气降回普通判断）。判据：ALL-M-019 的回退检查——输出字数低于原文 85%，或句数变化超过约 10%，都要回查是否误删了整句、合并了句子或压了段落。原文 6 句、120 字（数法：字数只数汉字，不计标点、空白和阿拉伯数字；句数按句末标点。！？计），输出必须仍是 6 句，字数不得低于 102 字（原文的 85%，向下取整）。正确输出：第一句的「毫无疑问」「意义深远」在句内降回普通判断（ZH-P-001、ZH-P-002），保留这句的命题；「坦率地讲」作为语气垫片可在句内删掉，句子本身保留。必须保留：三处、一处、一行配置、两周、一个月、「没有出现鉴权相关的告警」。失败条件：句数变成 5 句或更少、把第一句整句删掉、把第一句与第二句合并、字数低于原文 85% 而没有做回查说明、或者在 in-place 档下重排了句序。",
       "files": []
     },
     {
