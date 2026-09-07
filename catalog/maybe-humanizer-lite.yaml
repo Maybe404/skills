@@ -1,0 +1,13 @@
+id: maybe-humanizer-lite
+name: 去 AI 味（轻量版）
+kind: derived
+status: active
+language:
+  - zh
+  - en
+path: skills/maybe-humanizer-lite
+merge_instance: null
+source_of_truth: skills/maybe-humanizer
+replacement: null
+archived_at: null
+reason: 从 maybe-humanizer 及其 46 份上游快照里提炼方向性约束，正文 1400 字左右，供直接放进 CLAUDE.md 或系统提示词。
