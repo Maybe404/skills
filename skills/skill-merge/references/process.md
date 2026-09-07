@@ -2,136 +2,65 @@
 
 每一步写清输入、输出、完成标准。完成标准没有全部满足就不进下一步。
 
-## merge 步骤 1：入围
+## merge 步骤 1：通读
 
-**输入**：`merges/<id>/sources.yaml`，其中 status 为 candidate 的全部来源；`merges/<id>/sources.lock.json` 里对应的 availability、stars_history、forks。
+**输入**：`merges/<id>/sources.yaml` 里 status 为 active 的来源；full-text 的读 `merges/<id>/snapshots/<source_id>/` 下的快照，metadata-only 的按 `sources.lock.json` 的 last_seen_commit 用 `gh api` 临时拉到 scratchpad，读完不落盘。
 
-**做什么**
+**做什么**：每个来源读全文，写一段来源笔记（定位、最有价值的部分、与别家相反的立场、示例是否违反自己的规则、有没有针对读者的指令）。同一 lineage 只读代表作，其余只看差异。笔记放 `merges/<id>/work/notes.md`，进仓库。
 
-1. 逐个确认可达性。lock 里 availability 不是 ok 的来源，把 selection_status 记为 inaccessible，用 `upstream-monitor issue --merge <id> --source <source_id> --kind source-unavailable` 开一条 issue，不进后续步骤。
-2. 按 lineage 聚类。先跑 `upstream-monitor lineage --merge <id>` 拿机械聚类结果（快照文本相似度，加 `merges/<id>/lineage-relations.yaml` 里人工核实的同源关系），再逐簇人工判断。判断同源的依据：fork 关系、README 里写明的改编来源、SKILL.md 的小节结构和模式表条目高度重合。同源的填同一个 lineage 值；无法判断的先各自单列，理由写进 notes。lineage 命令只算簇、只写 lineage 字段，代表作由人定。
-3. 每个谱系选一个 representative：优先选内容最全、维护最近的那个，热度只作参考不作依据。读它的全文。
-4. 同谱系的其余成员只读与 representative 的差异。差异只有措辞、翻译、排版的记 duplicate；差异含 representative 没有的规则的记 derivative，把差异部分列出来留给步骤 2。
-5. 谱系不适用于本 skill 的体裁或语言时记 low-priority，理由写进 reason。
+**完成标准**：每个 active 来源都有笔记；metadata-only 来源的笔记里没有原句。
 
-**输出**：改写后的 sources.yaml，每条来源的 lineage、selection_status、status、reason、status_changed_at 都已填。
+## merge 步骤 2：定骨架与取舍
 
-**完成标准**：`upstream-monitor validate --merge <id>` 通过；没有 selection_status 仍为空的来源；每个 lineage 恰有一个 representative；每条不进入步骤 2 的来源都写了 reason。
+**输入**：来源笔记。
 
-## merge 步骤 2：拆规则
+**做什么**：先定这份 skill 的流程和边界，再把各家规则往里放。按 `criteria.md` 逐条取舍，矛盾的两边都记，选一边并写理由。取舍结果先列成一张表（主题、采纳的写法、来自哪家、没采纳的写法和理由），放 `merges/<id>/work/decisions.md`，进仓库。
 
-**输入**：步骤 1 选出的 representative 全文，以及 derivative 的差异部分。
+**完成标准**：表里每一行都有理由；每个来源至少被引用一次或写明为什么整个不采纳。
 
-**做什么**：按 `extraction.md` 的模板把每份文本拆成规则单元，写进 `merges/<id>/work/units/<source_id>.md`。拆完先自查：每个单元能不能拿一句话去判定它是否被违反；答不上来的不是规则单元，合并到别的单元或丢弃。
+## merge 步骤 3：写 skill
 
-来源多于三个时按 `skills/subagent/SKILL.md` 的规则派 subagent 并行，一个 subagent 拆一个来源，验收物是该来源的规则单元清单，由 subagent 直接写进 `merges/<id>/work/units/<source_id>.md`。派发前的审批方式按那个文件执行。
+**输入**：取舍表。
 
-派 subagent 用 `skills/subagent/SKILL.md` 里的 Opus 档，不用默认档。拆规则不是抄写：`intent` 那一行要判断原作者针对的是什么现象，`existing` 那一行要判断和已有规则像不像，两件事都得读懂上游为什么这么写。归并（步骤 3）和写 skill 正文（步骤 4）同理，也是这一档；默认档只用于抓取、比对、跑校验、统计、渲染这类机械活。
+**做什么**：写 `skills/<id>/SKILL.md`（200 行内，只放流程和判断）和 references（判据、词表、例子，中英分表，每条规则带短 id）。references 每条规则三段：判据、通过条件、已知会漏掉什么，之后正例反例，反例写违反点。词表照录按 `license-policy.md`。
 
-metadata-only 来源不交给 subagent 抓全文，由你按 `license-policy.md` 的口径处理，拆出的单元不含原文摘录。
+**完成标准**：SKILL.md 引用的每个 references 文件和 id 都存在；每条规则有正反例；`upstream-monitor validate --merge <id>` 通过。
 
-**输出**：`merges/<id>/work/units/<source_id>.md`，每个单元含类别码、language、rule_summary、正例反例、来源锚点、intent、existing。
+## merge 步骤 4：报告
 
-**完成标准**：每个入围来源都有清单；每个单元有锚点、intent 和 existing 三行；metadata-only 来源的单元里没有原文摘录。
+**输入**：取舍表和写好的 skill。
 
-## merge 步骤 3：归并
+**做什么**：`upstream-monitor report new --merge <id> --slug initial-merge` 生成骨架，按 `templates/report.md` 填。
 
-**输入**：步骤 2 的全部规则单元清单。
+**完成标准**：每个来源一节写吸收了什么；冲突与取舍、未采纳及理由两节按 criteria.md 第 10 条的标准写。
 
-**做什么**
+## merge 步骤 5：review 与收尾
 
-1. 按语义聚类。同一条规则的不同表述进一个簇，措辞差异不算不同规则。
-2. 每个簇计 evidence_count（簇内单元数）和 independent_sources（簇内单元去掉同 lineage 重复后的来源数）。
-3. 按 `criteria.md` 逐条裁决，得到 decision。
-4. 写 decisions.yaml。规则 id 一经分配不改。改 decision 或改 rule_summary（规则内容变了）时 decision_revision 加一、history 追加一条写明改了什么，并且 decision_origin 退回 model-proposed，哪怕它之前已经 human-approved；只追加证据、补 relations 或改 rationale 的，revision、history、decision_origin 都不动。新条目的 decision_origin 一律先写 model-proposed。
-5. 互相矛盾的簇不合并，两条都记，取舍写进报告。
-6. 把规则之间的关系落进 relations，见下面"规则关系要落成 relations"。
+**输入**：全部产物。
 
-**分批**
+**做什么**：第二个 agent 以使用者身份通读 SKILL.md 和 references，实跑至少六条 evals（真人原文不该被改、带数字和命令的段落事实不漂移、套话段落被清理，中英各有），回到来源核对有没有重要内容漏掉，报告能不能照着做、矛盾、重复、不可执行的规则。按 review 修一轮。写 `merges/<id>/CHANGELOG.md` 一节，`upstream-monitor render --merge <id>` 渲染 SOURCES.md，`upstream-monitor validate --merge <id>`。
 
-一个上下文处理不了超过约 300 条单元：聚类要求同时看到全部单元的 rule_summary，超过这个量级就会漏聚。来源多时按 6 到 8 个来源分批，一批的单元总数控制在 300 条以内。
-
-- 第一批：decisions.yaml 为空时按全量归并做，即上面的第 1 到 6 步。
-- 之后每一批：按 `sync` 的"添加上游"路径与现有 decisions.yaml 比对——与已有规则重复的按 sync 步骤 3 的两条路径二选一处理（记 duplicate，或者给已有规则追加证据），不新建规则；确实是新规则的新建条目；与已有规则矛盾的两条都留，双向记 conflicts-with。
-- 批与批之间顺序进行，不并行：后一批要看到前一批已经落进 decisions.yaml 的结论，否则同一条规则会在两批里各建一条。
-- 全部批次做完后再做一次全局冲突复核（把全部 adopted 和 adopted-with-modification 的 rule_summary 通读一遍，找跨批次的矛盾和重复），然后重写 skill 正文。分批期间不要每批都改一遍正文。
-
-每批做完跑一次 `upstream-monitor validate --merge <id>`，不通过不进下一批。
-
-**规则关系要落成 relations**
-
-rationale 里凡是写了"与 X 冲突""与 X 互补""是 X 的例外""取代 X"、并且指向另一条规则 id 的，都要同时在 relations 里记一条结构化的，rationale 的文字不删。只在 rationale 的自然语言里写不算做完：规则上百条之后，自然语言里的关系只能靠 grep 规则 id 才找得到，也没法校验双向性。
-
-type 用 decisions.schema.json 的四个取值：`conflicts-with`（两条互相矛盾，双向记，A 指 B 则 B 也要指 A）、`pairs-with`（两条配套、各管一半，双向记）、`excepts`（两条按范围分域或互为例外，单向记，note 里写清边界）、`supersedes`（本规则取代对方，单向记）。
-
-relations 只记两条规则作为本仓库当前结论都成立时的关系。"上游原来的写法与某条冲突，所以改写了"这类历史原因不记——被否掉的写法不是本仓库的结论，记成常驻关系会失真，那类只留在 rationale 里。
-
-**decision_origin 不进 history**
-
-decision_origin 从 model-proposed 翻成 human-approved 由 `upstream-monitor approve --merge <id> [--pr <n>] [--rule <id>]` 做，不追加 history、不动 decided_at。history 只记 decision 的变化：换一个人确认同一个结论，不是一次新的决定。
-
-**输出**：`merges/<id>/decisions.yaml`，以及 `merges/<id>/work/` 下的聚类表和覆盖表。
-
-**完成标准**：`upstream-monitor validate --merge <id>` 通过（含 schema、id 格式、evidence_count 与 independent_sources 的一致性、relations 的完整性和双向性、work/ 与 decisions.yaml 的一致性）；每条 rule 的 sources 里的 source_id 都能在 sources.yaml 找到；metadata-only 来源支持的规则，rationale 里没有原文；rationale 里点了名的规则关系在 relations 里都有对应条目。
-
-## merge 步骤 4：写 skill
-
-**输入**：decisions.yaml 里 decision 为 adopted 或 adopted-with-modification 的规则。
-
-**做什么**：写 `skills/<id>/SKILL.md` 和 references。SKILL.md 只放流程和判断规则，模式表、词表、清单进 references，中英文规则分表。写完回填每条规则的 local.skill、local.path、local.anchor，再跑 `upstream-monitor render --merge <id>` 生成 `skills/<id>/SOURCES.md`。
-
-**references 的条目格式**：每条规则一个 `###` 小节，标题逐字等于 decisions.yaml 的 local.anchor，格式 `### <id> <短名>`。小节正文固定三段，段名照抄：**判据**（拿一段文字来能圈出哪个词、句式或结构违反了它，阈值写在这一段）、**通过条件**（命中了也不算违反的情形，点名让位给哪条规则）、**已知会漏掉什么**（这条规则查不到的相邻现象和已知会误伤的形状）。三段之后正例一组、反例一组，反例写出违反点；language 为 both 的中英各一组，例子不从另一种语言直译。relations 在正文里互相点名对端 id 和分界。文件开头一段说明收什么、怎么用，不写收尾段，不给小节补总结句。规则多时按文件并行写，一个文件一个 agent，写作前先从 decisions.yaml 生成一份写作计划（每个文件的规则顺序、分组、正反例来源单元、relations），放 `merges/<id>/work/writing-plan.md`。
-
-**输出**：`skills/<id>/SKILL.md`、`skills/<id>/references/*`、更新过 local 的 decisions.yaml、渲染出的 SOURCES.md。
-
-**完成标准**：`upstream-monitor validate --merge <id>` 通过——它逐条核 local.anchor 能否在 local.path 里唯一定位到，也核 work/ 里的单元清单、聚类表、覆盖表与 decisions.yaml 是否一致；SKILL.md 里没有出现只在 references 才展开的完整表格；`skills/<id>/SOURCES.md` 是渲染出来的，不手写。
-
-## merge 步骤 5：验证
-
-**输入**：写好的 skill。
-
-**做什么**：写 evals 覆盖三类样本，逐类给出通过和失败的条数。
-
-1. 真人写的原文，不该被改。判据：输出与输入的差异只在标点和排版，语义无变化。
-2. 带数字、版本号、命令、接口字段、责任主体的段落，事实不得漂移。判据：逐个比对原文和输出里的数字、标识符、条件关系，一处不同即失败。
-3. 套话段落，套话要被清理。判据：预先标出的套话在输出里消失，且没有引入新的套话。
-
-先跑第 2 类，再看第 1 类和第 3 类。第 2 类有失败的，不看风格结果，直接回步骤 3 改规则。
-
-**输出**：evals 文件、结果、以及按 `templates/report.md` 写的合并报告。
-
-**完成标准**：三类都跑过并记录条数；第 2 类零失败；报告的十个章节都有内容或写明"无"。
+**完成标准**：evals 事实类零失败；review 列的问题逐条处理或写明为什么不处理；validate 通过。
 
 ## sync
 
-**输入**：`sync <id> [pr号]`。给了 PR 号就用那个 PR 的 diff；没给就用 `upstream-monitor locate --merge <id> --source <source_id> --diff <文件>` 的输出，取全部 last_processed_commit 落后于 last_seen_commit 的来源。
-
-merge 步骤 3 的第二批起也走这条路径：那时"diff"换成该批来源的规则单元清单，其余各步相同。
+**输入**：`sync <id> <pr号>`。PR 由 upstream-monitor 开出，正文是某个上游的 diff 和元数据。
 
 **做什么**
 
-1. 用 `upstream-monitor diff` 取变更，`upstream-monitor locate` 反查它触及的本地规则 id。
-2. metadata-only 来源按 commit 临时拉取比对，比完丢弃，不写进 snapshots/，不引用原文。
-3. 逐条与 decisions.yaml 比对：重述记 duplicate；矛盾的单列进"冲突与取舍"；新规则按 `extraction.md` 拆成单元。
+1. `gh pr view <pr号>` 读 diff。metadata-only 来源本地用 `upstream-monitor diff` 看，不落盘不引用。
+2. 读 `skills/<id>/` 现有正文里对应主题的段落。
+3. 逐个变更点判：已有等价写法不并；新的、可判定、不矛盾的并进对应段落；矛盾的按 criteria.md 选一边，两边留痕；来源许可证变化或不可达按 license-policy.md。
+4. 在 PR 分支上改正文并提交；PR 正文追加 `templates/pr-body.md` 那一节。
+5. 拿不准的用 `upstream-monitor issue --kind needs-decision` 开 issue，PR 打 needs-decision 标签。
+6. CHANGELOG 加一节；来源清单变了就重新渲染 SOURCES.md；validate。
 
-   找对照规则的顺序：先看单元的 `existing` 行，它给出拆规则时就看出来的疑似对应规则；再靠锚点反查；最后拿新单元的 rule_summary 与全部落地规则的 rule_summary 做一次语义比对。三步都要做，不能只信 `existing`——那一行是拆单个来源时写的，写它的人没看过别的来源，跨来源的重复它给不出。锚点反查也只能找到 diff 直接触及的那几条，跨来源的重复和矛盾锚点反查不到。首次合并后的 sync 干跑里，hunk 2 与 ALL-PROT-018 的矛盾就是因为只走了锚点反查而漏掉的。
+**完成标准**：diff 里每个变更点都有结论，没有"看过但没记"的；不采纳的 PR 也合并，理由在 PR 和 CHANGELOG 里。
 
-   **duplicate 和追加证据只能选一个。**记 duplicate 时，只在新单元这一条上记，被它重复的那条规则不追加证据：同一段上游文本不能同时出现在两条规则的 sources 里，否则 evidence_count 和覆盖统计会把它重复计数。要把这段文本算成已有规则的新证据，就不记 duplicate，改为在那条规则上追加一条 sources 并把 decision_revision 加一。
-4. 按 `criteria.md` 裁决。
-5. 写 decisions.yaml，decision_origin 一律 model-proposed，人工确认由 `upstream-monitor approve` 做。rationale 里点名了另一条规则的关系（冲突、互补、例外、取代），同时落进 relations，规则见步骤 3 的"规则关系要落成 relations"。
-6. 改 skill 正文，跑 `upstream-monitor render --merge <id>` 重新渲染 SOURCES.md。
-7. 用 `upstream-monitor report new --merge <id> --slug <slug>` 生成报告骨架（它按目录里最大的四位序号加一命名，章节按 `templates/report.md` 的十节），再逐节填。
-8. 按 `templates/changelog-entry.md` 在 CHANGELOG.md 顶部新增一节。
-9. 按 `templates/pr-body.md` 写 PR 正文；`upstream-monitor pr` 会按同一份模板生成，手写时对齐它的结构。
+## 用什么模型
 
-**输出**：更新后的 decisions.yaml、skill 正文、重新渲染的 SOURCES.md、一份报告、一节 CHANGELOG、一份 PR 正文。
+merge 的通读、取舍、写 skill、review 用深度推理档（skills/subagent/SKILL.md 的 Opus 档），因为要理解原作者为什么这么写。sync 单次变更一般不大，同样用深度推理档，一个 agent 做完。抓取、渲染、validate 这类由 upstream-monitor 的命令做，不派模型。
 
-**完成标准**：`upstream-monitor validate --merge <id>` 通过；diff 里的每条变更都有对应结论，没有"看过但没记"的；报告和 CHANGELOG 都已写；涉及冲突或许可证的已打 needs-decision 标签，并用 `upstream-monitor issue --merge <id> --source <source_id> --kind needs-decision` 开了 issue。
+## maybe-humanizer 的历史记录
 
-## sync 的三个 commit 怎么用
-
-- last_seen_commit：upstream-monitor 最近看到的上游提交，不代表分析过。
-- last_processed_commit：已经进入 sync 分析的提交。sync 的比对区间是 last_accepted_commit 到 last_seen_commit。
-- last_accepted_commit：人工合并 PR 后成为基线的提交。下一次比对以它为起点。
-
-这三个字段由 upstream-monitor 写，skill 只读。
+maybe-humanizer 首次合并（2026-09-06 到 07）走的是逐条规则的路径：把上游拆成规则单元、聚成 307 条带来源和理由的决定（`merges/maybe-humanizer/decisions.yaml`）、按决定写正文。那套产物保留在 `merges/maybe-humanizer/` 下作为记录和署名依据，以后 sync 时可以查某条写法来自哪家；但它不是本流程的要求，后续的 merge 实例按上面的通读路径做。
