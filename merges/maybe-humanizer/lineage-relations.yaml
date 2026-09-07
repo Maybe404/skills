@@ -1,0 +1,21 @@
+# 人工核实的谱系关系，供 upstream-monitor lineage 读取。自动相似度只对同语言文本有效，跨语言的翻译和改编关系记在这里。
+- from: upstream-kevintsai1202-humanizer-zh-tw
+  to: upstream-op7418-humanizer-zh
+  relation: fork
+  evidence: GitHub API repos/kevintsai1202/Humanizer-zh-TW 的 parent 字段为 op7418/Humanizer-zh。
+- from: upstream-op7418-humanizer-zh
+  to: upstream-blader-humanizer
+  relation: translation
+  evidence: 人工比对标题列表：op7418 的 24 条模式与 blader 前 24 条模式（五个分组）逐条对应、顺序相同，是同一模式表的翻译，另加了"核心规则速查"等增补小节。
+- from: upstream-hairyf-skills
+  to: upstream-op7418-humanizer-zh
+  relation: copy
+  evidence: 人工比对标题列表：hairyf/skills 的 writing-humanizer-zh 与 op7418/Humanizer-zh 的标题、模式编号、小节顺序（含独有增补小节）逐字相同。
+- from: upstream-z0gsh1u-oh-my-writing-skill
+  to: upstream-op7418-humanizer-zh
+  relation: adaptation
+  evidence: 人工比对标题列表：z0gSh1u 的 humanizer-cn 与 op7418 分组结构相同，模式从 24 条精简为 22 条且无"质量评分"小节。
+- from: upstream-z123-cloud-humanizer
+  to: upstream-lifelonglazylearner-qu-ai-wei
+  relation: copy
+  evidence: z123-cloud/humanizer 的 SKILL.md frontmatter name 为 qu-ai-wei、version 0.7.0，措辞与 LifelongLazyLearner/qu-ai-wei 高度重合，判定为同一内容的复制或未同步 fork。

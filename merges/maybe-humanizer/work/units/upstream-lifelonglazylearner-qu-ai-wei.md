@@ -464,7 +464,7 @@ source:
   source_id: upstream-lifelonglazylearner-qu-ai-wei
   path: SKILL.md
   commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
-  anchor: "至多两条具体结构"
+  anchor: "【门检】判断：AI 高频写作症状"
 ```
 
 ### U-qaw-027
@@ -481,7 +481,7 @@ source:
   source_id: upstream-lifelonglazylearner-qu-ai-wei
   path: SKILL.md
   commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
-  anchor: "### 1. 冻结不可丢失内容"
+  anchor: "### 1. 冻结不可丢失内容 / 建立全文信息账本"
 notes: 词表内各类记录对象（人物、事实、数字……）共用"须逐项记入信息账本"这一条判定逻辑，合并为一个单元。
 ```
 
@@ -499,7 +499,7 @@ source:
   source_id: upstream-lifelonglazylearner-qu-ai-wei
   path: SKILL.md
   commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
-  anchor: "### 1. 冻结不可丢失内容"
+  anchor: "### 1. 冻结不可丢失内容 / 再建立论证图"
 notes: 与 U-qaw-027 同一小节但对象不同（论证结构 vs 事实清单），拆成两个单元。
 ```
 
@@ -930,7 +930,7 @@ source:
   source_id: upstream-lifelonglazylearner-qu-ai-wei
   path: SKILL.md
   commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
-  anchor: "### 6. 全文复扫"
+  anchor: "### 6. 全文复扫 / 是否仍有同义重复"
 ```
 
 ### U-qaw-054
@@ -981,7 +981,7 @@ source:
   source_id: upstream-lifelonglazylearner-qu-ai-wei
   path: SKILL.md
   commit: 39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17
-  anchor: "### 6. 全文复扫"
+  anchor: "### 6. 全文复扫 / 标题、列表和段落层级"
 ```
 
 ### U-qaw-057

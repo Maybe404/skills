@@ -1,6 +1,6 @@
 {
   "merge_id": "maybe-humanizer",
-  "generated_at": "2026-09-06T10:14:01Z",
+  "generated_at": "2026-09-06T14:51:10Z",
   "sources": {
     "upstream-petergyang-no-ai-slop": {
       "last_seen_commit": "000650b156983f5159695b441477f4e63b25dc85",
@@ -26,11 +26,19 @@
         {
           "observed_at": "2026-09-06T10:14:01Z",
           "value": 7315
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 7336
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 7337
         }
       ],
-      "forks": 546,
+      "forks": 548,
       "installs": null,
-      "last_checked_at": "2026-09-06T10:14:01Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -60,11 +68,19 @@
         {
           "observed_at": "2026-09-06T10:14:01Z",
           "value": 531
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 531
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 531
         }
       ],
       "forks": 41,
       "installs": null,
-      "last_checked_at": "2026-09-06T10:14:01Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -106,11 +122,19 @@
         {
           "observed_at": "2026-09-06T10:14:01Z",
           "value": 264
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 264
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 264
         }
       ],
       "forks": 28,
       "installs": null,
-      "last_checked_at": "2026-09-06T10:14:01Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -158,11 +182,2529 @@
         {
           "observed_at": "2026-09-06T10:14:01Z",
           "value": 215
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 215
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 215
         }
       ],
       "forks": 32,
       "installs": null,
-      "last_checked_at": "2026-09-06T10:14:01Z",
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-mrgediao-shuorenhua": {
+      "last_seen_commit": "d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031",
+      "normalized_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031",
+      "size": 28916,
+      "line_count": 429,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-mrgediao-shuorenhua/SKILL.source.md",
+          "raw_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031",
+          "normalized_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 1445
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1445
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1445
+        }
+      ],
+      "forks": 72,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-op7418-humanizer-zh": {
+      "last_seen_commit": "91f3d394db8419c20d67ebe22a96cf8fee0a404b",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "e0edbdbc9008644263d5573fb59beac95794e188fd99c35012bfd79e9ae4beeb",
+      "normalized_sha256": "e0edbdbc9008644263d5573fb59beac95794e188fd99c35012bfd79e9ae4beeb",
+      "size": 18898,
+      "line_count": 484,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-op7418-humanizer-zh/SKILL.source.md",
+          "raw_sha256": "e0edbdbc9008644263d5573fb59beac95794e188fd99c35012bfd79e9ae4beeb",
+          "normalized_sha256": "e0edbdbc9008644263d5573fb59beac95794e188fd99c35012bfd79e9ae4beeb"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 16760
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 16764
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 16764
+        }
+      ],
+      "forks": 1117,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-ai-zixun-humanizer-zh": {
+      "last_seen_commit": "f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "d7ef1115ef9f05697bf08dc0218983e0c8fcb472e5c33eb4bb1d6faa200c0a32",
+      "normalized_sha256": "d7ef1115ef9f05697bf08dc0218983e0c8fcb472e5c33eb4bb1d6faa200c0a32",
+      "size": 10116,
+      "line_count": 165,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-ai-zixun-humanizer-zh/SKILL.source.md",
+          "raw_sha256": "d7ef1115ef9f05697bf08dc0218983e0c8fcb472e5c33eb4bb1d6faa200c0a32",
+          "normalized_sha256": "d7ef1115ef9f05697bf08dc0218983e0c8fcb472e5c33eb4bb1d6faa200c0a32"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 138
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 138
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 138
+        }
+      ],
+      "forks": 15,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-kkkkhazix-human-writing": {
+      "last_seen_commit": "4fda173f3fef7fb808f3eba991eeb2528ea4b189",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "eca17ce6f93ea6f206c846306538f476fd1b164dcff4bf8bf169fcc1f9fbd19a",
+      "normalized_sha256": "eca17ce6f93ea6f206c846306538f476fd1b164dcff4bf8bf169fcc1f9fbd19a",
+      "size": 67237,
+      "line_count": 1050,
+      "files": [
+        {
+          "original_path": "human-writing/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-kkkkhazix-human-writing/human-writing/SKILL.source.md",
+          "raw_sha256": "70a6e8c92ce74ac157e2ed11d022579aa67027610c47435a187296456008bcf3",
+          "normalized_sha256": "70a6e8c92ce74ac157e2ed11d022579aa67027610c47435a187296456008bcf3"
+        },
+        {
+          "original_path": "human-writing/references/fiction.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-kkkkhazix-human-writing/human-writing/references/fiction.md",
+          "raw_sha256": "6efea0c16f28b7ae2d3531a7e2413577e2f6e3c1945912b087c28a0da6d0ad83",
+          "normalized_sha256": "6efea0c16f28b7ae2d3531a7e2413577e2f6e3c1945912b087c28a0da6d0ad83"
+        },
+        {
+          "original_path": "human-writing/references/formats.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-kkkkhazix-human-writing/human-writing/references/formats.md",
+          "raw_sha256": "dd63704550574cd562b55f24307815e9172a63320dcfcc6006b3eab0ccc406bb",
+          "normalized_sha256": "dd63704550574cd562b55f24307815e9172a63320dcfcc6006b3eab0ccc406bb"
+        },
+        {
+          "original_path": "human-writing/references/forum-prose.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-kkkkhazix-human-writing/human-writing/references/forum-prose.md",
+          "raw_sha256": "20c22ad9c5c5c3f43ebae6bb7d258cfc42916413a82c2f95a0de9239541641dd",
+          "normalized_sha256": "20c22ad9c5c5c3f43ebae6bb7d258cfc42916413a82c2f95a0de9239541641dd"
+        },
+        {
+          "original_path": "human-writing/references/reality.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-kkkkhazix-human-writing/human-writing/references/reality.md",
+          "raw_sha256": "02004e1fd4dba40d8d50260982ecead81ce3788c7269922b8311514fe8edd0e6",
+          "normalized_sha256": "02004e1fd4dba40d8d50260982ecead81ce3788c7269922b8311514fe8edd0e6"
+        },
+        {
+          "original_path": "human-writing/references/revision.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-kkkkhazix-human-writing/human-writing/references/revision.md",
+          "raw_sha256": "2e7d8f74ace9d90e4805b6061b8015c91e6088166e5d224be185aba5a94e6592",
+          "normalized_sha256": "2e7d8f74ace9d90e4805b6061b8015c91e6088166e5d224be185aba5a94e6592"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 3472
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 3473
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 3473
+        }
+      ],
+      "forks": 268,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-alchaincyf-tramstop-skill": {
+      "last_seen_commit": "2f7808859e260ac9eb79bb3836bce1cd3eb2ba2e",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "f26bc10dd19f84853ce53f076d792e411b38ca6ac7578472aa45e69dc78d2c8b",
+      "normalized_sha256": "f26bc10dd19f84853ce53f076d792e411b38ca6ac7578472aa45e69dc78d2c8b",
+      "size": 7091,
+      "line_count": 79,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-alchaincyf-tramstop-skill/SKILL.source.md",
+          "raw_sha256": "f26bc10dd19f84853ce53f076d792e411b38ca6ac7578472aa45e69dc78d2c8b",
+          "normalized_sha256": "f26bc10dd19f84853ce53f076d792e411b38ca6ac7578472aa45e69dc78d2c8b"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 37
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 37
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 37
+        }
+      ],
+      "forks": 7,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-superchun-no-slop-zh": {
+      "last_seen_commit": "40e2f0cec18c32130dc2811e21e2cb178a571daa",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "25a63efb0ac18088cac1ff3f706d423583d14f307de7fa1df90f1ed5b7a00ad6",
+      "normalized_sha256": "25a63efb0ac18088cac1ff3f706d423583d14f307de7fa1df90f1ed5b7a00ad6",
+      "size": 24563,
+      "line_count": 442,
+      "files": [
+        {
+          "original_path": "plugins/no-slop-zh/skills/no-slop-zh/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-superchun-no-slop-zh/plugins/no-slop-zh/skills/no-slop-zh/SKILL.source.md",
+          "raw_sha256": "8462410e798f3c120fbb0893de212a7c1ac00905ee28119f0c53590396e53139",
+          "normalized_sha256": "8462410e798f3c120fbb0893de212a7c1ac00905ee28119f0c53590396e53139"
+        },
+        {
+          "original_path": "plugins/no-slop-zh/skills/no-slop-zh/references/patterns-zh.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-superchun-no-slop-zh/plugins/no-slop-zh/skills/no-slop-zh/references/patterns-zh.md",
+          "raw_sha256": "c48adfaceb2510414e7759bd89d2c160cb141ba941cda4ab5bcd414d1213857a",
+          "normalized_sha256": "c48adfaceb2510414e7759bd89d2c160cb141ba941cda4ab5bcd414d1213857a"
+        },
+        {
+          "original_path": "plugins/no-slop-zh/skills/no-slop-zh/references/protected.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-superchun-no-slop-zh/plugins/no-slop-zh/skills/no-slop-zh/references/protected.md",
+          "raw_sha256": "57897d829a0ce97ffc5af80e11efbeb1f25f5acc8ea33aa501e5f31adb1ec221",
+          "normalized_sha256": "57897d829a0ce97ffc5af80e11efbeb1f25f5acc8ea33aa501e5f31adb1ec221"
+        },
+        {
+          "original_path": "plugins/no-slop-zh/skills/no-slop-zh/references/scenes.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-superchun-no-slop-zh/plugins/no-slop-zh/skills/no-slop-zh/references/scenes.md",
+          "raw_sha256": "0d1c9a13033b3dc5ca013d403289ae2d642f12150eeaa2904b1d4046cd8e0222",
+          "normalized_sha256": "0d1c9a13033b3dc5ca013d403289ae2d642f12150eeaa2904b1d4046cd8e0222"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 28
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 28
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 28
+        }
+      ],
+      "forks": 2,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-chengzhi-c-natural-talk": {
+      "last_seen_commit": "efb7ee6e2e992486828bcd142beba696b115221e",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "8d1fb34f1e3898ef39704bc66d101665a9edd80a82374c88f9917db32225c517",
+      "normalized_sha256": "8d1fb34f1e3898ef39704bc66d101665a9edd80a82374c88f9917db32225c517",
+      "size": 9618,
+      "line_count": 126,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-chengzhi-c-natural-talk/SKILL.source.md",
+          "raw_sha256": "8d1fb34f1e3898ef39704bc66d101665a9edd80a82374c88f9917db32225c517",
+          "normalized_sha256": "8d1fb34f1e3898ef39704bc66d101665a9edd80a82374c88f9917db32225c517"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 38
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 38
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 38
+        }
+      ],
+      "forks": 1,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-oubigfa-de-ai-prompt-enhancer-writer-booster-skill": {
+      "last_seen_commit": "7e97ce997d8601de8343be6a31ed30ca22612dd0",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "01a7d4baf99eafb8fa232e00f9362974d2364698494dea4297f7e86439cbddf1",
+      "normalized_sha256": "01a7d4baf99eafb8fa232e00f9362974d2364698494dea4297f7e86439cbddf1",
+      "size": 115779,
+      "line_count": 1160,
+      "files": [
+        {
+          "original_path": "de-AI-writing/SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "9af8abd0f08056119d7001e41ae0039d1a262363b03b59f3aa5f2651ee366974",
+          "normalized_sha256": "9af8abd0f08056119d7001e41ae0039d1a262363b03b59f3aa5f2651ee366974"
+        },
+        {
+          "original_path": "de-AI-writing/references/ai-trace-index.md",
+          "stored_path": null,
+          "raw_sha256": "b18ec6525ac6c691e384de3d464f5aaeed0cefeae2658643fe75d7043667b360",
+          "normalized_sha256": "b18ec6525ac6c691e384de3d464f5aaeed0cefeae2658643fe75d7043667b360"
+        },
+        {
+          "original_path": "de-AI-writing/references/discourse-pass.md",
+          "stored_path": null,
+          "raw_sha256": "c6f2fea2a104d1ba98e1d9a698c34c073af9ef6989a8ce529d8a6eb4183398d5",
+          "normalized_sha256": "c6f2fea2a104d1ba98e1d9a698c34c073af9ef6989a8ce529d8a6eb4183398d5"
+        },
+        {
+          "original_path": "de-AI-writing/references/narrative-pass.md",
+          "stored_path": null,
+          "raw_sha256": "51aef4e9df60337f74ea3965453c52ef214c417740cc1d05762f9bbffb14d3fd",
+          "normalized_sha256": "51aef4e9df60337f74ea3965453c52ef214c417740cc1d05762f9bbffb14d3fd"
+        },
+        {
+          "original_path": "de-AI-writing/references/syntax-pass.md",
+          "stored_path": null,
+          "raw_sha256": "ec75fccfa14b39af727e1b94d0c1b537c6f90ba8beb439e0d669611f0b87da76",
+          "normalized_sha256": "ec75fccfa14b39af727e1b94d0c1b537c6f90ba8beb439e0d669611f0b87da76"
+        },
+        {
+          "original_path": "de-AI-writing/references/translation-guardrails.md",
+          "stored_path": null,
+          "raw_sha256": "1c281604e77181c9fea38ebaeac28f5862f465a27617a6903d1da4ab99aa4a06",
+          "normalized_sha256": "1c281604e77181c9fea38ebaeac28f5862f465a27617a6903d1da4ab99aa4a06"
+        },
+        {
+          "original_path": "de-AI-writing/references/vocab-pass.md",
+          "stored_path": null,
+          "raw_sha256": "c0f09476a84aa3dba78cddb581c872dde2e514e7aae9418c0d6782cc0b92b655",
+          "normalized_sha256": "c0f09476a84aa3dba78cddb581c872dde2e514e7aae9418c0d6782cc0b92b655"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 753
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 753
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 753
+        }
+      ],
+      "forks": 84,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-taxueseek-say-it-human": {
+      "last_seen_commit": "71bb6f81653d2ddd0ca9e9a3136ee978beb1d669",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "b77fd6b19d591c67297bc28cc359b732899de77d58fa6bc55aeada2fe60a9fff",
+      "normalized_sha256": "dee60c24d2672dff9b41e9e66885ae18aa2c371ae657950f615b2758b8d3206e",
+      "size": 44772,
+      "line_count": 869,
+      "files": [
+        {
+          "original_path": "skills/editor-revisor/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-taxueseek-say-it-human/skills/editor-revisor/SKILL.source.md",
+          "raw_sha256": "cf7ae1a3975e7cc5ee49be87e217449711eb21cfce3c0d5507c099b027925af2",
+          "normalized_sha256": "cf7ae1a3975e7cc5ee49be87e217449711eb21cfce3c0d5507c099b027925af2"
+        },
+        {
+          "original_path": "skills/humanize-ai/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-taxueseek-say-it-human/skills/humanize-ai/SKILL.source.md",
+          "raw_sha256": "0347a7d04734e63ce943701c6f9713bcf6ab81d80eed90e497d08a871827659d",
+          "normalized_sha256": "0347a7d04734e63ce943701c6f9713bcf6ab81d80eed90e497d08a871827659d"
+        },
+        {
+          "original_path": "skills/voice-dissolver/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-taxueseek-say-it-human/skills/voice-dissolver/SKILL.source.md",
+          "raw_sha256": "f8a7cf9129b35d388373dd90b4483537eb4362139d74abb8a6681aeee30e7d9b",
+          "normalized_sha256": "84b7902eabfaab2934b35e130ae084fc9c47b58fa80e3a522bc67c6b00cb725e"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 65
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 65
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 65
+        }
+      ],
+      "forks": 3,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-yyx20202020-natural-writing-skill": {
+      "last_seen_commit": "71af993050cc0885eee98c2b421a965e7fde2b43",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "308770f31de9351d4c9c25b96a129e336e6c705443917846655b5a6eb2ba18a7",
+      "normalized_sha256": "308770f31de9351d4c9c25b96a129e336e6c705443917846655b5a6eb2ba18a7",
+      "size": 14302,
+      "line_count": 305,
+      "files": [
+        {
+          "original_path": "skills/natural-writing/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-yyx20202020-natural-writing-skill/skills/natural-writing/SKILL.source.md",
+          "raw_sha256": "b7aa80b0db75c0089ca47349d8e4364496f4631816a824044aae783a2c34551b",
+          "normalized_sha256": "b7aa80b0db75c0089ca47349d8e4364496f4631816a824044aae783a2c34551b"
+        },
+        {
+          "original_path": "skills/natural-writing/references/chinese-writing.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-yyx20202020-natural-writing-skill/skills/natural-writing/references/chinese-writing.md",
+          "raw_sha256": "3ddfd072fba117cbe4ba34140cbcc09359c5d363b73fb17b3b1f2836db945c3c",
+          "normalized_sha256": "3ddfd072fba117cbe4ba34140cbcc09359c5d363b73fb17b3b1f2836db945c3c"
+        },
+        {
+          "original_path": "skills/natural-writing/references/english-writing.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-yyx20202020-natural-writing-skill/skills/natural-writing/references/english-writing.md",
+          "raw_sha256": "34a4c944dfcc083c1db3f097a6e5e79b016de060fd7da9e5e4911bdee21e59e9",
+          "normalized_sha256": "34a4c944dfcc083c1db3f097a6e5e79b016de060fd7da9e5e4911bdee21e59e9"
+        },
+        {
+          "original_path": "skills/natural-writing/references/long-form-workflow.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-yyx20202020-natural-writing-skill/skills/natural-writing/references/long-form-workflow.md",
+          "raw_sha256": "a4f8f9b3b386efeb0d45c2de272c30f243f1c4ad49c7ac67ed02ec1e4272952b",
+          "normalized_sha256": "a4f8f9b3b386efeb0d45c2de272c30f243f1c4ad49c7ac67ed02ec1e4272952b"
+        },
+        {
+          "original_path": "skills/natural-writing/references/protected-content.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-yyx20202020-natural-writing-skill/skills/natural-writing/references/protected-content.md",
+          "raw_sha256": "e46eda51172ea475f377f3fd9da3eb9926d54ae3ce147baf6e547d0f049eaa1c",
+          "normalized_sha256": "e46eda51172ea475f377f3fd9da3eb9926d54ae3ce147baf6e547d0f049eaa1c"
+        },
+        {
+          "original_path": "skills/natural-writing/references/quality-gates.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-yyx20202020-natural-writing-skill/skills/natural-writing/references/quality-gates.md",
+          "raw_sha256": "e6ec16079d4d93c395f6137523cc53856b722f04331d1cb9935259d149c11bc5",
+          "normalized_sha256": "e6ec16079d4d93c395f6137523cc53856b722f04331d1cb9935259d149c11bc5"
+        },
+        {
+          "original_path": "skills/natural-writing/references/routing.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-yyx20202020-natural-writing-skill/skills/natural-writing/references/routing.md",
+          "raw_sha256": "46d36dd759198c8488c49cc76ba9c7e0a4db9bde55b4675fbd6a418e3b6480ee",
+          "normalized_sha256": "46d36dd759198c8488c49cc76ba9c7e0a4db9bde55b4675fbd6a418e3b6480ee"
+        },
+        {
+          "original_path": "skills/natural-writing/references/voice-calibration.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-yyx20202020-natural-writing-skill/skills/natural-writing/references/voice-calibration.md",
+          "raw_sha256": "891aaf3aed0dfd83e960fa280bcb78f3eada50a7366ccd39cf646eff7ae7ba98",
+          "normalized_sha256": "891aaf3aed0dfd83e960fa280bcb78f3eada50a7366ccd39cf646eff7ae7ba98"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 14
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 14
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 14
+        }
+      ],
+      "forks": 1,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-dongbeixiaohuo-writing-agent": {
+      "last_seen_commit": "863177b2d733697c7524c5190cb2294b2dbed868",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "a78fbb7e0cc1f6eb5689b39660214db5527364be9b9613ea7b28d33a295809c5",
+      "normalized_sha256": "a78fbb7e0cc1f6eb5689b39660214db5527364be9b9613ea7b28d33a295809c5",
+      "size": 28320,
+      "line_count": 710,
+      "files": [
+        {
+          "original_path": ".claude/skills/style-modeler/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-dongbeixiaohuo-writing-agent/.claude/skills/style-modeler/SKILL.source.md",
+          "raw_sha256": "ae8ea86bec9124b770d29992cc67ecd0b71e23560c68e0e9c1db4bf08fd38751",
+          "normalized_sha256": "ae8ea86bec9124b770d29992cc67ecd0b71e23560c68e0e9c1db4bf08fd38751"
+        },
+        {
+          "original_path": ".claude/skills/style-modeler/references/15-dimensions.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-dongbeixiaohuo-writing-agent/.claude/skills/style-modeler/references/15-dimensions.md",
+          "raw_sha256": "77384188ceb185e366e14f1db3b4f53a59d4e92b817638658273aaf96d39c050",
+          "normalized_sha256": "77384188ceb185e366e14f1db3b4f53a59d4e92b817638658273aaf96d39c050"
+        },
+        {
+          "original_path": ".claude/skills/style-modeler/references/style-core-and-validation.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-dongbeixiaohuo-writing-agent/.claude/skills/style-modeler/references/style-core-and-validation.md",
+          "raw_sha256": "22f470d8f8ec33a502bc38a7d715fc3cff1d84ddf585facec673b4e3dcdb6f87",
+          "normalized_sha256": "22f470d8f8ec33a502bc38a7d715fc3cff1d84ddf585facec673b4e3dcdb6f87"
+        },
+        {
+          "original_path": ".claude/skills/style-modeler/references/style-output-template.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-dongbeixiaohuo-writing-agent/.claude/skills/style-modeler/references/style-output-template.md",
+          "raw_sha256": "694521a80e3f4697950c5de6b417725c935129df0ae7e73f913aeb0f928cbc08",
+          "normalized_sha256": "694521a80e3f4697950c5de6b417725c935129df0ae7e73f913aeb0f928cbc08"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 403
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 403
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 403
+        }
+      ],
+      "forks": 63,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-blader-humanizer": {
+      "last_seen_commit": "e2e92e7b4b8229253ed5c8e81dc65463fdeddda5",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202",
+      "normalized_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202",
+      "size": 30409,
+      "line_count": 456,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-blader-humanizer/SKILL.source.md",
+          "raw_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202",
+          "normalized_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 43894
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 43941
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 43945
+        }
+      ],
+      "forks": 3670,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-hardikpandya-stop-slop": {
+      "last_seen_commit": "8da1f030185bdfe8471220585162991eaeb970e9",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "02801cd3ea205e3c5ad89cec25ee91dd47814dce2dd6d3fef1e2ca3de840e66a",
+      "normalized_sha256": "02801cd3ea205e3c5ad89cec25ee91dd47814dce2dd6d3fef1e2ca3de840e66a",
+      "size": 12485,
+      "line_count": 389,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-hardikpandya-stop-slop/SKILL.source.md",
+          "raw_sha256": "7432a1d9ebdd42b27666da8458af252edf549f723fb14bcd4791425103930310",
+          "normalized_sha256": "7432a1d9ebdd42b27666da8458af252edf549f723fb14bcd4791425103930310"
+        },
+        {
+          "original_path": "references/phrases.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-hardikpandya-stop-slop/references/phrases.md",
+          "raw_sha256": "4ca1b7e97123b5c67eff3dc97e5e977332e0b24021265c1553888a93ec33fa93",
+          "normalized_sha256": "4ca1b7e97123b5c67eff3dc97e5e977332e0b24021265c1553888a93ec33fa93"
+        },
+        {
+          "original_path": "references/structures.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-hardikpandya-stop-slop/references/structures.md",
+          "raw_sha256": "ffbf1316c7fb5aaf552de005609a64a9639b546ecd76bfb0e482864d5bbe6f58",
+          "normalized_sha256": "ffbf1316c7fb5aaf552de005609a64a9639b546ecd76bfb0e482864d5bbe6f58"
+        },
+        {
+          "original_path": "references/examples.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-hardikpandya-stop-slop/references/examples.md",
+          "raw_sha256": "49c592899eb4457f95d0767e15e3143569e2cef50f2927c3174e62432984cd3d",
+          "normalized_sha256": "49c592899eb4457f95d0767e15e3143569e2cef50f2927c3174e62432984cd3d"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 16848
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 16852
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 16853
+        }
+      ],
+      "forks": 1218,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-conorbronsdon-avoid-ai-writing": {
+      "last_seen_commit": "801c2360f360e38d4316a271b953138e5e166d54",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "11304fcd8ff574e04103c273b34ac25ec72b7ce7500d620092d2725d5cf63257",
+      "normalized_sha256": "08bfcbe255a90563120d548af0d254d3de3596152236ed185f021089b5ba7fa5",
+      "size": 116191,
+      "line_count": 912,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-conorbronsdon-avoid-ai-writing/SKILL.source.md",
+          "raw_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b",
+          "normalized_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b"
+        },
+        {
+          "original_path": "references/patterns.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-conorbronsdon-avoid-ai-writing/references/patterns.md",
+          "raw_sha256": "81bc6e7faec77d61f709f9c55f75c493b434eb18768416097824ad03f8aa66c2",
+          "normalized_sha256": "6cb8b9f5edd343e214d80825fff0b15708f118bb8c27df28de7eaf334581d31d"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 4144
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 4144
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 4144
+        }
+      ],
+      "forks": 349,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-jpeggdev-humanize-writing": {
+      "last_seen_commit": "da03340e5bb38cdf412f697aca66d113560f75b2",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "88ed65ddbe4271a284ac968431ece93b0e88e7fed32158c7cf6d1771d549cca5",
+      "normalized_sha256": "88ed65ddbe4271a284ac968431ece93b0e88e7fed32158c7cf6d1771d549cca5",
+      "size": 25128,
+      "line_count": 464,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-jpeggdev-humanize-writing/SKILL.source.md",
+          "raw_sha256": "88ed65ddbe4271a284ac968431ece93b0e88e7fed32158c7cf6d1771d549cca5",
+          "normalized_sha256": "88ed65ddbe4271a284ac968431ece93b0e88e7fed32158c7cf6d1771d549cca5"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 59
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 59
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 59
+        }
+      ],
+      "forks": 9,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-jalaalrd-anti-ai-slop-writing": {
+      "last_seen_commit": "63255f9bbb75a265dc5786a04535cd033f487756",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "dfaf34001c86b79f954715204f049b95d9eff7b01725003d83c5e07a33135871",
+      "normalized_sha256": "dfaf34001c86b79f954715204f049b95d9eff7b01725003d83c5e07a33135871",
+      "size": 11285,
+      "line_count": 203,
+      "files": [
+        {
+          "original_path": "skills/anti-ai-slop-writing/SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "90d1ad351c51a033a079708a6ef2cfaea104c35806dd0dbfb46abe5836735211",
+          "normalized_sha256": "90d1ad351c51a033a079708a6ef2cfaea104c35806dd0dbfb46abe5836735211"
+        },
+        {
+          "original_path": "skills/anti-ai-slop-writing/references/banned-words.md",
+          "stored_path": null,
+          "raw_sha256": "3499749300115e0b57e44419b0baabe5d54ba297c82db5f8b7f2fc9d3d4b0178",
+          "normalized_sha256": "3499749300115e0b57e44419b0baabe5d54ba297c82db5f8b7f2fc9d3d4b0178"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 441
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 441
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 441
+        }
+      ],
+      "forks": 45,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-adenaufal-anti-slop-writing": {
+      "last_seen_commit": "bffa2a5692da892efcf97cba1a0d2cee413f02bc",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "bcea03d155992aabb9f6fdb769e2419b5040b24ebc0ae30ddc5a40b76c27920c",
+      "normalized_sha256": "71c1699ab2891775b009aeb332ad99ba81496b09d91b7e04f01b99b2d0e4eab3",
+      "size": 63875,
+      "line_count": 1082,
+      "files": [
+        {
+          "original_path": "english/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-adenaufal-anti-slop-writing/english/SKILL.source.md",
+          "raw_sha256": "04c93703649a8acb978fd7ce45dfa97aac0879bef47e85c38045f20c1e8a1229",
+          "normalized_sha256": "04c93703649a8acb978fd7ce45dfa97aac0879bef47e85c38045f20c1e8a1229"
+        },
+        {
+          "original_path": "english/references/structural-patterns.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-adenaufal-anti-slop-writing/english/references/structural-patterns.md",
+          "raw_sha256": "358a01d7c4e0d607ed14e1aaac3583dee7848e2ea7a4b7cdd5fd3a4f9014346f",
+          "normalized_sha256": "d759d89b203f9191d252d99b5ffee91c2f382cc51bd683fd587a448b6707b4dd"
+        },
+        {
+          "original_path": "english/references/vocabulary-banlist.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-adenaufal-anti-slop-writing/english/references/vocabulary-banlist.md",
+          "raw_sha256": "edde22bc2ca2a6f0230351f66e29073ab83a52fb8bc77ee9093fe0b2902c91cc",
+          "normalized_sha256": "4a247f722ab2309feb672c329142c780f42e5891a3cd494614cb5ee42b1b8443"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 124
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 124
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 124
+        }
+      ],
+      "forks": 7,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-adewale-anti-slop-writing": {
+      "last_seen_commit": "53370ff70b6d1da376e053cf144d39dca8d64f9e",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "8659ab0cfb62a5861e7d71d53b46c7fd154e3398c65c0404c987cdf7a1bd01db",
+      "normalized_sha256": "8659ab0cfb62a5861e7d71d53b46c7fd154e3398c65c0404c987cdf7a1bd01db",
+      "size": 31937,
+      "line_count": 787,
+      "files": [
+        {
+          "original_path": "skills/anti-slop-writing/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-adewale-anti-slop-writing/skills/anti-slop-writing/SKILL.source.md",
+          "raw_sha256": "1da80fc7bad725d1824a4e59e155a227c8d5da57e659e20c0ed80e5baa18d6f9",
+          "normalized_sha256": "1da80fc7bad725d1824a4e59e155a227c8d5da57e659e20c0ed80e5baa18d6f9"
+        },
+        {
+          "original_path": "skills/anti-slop-writing/references/anti-slop-writing-doctrine.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-adewale-anti-slop-writing/skills/anti-slop-writing/references/anti-slop-writing-doctrine.md",
+          "raw_sha256": "4145f5dc1e0e820ae26304165978328f0f6ff6ac45b7e4ed264afe2128d3aa56",
+          "normalized_sha256": "4145f5dc1e0e820ae26304165978328f0f6ff6ac45b7e4ed264afe2128d3aa56"
+        },
+        {
+          "original_path": "skills/anti-slop-writing/references/flow-by-relation.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-adewale-anti-slop-writing/skills/anti-slop-writing/references/flow-by-relation.md",
+          "raw_sha256": "4dfdfc358a9792ad76b414b1e8e3ce2328864662ba39007e020ebf2da11a4dec",
+          "normalized_sha256": "4dfdfc358a9792ad76b414b1e8e3ce2328864662ba39007e020ebf2da11a4dec"
+        },
+        {
+          "original_path": "skills/anti-slop-writing/references/rewrite-patterns.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-adewale-anti-slop-writing/skills/anti-slop-writing/references/rewrite-patterns.md",
+          "raw_sha256": "a8731b3df2ad60400385dabeff5a57ddd92d5a6216914eb4c6c41b14658f0ba3",
+          "normalized_sha256": "a8731b3df2ad60400385dabeff5a57ddd92d5a6216914eb4c6c41b14658f0ba3"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 17
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 17
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 17
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-theclaymethod-unslop": {
+      "last_seen_commit": "d81f5196167ded24f46fced04958c0c12d681798",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "e71f7e90759226fcc75cf6c62feb110ec3a108f67edaa9f23f1396709620163b",
+      "normalized_sha256": "e71f7e90759226fcc75cf6c62feb110ec3a108f67edaa9f23f1396709620163b",
+      "size": 6767,
+      "line_count": 131,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "e71f7e90759226fcc75cf6c62feb110ec3a108f67edaa9f23f1396709620163b",
+          "normalized_sha256": "e71f7e90759226fcc75cf6c62feb110ec3a108f67edaa9f23f1396709620163b"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 357
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 357
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 357
+        }
+      ],
+      "forks": 11,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-asavvin-pixel-unslop": {
+      "last_seen_commit": "5e6bac5891a214d3acdfaa296e4c7a5c73ab801e",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "aa776f0b3008236b759be3a54bb44209eaacba2adf6d45d11e937f521bee5638",
+      "normalized_sha256": "aa776f0b3008236b759be3a54bb44209eaacba2adf6d45d11e937f521bee5638",
+      "size": 17394,
+      "line_count": 179,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-asavvin-pixel-unslop/SKILL.source.md",
+          "raw_sha256": "aa776f0b3008236b759be3a54bb44209eaacba2adf6d45d11e937f521bee5638",
+          "normalized_sha256": "aa776f0b3008236b759be3a54bb44209eaacba2adf6d45d11e937f521bee5638"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 63
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 63
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 63
+        }
+      ],
+      "forks": 5,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-aplaceforallmystuff-the-antislop": {
+      "last_seen_commit": "732678de710a7db4226a5f78f7185c6b726ed157",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "ea7f22d1a16e580f4e6015893f3bd6284976778722105906d8ebfb97fbbe85c6",
+      "normalized_sha256": "ea7f22d1a16e580f4e6015893f3bd6284976778722105906d8ebfb97fbbe85c6",
+      "size": 19912,
+      "line_count": 460,
+      "files": [
+        {
+          "original_path": "skills/antislop/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aplaceforallmystuff-the-antislop/skills/antislop/SKILL.source.md",
+          "raw_sha256": "ea7f22d1a16e580f4e6015893f3bd6284976778722105906d8ebfb97fbbe85c6",
+          "normalized_sha256": "ea7f22d1a16e580f4e6015893f3bd6284976778722105906d8ebfb97fbbe85c6"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 28
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 28
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 28
+        }
+      ],
+      "forks": 2,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-brandonwise-humanizer": {
+      "last_seen_commit": "4b9b9bee384aea139f599133d2de1e1ceaee71a3",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "020cb8fd9d688abf0762e3056be30dd62c22547b7d2c78a891f6ceec06bdb970",
+      "normalized_sha256": "020cb8fd9d688abf0762e3056be30dd62c22547b7d2c78a891f6ceec06bdb970",
+      "size": 8639,
+      "line_count": 155,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-brandonwise-humanizer/SKILL.source.md",
+          "raw_sha256": "020cb8fd9d688abf0762e3056be30dd62c22547b7d2c78a891f6ceec06bdb970",
+          "normalized_sha256": "020cb8fd9d688abf0762e3056be30dd62c22547b7d2c78a891f6ceec06bdb970"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 119
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 119
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 119
+        }
+      ],
+      "forks": 19,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-hylarucoder-ai-flavor-remover": {
+      "last_seen_commit": "919386756cf568edf0ac9bd40ae96a9eeea6e21e",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "f2eaa389751643ab5c26fdaf3ba9023f0f6cff03cc6ffe3affb27571e04c11f8",
+      "normalized_sha256": "44a10ad292b1b17166ca42de2efe3e2860c8db9b003eafec5caae5f0ad8b77d1",
+      "size": 6003,
+      "line_count": 81,
+      "files": [
+        {
+          "original_path": "README.md",
+          "stored_path": null,
+          "raw_sha256": "f2eaa389751643ab5c26fdaf3ba9023f0f6cff03cc6ffe3affb27571e04c11f8",
+          "normalized_sha256": "44a10ad292b1b17166ca42de2efe3e2860c8db9b003eafec5caae5f0ad8b77d1"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 1148
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1149
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1149
+        }
+      ],
+      "forks": 73,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-hairyf-skills": {
+      "last_seen_commit": "4f463c746d271df0a3c7ab0f9821a04c756178ed",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "af1b634de817b7c64e5db716976ab02c690487107c59231b7df20111f30147e3",
+      "normalized_sha256": "af1b634de817b7c64e5db716976ab02c690487107c59231b7df20111f30147e3",
+      "size": 18906,
+      "line_count": 484,
+      "files": [
+        {
+          "original_path": "skills/writing-humanizer-zh/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-hairyf-skills/skills/writing-humanizer-zh/SKILL.source.md",
+          "raw_sha256": "af1b634de817b7c64e5db716976ab02c690487107c59231b7df20111f30147e3",
+          "normalized_sha256": "af1b634de817b7c64e5db716976ab02c690487107c59231b7df20111f30147e3"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 25
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 25
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 25
+        }
+      ],
+      "forks": 2,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-z0gsh1u-oh-my-writing-skill": {
+      "last_seen_commit": "56cbede6ade0b7d1b58c7374fbd1a1fe253d8819",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "714c409605ef1b5adc58023e8d44ea1615a4c6124421857b2f799f2a890c1c6d",
+      "normalized_sha256": "714c409605ef1b5adc58023e8d44ea1615a4c6124421857b2f799f2a890c1c6d",
+      "size": 13935,
+      "line_count": 461,
+      "files": [
+        {
+          "original_path": "skills/humanizer-cn/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-z0gsh1u-oh-my-writing-skill/skills/humanizer-cn/SKILL.source.md",
+          "raw_sha256": "714c409605ef1b5adc58023e8d44ea1615a4c6124421857b2f799f2a890c1c6d",
+          "normalized_sha256": "714c409605ef1b5adc58023e8d44ea1615a4c6124421857b2f799f2a890c1c6d"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 33
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 33
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 33
+        }
+      ],
+      "forks": 7,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-sickn33-agentic-awesome-skills": {
+      "last_seen_commit": "f8d5d2c82b0cdb54a8a022bced09db53db57e94c",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "59e8bd4a2a1cb60f332251e0e33fb0b55f6cd1b5d09f83d3aef7a9329f10ecfd",
+      "normalized_sha256": "59e8bd4a2a1cb60f332251e0e33fb0b55f6cd1b5d09f83d3aef7a9329f10ecfd",
+      "size": 5383,
+      "line_count": 150,
+      "files": [
+        {
+          "original_path": "skills/humanize-chinese/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-sickn33-agentic-awesome-skills/skills/humanize-chinese/SKILL.source.md",
+          "raw_sha256": "59e8bd4a2a1cb60f332251e0e33fb0b55f6cd1b5d09f83d3aef7a9329f10ecfd",
+          "normalized_sha256": "59e8bd4a2a1cb60f332251e0e33fb0b55f6cd1b5d09f83d3aef7a9329f10ecfd"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 46052
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 46059
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 46059
+        }
+      ],
+      "forks": 6732,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-smallnest-goal-workflow": {
+      "last_seen_commit": "284333e0012d1c34642e371822d622e084ba3eea",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "b364a0337a68bc3efeaa0a7641f12c20cced344f104500f7a1913d9fae8c57b8",
+      "normalized_sha256": "b364a0337a68bc3efeaa0a7641f12c20cced344f104500f7a1913d9fae8c57b8",
+      "size": 6759,
+      "line_count": 166,
+      "files": [
+        {
+          "original_path": "skills/humanize-it/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-smallnest-goal-workflow/skills/humanize-it/SKILL.source.md",
+          "raw_sha256": "b364a0337a68bc3efeaa0a7641f12c20cced344f104500f7a1913d9fae8c57b8",
+          "normalized_sha256": "b364a0337a68bc3efeaa0a7641f12c20cced344f104500f7a1913d9fae8c57b8"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 278
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 278
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 278
+        }
+      ],
+      "forks": 40,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-chujianyun-skills": {
+      "last_seen_commit": "d5966dd5428b5662b526ca259ffb8201fa7dd364",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "a7b9d17e9c4831af56ef6e981c0c9dec0e384a97e70f296abc384db29dcc7076",
+      "normalized_sha256": "a7b9d17e9c4831af56ef6e981c0c9dec0e384a97e70f296abc384db29dcc7076",
+      "size": 15472,
+      "line_count": 296,
+      "files": [
+        {
+          "original_path": "skills/content/remove-ai-flavor/SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "5cc838f520c3c8b362a2bb22d18ce063365db2cbcfa5cdb2fbf7afffeb740ea4",
+          "normalized_sha256": "5cc838f520c3c8b362a2bb22d18ce063365db2cbcfa5cdb2fbf7afffeb740ea4"
+        },
+        {
+          "original_path": "skills/content/remove-ai-flavor/references/anti-ai-flavor-rules.md",
+          "stored_path": null,
+          "raw_sha256": "57377ae0a59f5a08c7b017b9adc3f835e6f5ecaf59c641671383bf87bea22eb6",
+          "normalized_sha256": "57377ae0a59f5a08c7b017b9adc3f835e6f5ecaf59c641671383bf87bea22eb6"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 733
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 733
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 733
+        }
+      ],
+      "forks": 99,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-jackywxsz-jacky-opc": {
+      "last_seen_commit": "721172bb4a6c07f7e93cb06b56753f92497dd47a",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "f7aa641c460d9bec8842b535fabfb80b4363683d2d3a11340fc70da0b62c88bc",
+      "normalized_sha256": "f7aa641c460d9bec8842b535fabfb80b4363683d2d3a11340fc70da0b62c88bc",
+      "size": 13395,
+      "line_count": 335,
+      "files": [
+        {
+          "original_path": "skills/jacky-de-ai/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-jackywxsz-jacky-opc/skills/jacky-de-ai/SKILL.source.md",
+          "raw_sha256": "2a1308edf3621107243c16200b6e121fd6df10023c62e843c83275fa01e1394b",
+          "normalized_sha256": "2a1308edf3621107243c16200b6e121fd6df10023c62e843c83275fa01e1394b"
+        },
+        {
+          "original_path": "skills/jacky-de-ai/references/ai-taste-database.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-jackywxsz-jacky-opc/skills/jacky-de-ai/references/ai-taste-database.md",
+          "raw_sha256": "4b750f28ebd261c8cd9c5d85559389b41811be0c7e047172522fe090ae953a63",
+          "normalized_sha256": "4b750f28ebd261c8cd9c5d85559389b41811be0c7e047172522fe090ae953a63"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 35
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 35
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 35
+        }
+      ],
+      "forks": 1,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-aaaaqwq-agi-super-team": {
+      "last_seen_commit": "0c0234ccb1cde070f27e92e4cf8f559b94ba4cec",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "d19c5d04cd67f827ad40e829dc6339eb44ebf97a63c2bfeeaf74d882f7b57fca",
+      "normalized_sha256": "d19c5d04cd67f827ad40e829dc6339eb44ebf97a63c2bfeeaf74d882f7b57fca",
+      "size": 3376,
+      "line_count": 111,
+      "files": [
+        {
+          "original_path": "skills/humanize-zh/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aaaaqwq-agi-super-team/skills/humanize-zh/SKILL.source.md",
+          "raw_sha256": "d19c5d04cd67f827ad40e829dc6339eb44ebf97a63c2bfeeaf74d882f7b57fca",
+          "normalized_sha256": "d19c5d04cd67f827ad40e829dc6339eb44ebf97a63c2bfeeaf74d882f7b57fca"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 91
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 91
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 91
+        }
+      ],
+      "forks": 22,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-hardydai-cell-qu-ai-wei": {
+      "last_seen_commit": "71be514e84252317bf9afed725aaee7c34189049",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "94f0c4b707cde71d5aae677ec5e3d9696376053dcaff7e3203cd2bf385bdddd0",
+      "normalized_sha256": "94f0c4b707cde71d5aae677ec5e3d9696376053dcaff7e3203cd2bf385bdddd0",
+      "size": 7490,
+      "line_count": 224,
+      "files": [
+        {
+          "original_path": "skills/qu-ai-wei/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-hardydai-cell-qu-ai-wei/skills/qu-ai-wei/SKILL.source.md",
+          "raw_sha256": "94f0c4b707cde71d5aae677ec5e3d9696376053dcaff7e3203cd2bf385bdddd0",
+          "normalized_sha256": "94f0c4b707cde71d5aae677ec5e3d9696376053dcaff7e3203cd2bf385bdddd0"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-kevinaimonster-skill-hub": {
+      "last_seen_commit": "1ec784695e288b86f0da9d6b5c267145796f8a56",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "b034fafafde5dbd992852357f0bd42812043c3031e261ce7299b0987d1ddd4ad",
+      "normalized_sha256": "b034fafafde5dbd992852357f0bd42812043c3031e261ce7299b0987d1ddd4ad",
+      "size": 7711,
+      "line_count": 210,
+      "files": [
+        {
+          "original_path": "skills/chinese-copyfix/SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "b034fafafde5dbd992852357f0bd42812043c3031e261ce7299b0987d1ddd4ad",
+          "normalized_sha256": "b034fafafde5dbd992852357f0bd42812043c3031e261ce7299b0987d1ddd4ad"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 3
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 3
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 3
+        }
+      ],
+      "forks": 2,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-lanyasheng-content-deai-engine": {
+      "last_seen_commit": "e099d71b0fa386bbdce66f348d760d740d9356ae",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "baf6899b3ab221341f313353616597668e3f435eec9a3b8ece08148c03c5c343",
+      "normalized_sha256": "0a4ee3cc6f2f31d51a1e135383a485230a62ce96acf1314f92135bee3037bd26",
+      "size": 3672,
+      "line_count": 109,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "baf6899b3ab221341f313353616597668e3f435eec9a3b8ece08148c03c5c343",
+          "normalized_sha256": "0a4ee3cc6f2f31d51a1e135383a485230a62ce96acf1314f92135bee3037bd26"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-peng-666-deai-zh": {
+      "last_seen_commit": "cab4055987341e8b40851e816bd1799f620d490a",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "de4fd4bcdaa8c36e1551a6bf6745434d7e354c7fb8ce0dd8cb037a34e0dd6884",
+      "normalized_sha256": "de4fd4bcdaa8c36e1551a6bf6745434d7e354c7fb8ce0dd8cb037a34e0dd6884",
+      "size": 11512,
+      "line_count": 257,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "de4fd4bcdaa8c36e1551a6bf6745434d7e354c7fb8ce0dd8cb037a34e0dd6884",
+          "normalized_sha256": "de4fd4bcdaa8c36e1551a6bf6745434d7e354c7fb8ce0dd8cb037a34e0dd6884"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-xcc864451691-gongwen-deai-skill": {
+      "last_seen_commit": "fd0b1ff7a5483ca47d196e3ecc571856a601d49f",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "1a4ab77eb0ae2619bec13b7604df1d565ad6c0e38e93c53809259a79f95662de",
+      "normalized_sha256": "1a4ab77eb0ae2619bec13b7604df1d565ad6c0e38e93c53809259a79f95662de",
+      "size": 5181,
+      "line_count": 147,
+      "files": [
+        {
+          "original_path": "gongwen-deai/SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "1a4ab77eb0ae2619bec13b7604df1d565ad6c0e38e93c53809259a79f95662de",
+          "normalized_sha256": "1a4ab77eb0ae2619bec13b7604df1d565ad6c0e38e93c53809259a79f95662de"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-cycleuser-skills": {
+      "last_seen_commit": "068c2f8b96fc0759b724ec0e5f29bb3c217cb87f",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "0384e31c8107dd104ba1ff4f8f6d1f0af8b1da74a0c73e26e634346f8324cf4e",
+      "normalized_sha256": "82f05cd4030395fc97611fa9d6b6a7ee9aa01bb2e30627941620f45e9353529c",
+      "size": 89304,
+      "line_count": 2771,
+      "files": [
+        {
+          "original_path": "skills/humanizer/SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "fcafcbf79fa0f3b1b6bd43368fc7a2e7a143abbc3eafed5e7bb2ed2e99a5372c",
+          "normalized_sha256": "5ceb56f85f07b745ce1c3dace2e085bcabf08548f373e8ca0ea33bfecc794af7"
+        },
+        {
+          "original_path": "skills/humanizer/rules/ai-features.md",
+          "stored_path": null,
+          "raw_sha256": "0dbfe7a287375327e98bbd88ecd56e187b2e3c28487840be64bd36d7cc4d3950",
+          "normalized_sha256": "be1a2421cc89929c0a9a1451c0dca92b262232808e2880a1f731f1cdff98ea54"
+        },
+        {
+          "original_path": "skills/humanizer/rules/anti-aigc.md",
+          "stored_path": null,
+          "raw_sha256": "fe7ebc7019dd584fa57e721482017dfe530019b1e3c4b91ac66c27d761174ae0",
+          "normalized_sha256": "fcbdb731b13e025a12358d27b559c6df20cdfa97d0571fb34659e7f5f5353fd0"
+        },
+        {
+          "original_path": "skills/humanizer/rules/detection-methods.md",
+          "stored_path": null,
+          "raw_sha256": "2a459676cae5dc7eab3e94c4c442de8a2b35ce0259983e831d47447cf1f8a675",
+          "normalized_sha256": "011450cc0ebb8e6a50b5b45f774f93020801af4258ee53d12fb2309bff297cf6"
+        },
+        {
+          "original_path": "skills/humanizer/rules/formal-humanization.md",
+          "stored_path": null,
+          "raw_sha256": "3f1136745986360255cece7771ecd395e21a2b76c089b428093e23cb6021bbd4",
+          "normalized_sha256": "264d146b7420dbb4642b7407793edbc2e2a4f9788381d7b8ed328d37f1a97d15"
+        },
+        {
+          "original_path": "skills/humanizer/rules/humanization.md",
+          "stored_path": null,
+          "raw_sha256": "5eaf0855643794ae1e891d58e68071c16c568f48368e901a47ce343d3bf5b5a8",
+          "normalized_sha256": "87967dcb7bd7fbf0234a4058735fea40ff066ce1b798ad113a817a28b8fb4eaa"
+        },
+        {
+          "original_path": "skills/humanizer/rules/iteration.md",
+          "stored_path": null,
+          "raw_sha256": "beea2113228535b9c8ef061d3d99a2d04e27edab99aa917d4e3eafcfcd8fc76f",
+          "normalized_sha256": "879ca39ba27df94ba574fee355ef59195ee7e3f1d518a48c079ca5e52694c645"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 12
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 12
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 12
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-1-skill-shuorenhua": {
+      "last_seen_commit": "bba676861ace5e6986a5f04d1ac2fd150eeb9a04",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "edde094553f42fbe4606936ccf71dedced7a8a26066fd08784d056a73e0f8731",
+      "normalized_sha256": "bd89bff43b65c1c39025462509da36135f7fc4ba595898e7f03ee8f0673b612f",
+      "size": 7369,
+      "line_count": 169,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "edde094553f42fbe4606936ccf71dedced7a8a26066fd08784d056a73e0f8731",
+          "normalized_sha256": "bd89bff43b65c1c39025462509da36135f7fc4ba595898e7f03ee8f0673b612f"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 9
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 9
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 9
+        }
+      ],
+      "forks": 1,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-yanyintingyou-stop-slop-cn-en": {
+      "last_seen_commit": "6a4f1521cc2ad255fe7dd5271f8e47a30be0237d",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "ecd6400829566dcba13b112f629cb389beda8d95583ec9f86df051ef8d155861",
+      "normalized_sha256": "ecd6400829566dcba13b112f629cb389beda8d95583ec9f86df051ef8d155861",
+      "size": 11145,
+      "line_count": 316,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-yanyintingyou-stop-slop-cn-en/SKILL.source.md",
+          "raw_sha256": "ecd6400829566dcba13b112f629cb389beda8d95583ec9f86df051ef8d155861",
+          "normalized_sha256": "ecd6400829566dcba13b112f629cb389beda8d95583ec9f86df051ef8d155861"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-stephenturner-skill-deslop": {
+      "last_seen_commit": "a906154bef375d9d49ed2ad7da13b2db16f0d3d2",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "90fd6355859239630bf9e1b36f8a0b9071fe7fa63f57b1bf28cf069ad702c546",
+      "normalized_sha256": "3278c99da8ee7cf987285220a6a2122e54b50f9d0b8aa1d6cf5cb81236d55b09",
+      "size": 8396,
+      "line_count": 130,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-stephenturner-skill-deslop/SKILL.source.md",
+          "raw_sha256": "90fd6355859239630bf9e1b36f8a0b9071fe7fa63f57b1bf28cf069ad702c546",
+          "normalized_sha256": "3278c99da8ee7cf987285220a6a2122e54b50f9d0b8aa1d6cf5cb81236d55b09"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 381
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 381
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 381
+        }
+      ],
+      "forks": 25,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-redbaronyyyyy-eng-humanizer-zh-academic": {
+      "last_seen_commit": "50e11af64eb4817f75b8be7d609b99d7cd80d801",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "27f05a281b3bfd09bb27193e22a08969ffba4e05c86325e82f70ce2148c46378",
+      "normalized_sha256": "27f05a281b3bfd09bb27193e22a08969ffba4e05c86325e82f70ce2148c46378",
+      "size": 17204,
+      "line_count": 414,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-redbaronyyyyy-eng-humanizer-zh-academic/SKILL.source.md",
+          "raw_sha256": "27f05a281b3bfd09bb27193e22a08969ffba4e05c86325e82f70ce2148c46378",
+          "normalized_sha256": "27f05a281b3bfd09bb27193e22a08969ffba4e05c86325e82f70ce2148c46378"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 273
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 273
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 273
+        }
+      ],
+      "forks": 21,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-yzhao062-agent-style": {
+      "last_seen_commit": "99722a59e5ab654bafe68788f3bff7d1c8237f5a",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "5a6e5a6343a6fc6d992522ff29fd6c7d010da01c0cf1be3582086d8b2c535c0a",
+      "normalized_sha256": "5a6e5a6343a6fc6d992522ff29fd6c7d010da01c0cf1be3582086d8b2c535c0a",
+      "size": 17444,
+      "line_count": 218,
+      "files": [
+        {
+          "original_path": "agents/anthropic-skill/SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "530b895fa6db58de71621c8af89ec2a724d70eb823ada5b5b6b7366038c53252",
+          "normalized_sha256": "530b895fa6db58de71621c8af89ec2a724d70eb823ada5b5b6b7366038c53252"
+        },
+        {
+          "original_path": "skills/style-review/SKILL.md",
+          "stored_path": null,
+          "raw_sha256": "0d4d871f692720aed9c155ecab7707617317de903af3cbf66f827c5f090a252f",
+          "normalized_sha256": "0d4d871f692720aed9c155ecab7707617317de903af3cbf66f827c5f090a252f"
+        },
+        {
+          "original_path": "skills/style-review/references/revision-prompt.md",
+          "stored_path": null,
+          "raw_sha256": "08b50ab2c4aba0bb4af8470c772247628dab7b1e6fe68ce519e934efac4e9e55",
+          "normalized_sha256": "08b50ab2c4aba0bb4af8470c772247628dab7b1e6fe68ce519e934efac4e9e55"
+        },
+        {
+          "original_path": "skills/style-review/references/rule-detectors.md",
+          "stored_path": null,
+          "raw_sha256": "1c258000201dfdb925a6da7d20c473b26d1cad7872002b7bcf3233a17b66a2c7",
+          "normalized_sha256": "1c258000201dfdb925a6da7d20c473b26d1cad7872002b7bcf3233a17b66a2c7"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 671
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 671
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 671
+        }
+      ],
+      "forks": 34,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-momo2young-humanize-academic-writing": {
+      "last_seen_commit": "5ced86855fd804234af120412ae62d8757a7236f",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "60d66b9f157175db9672952cd6d47df6b6a6c77379daa64496a2cc1b6821f18b",
+      "normalized_sha256": "62cfefd5921ead40dc03886343a30f6a0526160213f1d60c8a4a3268bd4d677a",
+      "size": 12471,
+      "line_count": 361,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-momo2young-humanize-academic-writing/SKILL.source.md",
+          "raw_sha256": "60d66b9f157175db9672952cd6d47df6b6a6c77379daa64496a2cc1b6821f18b",
+          "normalized_sha256": "62cfefd5921ead40dc03886343a30f6a0526160213f1d60c8a4a3268bd4d677a"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 18
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 18
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 18
+        }
+      ],
+      "forks": 3,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-stephenlzc-humanize-mba-text-skill": {
+      "last_seen_commit": "160902bb3469199f53bc276d7d7905eea923f3cf",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "4ef41f2c201dad141558d0bf485c313c9a68965f00ebec679063ccda3ee5ebdc",
+      "normalized_sha256": "4ef41f2c201dad141558d0bf485c313c9a68965f00ebec679063ccda3ee5ebdc",
+      "size": 11672,
+      "line_count": 176,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-stephenlzc-humanize-mba-text-skill/SKILL.source.md",
+          "raw_sha256": "4ef41f2c201dad141558d0bf485c313c9a68965f00ebec679063ccda3ee5ebdc",
+          "normalized_sha256": "4ef41f2c201dad141558d0bf485c313c9a68965f00ebec679063ccda3ee5ebdc"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 43
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 43
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 43
+        }
+      ],
+      "forks": 6,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-jcarterjohnson-vibecoded-design-tells": {
+      "last_seen_commit": "f7c4aefc2c797a66e55b49354a93917ab60d33ac",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "4cb74feaf8b3c268c1c40046b852b8506aab6273468fa6e4dd409f947356c763",
+      "normalized_sha256": "4cb74feaf8b3c268c1c40046b852b8506aab6273468fa6e4dd409f947356c763",
+      "size": 38515,
+      "line_count": 688,
+      "files": [
+        {
+          "original_path": "unslop-ai-text/skill/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-jcarterjohnson-vibecoded-design-tells/unslop-ai-text/skill/SKILL.source.md",
+          "raw_sha256": "5e6dc683b8604110d0d6953b9499d069939c7c03f2aecf55ce4f94b664320737",
+          "normalized_sha256": "5e6dc683b8604110d0d6953b9499d069939c7c03f2aecf55ce4f94b664320737"
+        },
+        {
+          "original_path": "unslop-ai-text/skill/references/tells.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-jcarterjohnson-vibecoded-design-tells/unslop-ai-text/skill/references/tells.md",
+          "raw_sha256": "3346b94c4804555f7c132de6904fe049d866ca92e4c1218ea46e1de3432b64c6",
+          "normalized_sha256": "3346b94c4804555f7c132de6904fe049d866ca92e4c1218ea46e1de3432b64c6"
+        },
+        {
+          "original_path": "unslop-ai-text/skill/references/writing-with-intent.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-jcarterjohnson-vibecoded-design-tells/unslop-ai-text/skill/references/writing-with-intent.md",
+          "raw_sha256": "efdf1480ead5e1d061d071d052685b9fc14a55053dab27125c4c0494fb9381f3",
+          "normalized_sha256": "efdf1480ead5e1d061d071d052685b9fc14a55053dab27125c4c0494fb9381f3"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 482
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 482
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 483
+        }
+      ],
+      "forks": 29,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-sadhvikchirunomula-measured-humanizer": {
+      "last_seen_commit": "15c8695614a19fa660788dec82ffcf661b1ebb31",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "1e7ee2d350301333952ba287353dd2e67cd38c04de9d99c4b445facbdd0d3666",
+      "normalized_sha256": "1e7ee2d350301333952ba287353dd2e67cd38c04de9d99c4b445facbdd0d3666",
+      "size": 13164,
+      "line_count": 271,
+      "files": [
+        {
+          "original_path": "skills/measured-humanizer/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-sadhvikchirunomula-measured-humanizer/skills/measured-humanizer/SKILL.source.md",
+          "raw_sha256": "05d95d9c7df7e370ecbea3a3f3709946fc746a4ba6059ecb391b8d345ff888d9",
+          "normalized_sha256": "05d95d9c7df7e370ecbea3a3f3709946fc746a4ba6059ecb391b8d345ff888d9"
+        },
+        {
+          "original_path": "skills/measured-humanizer/reference/calibration.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-sadhvikchirunomula-measured-humanizer/skills/measured-humanizer/reference/calibration.md",
+          "raw_sha256": "87917ccc081df609fa35a2d183d5953090d2b92b341cff569f6910fbfd85ec78",
+          "normalized_sha256": "87917ccc081df609fa35a2d183d5953090d2b92b341cff569f6910fbfd85ec78"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 2
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 2
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 2
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-mjlens-spec-human-flavor-pipeline": {
+      "last_seen_commit": "643d1305f4d2669bfba5a276054d2a3285557524",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "4512360c53d825d6b2cda10176423a101eef03a4723741a6e969509fe2fc80a3",
+      "normalized_sha256": "4512360c53d825d6b2cda10176423a101eef03a4723741a6e969509fe2fc80a3",
+      "size": 32413,
+      "line_count": 518,
+      "files": [
+        {
+          "original_path": "skills/human-flavor-pipeline/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/SKILL.source.md",
+          "raw_sha256": "b2f8b9771ad3add277ce8f609951c8967e525f8fceda140799b3edafb7bc3ba4",
+          "normalized_sha256": "b2f8b9771ad3add277ce8f609951c8967e525f8fceda140799b3edafb7bc3ba4"
+        },
+        {
+          "original_path": "skills/human-flavor-pipeline/references/design-notes.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/references/design-notes.md",
+          "raw_sha256": "836db784b52b26152662e5745f6c44bd0cf4494fd835291403c0c0b4c01997f4",
+          "normalized_sha256": "836db784b52b26152662e5745f6c44bd0cf4494fd835291403c0c0b4c01997f4"
+        },
+        {
+          "original_path": "skills/human-flavor-pipeline/references/editing-protocol.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/references/editing-protocol.md",
+          "raw_sha256": "e4e121f18f98921b8fa6bdac4a8c7e6e06e41e4590a4c23bb618096849fd8dfd",
+          "normalized_sha256": "e4e121f18f98921b8fa6bdac4a8c7e6e06e41e4590a4c23bb618096849fd8dfd"
+        },
+        {
+          "original_path": "skills/human-flavor-pipeline/references/feedback-loop.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/references/feedback-loop.md",
+          "raw_sha256": "b1719434879d4afa17a515f57f6b17c97f94716f0b05642da6bb5da13047378c",
+          "normalized_sha256": "b1719434879d4afa17a515f57f6b17c97f94716f0b05642da6bb5da13047378c"
+        },
+        {
+          "original_path": "skills/human-flavor-pipeline/references/report-format.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/references/report-format.md",
+          "raw_sha256": "f0e1122a6c5df07bf02dcc0bc17e612aa89187f310a0d0f44f97552e5256c493",
+          "normalized_sha256": "f0e1122a6c5df07bf02dcc0bc17e612aa89187f310a0d0f44f97552e5256c493"
+        },
+        {
+          "original_path": "skills/human-flavor-pipeline/references/resource-router.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/references/resource-router.md",
+          "raw_sha256": "ca448788a6be966bffaf538a89491bab2ef583fe6f07d5a56c88f1909105ddc6",
+          "normalized_sha256": "ca448788a6be966bffaf538a89491bab2ef583fe6f07d5a56c88f1909105ddc6"
+        },
+        {
+          "original_path": "skills/human-flavor-pipeline/references/scoring.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/references/scoring.md",
+          "raw_sha256": "32e406a5c95f6b7ed2b8ef6e489db8a1f5c83940270551b91f9c9554922affa9",
+          "normalized_sha256": "32e406a5c95f6b7ed2b8ef6e489db8a1f5c83940270551b91f9c9554922affa9"
+        },
+        {
+          "original_path": "skills/human-flavor-pipeline/references/self-audit.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/references/self-audit.md",
+          "raw_sha256": "cd0724e73a8fb516f5fe7048bb42181317249d497ed324efcd4e57c0764c3272",
+          "normalized_sha256": "cd0724e73a8fb516f5fe7048bb42181317249d497ed324efcd4e57c0764c3272"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-peakseazhu-humanizer-chinese": {
+      "last_seen_commit": "1d6c08e10fbfe0e1b36ac784834451c6aae0a92c",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "d582f32dd18f5dfcba881a65b8718ab293761ec6ea0a5fad14d81e2fe0899c1a",
+      "normalized_sha256": "d582f32dd18f5dfcba881a65b8718ab293761ec6ea0a5fad14d81e2fe0899c1a",
+      "size": 32062,
+      "line_count": 464,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-peakseazhu-humanizer-chinese/SKILL.source.md",
+          "raw_sha256": "d582f32dd18f5dfcba881a65b8718ab293761ec6ea0a5fad14d81e2fe0899c1a",
+          "normalized_sha256": "d582f32dd18f5dfcba881a65b8718ab293761ec6ea0a5fad14d81e2fe0899c1a"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 1
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 1
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-oxforce-haning-humanize-writing-skill": {
+      "last_seen_commit": "b8741202a16fce3a0cf6f12d491fc4d0246ca19f",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "da2f4bf039e53131f745b55af18cfab0de48fd1a99d3daf5dc2d7d32a745e7cb",
+      "normalized_sha256": "da2f4bf039e53131f745b55af18cfab0de48fd1a99d3daf5dc2d7d32a745e7cb",
+      "size": 6314,
+      "line_count": 109,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-oxforce-haning-humanize-writing-skill/SKILL.source.md",
+          "raw_sha256": "da2f4bf039e53131f745b55af18cfab0de48fd1a99d3daf5dc2d7d32a745e7cb",
+          "normalized_sha256": "da2f4bf039e53131f745b55af18cfab0de48fd1a99d3daf5dc2d7d32a745e7cb"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-aazzaazzaazzaa-remove-chinese-ai-tics": {
+      "last_seen_commit": "49a62874745d45724626ce10d3e028b7d757f74c",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "077deca57ca47722cea660767d5411f2fecd8fafaefd83eb4d5c9afc76ff3cc6",
+      "normalized_sha256": "077deca57ca47722cea660767d5411f2fecd8fafaefd83eb4d5c9afc76ff3cc6",
+      "size": 109270,
+      "line_count": 1960,
+      "files": [
+        {
+          "original_path": "remove-chinese-ai-tics/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aazzaazzaazzaa-remove-chinese-ai-tics/remove-chinese-ai-tics/SKILL.source.md",
+          "raw_sha256": "df8f215fb5e77bce98e384f3259f502173e7130ad37fa029640d560c7c09d4ae",
+          "normalized_sha256": "df8f215fb5e77bce98e384f3259f502173e7130ad37fa029640d560c7c09d4ae"
+        },
+        {
+          "original_path": "remove-chinese-ai-tics/references/creative-writing.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aazzaazzaazzaa-remove-chinese-ai-tics/remove-chinese-ai-tics/references/creative-writing.md",
+          "raw_sha256": "17bb7dc0e8b4bb2e76c0627e4f437e2b4eaedb824ec47362ec2462df66ec1b2c",
+          "normalized_sha256": "17bb7dc0e8b4bb2e76c0627e4f437e2b4eaedb824ec47362ec2462df66ec1b2c"
+        },
+        {
+          "original_path": "remove-chinese-ai-tics/references/domain-profiles.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aazzaazzaazzaa-remove-chinese-ai-tics/remove-chinese-ai-tics/references/domain-profiles.md",
+          "raw_sha256": "113e5191ef00539044da88f9d974d698039abfbfee51b5679a28621fc6e63ab3",
+          "normalized_sha256": "113e5191ef00539044da88f9d974d698039abfbfee51b5679a28621fc6e63ab3"
+        },
+        {
+          "original_path": "remove-chinese-ai-tics/references/lexical-controls.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aazzaazzaazzaa-remove-chinese-ai-tics/remove-chinese-ai-tics/references/lexical-controls.md",
+          "raw_sha256": "902e744c5eb1a0a12fc331bfe866786a942e521b2d8b8c21984f3cda1c84ee1e",
+          "normalized_sha256": "902e744c5eb1a0a12fc331bfe866786a942e521b2d8b8c21984f3cda1c84ee1e"
+        },
+        {
+          "original_path": "remove-chinese-ai-tics/references/pattern-catalog.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aazzaazzaazzaa-remove-chinese-ai-tics/remove-chinese-ai-tics/references/pattern-catalog.md",
+          "raw_sha256": "9d6981f9911ee1b2029cb3ae231491d4c1702e802769d21e9225b39711bf1f33",
+          "normalized_sha256": "9d6981f9911ee1b2029cb3ae231491d4c1702e802769d21e9225b39711bf1f33"
+        },
+        {
+          "original_path": "remove-chinese-ai-tics/references/semantic-preservation.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-aazzaazzaazzaa-remove-chinese-ai-tics/remove-chinese-ai-tics/references/semantic-preservation.md",
+          "raw_sha256": "7eadfc850433dc3e96214375555941e2e2599fc32d833a1ce70acdcd4ab8adcd",
+          "normalized_sha256": "7eadfc850433dc3e96214375555941e2e2599fc32d833a1ce70acdcd4ab8adcd"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 20
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 20
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 20
+        }
+      ],
+      "forks": 2,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-wuxiiing-wash-ink": {
+      "last_seen_commit": "3b423d29e57c30c7a04b957bfe25e8dd74ec9ba7",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "77a84ff32e0760e7aafcbe9fbfeb612263afdacf40a5af4468b10a682208aa8f",
+      "normalized_sha256": "77a84ff32e0760e7aafcbe9fbfeb612263afdacf40a5af4468b10a682208aa8f",
+      "size": 9702,
+      "line_count": 346,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-wuxiiing-wash-ink/SKILL.source.md",
+          "raw_sha256": "77a84ff32e0760e7aafcbe9fbfeb612263afdacf40a5af4468b10a682208aa8f",
+          "normalized_sha256": "77a84ff32e0760e7aafcbe9fbfeb612263afdacf40a5af4468b10a682208aa8f"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-z123-cloud-humanizer": {
+      "last_seen_commit": "54e3f81f0a7a20c3636f65c26f15f56dde5547a0",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "79dfbf85e58435d87bce8c8b2055e2a0cb10a52b4bda46d7389217ffd00c8fa3",
+      "normalized_sha256": "3273245518e78a441c9e4a27206d0034f76b4c6908da8f63039935763ab2dc34",
+      "size": 77331,
+      "line_count": 1014,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-z123-cloud-humanizer/SKILL.source.md",
+          "raw_sha256": "79dfbf85e58435d87bce8c8b2055e2a0cb10a52b4bda46d7389217ffd00c8fa3",
+          "normalized_sha256": "3273245518e78a441c9e4a27206d0034f76b4c6908da8f63039935763ab2dc34"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 0
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 0
+        }
+      ],
+      "forks": 0,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-wantongc-journal-adapt-writing-skill": {
+      "last_seen_commit": "cc79265b0acc21bc488c4c3004d89113cf19335a",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "f82f19b512513a520f5aac3e864af86bc9076b4b1f5629c6b06be34b04ef16f1",
+      "normalized_sha256": "f82f19b512513a520f5aac3e864af86bc9076b4b1f5629c6b06be34b04ef16f1",
+      "size": 36701,
+      "line_count": 927,
+      "files": [
+        {
+          "original_path": "skill/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-wantongc-journal-adapt-writing-skill/skill/SKILL.source.md",
+          "raw_sha256": "97a7ace0299c3e9c713274b5df54f19ecb2a9dcc1df29efa2ce16313832cd457",
+          "normalized_sha256": "97a7ace0299c3e9c713274b5df54f19ecb2a9dcc1df29efa2ce16313832cd457"
+        },
+        {
+          "original_path": "skill/base_rules/cs_engineering.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-wantongc-journal-adapt-writing-skill/skill/base_rules/cs_engineering.md",
+          "raw_sha256": "1af91e9a165dc497ed5ccf72a4dc30bd8ec7dc3158f7a40f2a0b9637cffef60f",
+          "normalized_sha256": "1af91e9a165dc497ed5ccf72a4dc30bd8ec7dc3158f7a40f2a0b9637cffef60f"
+        },
+        {
+          "original_path": "skill/base_rules/economics.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-wantongc-journal-adapt-writing-skill/skill/base_rules/economics.md",
+          "raw_sha256": "e6723c7e63ee8354091fcb6633c4322b2a967bcca3c707f48cf864ea546aa425",
+          "normalized_sha256": "e6723c7e63ee8354091fcb6633c4322b2a967bcca3c707f48cf864ea546aa425"
+        },
+        {
+          "original_path": "skill/base_rules/general_academic.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-wantongc-journal-adapt-writing-skill/skill/base_rules/general_academic.md",
+          "raw_sha256": "c751395c9d37bd6e20ec275bb134284b37f4209ba47f86ac83d299e48af137c7",
+          "normalized_sha256": "c751395c9d37bd6e20ec275bb134284b37f4209ba47f86ac83d299e48af137c7"
+        },
+        {
+          "original_path": "skill/base_rules/ml_cv_nlp.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-wantongc-journal-adapt-writing-skill/skill/base_rules/ml_cv_nlp.md",
+          "raw_sha256": "cb6ff14090e2157eb643a7567d2f5f4de2b60b8b0cca934be92873a24b58e002",
+          "normalized_sha256": "cb6ff14090e2157eb643a7567d2f5f4de2b60b8b0cca934be92873a24b58e002"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 770
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 770
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 770
+        }
+      ],
+      "forks": 46,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-zenstory-ai-oh-story-claudecode": {
+      "last_seen_commit": "5de060f9a47e7c4781c81edb320436b772e2955e",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "1e0a1387c015b46ee54d49d573610674f3b54c7ce417cc2fdb2e14e7e6a36784",
+      "normalized_sha256": "1e0a1387c015b46ee54d49d573610674f3b54c7ce417cc2fdb2e14e7e6a36784",
+      "size": 87736,
+      "line_count": 1345,
+      "files": [
+        {
+          "original_path": "skills/story-deslop/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/SKILL.source.md",
+          "raw_sha256": "97abadf6ea64190b6c1afe8a19b40ad37370e09e614f2210322220bf6398f5e0",
+          "normalized_sha256": "97abadf6ea64190b6c1afe8a19b40ad37370e09e614f2210322220bf6398f5e0"
+        },
+        {
+          "original_path": "skills/story-deslop/references/anti-ai-writing.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/references/anti-ai-writing.md",
+          "raw_sha256": "011bfda41a22f4ba467517bb260954db1cb11ff32a542a887022e51ece1ed717",
+          "normalized_sha256": "011bfda41a22f4ba467517bb260954db1cb11ff32a542a887022e51ece1ed717"
+        },
+        {
+          "original_path": "skills/story-deslop/references/author-memory.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/references/author-memory.md",
+          "raw_sha256": "04077171ce2eb189985b555362fce60daad9fa3f966e32273e277062f65973d1",
+          "normalized_sha256": "04077171ce2eb189985b555362fce60daad9fa3f966e32273e277062f65973d1"
+        },
+        {
+          "original_path": "skills/story-deslop/references/banned-words.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/references/banned-words.md",
+          "raw_sha256": "bb9512f5b81e2dd0d8d47a8165b0372ed6c147475502a4aa207f763ab694d5e1",
+          "normalized_sha256": "bb9512f5b81e2dd0d8d47a8165b0372ed6c147475502a4aa207f763ab694d5e1"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 6561
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 6564
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 6564
+        }
+      ],
+      "forks": 962,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-tance-mang-chinese-webnovel-skills": {
+      "last_seen_commit": "ecf552f6930e769d8bbf17818ad3d5a864a7a70b",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "a476f0c7e6d3d0c9e148168ba04e79328992284e415e90fac4b4f97842faf334",
+      "normalized_sha256": "a476f0c7e6d3d0c9e148168ba04e79328992284e415e90fac4b4f97842faf334",
+      "size": 8461,
+      "line_count": 122,
+      "files": [
+        {
+          "original_path": "skills/deslop/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-tance-mang-chinese-webnovel-skills/skills/deslop/SKILL.source.md",
+          "raw_sha256": "bcc5a7d1166cd914dba724fc01b6107e6b365532ac449e886ebb11e5bce8c633",
+          "normalized_sha256": "bcc5a7d1166cd914dba724fc01b6107e6b365532ac449e886ebb11e5bce8c633"
+        },
+        {
+          "original_path": "skills/dialogue/SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-tance-mang-chinese-webnovel-skills/skills/dialogue/SKILL.source.md",
+          "raw_sha256": "5eed768b9d9d94101e6ff9b8525db0cb38642e1e14debbb6e5fb5ee42f76c21a",
+          "normalized_sha256": "5eed768b9d9d94101e6ff9b8525db0cb38642e1e14debbb6e5fb5ee42f76c21a"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 48
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 48
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 48
+        }
+      ],
+      "forks": 6,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_change_key": null,
+      "open_pr": null,
+      "open_issue": null,
+      "availability": "ok"
+    },
+    "upstream-kevintsai1202-humanizer-zh-tw": {
+      "last_seen_commit": "f63ee46876ada7714811744d47d0cd3cb9bf212b",
+      "last_processed_commit": null,
+      "last_accepted_commit": null,
+      "raw_sha256": "a0b77db830b5ae94bd909cdce6be82466acb8780a9676d058dd37f0fc81225ea",
+      "normalized_sha256": "a0b77db830b5ae94bd909cdce6be82466acb8780a9676d058dd37f0fc81225ea",
+      "size": 22494,
+      "line_count": 523,
+      "files": [
+        {
+          "original_path": "SKILL.md",
+          "stored_path": "merges/maybe-humanizer/snapshots/upstream-kevintsai1202-humanizer-zh-tw/SKILL.source.md",
+          "raw_sha256": "a0b77db830b5ae94bd909cdce6be82466acb8780a9676d058dd37f0fc81225ea",
+          "normalized_sha256": "a0b77db830b5ae94bd909cdce6be82466acb8780a9676d058dd37f0fc81225ea"
+        }
+      ],
+      "stars_history": [
+        {
+          "observed_at": "2026-09-06T18:00:00Z",
+          "value": 831
+        },
+        {
+          "observed_at": "2026-09-06T14:46:35Z",
+          "value": 831
+        },
+        {
+          "observed_at": "2026-09-06T14:51:10Z",
+          "value": 831
+        }
+      ],
+      "forks": 55,
+      "installs": null,
+      "last_checked_at": "2026-09-06T14:51:10Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,

@@ -1,0 +1,12 @@
+id: humanizer-fixture
+name: 去 AI 味改写（测试夹具）
+kind: aggregated
+status: planned
+language:
+  - zh
+  - en
+path: skills/humanizer-fixture
+merge_instance: merges/humanizer-fixture
+replacement: null
+archived_at: null
+reason: pytest 用的缩小版夹具，从 merges/maybe-humanizer 的真实结构裁剪而来，3 条规则、2 个来源。
