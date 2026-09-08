@@ -10,4 +10,4 @@ merge_instance: null
 source_of_truth: skills/maybe-humanizer
 replacement: null
 archived_at: null
-reason: 从 maybe-humanizer 及其 46 份上游快照里提炼方向性约束，正文 1400 字左右，供直接放进 CLAUDE.md 或系统提示词。
+reason: 从 maybe-humanizer 及其上游快照里提炼方向性约束，只给原则和最小复核，正文可整段放进 CLAUDE.md 或系统提示词。

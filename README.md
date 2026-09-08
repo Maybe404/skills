@@ -25,7 +25,7 @@ npx skills add Maybe404/skills --skill <id>
 | id | 类型 | 用途 |
 |---|---|---|
 | [`maybe-humanizer`](skills/maybe-humanizer/SKILL.md) | 合并 | 中英文去 AI 味改写与审稿，先保护事实再清理模式。合并自 10 个上游 |
-| [`maybe-humanizer-lite`](skills/maybe-humanizer-lite/SKILL.md) | 提炼 | 去 AI 味的轻量版，只给方向不给流程，正文 1400 字，可直接放进 CLAUDE.md 或系统提示词 |
+| [`maybe-humanizer-lite`](skills/maybe-humanizer-lite/SKILL.md) | 提炼 | 去 AI 味的轻量版，只给原则和最小复核，不带完整词表和流程，正文可整段放进 CLAUDE.md 或系统提示词 |
 | [`en-zh-translation`](skills/en-zh-translation/SKILL.md) | 自写 | 把英文规则、提示词、文档翻成中文，保住每一处条件和情态 |
 | [`subagent`](skills/subagent/SKILL.md) | 自写 | 什么该拆给 subagent、派给谁、怎么验收、怎么打回 |
 | [`skill-merge`](skills/skill-merge/SKILL.md) | 自写 | 把多个上游 skill 归并成一份，处理上游的后续变更 |
