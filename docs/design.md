@@ -2,13 +2,14 @@
 
 ## 1. 定位
 
-Maybe404/skills 是个人维护的 skill（技能）集合。集合内的 skill 分三种 kind：
+Maybe404/skills 是个人维护的 skill（技能）集合。集合内的 skill 分四种 kind：
 
 | kind | 定义 |
 |---|---|
 | original | 自写，0 上游 |
 | adapted | 单一上游的翻译或改编 |
 | aggregated | 多上游合并 |
+| derived | 从本仓库内另一个 skill 提炼，无 merges/ 目录，不进上游监控 |
 
 集合里有两个名称相近但职责不同的部分，不要混用：
 
@@ -64,11 +65,12 @@ docs/
 |---|---|
 | id | skill 唯一标识 |
 | name | 显示名 |
-| kind | original \| adapted \| aggregated |
+| kind | original \| adapted \| aggregated \| derived |
 | status | active \| planned \| archived |
 | language[] | 语言列表 |
 | path | skill 目录路径 |
 | merge_instance | 对应的 merges/<id>，非空即纳入监控 |
+| source_of_truth | 仅 derived 有，指向被提炼的本仓库 skill 目录 |
 | replacement | 被替代后的指向 |
 | archived_at | 归档时间 |
 | reason | 归档或状态变更原因 |
