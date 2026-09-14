@@ -1,6 +1,6 @@
 {
   "merge_id": "maybe-humanizer",
-  "generated_at": "2026-09-06T14:51:10Z",
+  "generated_at": "2026-09-14T02:46:37Z",
   "sources": {
     "upstream-petergyang-no-ai-slop": {
       "last_seen_commit": "000650b156983f5159695b441477f4e63b25dc85",
@@ -34,30 +34,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 7337
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 9220
         }
       ],
-      "forks": 548,
+      "forks": 673,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-lifelonglazylearner-qu-ai-wei": {
-      "last_seen_commit": "39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17",
+      "last_seen_commit": "1d32e803f091ec90808a69683ebf49e8a970a5e7",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "ebdea6bb785e111b6c67cf78552a5e3c8aa5aceecf6f2ec257a462d0fef419db",
-      "normalized_sha256": "ebdea6bb785e111b6c67cf78552a5e3c8aa5aceecf6f2ec257a462d0fef419db",
-      "size": 10974,
-      "line_count": 165,
+      "raw_sha256": "e06b47d7bd793ce2b2138af7b6fe4ec9e4549d25b681f2671d33e5e5a9088508",
+      "normalized_sha256": "e06b47d7bd793ce2b2138af7b6fe4ec9e4549d25b681f2671d33e5e5a9088508",
+      "size": 11498,
+      "line_count": 168,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-lifelonglazylearner-qu-ai-wei/SKILL.source.md",
-          "raw_sha256": "ebdea6bb785e111b6c67cf78552a5e3c8aa5aceecf6f2ec257a462d0fef419db",
-          "normalized_sha256": "ebdea6bb785e111b6c67cf78552a5e3c8aa5aceecf6f2ec257a462d0fef419db"
+          "raw_sha256": "e06b47d7bd793ce2b2138af7b6fe4ec9e4549d25b681f2671d33e5e5a9088508",
+          "normalized_sha256": "e06b47d7bd793ce2b2138af7b6fe4ec9e4549d25b681f2671d33e5e5a9088508"
         }
       ],
       "stars_history": [
@@ -76,11 +80,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 531
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 563
         }
       ],
-      "forks": 41,
+      "forks": 43,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -130,18 +138,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 264
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 267
         }
       ],
-      "forks": 28,
+      "forks": 27,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-aboudjem-humanizer-skill": {
-      "last_seen_commit": "275af9489079d0c4a95d47d62a311a5cb0bd85ba",
+      "last_seen_commit": "a58df065367550b6ce40ff3f648335018d8e0589",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "e57a0cb8772437f476ed6f85c250836d5f8cc9864fea3a0583dc0eaa32da74b0",
@@ -190,30 +202,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 215
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 234
         }
       ],
-      "forks": 32,
+      "forks": 35,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-mrgediao-shuorenhua": {
-      "last_seen_commit": "d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8",
+      "last_seen_commit": "5a9eafefe03807404135f4d2ee4f42fe61d58759",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031",
-      "normalized_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031",
-      "size": 28916,
-      "line_count": 429,
+      "raw_sha256": "56a156045d2ac25ebf8210768b6c2608a42c37ac7ee4979d746cde7b026012db",
+      "normalized_sha256": "56a156045d2ac25ebf8210768b6c2608a42c37ac7ee4979d746cde7b026012db",
+      "size": 8204,
+      "line_count": 66,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-mrgediao-shuorenhua/SKILL.source.md",
-          "raw_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031",
-          "normalized_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031"
+          "raw_sha256": "56a156045d2ac25ebf8210768b6c2608a42c37ac7ee4979d746cde7b026012db",
+          "normalized_sha256": "56a156045d2ac25ebf8210768b6c2608a42c37ac7ee4979d746cde7b026012db"
         }
       ],
       "stars_history": [
@@ -228,11 +244,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1445
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 1692
         }
       ],
-      "forks": 72,
+      "forks": 76,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -266,11 +286,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 16764
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 17206
         }
       ],
-      "forks": 1117,
+      "forks": 1136,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -304,11 +328,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 138
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 152
         }
       ],
-      "forks": 15,
+      "forks": 16,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -372,11 +400,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 3473
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 3614
         }
       ],
-      "forks": 268,
+      "forks": 280,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -410,11 +442,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 37
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 38
         }
       ],
-      "forks": 7,
+      "forks": 8,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -466,11 +502,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 28
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 28
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -504,11 +544,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 38
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 48
         }
       ],
-      "forks": 1,
+      "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -578,11 +622,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 753
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 781
         }
       ],
-      "forks": 84,
+      "forks": 85,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -628,11 +676,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 65
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 65
         }
       ],
       "forks": 3,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -708,18 +760,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 14
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 14
         }
       ],
       "forks": 1,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-dongbeixiaohuo-writing-agent": {
-      "last_seen_commit": "863177b2d733697c7524c5190cb2294b2dbed868",
+      "last_seen_commit": "ca01dcf989729a5c255bbb50b4b7896f3ef810a4",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "a78fbb7e0cc1f6eb5689b39660214db5527364be9b9613ea7b28d33a295809c5",
@@ -764,30 +820,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 403
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 415
         }
       ],
-      "forks": 63,
+      "forks": 64,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-blader-humanizer": {
-      "last_seen_commit": "e2e92e7b4b8229253ed5c8e81dc65463fdeddda5",
+      "last_seen_commit": "9862685f575c65a8247f90369951df1b3416e3d6",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202",
-      "normalized_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202",
-      "size": 30409,
-      "line_count": 456,
+      "raw_sha256": "e8269e236bed06ed0fe4824c274112e54950b0cb46b0bafe5e1576ef7c9f93d5",
+      "normalized_sha256": "e8269e236bed06ed0fe4824c274112e54950b0cb46b0bafe5e1576ef7c9f93d5",
+      "size": 28728,
+      "line_count": 374,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-blader-humanizer/SKILL.source.md",
-          "raw_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202",
-          "normalized_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202"
+          "raw_sha256": "e8269e236bed06ed0fe4824c274112e54950b0cb46b0bafe5e1576ef7c9f93d5",
+          "normalized_sha256": "e8269e236bed06ed0fe4824c274112e54950b0cb46b0bafe5e1576ef7c9f93d5"
         }
       ],
       "stars_history": [
@@ -802,11 +862,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 43945
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 47703
         }
       ],
-      "forks": 3670,
+      "forks": 3879,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -858,36 +922,40 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 16853
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 17105
         }
       ],
-      "forks": 1218,
+      "forks": 1245,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-conorbronsdon-avoid-ai-writing": {
-      "last_seen_commit": "801c2360f360e38d4316a271b953138e5e166d54",
+      "last_seen_commit": "366afe4cdaef8faa6f5d72bf8f05e08553f49c11",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "11304fcd8ff574e04103c273b34ac25ec72b7ce7500d620092d2725d5cf63257",
-      "normalized_sha256": "08bfcbe255a90563120d548af0d254d3de3596152236ed185f021089b5ba7fa5",
-      "size": 116191,
-      "line_count": 912,
+      "raw_sha256": "aa6e22021bdfb17376291bedf816a1feef70444fdaed69fd4efb078038bc023c",
+      "normalized_sha256": "aa6e22021bdfb17376291bedf816a1feef70444fdaed69fd4efb078038bc023c",
+      "size": 117972,
+      "line_count": 926,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-conorbronsdon-avoid-ai-writing/SKILL.source.md",
-          "raw_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b",
-          "normalized_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b"
+          "raw_sha256": "201b28bde80d155fbce972782703042f7bac96bbc3cda8d995d3d259ce110e58",
+          "normalized_sha256": "201b28bde80d155fbce972782703042f7bac96bbc3cda8d995d3d259ce110e58"
         },
         {
           "original_path": "references/patterns.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-conorbronsdon-avoid-ai-writing/references/patterns.md",
-          "raw_sha256": "81bc6e7faec77d61f709f9c55f75c493b434eb18768416097824ad03f8aa66c2",
-          "normalized_sha256": "6cb8b9f5edd343e214d80825fff0b15708f118bb8c27df28de7eaf334581d31d"
+          "raw_sha256": "f65230a56848f7466af6be9ecafb9ed9794a75126ee7d56a8e525f417f14280e",
+          "normalized_sha256": "f65230a56848f7466af6be9ecafb9ed9794a75126ee7d56a8e525f417f14280e"
         }
       ],
       "stars_history": [
@@ -902,11 +970,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 4144
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 4361
         }
       ],
-      "forks": 349,
+      "forks": 381,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -940,11 +1012,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 59
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 60
         }
       ],
       "forks": 9,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -984,11 +1060,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 441
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 456
         }
       ],
-      "forks": 45,
+      "forks": 46,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1034,11 +1114,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 124
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 129
         }
       ],
-      "forks": 7,
+      "forks": 9,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1090,18 +1174,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 17
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 18
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-theclaymethod-unslop": {
-      "last_seen_commit": "d81f5196167ded24f46fced04958c0c12d681798",
+      "last_seen_commit": "17ed39c9d0b522f44190ff0c6233867eadee192a",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "e71f7e90759226fcc75cf6c62feb110ec3a108f67edaa9f23f1396709620163b",
@@ -1128,11 +1216,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 357
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 412
         }
       ],
-      "forks": 11,
+      "forks": 13,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1166,11 +1258,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 63
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 67
         }
       ],
       "forks": 5,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1204,11 +1300,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 28
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 29
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1242,11 +1342,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 119
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 118
         }
       ],
       "forks": 19,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1280,11 +1384,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1149
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 1156
         }
       ],
       "forks": 73,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1318,11 +1426,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 25
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 25
         }
       ],
-      "forks": 2,
+      "forks": 3,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1356,18 +1468,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 33
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 33
         }
       ],
       "forks": 7,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-sickn33-agentic-awesome-skills": {
-      "last_seen_commit": "f8d5d2c82b0cdb54a8a022bced09db53db57e94c",
+      "last_seen_commit": "2fce708d4f3871ccce3d705b4748371f94c730ec",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "59e8bd4a2a1cb60f332251e0e33fb0b55f6cd1b5d09f83d3aef7a9329f10ecfd",
@@ -1394,18 +1510,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 46059
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 46373
         }
       ],
-      "forks": 6732,
+      "forks": 6757,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-smallnest-goal-workflow": {
-      "last_seen_commit": "284333e0012d1c34642e371822d622e084ba3eea",
+      "last_seen_commit": "b06ab3c1c147dcf7ef8dd62a8927cd506d098135",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "b364a0337a68bc3efeaa0a7641f12c20cced344f104500f7a1913d9fae8c57b8",
@@ -1432,18 +1552,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 278
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 280
         }
       ],
-      "forks": 40,
+      "forks": 42,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-chujianyun-skills": {
-      "last_seen_commit": "d5966dd5428b5662b526ca259ffb8201fa7dd364",
+      "last_seen_commit": "36e2fca44ace4ac3a3d69e138db179d1a8b7820d",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "a7b9d17e9c4831af56ef6e981c0c9dec0e384a97e70f296abc384db29dcc7076",
@@ -1476,18 +1600,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 733
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 734
         }
       ],
-      "forks": 99,
+      "forks": 100,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-jackywxsz-jacky-opc": {
-      "last_seen_commit": "721172bb4a6c07f7e93cb06b56753f92497dd47a",
+      "last_seen_commit": "fa6d6123c33f8bf5455865033685acb092b794b4",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "f7aa641c460d9bec8842b535fabfb80b4363683d2d3a11340fc70da0b62c88bc",
@@ -1520,18 +1648,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 35
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 36
         }
       ],
       "forks": 1,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-aaaaqwq-agi-super-team": {
-      "last_seen_commit": "0c0234ccb1cde070f27e92e4cf8f559b94ba4cec",
+      "last_seen_commit": "e17ed3a989620c37290865381c3a55715ad8a51e",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "d19c5d04cd67f827ad40e829dc6339eb44ebf97a63c2bfeeaf74d882f7b57fca",
@@ -1558,11 +1690,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 91
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 93
         }
       ],
-      "forks": 22,
+      "forks": 23,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1596,11 +1732,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1634,11 +1774,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 3
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 3
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1672,11 +1816,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1710,11 +1858,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1748,11 +1900,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1822,11 +1978,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 12
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 12
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1860,11 +2020,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 9
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 9
         }
       ],
       "forks": 1,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1898,11 +2062,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 1
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1936,11 +2104,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 381
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 392
         }
       ],
-      "forks": 25,
+      "forks": 24,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1974,11 +2146,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 273
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 288
         }
       ],
       "forks": 21,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2030,11 +2206,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 671
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 677
         }
       ],
-      "forks": 34,
+      "forks": 36,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2068,11 +2248,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 18
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 19
         }
       ],
       "forks": 3,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2106,11 +2290,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 43
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 43
         }
       ],
       "forks": 6,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2156,30 +2344,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 483
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 495
         }
       ],
       "forks": 29,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-sadhvikchirunomula-measured-humanizer": {
-      "last_seen_commit": "15c8695614a19fa660788dec82ffcf661b1ebb31",
+      "last_seen_commit": "dbe38f51fa526321e0f2881063792cacf4d4ae34",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "1e7ee2d350301333952ba287353dd2e67cd38c04de9d99c4b445facbdd0d3666",
-      "normalized_sha256": "1e7ee2d350301333952ba287353dd2e67cd38c04de9d99c4b445facbdd0d3666",
-      "size": 13164,
-      "line_count": 271,
+      "raw_sha256": "2195ce972a8cd6e6e6fc2b05674bcf8222842c9efa9037f379cfe4dc78966208",
+      "normalized_sha256": "2195ce972a8cd6e6e6fc2b05674bcf8222842c9efa9037f379cfe4dc78966208",
+      "size": 13366,
+      "line_count": 275,
       "files": [
         {
           "original_path": "skills/measured-humanizer/SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-sadhvikchirunomula-measured-humanizer/skills/measured-humanizer/SKILL.source.md",
-          "raw_sha256": "05d95d9c7df7e370ecbea3a3f3709946fc746a4ba6059ecb391b8d345ff888d9",
-          "normalized_sha256": "05d95d9c7df7e370ecbea3a3f3709946fc746a4ba6059ecb391b8d345ff888d9"
+          "raw_sha256": "4cfcb1fdf2ef5f1b5b93bd83bad35fab24d8b8ce27a15df3525e3acc4daa2c19",
+          "normalized_sha256": "4cfcb1fdf2ef5f1b5b93bd83bad35fab24d8b8ce27a15df3525e3acc4daa2c19"
         },
         {
           "original_path": "skills/measured-humanizer/reference/calibration.md",
@@ -2200,11 +2392,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 2
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 2
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2280,11 +2476,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 1
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2318,11 +2518,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 1
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2356,11 +2560,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2424,11 +2632,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 20
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 21
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2462,11 +2674,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2500,11 +2716,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2562,48 +2782,52 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 770
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 775
         }
       ],
       "forks": 46,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-zenstory-ai-oh-story-claudecode": {
-      "last_seen_commit": "5de060f9a47e7c4781c81edb320436b772e2955e",
+      "last_seen_commit": "9b91465c533e8c8488e2116339c3107dd4431697",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "1e0a1387c015b46ee54d49d573610674f3b54c7ce417cc2fdb2e14e7e6a36784",
-      "normalized_sha256": "1e0a1387c015b46ee54d49d573610674f3b54c7ce417cc2fdb2e14e7e6a36784",
-      "size": 87736,
-      "line_count": 1345,
+      "raw_sha256": "fd7e9beeff40bb7031f6a4d6833aaadd6ebd3b90cbc8df2c91c625b70f56a8bf",
+      "normalized_sha256": "fd7e9beeff40bb7031f6a4d6833aaadd6ebd3b90cbc8df2c91c625b70f56a8bf",
+      "size": 80025,
+      "line_count": 1159,
       "files": [
         {
           "original_path": "skills/story-deslop/SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/SKILL.source.md",
-          "raw_sha256": "97abadf6ea64190b6c1afe8a19b40ad37370e09e614f2210322220bf6398f5e0",
-          "normalized_sha256": "97abadf6ea64190b6c1afe8a19b40ad37370e09e614f2210322220bf6398f5e0"
+          "raw_sha256": "f6d8519683c50035e41ae8cf6436910b75a9c02ec07c37efd68260bd00972632",
+          "normalized_sha256": "f6d8519683c50035e41ae8cf6436910b75a9c02ec07c37efd68260bd00972632"
         },
         {
           "original_path": "skills/story-deslop/references/anti-ai-writing.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/references/anti-ai-writing.md",
-          "raw_sha256": "011bfda41a22f4ba467517bb260954db1cb11ff32a542a887022e51ece1ed717",
-          "normalized_sha256": "011bfda41a22f4ba467517bb260954db1cb11ff32a542a887022e51ece1ed717"
+          "raw_sha256": "d3f6eb36db0e2416a195b92d684ce39ae0ac254906ea4e2cd2a1adb9b6bc4b93",
+          "normalized_sha256": "d3f6eb36db0e2416a195b92d684ce39ae0ac254906ea4e2cd2a1adb9b6bc4b93"
         },
         {
           "original_path": "skills/story-deslop/references/author-memory.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/references/author-memory.md",
-          "raw_sha256": "04077171ce2eb189985b555362fce60daad9fa3f966e32273e277062f65973d1",
-          "normalized_sha256": "04077171ce2eb189985b555362fce60daad9fa3f966e32273e277062f65973d1"
+          "raw_sha256": "15a05bc83bfcc82d7aaa66f95e622b41c550db39c388d882d835e7f6a29fdf69",
+          "normalized_sha256": "15a05bc83bfcc82d7aaa66f95e622b41c550db39c388d882d835e7f6a29fdf69"
         },
         {
           "original_path": "skills/story-deslop/references/banned-words.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/references/banned-words.md",
-          "raw_sha256": "bb9512f5b81e2dd0d8d47a8165b0372ed6c147475502a4aa207f763ab694d5e1",
-          "normalized_sha256": "bb9512f5b81e2dd0d8d47a8165b0372ed6c147475502a4aa207f763ab694d5e1"
+          "raw_sha256": "f68afa5493557acd331da18ea07b14af7dc357fd3c8cd7e3c56be39ff23f85bd",
+          "normalized_sha256": "f68afa5493557acd331da18ea07b14af7dc357fd3c8cd7e3c56be39ff23f85bd"
         }
       ],
       "stars_history": [
@@ -2618,11 +2842,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 6564
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 6839
         }
       ],
-      "forks": 962,
+      "forks": 977,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2662,11 +2890,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 48
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 60
         }
       ],
-      "forks": 6,
+      "forks": 8,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2700,11 +2932,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 831
+        },
+        {
+          "observed_at": "2026-09-14T02:46:37Z",
+          "value": 842
         }
       ],
       "forks": 55,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-09-14T02:46:37Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
