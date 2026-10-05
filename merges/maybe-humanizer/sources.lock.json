@@ -1,6 +1,6 @@
 {
   "merge_id": "maybe-humanizer",
-  "generated_at": "2026-09-06T14:51:10Z",
+  "generated_at": "2026-10-05T03:25:30Z",
   "sources": {
     "upstream-petergyang-no-ai-slop": {
       "last_seen_commit": "000650b156983f5159695b441477f4e63b25dc85",
@@ -34,30 +34,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 7337
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 11877
         }
       ],
-      "forks": 548,
+      "forks": 815,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-lifelonglazylearner-qu-ai-wei": {
-      "last_seen_commit": "39da1cfac4f0e3e4d2b46bc7188a0edc762b8d17",
+      "last_seen_commit": "1d32e803f091ec90808a69683ebf49e8a970a5e7",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "ebdea6bb785e111b6c67cf78552a5e3c8aa5aceecf6f2ec257a462d0fef419db",
-      "normalized_sha256": "ebdea6bb785e111b6c67cf78552a5e3c8aa5aceecf6f2ec257a462d0fef419db",
-      "size": 10974,
-      "line_count": 165,
+      "raw_sha256": "e06b47d7bd793ce2b2138af7b6fe4ec9e4549d25b681f2671d33e5e5a9088508",
+      "normalized_sha256": "e06b47d7bd793ce2b2138af7b6fe4ec9e4549d25b681f2671d33e5e5a9088508",
+      "size": 11498,
+      "line_count": 168,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-lifelonglazylearner-qu-ai-wei/SKILL.source.md",
-          "raw_sha256": "ebdea6bb785e111b6c67cf78552a5e3c8aa5aceecf6f2ec257a462d0fef419db",
-          "normalized_sha256": "ebdea6bb785e111b6c67cf78552a5e3c8aa5aceecf6f2ec257a462d0fef419db"
+          "raw_sha256": "e06b47d7bd793ce2b2138af7b6fe4ec9e4549d25b681f2671d33e5e5a9088508",
+          "normalized_sha256": "e06b47d7bd793ce2b2138af7b6fe4ec9e4549d25b681f2671d33e5e5a9088508"
         }
       ],
       "stars_history": [
@@ -76,11 +80,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 531
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 622
         }
       ],
-      "forks": 41,
+      "forks": 46,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -130,18 +138,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 264
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 271
         }
       ],
-      "forks": 28,
+      "forks": 27,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-aboudjem-humanizer-skill": {
-      "last_seen_commit": "275af9489079d0c4a95d47d62a311a5cb0bd85ba",
+      "last_seen_commit": "a58df065367550b6ce40ff3f648335018d8e0589",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "e57a0cb8772437f476ed6f85c250836d5f8cc9864fea3a0583dc0eaa32da74b0",
@@ -190,30 +202,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 215
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 264
         }
       ],
-      "forks": 32,
+      "forks": 40,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-mrgediao-shuorenhua": {
-      "last_seen_commit": "d2d0ce27da295581c3cf87a30ab65deb7d0ddfb8",
+      "last_seen_commit": "e7c2b8670bd3e1988bfec199e861cebd87fc5e9c",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031",
-      "normalized_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031",
-      "size": 28916,
-      "line_count": 429,
+      "raw_sha256": "56a156045d2ac25ebf8210768b6c2608a42c37ac7ee4979d746cde7b026012db",
+      "normalized_sha256": "56a156045d2ac25ebf8210768b6c2608a42c37ac7ee4979d746cde7b026012db",
+      "size": 8204,
+      "line_count": 66,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-mrgediao-shuorenhua/SKILL.source.md",
-          "raw_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031",
-          "normalized_sha256": "087c9e7a443388ad512821d8aceeddc32e0462aba3995e52a8090581df075031"
+          "raw_sha256": "56a156045d2ac25ebf8210768b6c2608a42c37ac7ee4979d746cde7b026012db",
+          "normalized_sha256": "56a156045d2ac25ebf8210768b6c2608a42c37ac7ee4979d746cde7b026012db"
         }
       ],
       "stars_history": [
@@ -228,30 +244,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1445
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 1978
         }
       ],
-      "forks": 72,
+      "forks": 82,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-op7418-humanizer-zh": {
-      "last_seen_commit": "91f3d394db8419c20d67ebe22a96cf8fee0a404b",
+      "last_seen_commit": "f4518a8eab97b8bfebc66a89d34320a89bef6930",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "e0edbdbc9008644263d5573fb59beac95794e188fd99c35012bfd79e9ae4beeb",
-      "normalized_sha256": "e0edbdbc9008644263d5573fb59beac95794e188fd99c35012bfd79e9ae4beeb",
-      "size": 18898,
-      "line_count": 484,
+      "raw_sha256": "95627fd4437d886f98032ccc62d79136e6310f1fc04e354bb86431795ff206df",
+      "normalized_sha256": "95627fd4437d886f98032ccc62d79136e6310f1fc04e354bb86431795ff206df",
+      "size": 20527,
+      "line_count": 408,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-op7418-humanizer-zh/SKILL.source.md",
-          "raw_sha256": "e0edbdbc9008644263d5573fb59beac95794e188fd99c35012bfd79e9ae4beeb",
-          "normalized_sha256": "e0edbdbc9008644263d5573fb59beac95794e188fd99c35012bfd79e9ae4beeb"
+          "raw_sha256": "95627fd4437d886f98032ccc62d79136e6310f1fc04e354bb86431795ff206df",
+          "normalized_sha256": "95627fd4437d886f98032ccc62d79136e6310f1fc04e354bb86431795ff206df"
         }
       ],
       "stars_history": [
@@ -266,11 +286,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 16764
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 18924
         }
       ],
-      "forks": 1117,
+      "forks": 1227,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -304,11 +328,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 138
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 172
         }
       ],
-      "forks": 15,
+      "forks": 16,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -372,11 +400,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 3473
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 3946
         }
       ],
-      "forks": 268,
+      "forks": 300,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -410,11 +442,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 37
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 43
         }
       ],
-      "forks": 7,
+      "forks": 9,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -466,30 +502,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 28
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 28
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-chengzhi-c-natural-talk": {
-      "last_seen_commit": "efb7ee6e2e992486828bcd142beba696b115221e",
+      "last_seen_commit": "85a43e38ecb39a910f9970435fb312b073e0f86e",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "8d1fb34f1e3898ef39704bc66d101665a9edd80a82374c88f9917db32225c517",
-      "normalized_sha256": "8d1fb34f1e3898ef39704bc66d101665a9edd80a82374c88f9917db32225c517",
-      "size": 9618,
-      "line_count": 126,
+      "raw_sha256": "2cc74d21db91031e6c7f01d348accd1abe5a40a5954edebbe42246928b06af61",
+      "normalized_sha256": "2cc74d21db91031e6c7f01d348accd1abe5a40a5954edebbe42246928b06af61",
+      "size": 9961,
+      "line_count": 92,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-chengzhi-c-natural-talk/SKILL.source.md",
-          "raw_sha256": "8d1fb34f1e3898ef39704bc66d101665a9edd80a82374c88f9917db32225c517",
-          "normalized_sha256": "8d1fb34f1e3898ef39704bc66d101665a9edd80a82374c88f9917db32225c517"
+          "raw_sha256": "2cc74d21db91031e6c7f01d348accd1abe5a40a5954edebbe42246928b06af61",
+          "normalized_sha256": "2cc74d21db91031e6c7f01d348accd1abe5a40a5954edebbe42246928b06af61"
         }
       ],
       "stars_history": [
@@ -504,42 +544,46 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 38
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 83
         }
       ],
-      "forks": 1,
+      "forks": 4,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-oubigfa-de-ai-prompt-enhancer-writer-booster-skill": {
-      "last_seen_commit": "7e97ce997d8601de8343be6a31ed30ca22612dd0",
+      "last_seen_commit": "59eafed6c9ebee0cce142e2ea54aab41014afbe9",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "01a7d4baf99eafb8fa232e00f9362974d2364698494dea4297f7e86439cbddf1",
-      "normalized_sha256": "01a7d4baf99eafb8fa232e00f9362974d2364698494dea4297f7e86439cbddf1",
-      "size": 115779,
-      "line_count": 1160,
+      "raw_sha256": "9b7273314fff1f9e40168f0f8ebd868baf5dd129ae4aa84fd681e0192e4662ef",
+      "normalized_sha256": "9b7273314fff1f9e40168f0f8ebd868baf5dd129ae4aa84fd681e0192e4662ef",
+      "size": 116625,
+      "line_count": 1162,
       "files": [
         {
           "original_path": "de-AI-writing/SKILL.md",
           "stored_path": null,
-          "raw_sha256": "9af8abd0f08056119d7001e41ae0039d1a262363b03b59f3aa5f2651ee366974",
-          "normalized_sha256": "9af8abd0f08056119d7001e41ae0039d1a262363b03b59f3aa5f2651ee366974"
+          "raw_sha256": "6286e9097b8a3c38a3a261096998b7205ee80fbd00585641231d04adaa6e1841",
+          "normalized_sha256": "6286e9097b8a3c38a3a261096998b7205ee80fbd00585641231d04adaa6e1841"
         },
         {
           "original_path": "de-AI-writing/references/ai-trace-index.md",
           "stored_path": null,
-          "raw_sha256": "b18ec6525ac6c691e384de3d464f5aaeed0cefeae2658643fe75d7043667b360",
-          "normalized_sha256": "b18ec6525ac6c691e384de3d464f5aaeed0cefeae2658643fe75d7043667b360"
+          "raw_sha256": "a8495d4dead3c24efb5acadc17f16cda26e91c248a70c057313e39ba636cdc1e",
+          "normalized_sha256": "a8495d4dead3c24efb5acadc17f16cda26e91c248a70c057313e39ba636cdc1e"
         },
         {
           "original_path": "de-AI-writing/references/discourse-pass.md",
           "stored_path": null,
-          "raw_sha256": "c6f2fea2a104d1ba98e1d9a698c34c073af9ef6989a8ce529d8a6eb4183398d5",
-          "normalized_sha256": "c6f2fea2a104d1ba98e1d9a698c34c073af9ef6989a8ce529d8a6eb4183398d5"
+          "raw_sha256": "bff4e3803cdf54dbb6d0a6b06cb62b91166ac7edc31c94a084c193e3874a85db",
+          "normalized_sha256": "bff4e3803cdf54dbb6d0a6b06cb62b91166ac7edc31c94a084c193e3874a85db"
         },
         {
           "original_path": "de-AI-writing/references/narrative-pass.md",
@@ -550,8 +594,8 @@
         {
           "original_path": "de-AI-writing/references/syntax-pass.md",
           "stored_path": null,
-          "raw_sha256": "ec75fccfa14b39af727e1b94d0c1b537c6f90ba8beb439e0d669611f0b87da76",
-          "normalized_sha256": "ec75fccfa14b39af727e1b94d0c1b537c6f90ba8beb439e0d669611f0b87da76"
+          "raw_sha256": "57e7800eef66f5c54c7d0cbfc558296070cd6450f6aa5f488b2632391ba47143",
+          "normalized_sha256": "57e7800eef66f5c54c7d0cbfc558296070cd6450f6aa5f488b2632391ba47143"
         },
         {
           "original_path": "de-AI-writing/references/translation-guardrails.md",
@@ -578,11 +622,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 753
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 848
         }
       ],
-      "forks": 84,
+      "forks": 85,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -628,11 +676,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 65
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 66
         }
       ],
       "forks": 3,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -708,18 +760,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 14
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 17
         }
       ],
       "forks": 1,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-dongbeixiaohuo-writing-agent": {
-      "last_seen_commit": "863177b2d733697c7524c5190cb2294b2dbed868",
+      "last_seen_commit": "fd4957112dd263cfa90567ff52c920ce8b90047e",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "a78fbb7e0cc1f6eb5689b39660214db5527364be9b9613ea7b28d33a295809c5",
@@ -764,30 +820,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 403
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 434
         }
       ],
-      "forks": 63,
+      "forks": 66,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-blader-humanizer": {
-      "last_seen_commit": "e2e92e7b4b8229253ed5c8e81dc65463fdeddda5",
+      "last_seen_commit": "225a6f39ac85f76ee48dbad772ea4abe4ed6c9d8",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202",
-      "normalized_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202",
-      "size": 30409,
-      "line_count": 456,
+      "raw_sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+      "normalized_sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+      "size": 32348,
+      "line_count": 397,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-blader-humanizer/SKILL.source.md",
-          "raw_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202",
-          "normalized_sha256": "14fc8a965b6e0a8dc100ba4dffeab55cb94bbac112abbde7e014d5c15a35c202"
+          "raw_sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+          "normalized_sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
         }
       ],
       "stars_history": [
@@ -802,11 +862,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 43945
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 53985
         }
       ],
-      "forks": 3670,
+      "forks": 4291,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -858,36 +922,40 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 16853
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 17752
         }
       ],
-      "forks": 1218,
+      "forks": 1294,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-conorbronsdon-avoid-ai-writing": {
-      "last_seen_commit": "801c2360f360e38d4316a271b953138e5e166d54",
+      "last_seen_commit": "db82bc8a2631f75fa829e97dc811c16a091fe1d9",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "11304fcd8ff574e04103c273b34ac25ec72b7ce7500d620092d2725d5cf63257",
-      "normalized_sha256": "08bfcbe255a90563120d548af0d254d3de3596152236ed185f021089b5ba7fa5",
-      "size": 116191,
-      "line_count": 912,
+      "raw_sha256": "d4e38b5d6fb299602e5ed366bd042ae0036af25ce9fe7d1b3018c34bc8a823a1",
+      "normalized_sha256": "d4e38b5d6fb299602e5ed366bd042ae0036af25ce9fe7d1b3018c34bc8a823a1",
+      "size": 139698,
+      "line_count": 1060,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-conorbronsdon-avoid-ai-writing/SKILL.source.md",
-          "raw_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b",
-          "normalized_sha256": "c85a62d36980bdeb2180e32a9cdecd868b5d158efa766389ee2b4f380614042b"
+          "raw_sha256": "0a89c0649dab9930b7a9532dd44bb5196c3dc8f7af56a32e79d8a65a261e9f45",
+          "normalized_sha256": "0a89c0649dab9930b7a9532dd44bb5196c3dc8f7af56a32e79d8a65a261e9f45"
         },
         {
           "original_path": "references/patterns.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-conorbronsdon-avoid-ai-writing/references/patterns.md",
-          "raw_sha256": "81bc6e7faec77d61f709f9c55f75c493b434eb18768416097824ad03f8aa66c2",
-          "normalized_sha256": "6cb8b9f5edd343e214d80825fff0b15708f118bb8c27df28de7eaf334581d31d"
+          "raw_sha256": "5cd91fd247a4a450ad22e8d0dbaf0e88ef9d33f8968ba62241c05598cd9a4b16",
+          "normalized_sha256": "5cd91fd247a4a450ad22e8d0dbaf0e88ef9d33f8968ba62241c05598cd9a4b16"
         }
       ],
       "stars_history": [
@@ -902,11 +970,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 4144
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 4854
         }
       ],
-      "forks": 349,
+      "forks": 427,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -940,11 +1012,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 59
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 68
         }
       ],
-      "forks": 9,
+      "forks": 11,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -984,42 +1060,46 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 441
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 500
         }
       ],
-      "forks": 45,
+      "forks": 51,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-adenaufal-anti-slop-writing": {
-      "last_seen_commit": "bffa2a5692da892efcf97cba1a0d2cee413f02bc",
+      "last_seen_commit": "104fae8cf646d97cdf06fb9e5cc5f2a724808b1a",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "bcea03d155992aabb9f6fdb769e2419b5040b24ebc0ae30ddc5a40b76c27920c",
-      "normalized_sha256": "71c1699ab2891775b009aeb332ad99ba81496b09d91b7e04f01b99b2d0e4eab3",
-      "size": 63875,
-      "line_count": 1082,
+      "raw_sha256": "80ff2d6ed7e2cabe0679baed8ca013f5112196da080769ff5f88620ed065a318",
+      "normalized_sha256": "c2d122c8781cbfe662475ffefa9389db68e849589e8aab24c9af3fadbd5179b8",
+      "size": 50303,
+      "line_count": 961,
       "files": [
         {
           "original_path": "english/SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-adenaufal-anti-slop-writing/english/SKILL.source.md",
-          "raw_sha256": "04c93703649a8acb978fd7ce45dfa97aac0879bef47e85c38045f20c1e8a1229",
-          "normalized_sha256": "04c93703649a8acb978fd7ce45dfa97aac0879bef47e85c38045f20c1e8a1229"
+          "raw_sha256": "8eb2a4e7d2ce0283640cede53cc768acb93db7bc1b9b31fa2f35d7c6863ebba3",
+          "normalized_sha256": "8eb2a4e7d2ce0283640cede53cc768acb93db7bc1b9b31fa2f35d7c6863ebba3"
         },
         {
           "original_path": "english/references/structural-patterns.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-adenaufal-anti-slop-writing/english/references/structural-patterns.md",
-          "raw_sha256": "358a01d7c4e0d607ed14e1aaac3583dee7848e2ea7a4b7cdd5fd3a4f9014346f",
-          "normalized_sha256": "d759d89b203f9191d252d99b5ffee91c2f382cc51bd683fd587a448b6707b4dd"
+          "raw_sha256": "0f8c6142740f8315f78221cded4d0b956ff906721ad9c288488d626679230533",
+          "normalized_sha256": "0f8c6142740f8315f78221cded4d0b956ff906721ad9c288488d626679230533"
         },
         {
           "original_path": "english/references/vocabulary-banlist.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-adenaufal-anti-slop-writing/english/references/vocabulary-banlist.md",
-          "raw_sha256": "edde22bc2ca2a6f0230351f66e29073ab83a52fb8bc77ee9093fe0b2902c91cc",
-          "normalized_sha256": "4a247f722ab2309feb672c329142c780f42e5891a3cd494614cb5ee42b1b8443"
+          "raw_sha256": "cd8fc8409da58daadc2a502b05d999f7c4a8167066a15879af664c3a7495ba40",
+          "normalized_sha256": "1805a7045d987ff56058d62e0e6e1f3df6d0fa1fc781660b50da14a108ab0b85"
         }
       ],
       "stars_history": [
@@ -1034,11 +1114,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 124
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 143
         }
       ],
-      "forks": 7,
+      "forks": 12,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1090,18 +1174,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 17
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 18
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-theclaymethod-unslop": {
-      "last_seen_commit": "d81f5196167ded24f46fced04958c0c12d681798",
+      "last_seen_commit": "17ed39c9d0b522f44190ff0c6233867eadee192a",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "e71f7e90759226fcc75cf6c62feb110ec3a108f67edaa9f23f1396709620163b",
@@ -1128,11 +1216,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 357
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 503
         }
       ],
-      "forks": 11,
+      "forks": 20,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1166,11 +1258,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 63
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 74
         }
       ],
       "forks": 5,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1204,11 +1300,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 28
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 32
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1242,11 +1342,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 119
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 127
         }
       ],
       "forks": 19,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1280,11 +1384,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1149
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 1176
         }
       ],
-      "forks": 73,
+      "forks": 72,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1318,11 +1426,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 25
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 25
         }
       ],
-      "forks": 2,
+      "forks": 3,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1356,18 +1468,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 33
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 33
         }
       ],
       "forks": 7,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-sickn33-agentic-awesome-skills": {
-      "last_seen_commit": "f8d5d2c82b0cdb54a8a022bced09db53db57e94c",
+      "last_seen_commit": "bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "59e8bd4a2a1cb60f332251e0e33fb0b55f6cd1b5d09f83d3aef7a9329f10ecfd",
@@ -1394,18 +1510,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 46059
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 47255
         }
       ],
-      "forks": 6732,
+      "forks": 6883,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-smallnest-goal-workflow": {
-      "last_seen_commit": "284333e0012d1c34642e371822d622e084ba3eea",
+      "last_seen_commit": "b06ab3c1c147dcf7ef8dd62a8927cd506d098135",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "b364a0337a68bc3efeaa0a7641f12c20cced344f104500f7a1913d9fae8c57b8",
@@ -1432,11 +1552,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 278
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 287
         }
       ],
-      "forks": 40,
+      "forks": 44,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1476,18 +1600,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 733
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 740
         }
       ],
-      "forks": 99,
+      "forks": 102,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
-      "availability": "ok"
+      "availability": "unreachable"
     },
     "upstream-jackywxsz-jacky-opc": {
-      "last_seen_commit": "721172bb4a6c07f7e93cb06b56753f92497dd47a",
+      "last_seen_commit": "f87e4c29bd81af18a825953d704ba9b0b85182d5",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "f7aa641c460d9bec8842b535fabfb80b4363683d2d3a11340fc70da0b62c88bc",
@@ -1520,18 +1648,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 35
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 41
         }
       ],
-      "forks": 1,
+      "forks": 3,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-aaaaqwq-agi-super-team": {
-      "last_seen_commit": "0c0234ccb1cde070f27e92e4cf8f559b94ba4cec",
+      "last_seen_commit": "331ecd3c1dd6597c351e5dc5d7a7d9f6e6bcab13",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "d19c5d04cd67f827ad40e829dc6339eb44ebf97a63c2bfeeaf74d882f7b57fca",
@@ -1558,11 +1690,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 91
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 105
         }
       ],
-      "forks": 22,
+      "forks": 24,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1596,11 +1732,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1634,11 +1774,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 3
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 4
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1672,11 +1816,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1710,11 +1858,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1748,18 +1900,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-cycleuser-skills": {
-      "last_seen_commit": "068c2f8b96fc0759b724ec0e5f29bb3c217cb87f",
+      "last_seen_commit": "25e4e753dd578a5210f7c2b358e41d4ee8ca1de2",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "0384e31c8107dd104ba1ff4f8f6d1f0af8b1da74a0c73e26e634346f8324cf4e",
@@ -1822,11 +1978,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 12
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 12
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1860,11 +2020,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 9
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 9
         }
       ],
       "forks": 1,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1898,11 +2062,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 1
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1936,11 +2104,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 381
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 407
         }
       ],
-      "forks": 25,
+      "forks": 27,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -1974,18 +2146,22 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 273
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 302
         }
       ],
-      "forks": 21,
+      "forks": 23,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-yzhao062-agent-style": {
-      "last_seen_commit": "99722a59e5ab654bafe68788f3bff7d1c8237f5a",
+      "last_seen_commit": "4bc29bdf0ec7ffb43b58648f55bb707cbcedcf4f",
       "last_processed_commit": null,
       "last_accepted_commit": null,
       "raw_sha256": "5a6e5a6343a6fc6d992522ff29fd6c7d010da01c0cf1be3582086d8b2c535c0a",
@@ -2030,11 +2206,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 671
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 705
         }
       ],
-      "forks": 34,
+      "forks": 37,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2068,11 +2248,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 18
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 20
         }
       ],
       "forks": 3,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2106,11 +2290,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 43
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 50
         }
       ],
-      "forks": 6,
+      "forks": 7,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2156,30 +2344,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 483
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 508
         }
       ],
-      "forks": 29,
+      "forks": 28,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-sadhvikchirunomula-measured-humanizer": {
-      "last_seen_commit": "15c8695614a19fa660788dec82ffcf661b1ebb31",
+      "last_seen_commit": "1986e136f6e6818bc9b4d1a0141abb0971878f09",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "1e7ee2d350301333952ba287353dd2e67cd38c04de9d99c4b445facbdd0d3666",
-      "normalized_sha256": "1e7ee2d350301333952ba287353dd2e67cd38c04de9d99c4b445facbdd0d3666",
-      "size": 13164,
-      "line_count": 271,
+      "raw_sha256": "2195ce972a8cd6e6e6fc2b05674bcf8222842c9efa9037f379cfe4dc78966208",
+      "normalized_sha256": "2195ce972a8cd6e6e6fc2b05674bcf8222842c9efa9037f379cfe4dc78966208",
+      "size": 13366,
+      "line_count": 275,
       "files": [
         {
           "original_path": "skills/measured-humanizer/SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-sadhvikchirunomula-measured-humanizer/skills/measured-humanizer/SKILL.source.md",
-          "raw_sha256": "05d95d9c7df7e370ecbea3a3f3709946fc746a4ba6059ecb391b8d345ff888d9",
-          "normalized_sha256": "05d95d9c7df7e370ecbea3a3f3709946fc746a4ba6059ecb391b8d345ff888d9"
+          "raw_sha256": "4cfcb1fdf2ef5f1b5b93bd83bad35fab24d8b8ce27a15df3525e3acc4daa2c19",
+          "normalized_sha256": "4cfcb1fdf2ef5f1b5b93bd83bad35fab24d8b8ce27a15df3525e3acc4daa2c19"
         },
         {
           "original_path": "skills/measured-humanizer/reference/calibration.md",
@@ -2200,36 +2392,40 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 2
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 2
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-mjlens-spec-human-flavor-pipeline": {
-      "last_seen_commit": "643d1305f4d2669bfba5a276054d2a3285557524",
+      "last_seen_commit": "2f78fa74c1598f05cd3fa993ae9b085493d6b536",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "4512360c53d825d6b2cda10176423a101eef03a4723741a6e969509fe2fc80a3",
-      "normalized_sha256": "4512360c53d825d6b2cda10176423a101eef03a4723741a6e969509fe2fc80a3",
-      "size": 32413,
-      "line_count": 518,
+      "raw_sha256": "ff6f6b3cc7927ed404e76e4dd318eb56e80fbb6946c44a2b27ad34c37f3a1927",
+      "normalized_sha256": "ff6f6b3cc7927ed404e76e4dd318eb56e80fbb6946c44a2b27ad34c37f3a1927",
+      "size": 33175,
+      "line_count": 522,
       "files": [
         {
           "original_path": "skills/human-flavor-pipeline/SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/SKILL.source.md",
-          "raw_sha256": "b2f8b9771ad3add277ce8f609951c8967e525f8fceda140799b3edafb7bc3ba4",
-          "normalized_sha256": "b2f8b9771ad3add277ce8f609951c8967e525f8fceda140799b3edafb7bc3ba4"
+          "raw_sha256": "781ee15c66d345018958326c9d2a31a93047fdd4f2c9124aff92391f2d941399",
+          "normalized_sha256": "781ee15c66d345018958326c9d2a31a93047fdd4f2c9124aff92391f2d941399"
         },
         {
           "original_path": "skills/human-flavor-pipeline/references/design-notes.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/references/design-notes.md",
-          "raw_sha256": "836db784b52b26152662e5745f6c44bd0cf4494fd835291403c0c0b4c01997f4",
-          "normalized_sha256": "836db784b52b26152662e5745f6c44bd0cf4494fd835291403c0c0b4c01997f4"
+          "raw_sha256": "36ee97fc14cce35fdfc5d70023112074ad090d9842ed536f90f8a1cff741b92a",
+          "normalized_sha256": "36ee97fc14cce35fdfc5d70023112074ad090d9842ed536f90f8a1cff741b92a"
         },
         {
           "original_path": "skills/human-flavor-pipeline/references/editing-protocol.md",
@@ -2258,8 +2454,8 @@
         {
           "original_path": "skills/human-flavor-pipeline/references/scoring.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-mjlens-spec-human-flavor-pipeline/skills/human-flavor-pipeline/references/scoring.md",
-          "raw_sha256": "32e406a5c95f6b7ed2b8ef6e489db8a1f5c83940270551b91f9c9554922affa9",
-          "normalized_sha256": "32e406a5c95f6b7ed2b8ef6e489db8a1f5c83940270551b91f9c9554922affa9"
+          "raw_sha256": "f90c53717bed547923e5cce0ef074cba88e75a0558e568d51ac49667658c5e10",
+          "normalized_sha256": "f90c53717bed547923e5cce0ef074cba88e75a0558e568d51ac49667658c5e10"
         },
         {
           "original_path": "skills/human-flavor-pipeline/references/self-audit.md",
@@ -2280,11 +2476,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 1
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2318,11 +2518,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 1
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 1
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2356,11 +2560,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2424,11 +2632,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 20
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 21
         }
       ],
       "forks": 2,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2462,11 +2674,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2500,11 +2716,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 0
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 0
         }
       ],
       "forks": 0,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2562,48 +2782,52 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 770
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 793
         }
       ],
       "forks": 46,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-zenstory-ai-oh-story-claudecode": {
-      "last_seen_commit": "5de060f9a47e7c4781c81edb320436b772e2955e",
+      "last_seen_commit": "87f2e7e223077023e0b0c0796d5704c1b0b02088",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "1e0a1387c015b46ee54d49d573610674f3b54c7ce417cc2fdb2e14e7e6a36784",
-      "normalized_sha256": "1e0a1387c015b46ee54d49d573610674f3b54c7ce417cc2fdb2e14e7e6a36784",
-      "size": 87736,
-      "line_count": 1345,
+      "raw_sha256": "98107a3f3545f0bc06cab75eb7c19149fff920720865dba02d935942f27f99b9",
+      "normalized_sha256": "98107a3f3545f0bc06cab75eb7c19149fff920720865dba02d935942f27f99b9",
+      "size": 79534,
+      "line_count": 1098,
       "files": [
         {
           "original_path": "skills/story-deslop/SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/SKILL.source.md",
-          "raw_sha256": "97abadf6ea64190b6c1afe8a19b40ad37370e09e614f2210322220bf6398f5e0",
-          "normalized_sha256": "97abadf6ea64190b6c1afe8a19b40ad37370e09e614f2210322220bf6398f5e0"
+          "raw_sha256": "c967d9222417f8dee3a7ee4eaa82afb034a1c3040c63234deb80074749be2fab",
+          "normalized_sha256": "c967d9222417f8dee3a7ee4eaa82afb034a1c3040c63234deb80074749be2fab"
         },
         {
           "original_path": "skills/story-deslop/references/anti-ai-writing.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/references/anti-ai-writing.md",
-          "raw_sha256": "011bfda41a22f4ba467517bb260954db1cb11ff32a542a887022e51ece1ed717",
-          "normalized_sha256": "011bfda41a22f4ba467517bb260954db1cb11ff32a542a887022e51ece1ed717"
+          "raw_sha256": "8478524ab72e08db29ea09fdf09ac7420776da07c1ef526cdce5e7dc4ee4fd29",
+          "normalized_sha256": "8478524ab72e08db29ea09fdf09ac7420776da07c1ef526cdce5e7dc4ee4fd29"
         },
         {
           "original_path": "skills/story-deslop/references/author-memory.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/references/author-memory.md",
-          "raw_sha256": "04077171ce2eb189985b555362fce60daad9fa3f966e32273e277062f65973d1",
-          "normalized_sha256": "04077171ce2eb189985b555362fce60daad9fa3f966e32273e277062f65973d1"
+          "raw_sha256": "376c06efa01b308a2c7e8fcfd37f0ba2045e00ada20cbe63792e1d0246b222d2",
+          "normalized_sha256": "376c06efa01b308a2c7e8fcfd37f0ba2045e00ada20cbe63792e1d0246b222d2"
         },
         {
           "original_path": "skills/story-deslop/references/banned-words.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-zenstory-ai-oh-story-claudecode/skills/story-deslop/references/banned-words.md",
-          "raw_sha256": "bb9512f5b81e2dd0d8d47a8165b0372ed6c147475502a4aa207f763ab694d5e1",
-          "normalized_sha256": "bb9512f5b81e2dd0d8d47a8165b0372ed6c147475502a4aa207f763ab694d5e1"
+          "raw_sha256": "0950870db637861b895972069f374b0d9e89120a17fa9d668362879b7da0f6a3",
+          "normalized_sha256": "0950870db637861b895972069f374b0d9e89120a17fa9d668362879b7da0f6a3"
         }
       ],
       "stars_history": [
@@ -2618,11 +2842,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 6564
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 7258
         }
       ],
-      "forks": 962,
+      "forks": 1032,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
@@ -2662,30 +2890,34 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 48
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 75
         }
       ],
-      "forks": 6,
+      "forks": 11,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
       "availability": "ok"
     },
     "upstream-kevintsai1202-humanizer-zh-tw": {
-      "last_seen_commit": "f63ee46876ada7714811744d47d0cd3cb9bf212b",
+      "last_seen_commit": "e2cb6172c9264ea04f5bfa19433c06c653a4ac54",
       "last_processed_commit": null,
       "last_accepted_commit": null,
-      "raw_sha256": "a0b77db830b5ae94bd909cdce6be82466acb8780a9676d058dd37f0fc81225ea",
-      "normalized_sha256": "a0b77db830b5ae94bd909cdce6be82466acb8780a9676d058dd37f0fc81225ea",
-      "size": 22494,
-      "line_count": 523,
+      "raw_sha256": "4f1eb6b1ad08b7ddedfdb88a94e40115d12aa2878fc7e54a1559553d695d5790",
+      "normalized_sha256": "4f1eb6b1ad08b7ddedfdb88a94e40115d12aa2878fc7e54a1559553d695d5790",
+      "size": 25527,
+      "line_count": 465,
       "files": [
         {
           "original_path": "SKILL.md",
           "stored_path": "merges/maybe-humanizer/snapshots/upstream-kevintsai1202-humanizer-zh-tw/SKILL.source.md",
-          "raw_sha256": "a0b77db830b5ae94bd909cdce6be82466acb8780a9676d058dd37f0fc81225ea",
-          "normalized_sha256": "a0b77db830b5ae94bd909cdce6be82466acb8780a9676d058dd37f0fc81225ea"
+          "raw_sha256": "4f1eb6b1ad08b7ddedfdb88a94e40115d12aa2878fc7e54a1559553d695d5790",
+          "normalized_sha256": "4f1eb6b1ad08b7ddedfdb88a94e40115d12aa2878fc7e54a1559553d695d5790"
         }
       ],
       "stars_history": [
@@ -2700,11 +2932,15 @@
         {
           "observed_at": "2026-09-06T14:51:10Z",
           "value": 831
+        },
+        {
+          "observed_at": "2026-10-05T03:25:30Z",
+          "value": 878
         }
       ],
-      "forks": 55,
+      "forks": 57,
       "installs": null,
-      "last_checked_at": "2026-09-06T14:51:10Z",
+      "last_checked_at": "2026-10-05T03:25:30Z",
       "last_change_key": null,
       "open_pr": null,
       "open_issue": null,
